@@ -1,0 +1,105 @@
+{
+    "characters" : [],
+    "weapons" : [],
+    "artifacts" : [      
+        {
+            "id" :  31,
+            "name": "Gladiator's Flower",
+            "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b1/Item_Gladiator%27s_Nostalgia.png/revision/latest/scale-to-width-down/45?cb=20200913045405",
+            "set": "Gladiator's Finale",
+            "type" : "Flower Of Life"
+        },
+        {
+            "id" :  32,
+            "name": "Gladiator's Plume",
+            "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/94/Item_Gladiator%27s_Destiny.png/revision/latest/scale-to-width-down/45?cb=20200913045616",
+            "set": "Gladiator's Finale",
+            "type" : "Plume of Death"
+        },
+        {
+            "id" :  33,
+            "name": "Gladiator's Sands",
+            "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/0c/Item_Gladiator%27s_Longing.png/revision/latest/scale-to-width-down/45?cb=20201009074313",
+            "set": "Gladiator's Finale",
+            "type" : "Sands Of Eon"
+        },
+        {
+            "id" :  34,
+            "name": "Gladiator's Goblet",
+            "image":"https://static.wikia.nocookie.net/gensin-impact/images/6/6d/Item_Gladiator%27s_Intoxication.png/revision/latest/scale-to-width-down/45?cb=20201009074319",
+            "set": "Gladiator's Finale",
+            "type" : "Goblet Of Eonothem"
+        },
+        {
+            "id" :  35,
+            "name": "Gladiator's Circlet",
+            "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/9b/Item_Gladiator%27s_Triumphus.png/revision/latest/scale-to-width-down/45?cb=20201009074325",
+            "set": "Gladiator's Finale",
+            "type" : "Circlet of Logos"
+        },
+        {
+            "id" :  36,
+            "name": "Instructor's Flower",
+            "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/35/Item_Instructor%27s_Brooch.png/revision/latest/scale-to-width-down/45?cb=20201009055347",
+            "set": "Instructor",
+            "type" : "Flower Of Life"
+        },
+        {
+            "id" :  37,
+            "name": "Instructor's Plume",
+            "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/af/Item_Instructor%27s_Feather_Accessory.png/revision/latest/scale-to-width-down/45?cb=20201009060755",
+            "set": "Instructor",
+            "type" : "Plume of Death"
+        },
+        {
+            "id" :  38,
+            "name": "Instructor's Sands",
+            "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/41/Item_Instructor%27s_Pocket_Watch.png/revision/latest/scale-to-width-down/45?cb=20201009060810",
+            "set": "Instructor",
+            "type" : "Sands Of Eon"
+        },
+        {
+            "id" :  39,
+            "name": "Instructor's Goblet",
+            "image":"https://static.wikia.nocookie.net/gensin-impact/images/a/ad/Item_Instructor%27s_Tea_Cup.png/revision/latest/scale-to-width-down/45?cb=20201009060945",
+            "set": "Instructor",
+            "type" : "Goblet Of Eonothem"
+        },
+        {
+            "id" :  40,
+            "name": "Instructor's Circlet",
+            "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/da/Item_Instructor%27s_Cap.png/revision/latest/scale-to-width-down/45?cb=20201009060957",
+            "set": "Instructor",
+            "type" : "Circlet of Logos"
+        }
+        
+    ],
+    "artifactSets" : {
+        "Gladiator's Finale" : {  
+            "minRarity" : 4 ,
+            "maxRarity" : 5 ,
+            "items" : {
+                "flower" : 31,
+                "plume" : 32,
+                "sands" : 33,
+                "goblet" : 34,
+                "circlet" : 35
+            }
+        },
+        "Instructor" : {  
+            "minRarity" : 3 ,
+            "maxRarity" : 4 ,
+            "items" : {
+                "flower" : 36,
+                "plume" : 37,
+                "sands" : 38,
+                "goblet" : 39,
+                "circlet" : 40
+            }
+        }
+    },
+    "characterSets": [
+
+    ],
+    "weaponSets": []
+}

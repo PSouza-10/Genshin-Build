@@ -3,7 +3,7 @@ import { Character, Artifacts, Weapons } from '../../assets/icons'
 import { FaFilter } from 'react-icons/fa'
 export const Container = styled.div`
   display: flex;
-
+  max-height: 45%;
   flex-basis: 45%;
 `
 
@@ -48,6 +48,19 @@ export const Items = styled.div`
     display: flex;
     flex-wrap: wrap;
     padding: 3px 15px;
+    flex: 1;
+    align-items: flex-start;
+    align-content: flex-start;
+    overflow-y: scroll;
+  }
+
+  .itemTable::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    opacity: 0.2;
+    border-radius: 1em;
+  }
+  .itemTable::-webkit-scrollbar {
+    background-color: transparent;
   }
 `
 

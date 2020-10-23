@@ -12,23 +12,24 @@ import {
 } from './styles'
 import Filter from './Filter'
 import Item from '../Item'
-import items from './placeholder'
 import { FilterContext } from './FilterContext'
 
 export function ItemPicker() {
   const [selectedTab, setTab] = useState('characters')
-  const { selected } = useContext(FilterContext)
+  const { list } = useContext(FilterContext)
+  const [query, setQuery] = useState('')
 
   return (
     <Container>
       <Nav {...{ selectedTab, setTab }} />
       <Items>
-        <Search />
+        <Search tab={selectedTab} query={query} setQuery={setQuery} />
         <div className='itemTable'>
-          {items.map(item =>
-            item.set === selected || !selected ? (
-              <Item key={item.id} {...item} />
-            ) : null
+          {list[selectedTab].map(
+            item =>
+              (item.name.toLowerCase().includes(query) || query === '') && (
+                <Item key={item.id} {...item} />
+              )
           )}
         </div>
       </Items>
@@ -70,12 +71,20 @@ const Nav = ({ selectedTab, setTab }) => {
   )
 }
 
-const Search = () => {
+const Search = ({ tab, query, setQuery }) => {
+  const searchItem = (query = '') => {
+    setQuery(query.toLowerCase())
+  }
+
   return (
     <SearchContainer>
-      <SearchBar placeholder='Search for an item...' />
+      <SearchBar
+        placeholder='Search for an item...'
+        onChange={e => searchItem(e.target.value)}
+        value={query}
+      />
 
-      <Filter />
+      <Filter tab={tab} />
     </SearchContainer>
   )
 }

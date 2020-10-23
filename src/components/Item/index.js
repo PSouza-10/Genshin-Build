@@ -1,8 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
-export default function Item({ image, name }) {
+import React, { useContext } from 'react'
+import styled, { css } from 'styled-components'
+import { ItemsContext } from '../../ItemsContext'
+export default function Item({ id, image, name, type = '' }) {
+  const itemSlot = type.toLowerCase().split(' ')[0]
+  const { selectedItems, handleSelectItem } = useContext(ItemsContext)
+  console.log(itemSlot)
   return (
-    <Wrapper>
+    <Wrapper
+      selected={selectedItems[itemSlot].id === id}
+      onClick={() => handleSelectItem(id, itemSlot)}>
       <Image src={image} alt={name} />
     </Wrapper>
   )
@@ -11,11 +17,21 @@ const Wrapper = styled.span`
   position: relative;
   z-index: 2;
   margin-right: 10px;
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+  cursor: pointer;
+  ${({ selected }) =>
+    selected
+      ? css`
+          background-color: var(--primary);
+          &:hover {
+            background-color: var(--primary);
+          }
+        `
+      : css`
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        `}
 `
 const Image = styled.img`
-  cursor: pointer;
   z-index: 1;
 `

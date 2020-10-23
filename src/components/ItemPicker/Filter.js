@@ -1,43 +1,42 @@
 import React, { useState, useContext } from 'react'
 import styled, { css } from 'styled-components'
+import { ItemsContext } from '../../ItemsContext'
 import { FilterContext } from './FilterContext'
 import { FilterIcon } from './styles'
-export default function Filter() {
-  const { selected, setSelected } = useContext(FilterContext)
+export default function Filter({ tab }) {
+  const { selectedFilter, handleFilterSelect } = useContext(FilterContext)
   const [open, setOpen] = useState(false)
   const toggle = () => setOpen(!open)
+  const { artifactSets, characterSets, weaponSets } = useContext(
+    ItemsContext
+  ).data
 
-  const handleSelect = name => setSelected(name)
-  const items = [
-    {
-      name: 'Resolution of Sojourner'
-    },
-    {
-      name: "Gladiator's Finale"
-    },
-    {
-      name: 'Thundering Fury'
-    }
-  ]
+  const sets = {
+    characters: characterSets,
+    weapons: weaponSets,
+    artifacts: artifactSets
+  }
 
   return (
     <>
       <FilterIcon onClick={toggle} />
       <FilterWrapper>
         <FilterBar onClick={toggle} open={open}>
-          {selected ? selected : 'Select a set...'}{' '}
+          {selectedFilter[tab]}{' '}
           <span className='close' onClick={toggle}>
             &times;
           </span>
         </FilterBar>
         <FilterItems open={open}>
-          <FilterItem onClick={() => setSelected('')}>Clear</FilterItem>
-          {items.map((item, index) => (
+          <FilterItem onClick={() => handleFilterSelect('All', tab)}>
+            All
+          </FilterItem>
+          {Object.keys(sets[tab]).map((item, index) => (
             <FilterItem
               key={index}
-              selected={selected === item.name}
-              onClick={() => handleSelect(item.name)}>
-              {item.name}
+              selected={selectedFilter === item}
+              onClick={() => handleFilterSelect(item, tab)}>
+              {item}
             </FilterItem>
           ))}
         </FilterItems>
@@ -52,6 +51,7 @@ const FilterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  z-index: 10;
 `
 
 const FilterBar = styled.span`
@@ -94,11 +94,11 @@ const FilterItems = styled.ul`
   color: ${({ open }) => (open ? 'var(--primary)' : 'rgba(0,0,0,0)')};
   transition: all 0.3s ease;
   background-color: var(--bgSecondary);
-  z-index: 2;
+
   position: absolute;
   width: 100%;
   border-radius: 1em;
-  /* margin-top: -25px; */
+
   border: 1px solid var(--primary);
   padding-top: 28px;
 `

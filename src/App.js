@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { Header, ItemPicker, CharacterWheel } from './components'
 import FilterProvider from './components/ItemPicker/FilterContext'
+import { ItemsContext } from './ItemsContext'
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -12,8 +13,37 @@ const Container = styled.div`
     flex-direction: column;
   }
 `
+// const items = {
+//   flower: {
+//     name: "Gladiator's Flower",
+//     image: GladiatorSet.GladiatorFlower,
+//     set: "Gladiator's Finale"
+//   },
+//   plume: {
+//     name: "Gladiator's Plume",
+//     image: GladiatorSet.GladiatorPlume,
+//     set: "Gladiator's Finale"
+//   },
+//   sands: {
+//     name: "Gladiator's Sands",
+//     image: GladiatorSet.GladiatorSands,
+//     set: "Gladiator's Finale"
+//   },
+//   goblet: {
+//     name: "Gladiator's Goblet",
+//     image: GladiatorSet.GladiatorGoblet,
+//     set: "Gladiator's Finale"
+//   },
+//   circlet: {
+//     name: "Gladiator's Circlet",
+//     image: GladiatorSet.GladiatorCirclet,
+//     set: "Gladiator's Finale"
+//   }
+// }
 
 function App() {
+  const { data } = useContext(ItemsContext)
+
   return (
     <>
       <Header />
@@ -22,7 +52,7 @@ function App() {
           <FilterProvider>
             <ItemPicker />
           </FilterProvider>
-          <CharacterWheel />
+          <CharacterWheel items={data.artifactSets["Gladiator's Finale"]} />
         </div>
       </Container>
     </>

@@ -36,6 +36,10 @@ export default createGlobalStyle`
         list-style: none;
         
     }
+    button {
+        border: none;
+        
+    }
     :root {
         --bgPrimary: #222;
         --bgSecondary: #333;
@@ -46,6 +50,11 @@ export default createGlobalStyle`
         --positive: #00C06B;
         --negative: #f92042;
         --hover: #2C8ED6;
+        --stars1: #a1a09f;
+        --stars2: #79a368;
+        --stars3: #5380a7;
+        --stars4: #8e78ab;
+        --stars5: #c2883a;
     }
 
 
