@@ -1,6 +1,6 @@
 import { FaStar } from 'react-icons/fa'
-import styled from 'styled-components'
-import { Artifacts } from '../../assets/icons'
+import styled, { css } from 'styled-components'
+import { Character, Artifacts, Weapons } from '../../assets/icons'
 
 export const Container = styled.div`
   display: flex;
@@ -9,13 +9,20 @@ export const Container = styled.div`
   flex-direction: column;
   background-color: var(--bgSecondary);
   flex: 1;
-  box-shadow: 0 0 4px #000 inset;
+  ${({ RightColumn }) =>
+    RightColumn &&
+    css`
+      flex: 0.3;
+      align-items: center;
+      justify-content: center;
+      flex-basis: 10%;
+    `}
 `
 
 export const ItemRow = styled.div`
   display: flex;
   justify-content: ${({ justify }) => justify};
-  padding: 20px 300px;
+  padding: 20px 75px;
 
   flex-basis: 33%;
   max-height: 33%;
@@ -45,6 +52,12 @@ export const ItemSlot = styled.div`
   .text {
     display: flex;
     align-items: center;
+  }
+  .LvlEdit {
+    background-color: transparent;
+    border: none;
+    width: 25px;
+    text-align: center;
   }
 `
 export const IconButton = styled.button`
@@ -76,8 +89,19 @@ export const Image = styled.img`
   width: 45px;
   height: 47px;
 `
-export const ArtifactsIcon = styled(Artifacts)`
+
+const placeholderIconCSS = css`
   fill: white;
   height: 47px;
   width: 45px;
+`
+
+export const ArtifactsIcon = styled(Artifacts)`
+  ${placeholderIconCSS}
+`
+export const CharactersIcon = styled(Character)`
+  ${placeholderIconCSS}
+`
+export const WeaponsIcon = styled(Weapons)`
+  ${placeholderIconCSS}
 `

@@ -16,7 +16,16 @@ export default createGlobalStyle`
         user-select: none;
         outline: none;
         color: var(--primary);
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
         
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+       
     }
 
     html, body, #root {

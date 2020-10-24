@@ -4,7 +4,7 @@ import { ItemsContext } from '../../ItemsContext'
 export default function Item({ id, image, name, type = '' }) {
   const itemSlot = type.toLowerCase().split(' ')[0]
   const { selectedItems, handleSelectItem } = useContext(ItemsContext)
-  console.log(itemSlot)
+
   return (
     <Wrapper
       selected={selectedItems[itemSlot].id === id}
@@ -18,6 +18,8 @@ const Wrapper = styled.span`
   z-index: 2;
   margin-right: 10px;
   cursor: pointer;
+  height: 47px;
+  width: 45px;
   ${({ selected }) =>
     selected
       ? css`
@@ -34,4 +36,6 @@ const Wrapper = styled.span`
 `
 const Image = styled.img`
   z-index: 1;
+  max-height: 47px;
+  max-width: 45px;
 `

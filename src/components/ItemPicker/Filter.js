@@ -95,10 +95,13 @@ const FilterItems = styled.ul`
   transition: all 0.3s ease;
   background-color: var(--bgSecondary);
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
   position: absolute;
   width: 100%;
   border-radius: 1em;
-
+  overflow-y: scroll;
   border: 1px solid var(--primary);
   padding-top: 28px;
 `

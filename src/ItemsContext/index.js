@@ -21,7 +21,7 @@ export const ItemsContext = createContext(initialState)
 export default function ItemsProvider({ children }) {
   const [selectedItems, selectItem] = useState(initialState.selectedItems)
   const handleSelectItem = (id, slot) => {
-    if (selectedItems[slot].id === id) {
+    if (slot && selectedItems[slot].id === id) {
       selectItem({
         ...selectedItems,
         [slot]: {}

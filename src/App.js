@@ -12,6 +12,12 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
   }
+  .charWheel {
+    display: flex;
+    flex: 1;
+    align-items: stretch;
+    box-shadow: 0 0 4px #000 inset;
+  }
 `
 // const items = {
 //   flower: {

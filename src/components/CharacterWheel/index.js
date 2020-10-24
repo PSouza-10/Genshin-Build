@@ -1,46 +1,64 @@
-import React, { useContext, useState } from 'react'
-import {
-  Container,
-  ItemRow,
-  ItemSlot,
-  Image,
-  IconButton,
-  StarIcon,
-  ArtifactsIcon
-} from './styles'
-import { FaMinus, FaPlus } from 'react-icons/fa'
+import React, { useContext, useEffect, useState } from 'react'
+import { Container, ItemRow } from './styles'
+
 import { ItemsContext } from '../../ItemsContext'
+import ItemRenderer from './ItemRenderer'
 
 export function CharacterWheel() {
   const { selectedItems } = useContext(ItemsContext)
 
   return (
-    <Container>
-      <ItemRow justify='center'>
-        <Item {...selectedItems.flower} />
-      </ItemRow>
-      <ItemRow justify='space-around'>
-        <Item {...selectedItems.circlet} />
-        <Item {...selectedItems.character} />
-        <Item {...selectedItems.plume} />
-      </ItemRow>
-      <ItemRow justify='space-around'>
-        <Item {...selectedItems.goblet} />
-        <Item {...selectedItems.sands} />
-      </ItemRow>
-    </Container>
+    <div className='charWheel'>
+      <Container>
+        <ItemRow justify='center'>
+          <Item {...selectedItems.flower} slotType='artifact' />
+        </ItemRow>
+        <ItemRow justify='space-between'>
+          <Item {...selectedItems.circlet} slotType='artifact' />
+          <Item {...selectedItems.character} slotType='character' />
+          <Item {...selectedItems.plume} slotType='artifact' />
+        </ItemRow>
+        <ItemRow justify='space-around'>
+          <Item {...selectedItems.goblet} slotType='artifact' />
+          <Item {...selectedItems.sands} slotType='artifact' />
+        </ItemRow>
+      </Container>
+      <Container RightColumn>
+        <Item {...selectedItems.weapon} slotType='weapon' />
+      </Container>
+    </div>
   )
 }
 
-const Item = ({ image, name = '', type }) => {
+const Item = ({ id, image, name = '', slotType, rarity = 1, set, type }) => {
+  const isArtifact = slotType === 'artifact'
+  const { artifactSets } = useContext(ItemsContext).data
   const [level, setLevel] = useState(1)
-  const [stars, setStars] = useState(1)
-  const [maxLevel, setMaxLevel] = useState(4)
+  const [stars, setStars] = useState(isArtifact ? 1 : 4)
+  const [maxLevel, setMaxLevel] = useState(isArtifact ? 4 : 90)
+  const [artifactRarity, setRarity] = useState({
+    minRarity: 1,
+    maxRarity: 5
+  })
+
+  useEffect(() => {
+    setStars(rarity)
+  }, [rarity, setStars])
+  useEffect(() => {
+    if (artifactSets[set]) {
+      const { minRarity, maxRarity } = artifactSets[set]
+      setRarity({ minRarity, maxRarity })
+      setStars(minRarity)
+    }
+  }, [set, artifactSets, setStars])
 
   const handleLevel = operation => {
-    const newLevel = operation === 'plus' ? level + 1 : level - 1
-
-    setLevel(newLevel)
+    if (operation === 'plus' || operation === 'minus') {
+      const newLevel = operation === 'plus' ? level + 1 : level - 1
+      setLevel(newLevel)
+    } else {
+      setLevel(operation)
+    }
   }
   const handleStars = operation => {
     const newStars = operation === 'plus' ? stars + 1 : stars - 1
@@ -51,42 +69,21 @@ const Item = ({ image, name = '', type }) => {
     setStars(newStars)
   }
   const isMaxLevel = level === maxLevel
-  return (
-    <ItemSlot stars={stars}>
-      <span className='stars'>
-        <Icon
-          negative
-          onClick={() => handleStars('minus')}
-          disabled={stars === 1}
-        />
-        <span className='text'>
-          <StarIcon /> {stars}
-        </span>
-        <Icon onClick={() => handleStars('plus')} disabled={stars === 5} />
-      </span>
-      <span className='imgWrapper'>
-        {image ? <Image src={image} alt={name} /> : <ArtifactsIcon />}
-      </span>
-      <span className='Lvl'>
-        <Icon
-          negative
-          onClick={() => handleLevel('minus')}
-          disabled={level === 1}
-        />
-        <span className='text'>Lvl. {level}</span>
-        <Icon onClick={() => handleLevel('plus')} disabled={isMaxLevel} />
-      </span>
-    </ItemSlot>
-  )
-}
 
-const Icon = ({ negative = false, disabled = false, ...otherProps }) =>
-  negative ? (
-    <IconButton disabled={disabled} {...otherProps}>
-      <FaMinus />
-    </IconButton>
-  ) : (
-    <IconButton disabled={disabled} {...otherProps}>
-      <FaPlus />
-    </IconButton>
-  )
+  const rendererProps = {
+    id,
+    level,
+    stars,
+    name,
+    isArtifact,
+    image,
+    slotType,
+    maxLevel,
+    isMaxLevel,
+    artifactRarity,
+    type,
+    handleLevel,
+    handleStars
+  }
+  return <ItemRenderer {...rendererProps} />
+}
