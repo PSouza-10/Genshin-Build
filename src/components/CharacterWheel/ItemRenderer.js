@@ -64,7 +64,7 @@ export default function ItemRenderer({
           disabled={stars === maxRarity || !isArtifact}
         />
       </span>
-      <span className='imgWrapper' onClick={removeItem}>
+      <span className='imgWrapper' title={name} onDoubleClick={removeItem}>
         {image ? <Image src={image} alt={name} /> : placeholderIcon[slotType]}
       </span>
       <span className='Lvl'>
@@ -85,13 +85,14 @@ export default function ItemRenderer({
         </span>
         <Icon onClick={() => handleLevel('plus')} disabled={isMaxLevel} />
       </span>
+      <span className='itemName'>{name}</span>
     </ItemSlot>
   )
 }
 
 const Icon = ({ negative = false, disabled = false, ...otherProps }) =>
   negative ? (
-    <IconButton disabled={disabled} {...otherProps}>
+    <IconButton negative disabled={disabled} {...otherProps}>
       <FaMinus />
     </IconButton>
   ) : (

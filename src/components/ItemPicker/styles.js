@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components'
 import { Character, Artifacts, Weapons } from '../../assets/icons'
+
 import { FaFilter } from 'react-icons/fa'
+
 export const Container = styled.div`
   display: flex;
   max-height: 45%;
@@ -52,6 +54,7 @@ export const Items = styled.div`
     align-items: flex-start;
     align-content: flex-start;
     overflow-y: scroll;
+    max-height: 90%;
   }
 
   .itemTable::-webkit-scrollbar-thumb {
@@ -118,5 +121,8 @@ export const SearchBar = styled.input`
   ::placeholder {
     color: var(--primary);
     opacity: 0.7;
+  }
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
   }
 `

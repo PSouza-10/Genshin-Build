@@ -82,6 +82,7 @@ const Search = ({ tab, query, setQuery }) => {
         placeholder='Search for an item...'
         onChange={e => searchItem(e.target.value)}
         value={query}
+        type='search'
       />
 
       <Filter tab={tab} />

@@ -1,14 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Container, ItemRow } from './styles'
+import { Container, ItemRow, ClearIcon } from './styles'
 
 import { ItemsContext } from '../../ItemsContext'
 import ItemRenderer from './ItemRenderer'
 
 export function CharacterWheel() {
-  const { selectedItems } = useContext(ItemsContext)
+  const { selectedItems, clearItems } = useContext(ItemsContext)
 
   return (
     <div className='charWheel'>
+      <ClearIcon onClick={clearItems} />
       <Container>
         <ItemRow justify='center'>
           <Item {...selectedItems.flower} slotType='artifact' />
@@ -47,6 +48,10 @@ const Item = ({ id, image, name = '', slotType, rarity = 1, set, type }) => {
   useEffect(() => {
     if (artifactSets[set]) {
       const { minRarity, maxRarity } = artifactSets[set]
+      setRarity({ minRarity, maxRarity })
+      setStars(minRarity)
+    } else {
+      const [minRarity, maxRarity] = [1, 5]
       setRarity({ minRarity, maxRarity })
       setStars(minRarity)
     }

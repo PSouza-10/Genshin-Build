@@ -21,7 +21,12 @@ export const ItemsContext = createContext(initialState)
 export default function ItemsProvider({ children }) {
   const [selectedItems, selectItem] = useState(initialState.selectedItems)
   const handleSelectItem = (id, slot) => {
-    if (slot && selectedItems[slot].id === id) {
+    console.log(id, slot)
+    if (
+      slot &&
+      selectedItems[slot].id === id &&
+      slot === selectedItems[slot].type.toLowerCase().split(' ')[0]
+    ) {
       selectItem({
         ...selectedItems,
         [slot]: {}
@@ -29,7 +34,9 @@ export default function ItemsProvider({ children }) {
     } else {
       const { characters, artifacts, weapons } = initialState.data
       const allItems = [...characters, ...artifacts, ...weapons]
-      const newItem = allItems.find(item => id === item.id)
+      const newItem = allItems.find(
+        item => id === item.id && slot === item.type.toLowerCase().split(' ')[0]
+      )
 
       selectItem({
         ...selectedItems,
@@ -37,9 +44,13 @@ export default function ItemsProvider({ children }) {
       })
     }
   }
+
+  function clearItems() {
+    selectItem(initialState.selectedItems)
+  }
   return (
     <ItemsContext.Provider
-      value={{ ...initialState, selectedItems, handleSelectItem }}>
+      value={{ ...initialState, selectedItems, handleSelectItem, clearItems }}>
       {children}
     </ItemsContext.Provider>
   )

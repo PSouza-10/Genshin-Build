@@ -1,4 +1,4 @@
-import { FaStar } from 'react-icons/fa'
+import { FaStar, FaTrash } from 'react-icons/fa'
 import styled, { css } from 'styled-components'
 import { Character, Artifacts, Weapons } from '../../assets/icons'
 
@@ -22,8 +22,8 @@ export const Container = styled.div`
 export const ItemRow = styled.div`
   display: flex;
   justify-content: ${({ justify }) => justify};
-  padding: 20px 75px;
-
+  padding: 7px 75px;
+  align-items: center;
   flex-basis: 33%;
   max-height: 33%;
 `
@@ -48,7 +48,9 @@ export const ItemSlot = styled.div`
     justify-content: space-between;
     align-items: center;
   }
-
+  .itemName {
+    text-align: center;
+  }
   .text {
     display: flex;
     align-items: center;
@@ -67,7 +69,7 @@ export const IconButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  transition: background-color 0.2s ease;
   svg {
     fill: var(--outline);
     height: 12px;
@@ -79,12 +81,40 @@ export const IconButton = styled.button`
     background-color: white;
   }
 
-  ${({ disabled }) => disabled && 'filter: brightness(50%)'};
+  &:hover {
+    background-color: ${({ negative }) =>
+      negative ? 'var(--negative)' : 'var(--positive)'};
+  }
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      filter: brightness(50%);
+      &:active {
+        background-color: var(--primary);
+      }
+
+      &:hover {
+        background-color: var(--primary);
+      }
+    `}
 `
 export const StarIcon = styled(FaStar)`
   fill: yellow;
 `
-
+export const ClearIcon = styled(FaTrash)`
+  fill: var(--primary);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  &:hover {
+    fill: var(--negative);
+  }
+  transition: background-color 0.2s ease;
+`
 export const Image = styled.img`
   width: 45px;
   height: 47px;

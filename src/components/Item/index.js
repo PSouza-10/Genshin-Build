@@ -8,7 +8,8 @@ export default function Item({ id, image, name, type = '' }) {
   return (
     <Wrapper
       selected={selectedItems[itemSlot].id === id}
-      onClick={() => handleSelectItem(id, itemSlot)}>
+      onClick={() => handleSelectItem(id, itemSlot)}
+      title={name}>
       <Image src={image} alt={name} />
     </Wrapper>
   )
@@ -18,8 +19,8 @@ const Wrapper = styled.span`
   z-index: 2;
   margin-right: 10px;
   cursor: pointer;
-  height: 47px;
-  width: 45px;
+  height: 60px;
+  width: 57px;
   ${({ selected }) =>
     selected
       ? css`
@@ -36,6 +37,8 @@ const Wrapper = styled.span`
 `
 const Image = styled.img`
   z-index: 1;
-  max-height: 47px;
-  max-width: 45px;
+  max-height: 100%;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
 `
