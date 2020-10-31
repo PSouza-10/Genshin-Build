@@ -5,90 +5,73 @@ import { ItemsContext } from '../../ItemsContext'
 import ItemRenderer from './ItemRenderer'
 
 export function CharacterWheel() {
-  const { selectedItems, clearItems } = useContext(ItemsContext)
+  const { clearItems } = useContext(ItemsContext)
 
   return (
     <div className='charWheel'>
       <ClearIcon onClick={clearItems} />
       <Container>
         <ItemRow justify='center'>
-          <Item {...selectedItems.flower} slotType='artifact' />
+          <Item itemSlot='flower' slotType='artifact' />
         </ItemRow>
         <ItemRow justify='space-between'>
-          <Item {...selectedItems.circlet} slotType='artifact' />
-          <Item {...selectedItems.character} slotType='character' />
-          <Item {...selectedItems.plume} slotType='artifact' />
+          <Item itemSlot='circlet' slotType='artifact' />
+          <Item itemSlot='character' slotType='character' />
+          <Item itemSlot='plume' slotType='artifact' />
         </ItemRow>
         <ItemRow justify='space-around'>
-          <Item {...selectedItems.goblet} slotType='artifact' />
-          <Item {...selectedItems.sands} slotType='artifact' />
+          <Item itemSlot='goblet' slotType='artifact' />
+          <Item itemSlot='sands' slotType='artifact' />
         </ItemRow>
       </Container>
       <Container RightColumn>
-        <Item {...selectedItems.weapon} slotType='weapon' />
+        <Item itemSlot='weapon' slotType='weapon' />
       </Container>
     </div>
   )
 }
 
-const Item = ({ id, image, name = '', slotType, rarity = 1, set, type }) => {
-  const isArtifact = slotType === 'artifact'
-  const { artifactSets } = useContext(ItemsContext).data
-  const [level, setLevel] = useState(1)
-  const [stars, setStars] = useState(isArtifact ? 1 : 4)
-  const [maxLevel, setMaxLevel] = useState(isArtifact ? 4 : 90)
-  const [artifactRarity, setRarity] = useState({
-    minRarity: 1,
-    maxRarity: 5
-  })
+const Item = ({ itemSlot, slotType }) => {
+  const { setStats, selectedItems } = useContext(ItemsContext)
+  const item = selectedItems[itemSlot]
 
-  useEffect(() => {
-    setStars(rarity)
-  }, [rarity, setStars])
-  useEffect(() => {
-    if (artifactSets[set]) {
-      const { minRarity, maxRarity } = artifactSets[set]
-      setRarity({ minRarity, maxRarity })
-      setStars(minRarity)
-    } else {
-      const [minRarity, maxRarity] = [1, 5]
-      setRarity({ minRarity, maxRarity })
-      setStars(minRarity)
-    }
-  }, [set, artifactSets, setStars])
+  const { level, ascension, stars, maxLevel } = item
+
+  const isArtifact = slotType === 'artifact'
 
   const handleLevel = operation => {
     if (operation === 'plus' || operation === 'minus') {
       const newLevel = operation === 'plus' ? level + 1 : level - 1
-      setLevel(newLevel)
+      setStats(itemSlot, { level: newLevel })
     } else {
-      setLevel(operation)
+      setStats(itemSlot, { level: operation })
     }
   }
-  const handleStars = operation => {
-    const newStars = operation === 'plus' ? stars + 1 : stars - 1
-    const newMaxLevel = newStars > 2 ? newStars * 4 : 4
 
-    if (level > newMaxLevel) setLevel(newMaxLevel)
-    setMaxLevel(newMaxLevel)
-    setStars(newStars)
+  const handleUpgrade = operation => {
+    if (operation === 'plus' || operation === 'minus') {
+      const initialValue = isArtifact ? stars : ascension
+      const newUpgrade =
+        operation === 'plus' ? initialValue + 1 : initialValue - 1
+      const newValue = isArtifact
+        ? { stars: newUpgrade }
+        : { ascension: newUpgrade }
+      setStats(itemSlot, newValue)
+    } else {
+      setStats(itemSlot, { ascension: operation })
+    }
   }
+
   const isMaxLevel = level === maxLevel
 
   const rendererProps = {
-    id,
-    level,
-    stars,
-    name,
     isArtifact,
-    image,
     slotType,
-    maxLevel,
     isMaxLevel,
-    artifactRarity,
-    type,
     handleLevel,
-    handleStars
+    handleUpgrade,
+    item
   }
+
   return <ItemRenderer {...rendererProps} />
 }

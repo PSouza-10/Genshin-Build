@@ -8,28 +8,32 @@ import {
   ArtifactsIcon,
   CharactersIcon,
   WeaponsIcon,
-  IconButton
+  IconButton,
+  AscensionStar
 } from './styles'
 export default function ItemRenderer({
-  id,
-  level,
-  stars,
-  name,
   isArtifact,
-  image,
   slotType,
-  maxLevel,
   isMaxLevel,
   handleLevel,
-  handleStars,
-  type,
-  artifactRarity: { minRarity, maxRarity }
+  handleUpgrade,
+  item
 }) {
-  const { handleSelectItem } = useContext(ItemsContext)
+  const {
+    image,
+    name,
+    type,
+    level,
+    stars,
+    ascension,
+    maxLevel,
+    minRarity,
+    maxRarity
+  } = item
+  const { handleSelectItem, handleItemDisplay } = useContext(ItemsContext)
   const [inputLevel, setLevel] = useState(level)
   const onChange = val => setLevel(parseInt(val))
   const checkLevel = () => {
-    console.log(inputLevel)
     if (inputLevel >= 1 && inputLevel <= maxLevel) {
       handleLevel(inputLevel)
     } else {
@@ -37,8 +41,13 @@ export default function ItemRenderer({
     }
   }
   const itemSlot = type ? type.toLowerCase().split(' ')[0] : ''
+  const displayItem = () => {
+    if (itemSlot) {
+      handleItemDisplay(itemSlot)
+    }
+  }
   const removeItem = () => {
-    handleSelectItem(id, itemSlot)
+    handleSelectItem(item, itemSlot)
   }
   const placeholderIcon = {
     character: <CharactersIcon />,
@@ -48,23 +57,31 @@ export default function ItemRenderer({
   useEffect(() => {
     setLevel(level)
   }, [level, setLevel])
+
+  const upgradeLevel = isArtifact ? stars : ascension
+  const minUpgrade = isArtifact ? minRarity : 0
+  const maxUpgrade = isArtifact ? maxRarity : 7
   return (
     <ItemSlot stars={stars}>
       <span className='stars'>
         <Icon
           negative
-          onClick={() => handleStars('minus')}
-          disabled={stars === minRarity || !isArtifact}
+          onClick={() => handleUpgrade('minus')}
+          disabled={upgradeLevel === minUpgrade}
         />
         <span className='text'>
-          <StarIcon /> {stars}
+          {isArtifact ? <StarIcon /> : <AscensionStar />} {upgradeLevel}
         </span>
         <Icon
-          onClick={() => handleStars('plus')}
-          disabled={stars === maxRarity || !isArtifact}
+          onClick={() => handleUpgrade('plus')}
+          disabled={upgradeLevel === maxUpgrade}
         />
       </span>
-      <span className='imgWrapper' title={name} onDoubleClick={removeItem}>
+      <span
+        className='imgWrapper'
+        title={name}
+        onDoubleClick={removeItem}
+        onClick={displayItem}>
         {image ? <Image src={image} alt={name} /> : placeholderIcon[slotType]}
       </span>
       <span className='Lvl'>

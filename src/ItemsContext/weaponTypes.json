@@ -1,0 +1,162 @@
+{
+  "48": {
+    "scaling": [
+      { "level": 1, "atk": 48, "ascendedAtk": 48 },
+      { "level": 20, "atk": 133, "ascendedAtk": 164 },
+      { "level": 40, "atk": 261, "ascendedAtk": 292 },
+      { "level": 50, "atk": 341, "ascendedAtk": 373 },
+      { "level": 60, "atk": 423, "ascendedAtk": 455 },
+      { "level": 70, "atk": 506, "ascendedAtk": 537 }
+    ],
+    "ascensionBonus": 31.4,
+    "increasesPerLevel": {
+      "1": 4.47,
+      "20": 4.85,
+      "40": 4.9,
+      "50": 5.0,
+      "60": 5.1
+    }
+  },
+  "46": {
+    "scaling": [
+      { "level": 1, "atk": 46, "ascendedAtk": 46 },
+      { "level": 20, "atk": 122, "ascendedAtk": 153 },
+      { "level": 40, "atk": 235, "ascendedAtk": 266 },
+      { "level": 50, "atk": 308, "ascendedAtk": 340 },
+      { "level": 60, "atk": 382, "ascendedAtk": 414 },
+      { "level": 70, "atk": 457, "ascendedAtk": 488 }
+    ],
+    "ascensionBonus": 31.4,
+    "increasesPerLevel": {
+      "1": 4.0,
+      "20": 4.1,
+      "40": 4.2,
+      "50": 4.2,
+      "60": 4.3
+    }
+  },
+  "44": {
+    "scaling": [
+      { "level": 1, "atk": 44, "ascendedAtk": 44 },
+      { "level": 20, "atk": 119, "ascendedAtk": 144 },
+      { "level": 40, "atk": 226, "ascendedAtk": 252 },
+      { "level": 50, "atk": 293, "ascendedAtk": 319 },
+      { "level": 60, "atk": 361, "ascendedAtk": 387 },
+      { "level": 70, "atk": 429, "ascendedAtk": 455 }
+    ],
+    "ascensionBonus": 25.8,
+    "increasesPerLevel": {
+      "1": 3.95,
+      "20": 4.1,
+      "40": 4.1,
+      "50": 4.2,
+      "60": 4.2
+    }
+  },
+  "42": {
+    "scaling": [
+      { "level": 1, "atk": 42, "ascendedAtk": 42 },
+      { "level": 20, "atk": 109, "ascendedAtk": 135 },
+      { "level": 40, "atk": 205, "ascendedAtk": 231 },
+      { "level": 50, "atk": 266, "ascendedAtk": 292 },
+      { "level": 60, "atk": 327, "ascendedAtk": 353 },
+      { "level": 70, "atk": 388, "ascendedAtk": 414 }
+    ],
+    "ascensionBonus": 26.0,
+    "increasesPerLevel": {
+      "1": 3.53,
+      "20": 3.5,
+      "40": 3.5,
+      "50": 3.5,
+      "60": 3.5
+    }
+  },
+  "41": {
+    "scaling": [
+      { "level": 1, "atk": 41, "ascendedAtk": 41 },
+      { "level": 20, "atk": 99, "ascendedAtk": 125 },
+      { "level": 40, "atk": 184, "ascendedAtk": 210 },
+      { "level": 50, "atk": 238, "ascendedAtk": 264 },
+      { "level": 60, "atk": 293, "ascendedAtk": 319 },
+      { "level": 70, "atk": 347, "ascendedAtk": 373 }
+    ],
+    "ascensionBonus": 26.0,
+    "increasesPerLevel": {
+      "1": 3.05,
+      "20": 2.95,
+      "40": 2.8,
+      "50": 2.9,
+      "60": 2.8
+    }
+  },
+  "40": {
+    "scaling": [
+      { "level": 1, "atk": 40, "ascendedAtk": 40 },
+      { "level": 20, "atk": 102, "ascendedAtk": 121 },
+      { "level": 40, "atk": 187, "ascendedAtk": 207 },
+      { "level": 50, "atk": 239, "ascendedAtk": 259 },
+      { "level": 60, "atk": 292, "ascendedAtk": 311 },
+      { "level": 70, "atk": 344, "ascendedAtk": 363 }
+    ],
+    "ascensionBonus": 19.4,
+    "increasesPerLevel": {
+      "1": 3.26,
+      "20": 3.3,
+      "40": 3.2,
+      "50": 3.3,
+      "60": 3.3
+    }
+  },
+  "39": {
+    "scaling": [
+      { "level": 1, "atk": 39, "ascendedAtk": 39 },
+      { "level": 20, "atk": 94, "ascendedAtk": 113 },
+      { "level": 40, "atk": 169, "ascendedAtk": 189 },
+      { "level": 50, "atk": 216, "ascendedAtk": 236 },
+      { "level": 60, "atk": 263, "ascendedAtk": 282 }
+    ],
+    "ascensionBonus": 19.5,
+    "increasesPerLevel": { "1": 2.89, "20": 2.8, "40": 2.7, "50": 2.7 }
+  },
+  "38": {
+    "scaling": [
+      { "level": 1, "atk": 38, "ascendedAtk": 38 },
+      { "level": 20, "atk": 86, "ascendedAtk": 105 },
+      { "level": 40, "atk": 151, "ascendedAtk": 171 },
+      { "level": 50, "atk": 193, "ascendedAtk": 212 },
+      { "level": 60, "atk": 234, "ascendedAtk": 253 },
+      { "level": 70, "atk": 274, "ascendedAtk": 294 }
+    ],
+    "ascensionBonus": 19.4,
+    "increasesPerLevel": {
+      "1": 2.53,
+      "20": 2.3,
+      "40": 2.2,
+      "50": 2.2,
+      "60": 2.1
+    }
+  },
+  "33": {
+    "scaling": [{ "level": 1, "atk": 33, "ascendedAtk": 33 }],
+    "ascensionBonus": 0,
+    "increasesPerLevel": {}
+  },
+  "23": {
+    "scaling": [
+      { "level": 1, "atk": 23, "ascendedAtk": 23 },
+      { "level": 20, "atk": 56, "ascendedAtk": 68 },
+      { "level": 40, "atk": 102, "ascendedAtk": 113 },
+      { "level": 50, "atk": 130, "ascendedAtk": 141 },
+      { "level": 60, "atk": 158, "ascendedAtk": 169 },
+      { "level": 70, "atk": 185, "ascendedAtk": 185 }
+    ],
+    "ascensionBonus": 9.0,
+    "increasesPerLevel": {
+      "1": 1.74,
+      "20": 1.7,
+      "40": 1.7,
+      "50": 1.7,
+      "60": 1.6
+    }
+  }
+}

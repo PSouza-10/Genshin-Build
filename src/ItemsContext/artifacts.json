@@ -1,0 +1,842 @@
+[
+  {
+    "id": 1,
+    "name": "Adventurer's Flower",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/e/ec/Item_Adventurer%27s_Flower.png",
+    "set": "Adventurer",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 2,
+    "name": "Adventurer's Tail Feather",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/30/Item_Adventurer%27s_Tail_Feather.png",
+    "set": "Adventurer",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 3,
+    "name": "Adventurer's Pocket Watch",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/f/f6/Item_Adventurer%27s_Pocket_Watch.png",
+    "set": "Adventurer",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 4,
+    "name": "Adventurer's Golden Goblet",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/ae/Item_Adventurer%27s_Golden_Goblet.png",
+    "set": "Adventurer",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 5,
+    "name": "Adventurer's Bandana",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/43/Item_Adventurer%27s_Bandana.png",
+    "set": "Adventurer",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 6,
+    "name": "Lucky Dog's Clover",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/e/e0/Item_Lucky_Dog%27s_Clover.png",
+    "set": "Lucky Dog",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 7,
+    "name": "Lucky Dog's Eagle Feather",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/ac/Item_Lucky_Dog%27s_Eagle_Feather.png",
+    "set": "Lucky Dog",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 8,
+    "name": "Lucky Dog's Hourglass",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/50/Item_Lucky_Dog%27s_Hourglass.png",
+    "set": "Lucky Dog",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 9,
+    "name": "Lucky Dog's Goblet",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/c/c1/Item_Lucky_Dog%27s_Goblet.png",
+    "set": "Lucky Dog",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 10,
+    "name": "Lucky Dog's Silver Circlet",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/6a/Item_Lucky_Dog%27s_Silver_Circlet.png",
+    "set": "Lucky Dog",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 11,
+    "name": "Traveling Doctor's Silver Lotus",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a5/Item_Traveling_Doctor%27s_Silver_Lotus.png",
+    "set": "Traveling Doctor",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 12,
+    "name": "Traveling Doctor's Owl Feather",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/01/Item_Traveling_Doctor%27s_Owl_Feather.png",
+    "set": "Traveling Doctor",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 13,
+    "name": "Traveling Doctor's Pocket Watch",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b7/Item_Traveling_Doctor%27s_Pocket_Watch.png",
+    "set": "Traveling Doctor",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 14,
+    "name": "Traveling Doctor's Medicine Pot",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/25/Item_Traveling_Doctor%27s_Medicine_Pot.png",
+    "set": "Traveling Doctor",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 15,
+    "name": "Traveling Doctor's Handkerchief",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/1/18/Item_Traveling_Doctor%27s_Handkerchief.png",
+    "set": "Traveling Doctor",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 16,
+    "name": "Instructor's Brooch",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/35/Item_Instructor%27s_Brooch.png",
+    "set": "Instructor",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 17,
+    "name": "Instructor's Feather Accessory",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/af/Item_Instructor%27s_Feather_Accessory.png",
+    "set": "Instructor",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 18,
+    "name": "Instructor's Pocket Watch",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/41/Item_Instructor%27s_Pocket_Watch.png",
+    "set": "Instructor",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 19,
+    "name": "Instructor's Tea Cup",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/ad/Item_Instructor%27s_Tea_Cup.png",
+    "set": "Instructor",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 20,
+    "name": "Instructor's Cap",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/da/Item_Instructor%27s_Cap.png",
+    "set": "Instructor",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 21,
+    "name": "Berserker's Rose",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/c/c1/Item_Berserker%27s_Rose.png",
+    "set": "Berserker",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 22,
+    "name": "Berserker's Indigo Feather",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/1/10/Item_Berserker%27s_Indigo_Feather.png",
+    "set": "Berserker",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 23,
+    "name": "Berserker's Timepiece",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/5c/Item_Berserker%27s_Timepiece.png",
+    "set": "Berserker",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 24,
+    "name": "Berserker's Bone Goblet",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/da/Item_Berserker%27s_Bone_Goblet.png",
+    "set": "Berserker",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 25,
+    "name": "Berserker's Battle Mask",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/5e/Item_Berserker%27s_Battle_Mask.png",
+    "set": "Berserker",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 26,
+    "name": "Exile's Flower",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/f/f9/Item_Exile%27s_Flower.png",
+    "set": "The Exile",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 27,
+    "name": "Exile's Feather",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/4d/Item_Exile%27s_Feather.png",
+    "set": "The Exile",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 28,
+    "name": "Exile's Pocket Watch",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/e/e4/Item_Exile%27s_Pocket_Watch.png",
+    "set": "The Exile",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 29,
+    "name": "Exile's Goblet",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/6a/Item_Exile%27s_Goblet.png",
+    "set": "The Exile",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 30,
+    "name": "Exile's Circlet",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b3/Item_Exile%27s_Circlet.png",
+    "set": "The Exile",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 31,
+    "name": "Heart of Comeradeship",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/8a/Item_Heart_of_Comeradeship.png",
+    "set": "Resolution of Sojourner",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 32,
+    "name": "Feather of Homecoming",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/f/f0/Item_Feather_of_Homecoming.png",
+    "set": "Resolution of Sojourner",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 33,
+    "name": "Sundial of the Sojourner",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/93/Item_Sundial_of_the_Sojourner.png",
+    "set": "Resolution of Sojourner",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 34,
+    "name": "Goblet of the Sojourner",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/06/Item_Goblet_of_the_Sojourner.png",
+    "set": "Resolution of Sojourner",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 35,
+    "name": "Crown of Parting",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/25/Item_Crown_of_Parting.png",
+    "set": "Resolution of Sojourner",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 36,
+    "name": "Martial Artist's Red Flower",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a7/Item_Martial_Artist%27s_Red_Flower.png",
+    "set": "Martial Artist",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 37,
+    "name": "Martial Artist's Feather Accessory",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/6e/Item_Martial_Artist%27s_Feather_Accessory.png",
+    "set": "Martial Artist",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 38,
+    "name": "Martial Artist's Water Hourglass",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/06/Item_Martial_Artist%27s_Water_Hourglass.png",
+    "set": "Martial Artist",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 39,
+    "name": "Martial Artist's Wine Cup",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/8d/Item_Martial_Artist%27s_Wine_Cup.png",
+    "set": "Martial Artist",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 40,
+    "name": "Martial Artist's Bandana",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/4c/Item_Martial_Artist%27s_Bandana.png",
+    "set": "Martial Artist",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 41,
+    "name": "Guardian's Flower",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/63/Item_Guardian%27s_Flower.png",
+    "set": "Defender's Will",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 42,
+    "name": "45px\nGuardian's Sigil",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Guardian%27s_Sigil.png",
+    "set": "Defender's Will",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 43,
+    "name": "45px\nGuardian's Clock",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Guardian%27s_Clock.png",
+    "set": "Defender's Will",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 44,
+    "name": "45px\nGuardian's Vessel",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Guardian%27s_Vessel.png",
+    "set": "Defender's Will",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 45,
+    "name": "45px\nGuardian's Band",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Guardian%27s_Band.png",
+    "set": "Defender's Will",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 46,
+    "name": "Tiny Miracle's Flower",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/68/Item_Tiny_Miracle%27s_Flower.png",
+    "set": "Tiny Miracle",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 47,
+    "name": "Tiny Miracle's Feather",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/89/Item_Tiny_Miracle%27s_Feather.png",
+    "set": "Tiny Miracle",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 48,
+    "name": " Tiny Miracle's Hourglass",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/1/14/Item_Tiny_Miracle%27s_Hourglass.png",
+    "set": "Tiny Miracle",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 49,
+    "name": "Tiny Miracle's Goblet",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/52/Item_Tiny_Miracle%27s_Goblet.png",
+    "set": "Tiny Miracle",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 50,
+    "name": "Tiny Miracle's Earrings",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/7/73/Item_Tiny_Miracle%27s_Earrings.png",
+    "set": "Tiny Miracle",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 51,
+    "name": "Medal of the Brave",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/9e/Item_Medal_of_the_Brave.png",
+    "set": "Brave Heart",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 52,
+    "name": "Prospect of the Brave",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/2f/Item_Prospect_of_the_Brave.png",
+    "set": "Brave Heart",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 53,
+    "name": "Fortitude of the Brave",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/e/ed/Item_Fortitude_of_the_Brave.png",
+    "set": "Brave Heart",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 54,
+    "name": "Outset of the Brave",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/49/Item_Outset_of_the_Brave.png",
+    "set": "Brave Heart",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 55,
+    "name": "Crown of the Brave",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b3/Item_Crown_of_the_Brave.png",
+    "set": "Brave Heart",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 56,
+    "name": "Gambler's Brooch",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/39/Item_Gambler%27s_Brooch.png",
+    "set": "Gambler",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 57,
+    "name": "45px\nGambler's Feather Accessory",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Gambler%27s_Feather_Accessory.png",
+    "set": "Gambler",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 58,
+    "name": "45px\n Gambler's Pocket Watch",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Gambler%27s_Pocket_Watch.png",
+    "set": "Gambler",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 59,
+    "name": "Gambler's Dice Cup",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/f/fd/Item_Gambler%27s_Dice_Cup.png",
+    "set": "Gambler",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 60,
+    "name": "45px\nGambler's Earrings",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Gambler%27s_Earrings.png",
+    "set": "Gambler",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 61,
+    "name": "Scholar's Bookmark",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/e/e5/Item_Scholar%27s_Bookmark.png",
+    "set": "Scholar",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 62,
+    "name": "Scholar's Quill Pen",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/52/Item_Scholar%27s_Quill_Pen.png",
+    "set": "Scholar",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 63,
+    "name": " Scholar's Clock",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/01/Item_Scholar%27s_Clock.png",
+    "set": "Scholar",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 64,
+    "name": "Scholar's Ink Cup",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/66/Item_Scholar%27s_Ink_Cup.png",
+    "set": "Scholar",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 65,
+    "name": "Scholar's Lens",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/93/Item_Scholar%27s_Lens.png",
+    "set": "Scholar",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 66,
+    "name": "Gladiator's Nostalgia",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b1/Item_Gladiator%27s_Nostalgia.png",
+    "set": "Gladiator's Finale",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 67,
+    "name": "Gladiator's Destiny",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/94/Item_Gladiator%27s_Destiny.png",
+    "set": "Gladiator's Finale",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 68,
+    "name": "Gladiator's Longing",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/0c/Item_Gladiator%27s_Longing.png",
+    "set": "Gladiator's Finale",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 69,
+    "name": "Gladiator's Intoxication",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/6d/Item_Gladiator%27s_Intoxication.png",
+    "set": "Gladiator's Finale",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 70,
+    "name": "Gladiator's Triumphus",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/9b/Item_Gladiator%27s_Triumphus.png",
+    "set": "Gladiator's Finale",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 71,
+    "name": "Maiden's Distant Love",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/dc/Item_Maiden%27s_Distant_Love.png",
+    "set": "Maiden Beloved",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 72,
+    "name": "Maiden's Heart-stricken Infatuation",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/5f/Item_Maiden%27s_Heart-stricken_Infatuation.png",
+    "set": "Maiden Beloved",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 73,
+    "name": "Maiden's Passing Youth",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/93/Item_Maiden%27s_Passing_Youth.png",
+    "set": "Maiden Beloved",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 74,
+    "name": "Maiden's Fleeting Leisure",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/23/Item_Maiden%27s_Fleeting_Leisure.png",
+    "set": "Maiden Beloved",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 75,
+    "name": "Maiden's Fading Beauty",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/82/Item_Maiden%27s_Fading_Beauty.png",
+    "set": "Maiden Beloved",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 76,
+    "name": "Royal Flora",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/7/71/Item_Royal_Flora.png",
+    "set": "Noblesse Oblige",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 77,
+    "name": "45px\nRoyal Plume",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Royal_Plume.png",
+    "set": "Noblesse Oblige",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 78,
+    "name": "45px\nRoyal Pocket Watch",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Royal_Pocket_Watch.png",
+    "set": "Noblesse Oblige",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 79,
+    "name": "Royal Silver Urn",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/9c/Item_Royal_Silver_Urn.png",
+    "set": "Noblesse Oblige",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 80,
+    "name": "45px\nRoyal Masque",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Royal_Masque.png",
+    "set": "Noblesse Oblige",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 81,
+    "name": "Bloodstained Flower of Iron",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/5b/Item_Bloodstained_Flower_of_Iron.png",
+    "set": "Bloodstained Chivalry",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 82,
+    "name": "45px\nBloodstained Black Plume",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Bloodstained_Black_Plume.png",
+    "set": "Bloodstained Chivalry",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 83,
+    "name": "45px\nBloodstained Final Hour",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Bloodstained_Final_Hour.png",
+    "set": "Bloodstained Chivalry",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 84,
+    "name": "Bloodstained Chevalier's Goblet",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/4f/Item_Bloodstained_Chevalier%27s_Goblet.png",
+    "set": "Bloodstained Chivalry",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 85,
+    "name": "45px\nBloodstained Iron Mask",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Bloodstained_Iron_Mask.png",
+    "set": "Bloodstained Chivalry",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 86,
+    "name": "Troupe's Dawnlight",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/ad/Item_Troupe%27s_Dawnlight.png",
+    "set": "Wanderer's Troupe",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 87,
+    "name": "Bard's Arrow Feather",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/4e/Item_Bard%27s_Arrow_Feather.png",
+    "set": "Wanderer's Troupe",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 88,
+    "name": "Concert's Final Hour",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/9e/Item_Concert%27s_Final_Hour.png",
+    "set": "Wanderer's Troupe",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 89,
+    "name": "Wanderer's String Kettle",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/9b/Item_Wanderer%27s_String_Kettle.png",
+    "set": "Wanderer's Troupe",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 90,
+    "name": "Conductor's Top Hat",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/81/Item_Conductor%27s_Top_Hat.png",
+    "set": "Wanderer's Troupe",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 91,
+    "name": "Thunderbird's Mercy",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/57/Item_Thunderbird%27s_Mercy.png",
+    "set": "Thundering Fury",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 92,
+    "name": "Survivor of Catastrophe",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/e/e9/Item_Survivor_of_Catastrophe.png",
+    "set": "Thundering Fury",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 93,
+    "name": "Hourglass of Thunder",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/94/Item_Hourglass_of_Thunder.png",
+    "set": "Thundering Fury",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 94,
+    "name": "45px\nOmen of Thunderstorm",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Omen_of_Thunderstorm.png",
+    "set": "Thundering Fury",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 95,
+    "name": "Thunder Summoner's Crown",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a5/Item_Thunder_Summoner%27s_Crown.png",
+    "set": "Thundering Fury",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 96,
+    "name": " Thundershoother's Heart",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b7/Item_Thundershoother%27s_Heart.png",
+    "set": "Thundersoother",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 97,
+    "name": "45px\n Thundershoother's Plume",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Thundershoother%27s_Plume.png",
+    "set": "Thundersoother",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 98,
+    "name": "Hour of Soothing Thunder",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b7/Item_Hour_of_Soothing_Thunder.png",
+    "set": "Thundersoother",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 99,
+    "name": "45px\n Thundershoother's Goblet",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Thundershoother%27s_Goblet.png",
+    "set": "Thundersoother",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 100,
+    "name": " Thundershoother's Diadem",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/47/Item_Thundershoother%27s_Diadem.png",
+    "set": "Thundersoother",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 101,
+    "name": "Witch's Flower of Blaze",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/0f/Item_Witch%27s_Flower_of_Blaze.png",
+    "set": "Crimson Witch of Flames",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 102,
+    "name": "45px\nWitch's Ever-Burning Plume",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Witch%27s_Ever-Burning_Plume.png",
+    "set": "Crimson Witch of Flames",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 103,
+    "name": "Witch's End Time",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/1/14/Item_Witch%27s_End_Time.png",
+    "set": "Crimson Witch of Flames",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 104,
+    "name": "45px\nWitch's Heart Flames",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Witch%27s_Heart_Flames.png",
+    "set": "Crimson Witch of Flames",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 105,
+    "name": "45px\nWitch's Scorching Hat",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Witch%27s_Scorching_Hat.png",
+    "set": "Crimson Witch of Flames",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 106,
+    "name": "Lavawalker's Resolution",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b5/Item_Lavawalker%27s_Resolution.png",
+    "set": "Lavawalker",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 107,
+    "name": "Lavawalker's Salvation",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/0a/Item_Lavawalker%27s_Salvation.png",
+    "set": "Lavawalker",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 108,
+    "name": "45px\nLavawalker's Torment",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Lavawalker%27s_Torment.png",
+    "set": "Lavawalker",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 109,
+    "name": "45px\nLavawalker's Epiphany",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Lavawalker%27s_Epiphany.png",
+    "set": "Lavawalker",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 110,
+    "name": "Lavawalker's Wisdom",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/63/Item_Lavawalker%27s_Wisdom.png",
+    "set": "Lavawalker",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 111,
+    "name": "Flower of Creviced Cliff",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/9f/Item_Flower_of_Creviced_Cliff.png",
+    "set": "Archaic Petra",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 112,
+    "name": "45px\nFeather of Jagged Peaks",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Feather_of_Jagged_Peaks.png",
+    "set": "Archaic Petra",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 113,
+    "name": "45px\nSundial of Enduring Jade",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Sundial_of_Enduring_Jade.png",
+    "set": "Archaic Petra",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 114,
+    "name": "45px\nGoblet of Chiseled Crag",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Goblet_of_Chiseled_Crag.png",
+    "set": "Archaic Petra",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 115,
+    "name": "45px\nMask of Solitude Basalt",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Mask_of_Solitude_Basalt.png",
+    "set": "Archaic Petra",
+    "type": "Circlet of Logos"
+  },
+  {
+    "id": 116,
+    "name": "Summer Night's Bloom",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a6/Item_Summer_Night%27s_Bloom.png",
+    "set": "Retracing Bolide",
+    "type": "Flower of Life"
+  },
+  {
+    "id": 117,
+    "name": "45px\nSummer Night's Finale",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Summer_Night%27s_Finale.png",
+    "set": "Retracing Bolide",
+    "type": "Plume of Death"
+  },
+  {
+    "id": 118,
+    "name": "45px\nSummer Night's Moment",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Summer_Night%27s_Moment.png",
+    "set": "Retracing Bolide",
+    "type": "Sands of Eon"
+  },
+  {
+    "id": 119,
+    "name": "45px\nSummer Night's Waterballoon",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Summer_Night%27s_Waterballoon.png",
+    "set": "Retracing Bolide",
+    "type": "Goblet of Enotherm"
+  },
+  {
+    "id": 120,
+    "name": "45px\nSummer Night's Mask",
+    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Summer_Night%27s_Mask.png",
+    "set": "Retracing Bolide",
+    "type": "Circlet of Logos"
+  }
+]

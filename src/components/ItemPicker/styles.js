@@ -5,8 +5,8 @@ import { FaFilter } from 'react-icons/fa'
 
 export const Container = styled.div`
   display: flex;
-  max-height: 45%;
-  flex-basis: 45%;
+  max-height: 40%;
+  flex-basis: 40%;
 `
 
 export const NavContainer = styled.ul`
@@ -43,18 +43,19 @@ export const NavItem = styled.li`
 `
 
 export const Items = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-height: 0;
   .itemTable {
     display: flex;
     flex-wrap: wrap;
     padding: 3px 15px;
-    flex: 1;
+
     align-items: flex-start;
     align-content: flex-start;
-    overflow-y: scroll;
-    max-height: 90%;
+    overflow-y: auto;
+    min-height: 0;
   }
 
   .itemTable::-webkit-scrollbar-thumb {
@@ -100,6 +101,7 @@ export const SearchContainer = styled.form`
   padding: 3px 15px;
   margin-top: 12px;
   flex-basis: 10%;
+  max-height: 10%;
 `
 
 export const SearchBar = styled.input`

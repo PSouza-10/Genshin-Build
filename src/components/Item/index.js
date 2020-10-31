@@ -1,14 +1,19 @@
 import React, { useContext } from 'react'
 import styled, { css } from 'styled-components'
 import { ItemsContext } from '../../ItemsContext'
-export default function Item({ id, image, name, type = '' }) {
+export default function Item({ item }) {
+  const { id, image, name, type } = item
+
   const itemSlot = type.toLowerCase().split(' ')[0]
-  const { selectedItems, handleSelectItem } = useContext(ItemsContext)
+  const { selectedItems, handleSelectItem, handleItemDisplay } = useContext(
+    ItemsContext
+  )
 
   return (
     <Wrapper
       selected={selectedItems[itemSlot].id === id}
-      onClick={() => handleSelectItem(id, itemSlot)}
+      onClick={() => handleItemDisplay('view', item)}
+      onDoubleClick={() => handleSelectItem(item, itemSlot)}
       title={name}>
       <Image src={image} alt={name} />
     </Wrapper>

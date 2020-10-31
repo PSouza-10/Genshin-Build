@@ -28,7 +28,7 @@ export function ItemPicker() {
           {list[selectedTab].map(
             item =>
               (item.name.toLowerCase().includes(query) || query === '') && (
-                <Item key={item.id} {...item} />
+                <Item key={item.id} item={item} />
               )
           )}
         </div>

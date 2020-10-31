@@ -1,6 +1,6 @@
 import { FaStar, FaTrash } from 'react-icons/fa'
 import styled, { css } from 'styled-components'
-import { Character, Artifacts, Weapons } from '../../assets/icons'
+import { Character, Artifacts, Weapons, Star } from '../../assets/icons'
 
 export const Container = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ export const Container = styled.div`
 export const ItemRow = styled.div`
   display: flex;
   justify-content: ${({ justify }) => justify};
-  padding: 7px 75px;
+  padding: 6px 75px;
   align-items: center;
   flex-basis: 33%;
   max-height: 33%;
@@ -50,6 +50,7 @@ export const ItemSlot = styled.div`
   }
   .itemName {
     text-align: center;
+    font-size: 12px;
   }
   .text {
     display: flex;
@@ -102,6 +103,12 @@ export const IconButton = styled.button`
 export const StarIcon = styled(FaStar)`
   fill: yellow;
 `
+export const AscensionStar = styled(Star)`
+  fill: white;
+  height: 16px;
+  width: 16px;
+  transform: translateX(-3px);
+`
 export const ClearIcon = styled(FaTrash)`
   fill: var(--primary);
   width: 30px;
@@ -124,6 +131,9 @@ const placeholderIconCSS = css`
   fill: white;
   height: 47px;
   width: 45px;
+  &:hover {
+    fill: var(--primary);
+  }
 `
 
 export const ArtifactsIcon = styled(Artifacts)`
