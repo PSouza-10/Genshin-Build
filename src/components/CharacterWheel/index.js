@@ -31,13 +31,13 @@ export function CharacterWheel() {
   )
 }
 
-const Item = ({ itemSlot, slotType }) => {
+const Item = ({ itemSlot }) => {
   const { setStats, selectedItems } = useContext(ItemsContext)
   const item = selectedItems[itemSlot]
 
   const { level, ascension, stars, maxLevel } = item
 
-  const isArtifact = slotType === 'artifact'
+  const isArtifact = !['character', 'weapon'].includes(itemSlot)
 
   const handleLevel = operation => {
     if (operation === 'plus' || operation === 'minus') {
@@ -65,8 +65,8 @@ const Item = ({ itemSlot, slotType }) => {
   const isMaxLevel = level === maxLevel
 
   const rendererProps = {
+    itemSlot,
     isArtifact,
-    slotType,
     isMaxLevel,
     handleLevel,
     handleUpgrade,

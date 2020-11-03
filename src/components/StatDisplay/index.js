@@ -1,58 +1,28 @@
 import React, { useContext } from 'react'
-import { Container, ItemImage, MainStat, ItemInfo, StarIcon } from './styles'
+import { Container, MainStat } from './styles'
 import { ItemsContext } from '../../ItemsContext'
+import ItemView from './ItemView'
 
 export function StatDisplay() {
-  const { selectedItems, displayedItem } = useContext(ItemsContext)
   const {
-    image,
-    name,
-    baseAtk,
-    type,
-    stars,
-    element,
-    category,
-    level,
-    minRarity,
-    maxRarity
-  } = selectedItems[displayedItem]
-  const isArtifact = !['Character', 'Weapon'].includes(type)
-  const findDisplayType = () => {
-    const displayType = {
-      Weapon: category,
-      Character: element
-    }
-    if (!isArtifact) {
-      return displayType[type]
-    } else {
-      return type
-    }
-  }
+    selectedItems,
+    displayedItem,
+    calculatedStats,
+    setDisplayed
+  } = useContext(ItemsContext)
 
-  const displayStars =
-    displayedItem === 'view'
-      ? isArtifact
-        ? `${minRarity}~${maxRarity}`
-        : stars
-      : stars
+  const { characterAtk } = calculatedStats
   return (
-    <Container>
-      <ItemInfo>
-        <span>
-          {type && (
-            <>
-              <StarIcon /> {displayStars}
-            </>
-          )}
-        </span>
-        {level && <span>Lvl.{level}</span>}
-        <span>{findDisplayType()}</span>
-      </ItemInfo>
-      <ItemImage>
-        <img src={image} alt={name} />
-      </ItemImage>
-      <h1 className='title'>{name}</h1>
-      {type === 'Weapon' && <MainStat>ATK {baseAtk}</MainStat>}
-    </Container>
+    <>
+      <ItemView
+        item={displayedItem === 'stats' ? {} : selectedItems[displayedItem]}
+        stats={calculatedStats}
+        displayedItem={displayedItem}
+        setDisplayed={setDisplayed}
+      />
+      <Container>
+        <MainStat>Character ATK {characterAtk}</MainStat>
+      </Container>
+    </>
   )
 }

@@ -21,7 +21,7 @@ export default function FilterProvider({ children }) {
   const [list, setList] = useState(initialListState)
 
   const changeDisplayedItems = (set, category) => {
-    const arrayOfSetItems = Object.keys(set).map((key, index) => {
+    const arrayOfSetItems = Object.keys(set).map(key => {
       const item = data[category].find(({ id }) => set[key] === id)
       return item
     })
@@ -49,8 +49,7 @@ export default function FilterProvider({ children }) {
         default:
           setCategory = {}
       }
-      console.log(tab)
-      console.log(setCategory)
+
       changeDisplayedItems(setCategory[newFilter].items, tab)
     } else {
       setList(initialListState)

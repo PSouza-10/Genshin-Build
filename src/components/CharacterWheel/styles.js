@@ -1,6 +1,16 @@
 import { FaStar, FaTrash } from 'react-icons/fa'
 import styled, { css } from 'styled-components'
-import { Character, Artifacts, Weapons, Star } from '../../assets/icons'
+import {
+  Character,
+  Weapons,
+  Star,
+  Circlet,
+  Flower,
+  Goblet,
+  Plume,
+  Sands
+} from '../../assets/icons'
+import React from 'react'
 
 export const Container = styled.div`
   display: flex;
@@ -16,6 +26,9 @@ export const Container = styled.div`
       align-items: center;
       justify-content: center;
       flex-basis: 10%;
+      @media (max-width: 576px) {
+        flex: 0.25 0 5%;
+      }
     `}
 `
 
@@ -26,6 +39,9 @@ export const ItemRow = styled.div`
   align-items: center;
   flex-basis: 33%;
   max-height: 33%;
+  @media (max-width: 576px) {
+    padding: 6px 6px;
+  }
 `
 export const ItemSlot = styled.div`
   display: flex;
@@ -34,7 +50,9 @@ export const ItemSlot = styled.div`
   width: 100px;
   border-radius: 0.5em;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-
+  @media (max-width: 576px) {
+    width: 85px;
+  }
   .imgWrapper {
     background-color: ${({ stars }) => `var(--stars${stars})`};
     text-align: center;
@@ -128,7 +146,7 @@ export const Image = styled.img`
 `
 
 const placeholderIconCSS = css`
-  fill: white;
+  fill: #fff;
   height: 47px;
   width: 45px;
   &:hover {
@@ -136,12 +154,34 @@ const placeholderIconCSS = css`
   }
 `
 
-export const ArtifactsIcon = styled(Artifacts)`
+const FlowerIcon = styled(Flower)`
   ${placeholderIconCSS}
 `
-export const CharactersIcon = styled(Character)`
+const PlumeIcon = styled(Plume)`
   ${placeholderIconCSS}
 `
-export const WeaponsIcon = styled(Weapons)`
+const SandsIcon = styled(Sands)`
   ${placeholderIconCSS}
 `
+const GobletIcon = styled(Goblet)`
+  ${placeholderIconCSS}
+`
+const CircletIcon = styled(Circlet)`
+  ${placeholderIconCSS}
+`
+const CharactersIcon = styled(Character)`
+  ${placeholderIconCSS}
+`
+const WeaponsIcon = styled(Weapons)`
+  ${placeholderIconCSS}
+`
+
+export const placeholderIcon = {
+  character: <CharactersIcon />,
+  weapon: <WeaponsIcon />,
+  flower: <FlowerIcon />,
+  goblet: <GobletIcon />,
+  circlet: <CircletIcon />,
+  plume: <PlumeIcon />,
+  sands: <SandsIcon />
+}

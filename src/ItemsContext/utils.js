@@ -1,6 +1,6 @@
 export function findItem(slot, id, data) {
   let arr = []
-  console.log(slot)
+
   switch (slot) {
     case 'weapon':
       arr = data.weapons
@@ -11,7 +11,10 @@ export function findItem(slot, id, data) {
     default:
       arr = data.artifacts
   }
-  console.log(arr)
 
   return arr.find(item => item.id === id)
+}
+
+export function formatSlot(slot = '') {
+  return slot.toLowerCase().split(' ')[0]
 }

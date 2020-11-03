@@ -7,6 +7,7 @@ const Container = styled.div`
   width: 100%;
   height: calc(100% - 50px);
   max-height: calc(100% - 50px);
+  overflow-x: hidden;
   .left {
     flex-basis: 70%;
     display: flex;
@@ -17,6 +18,7 @@ const Container = styled.div`
     flex: 1;
     display: flex;
     align-items: stretch;
+    position: relative;
   }
   .charWheel {
     display: flex;
@@ -24,6 +26,17 @@ const Container = styled.div`
     align-items: stretch;
     position: relative;
     box-shadow: 0 0 4px #000 inset;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+
+    .charWheel {
+      flex-basis: 1;
+    }
+    .left {
+      flex: 1;
+    }
   }
 `
 
@@ -38,9 +51,8 @@ function App() {
           </FilterProvider>
           <CharacterWheel />
         </div>
-        <div className='right'>
-          <StatDisplay />
-        </div>
+
+        <StatDisplay />
       </Container>
     </>
   )

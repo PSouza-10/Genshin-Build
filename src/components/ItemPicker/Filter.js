@@ -6,7 +6,9 @@ import { FilterIcon } from './styles'
 export default function Filter({ tab }) {
   const { selectedFilter, handleFilterSelect } = useContext(FilterContext)
   const [open, setOpen] = useState(false)
-  const toggle = () => setOpen(!open)
+  const toggle = () => {
+    setOpen(!open)
+  }
   const { artifactSets, characterSets, weaponSets } = useContext(
     ItemsContext
   ).data
@@ -15,6 +17,10 @@ export default function Filter({ tab }) {
     characters: characterSets,
     weapons: weaponSets,
     artifacts: artifactSets
+  }
+  const handleSelect = value => {
+    handleFilterSelect(value, tab)
+    toggle()
   }
 
   return (
@@ -28,14 +34,15 @@ export default function Filter({ tab }) {
           </span>
         </FilterBar>
         <FilterItems open={open}>
-          <FilterItem onClick={() => handleFilterSelect('All', tab)}>
-            All
-          </FilterItem>
+          <span className='close' onClick={toggle}>
+            &times;
+          </span>
+          <FilterItem onClick={() => handleSelect('All')}>All</FilterItem>
           {Object.keys(sets[tab]).map((item, index) => (
             <FilterItem
               key={index}
               selected={selectedFilter === item}
-              onClick={() => handleFilterSelect(item, tab)}>
+              onClick={() => handleSelect(item)}>
               {item}
             </FilterItem>
           ))}
@@ -52,6 +59,10 @@ const FilterWrapper = styled.div`
   flex-direction: column;
   align-items: stretch;
   z-index: 10;
+  @media (max-width: 576px) {
+    position: static;
+    flex-basis: 70%;
+  }
 `
 
 const FilterBar = styled.span`
@@ -62,6 +73,7 @@ const FilterBar = styled.span`
   border: 1px solid var(--outline);
   display: flex;
   justify-content: space-between;
+  font-size: 16px;
   .close {
     display: none;
     font-size: 19px;
@@ -84,7 +96,15 @@ const FilterBar = styled.span`
         display: initial;
       }
     `}
-  z-index: 6;
+  z-index: 10;
+  @media (max-width: 576px) {
+    position: static;
+    z-index: 0;
+    padding-right: 0;
+    .close {
+      display: none;
+    }
+  }
 `
 
 const FilterItems = styled.ul`
@@ -104,6 +124,29 @@ const FilterItems = styled.ul`
   overflow-y: scroll;
   border: 1px solid var(--primary);
   padding-top: 28px;
+  .close {
+    display: none;
+  }
+  @media (max-width: 576px) {
+    width: ${({ open }) => (open ? `100%` : '0')};
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    height: 100%;
+
+    z-index: 15;
+    border: none;
+    border-radius: initial;
+    padding-top: 6px;
+    font-size: 14pt;
+    .close {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 30pt;
+      padding: 0 17px;
+    }
+  }
 `
 const FilterItem = styled.li`
   cursor: pointer;

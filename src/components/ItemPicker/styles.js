@@ -56,6 +56,9 @@ export const Items = styled.div`
     align-content: flex-start;
     overflow-y: auto;
     min-height: 0;
+    @media (max-width: 576px) {
+      padding: 3px 3px;
+    }
   }
 
   .itemTable::-webkit-scrollbar-thumb {
@@ -126,5 +129,8 @@ export const SearchBar = styled.input`
   }
   &::-webkit-search-cancel-button {
     -webkit-appearance: none;
+  }
+  @media (max-width: 576px) {
+    max-width: 50%;
   }
 `

@@ -4,16 +4,22 @@ import { ItemsContext } from '../../ItemsContext'
 export default function Item({ item }) {
   const { id, image, name, type } = item
 
-  const itemSlot = type.toLowerCase().split(' ')[0]
-  const { selectedItems, handleSelectItem, handleItemDisplay } = useContext(
-    ItemsContext
-  )
+  const {
+    selectedItems,
+    handleSelectItem,
+    handleItemDisplay,
+    formatSlot
+  } = useContext(ItemsContext)
+
+  const itemSlot = formatSlot(type === 'Artifact' ? item.slot : type)
 
   return (
     <Wrapper
       selected={selectedItems[itemSlot].id === id}
-      onClick={() => handleItemDisplay('view', item)}
-      onDoubleClick={() => handleSelectItem(item, itemSlot)}
+      onClick={() => handleItemDisplay(item, true)}
+      onDoubleClick={() =>
+        window.innerWidth >= 576 ? handleSelectItem(item) : null
+      }
       title={name}>
       <Image src={image} alt={name} />
     </Wrapper>

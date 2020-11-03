@@ -5,15 +5,13 @@ import {
   ItemSlot,
   Image,
   StarIcon,
-  ArtifactsIcon,
-  CharactersIcon,
-  WeaponsIcon,
   IconButton,
-  AscensionStar
+  AscensionStar,
+  placeholderIcon
 } from './styles'
 export default function ItemRenderer({
+  itemSlot,
   isArtifact,
-  slotType,
   isMaxLevel,
   handleLevel,
   handleUpgrade,
@@ -22,7 +20,7 @@ export default function ItemRenderer({
   const {
     image,
     name,
-    type,
+    rarity,
     level,
     stars,
     ascension,
@@ -40,20 +38,18 @@ export default function ItemRenderer({
       setLevel(level)
     }
   }
-  const itemSlot = type ? type.toLowerCase().split(' ')[0] : ''
+
   const displayItem = () => {
-    if (itemSlot) {
-      handleItemDisplay(itemSlot)
+    if (itemSlot && item.name) {
+      handleItemDisplay(item, false)
     }
   }
   const removeItem = () => {
-    handleSelectItem(item, itemSlot)
+    if (item.name) {
+      handleSelectItem(item)
+    }
   }
-  const placeholderIcon = {
-    character: <CharactersIcon />,
-    weapon: <WeaponsIcon />,
-    artifact: <ArtifactsIcon />
-  }
+
   useEffect(() => {
     setLevel(level)
   }, [level, setLevel])
@@ -61,8 +57,10 @@ export default function ItemRenderer({
   const upgradeLevel = isArtifact ? stars : ascension
   const minUpgrade = isArtifact ? minRarity : 0
   const maxUpgrade = isArtifact ? maxRarity : 7
+
+  const ascensionLevels = [1, 20, 40, 50, 60, 70, 80, 90]
   return (
-    <ItemSlot stars={stars}>
+    <ItemSlot stars={isArtifact ? stars : rarity}>
       <span className='stars'>
         <Icon
           negative
@@ -82,13 +80,13 @@ export default function ItemRenderer({
         title={name}
         onDoubleClick={removeItem}
         onClick={displayItem}>
-        {image ? <Image src={image} alt={name} /> : placeholderIcon[slotType]}
+        {image ? <Image src={image} alt={name} /> : placeholderIcon[itemSlot]}
       </span>
       <span className='Lvl'>
         <Icon
           negative
           onClick={() => handleLevel('minus')}
-          disabled={level === 1}
+          disabled={level === 1 || level === ascensionLevels[upgradeLevel]}
         />
         <span className='text'>
           Lvl.{' '}

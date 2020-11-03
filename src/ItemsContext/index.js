@@ -1,10 +1,12 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import meta from './data.json'
 import artifactSets from './artifactSets.json'
 import weaponTypes from './weaponTypes.json'
 import weapons from './weapons.json'
 import characters from './characters.json'
 import artifacts from './artifacts.json'
+import { formatSlot } from './utils'
+import { calculateCharacterAtk } from './statCalculations'
 
 const data = {
   ...meta,
@@ -31,15 +33,39 @@ const initialState = {
     character: { level: 1 },
     weapon: { level: 1 },
     view: {}
+  },
+  calculatedStats: {
+    damage: 0,
+    weaponAtk: 0,
+    characterAtk: 0
   }
 }
 export const ItemsContext = createContext(initialState)
 
 export default function ItemsProvider({ children }) {
   const [selectedItems, selectItem] = useState(initialState.selectedItems)
-  const [displayedItem, setDisplayed] = useState('view')
-  const handleSelectItem = (item = {}, slot) => {
-    if (slot && selectedItems[slot].id === item.id) {
+  const [displayedItem, setDisplayed] = useState('stats')
+
+  const [calculatedStats, setCalculatedStats] = useState(
+    initialState.calculatedStats
+  )
+
+  useEffect(() => {
+    if (selectedItems.character.id) {
+      const newAtk = calculateCharacterAtk(selectedItems.character)
+      setCalculatedStats(previousStats => {
+        return {
+          ...previousStats,
+          characterAtk: newAtk
+        }
+      })
+    }
+  }, [selectedItems.character, setCalculatedStats])
+
+  const handleSelectItem = (item = {}) => {
+    const slot = formatSlot(item.type === 'Artifact' ? item.slot : item.type)
+
+    if (selectedItems[slot].id === item.id) {
       selectItem({
         ...selectedItems,
         [slot]: {
@@ -48,9 +74,12 @@ export default function ItemsProvider({ children }) {
           stars: 1
         }
       })
+      if (displayedItem === slot) {
+        setDisplayed('stats')
+      }
     } else {
       const selected = selectedItems[slot]
-      if (!['character', 'weapon'].includes(slot)) {
+      if (item.type === 'Artifact') {
         const { minRarity, maxRarity } = initialState.data.artifactSets[
           item.set
         ]
@@ -68,7 +97,7 @@ export default function ItemsProvider({ children }) {
             ...item,
             stars: currentStars,
             maxLevel: maxLevel,
-            level: currentLevel || 1,
+            level: currentLevel > maxLevel ? maxLevel : currentLevel,
             minRarity,
             maxRarity
           }
@@ -89,13 +118,15 @@ export default function ItemsProvider({ children }) {
           }
         })
       }
+      setDisplayed(slot)
     }
   }
 
-  const handleItemDisplay = (slot, item = {}) => {
-    if (slot === 'view') {
+  const handleItemDisplay = (item = {}, view = false) => {
+    const slot = formatSlot(item.type === 'Artifact' ? item.slot : item.type)
+    if (view) {
       let value = { ...item }
-      if (!['Character', 'Weapon'].includes(item.type)) {
+      if (item.type === 'Artifact') {
         const { minRarity, maxRarity } = initialState.data.artifactSets[
           item.set
         ]
@@ -105,26 +136,34 @@ export default function ItemsProvider({ children }) {
         ...selectedItems,
         view: value
       })
-      setDisplayed(slot)
+      setDisplayed('view')
     } else {
       setDisplayed(slot)
     }
   }
-  function setStats(slot, { level, ascension, stars }) {
+  function setStats(slot, { level = 0, ascension = null, stars }) {
     const selected = selectedItems[slot]
     if (['character', 'weapon'].includes(slot)) {
-      const ascensionTable = [20, 40, 50, 60, 70, 80, 90]
+      const ascensionTable = [1, 20, 40, 50, 60, 70, 80, 90]
 
-      const currentLevel = selected.level
-      const currentAscension = selected.ascension
+      let newLevel = selected.level
+      let newAscension = selected.ascension
+
+      if (
+        (![newAscension].includes(ascension) && ascension) ||
+        ascension === 0
+      ) {
+        newAscension = ascension
+        newLevel = ascensionTable[ascension]
+      }
 
       selectItem({
         ...selectedItems,
         [slot]: {
           ...selected,
-          level: level ? level : currentLevel,
-          ascension: ascension ? ascension : currentAscension,
-          maxLevel: ascensionTable[ascension ? ascension : currentAscension]
+          level: level === 0 ? newLevel : level,
+          ascension: newAscension,
+          maxLevel: ascensionTable[newAscension === 7 ? 7 : newAscension + 1]
         }
       })
     } else {
@@ -159,10 +198,13 @@ export default function ItemsProvider({ children }) {
         ...initialState,
         selectedItems,
         displayedItem,
+        calculatedStats,
         handleSelectItem,
         clearItems,
         handleItemDisplay,
-        setStats
+        setStats,
+        formatSlot,
+        setDisplayed
       }}>
       {children}
     </ItemsContext.Provider>
