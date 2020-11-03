@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
-
+import React, { useCallback, useContext, useEffect, useState } from 'react'
+import { formatViewMode, formatEditMode } from './formatItemInfo'
 import { ItemsContext } from '../../ItemsContext'
+import { StatContext } from '../../StatContext'
 import {
   Container,
   ItemImage,
@@ -11,45 +12,35 @@ import {
   SelectButton
 } from './styles'
 
-export default function ItemView({ item, displayedItem, setDisplayed, stats }) {
-  const { handleSelectItem } = useContext(ItemsContext)
-  const {
-    image,
-    name,
-    type,
-    stars,
-    element,
-    category,
-    slot,
-    level,
-    minRarity,
-    maxRarity
-  } = item
+export default function ItemView({ item, displayedItem, setDisplayed }) {
+  const { handleSelectItem, data } = useContext(ItemsContext)
+  const stats = useContext(StatContext)
 
-  const isArtifact = type === 'Artifact'
+  const { image, name, level, type } = item
+  const [itemInfo, setItemInfo] = useState({})
+
   const handleSelect = () => {
     handleSelectItem(item)
     setDisplayed('stats')
   }
-  const findDisplayType = () => {
-    const displayType = {
-      Weapon: category,
-      Character: element
-    }
-    if (!isArtifact) {
-      return displayType[type]
+
+  const formatInfo = useCallback(() => {
+    let newInfo = { ...item }
+
+    if (displayedItem === 'view') {
+      newInfo = { ...newInfo, ...formatViewMode(item, data) }
     } else {
-      return slot
+      newInfo = { ...newInfo, ...formatEditMode(item, data, stats) }
     }
-  }
 
-  const displayStars =
-    displayedItem === 'view'
-      ? isArtifact
-        ? `${minRarity}~${maxRarity}`
-        : stars
-      : stars
+    setItemInfo(newInfo)
+  }, [item, data, stats, displayedItem])
 
+  useEffect(() => {
+    formatInfo()
+  }, [item, formatInfo])
+
+  const { displayStars, baseAtk, category } = itemInfo
   return (
     <Container isItemView displayed={!(displayedItem === 'stats')}>
       <span className='layoutControl'>
@@ -57,20 +48,21 @@ export default function ItemView({ item, displayedItem, setDisplayed, stats }) {
       </span>
       <ItemInfo>
         <span>
-          {type && (
-            <>
-              <StarIcon /> {displayStars}
-            </>
-          )}
+          <StarIcon /> {displayStars}
         </span>
-        {level && <span>Lvl.{level}</span>}
-        <span>{findDisplayType()}</span>
+        {(level || level === 0) && (
+          <span>
+            {type === 'Artifact' ? '+' : 'Lvl.'}
+            {level}
+          </span>
+        )}
+        <span>{category}</span>
       </ItemInfo>
       <ItemImage>
         <img src={image} alt={name} />
       </ItemImage>
       <h1 className='title'>{name}</h1>
-      {type !== 'Artifact' && <MainStat>ATK {item.baseAtk}</MainStat>}
+      <MainStat>ATK {baseAtk}</MainStat>
 
       {window.innerWidth < 576 && (
         <SelectButton onClick={handleSelect}>Select</SelectButton>

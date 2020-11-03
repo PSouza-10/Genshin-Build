@@ -1,3 +1,5 @@
+import data from '../ItemsContext/data.json'
+const { artifactIncreases } = data
 export function calculateAtkPower({
   flower,
   plume,
@@ -15,7 +17,7 @@ export function calculateCharacterAtk({
   increasesPerLevel,
   ascension
 }) {
-  const levelsOfAscension = [1, 20, 40, 50, 60, 70, 80, 90]
+  const levelsOfAscension = [1, 20, 40, 50, 60, 70, 80]
 
   const totalAscensionBonus = ascension === 0 ? 0 : ascension * ascensionBonus
   let totalAtkIncrease = 0
@@ -26,11 +28,10 @@ export function calculateCharacterAtk({
       let levelDiff = 0
       if (i === ascension) {
         levelDiff = level - levelsOfAscension[i]
-        console.log(levelDiff)
+
         totalAtkIncrease +=
           levelDiff * increasesPerLevel[levelsOfAscension[i].toString()]
       } else {
-        console.log(levelsOfAscension[i])
         levelDiff = i > 0 ? levelsOfAscension[i] - levelsOfAscension[i - 1] : 19
         totalAtkIncrease +=
           levelDiff *
@@ -40,4 +41,25 @@ export function calculateCharacterAtk({
   }
 
   return Math.floor(baseAtk + totalAtkIncrease + totalAscensionBonus)
+}
+
+export function calculateArtifactStats({ stars = 0, slot, level }) {
+  const { atkMult, atkPercMult, baseAtk, baseAtkPerc } = artifactIncreases[
+    stars.toString()
+  ]
+  let increase = 0
+  let newMain = slot === 'Plume of Death' ? baseAtk : baseAtkPerc
+  let newSub = []
+
+  if (level > 0) {
+    if (slot === 'Plume of Death') {
+      increase = level * (baseAtk * atkMult)
+      newMain = Math.ceil(baseAtk + increase)
+    } else {
+      increase = level * (baseAtkPerc * atkPercMult)
+      newMain = (Math.round((baseAtkPerc + increase) * 100) / 100).toFixed(1)
+    }
+  }
+
+  return { newMain, newSub }
 }

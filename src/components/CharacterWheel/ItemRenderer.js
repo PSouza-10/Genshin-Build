@@ -56,9 +56,9 @@ export default function ItemRenderer({
 
   const upgradeLevel = isArtifact ? stars : ascension
   const minUpgrade = isArtifact ? minRarity : 0
-  const maxUpgrade = isArtifact ? maxRarity : 7
+  const maxUpgrade = isArtifact ? maxRarity : 6
 
-  const ascensionLevels = [1, 20, 40, 50, 60, 70, 80, 90]
+  const ascensionLevels = [1, 20, 40, 50, 60, 70, 80]
   return (
     <ItemSlot stars={isArtifact ? stars : rarity}>
       <span className='stars'>
@@ -86,10 +86,10 @@ export default function ItemRenderer({
         <Icon
           negative
           onClick={() => handleLevel('minus')}
-          disabled={level === 1 || level === ascensionLevels[upgradeLevel]}
+          disabled={level === 0 || level === ascensionLevels[upgradeLevel]}
         />
         <span className='text'>
-          Lvl.{' '}
+          {isArtifact ? '+' : 'Lvl'}{' '}
           <input
             className='LvlEdit'
             value={inputLevel}

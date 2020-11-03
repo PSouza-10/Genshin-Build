@@ -52,33 +52,33 @@
   "artifactIncreases": {
     "1": {
       "baseAtk": 8,
-      "baseAtk%": 1.46,
-      "atk": 0.285,
-      "atk%": 0.285
+      "baseAtkPerc": 1.46,
+      "atkMult": 0.285,
+      "atkPercMult": 0.285
     },
     "2": {
       "baseAtk": 17,
-      "baseAtk%": 3.12,
-      "atk": 0.285,
-      "atk%": 0.285
+      "baseAtkPerc": 3.12,
+      "atkMult": 0.285,
+      "atkPercMult": 0.285
     },
     "3": {
       "baseAtk": 28,
-      "baseAtk%": 5.2,
-      "atk": 0.285,
-      "atk%": 0.288
+      "baseAtkPerc": 5.2,
+      "atkMult": 0.285,
+      "atkPercMult": 0.288
     },
     "4": {
       "baseAtk": 42,
-      "baseAtk%": 6.3,
-      "atk": 0.285,
-      "atk%": 0.285
+      "baseAtkPerc": 6.3,
+      "atkMult": 0.285,
+      "atkPercMult": 0.285
     },
     "5": {
       "baseAtk": 47,
-      "baseAtk%": 7,
-      "atk": 0.28,
-      "atk%": 0.285
+      "baseAtkPerc": 7,
+      "atkMult": 0.28,
+      "atkPercMult": 0.285
     }
   }
 }

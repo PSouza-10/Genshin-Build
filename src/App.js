@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Header, ItemPicker, CharacterWheel, StatDisplay } from './components'
 import FilterProvider from './components/ItemPicker/FilterContext'
+import StatProvider from './StatContext'
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -51,8 +52,9 @@ function App() {
           </FilterProvider>
           <CharacterWheel />
         </div>
-
-        <StatDisplay />
+        <StatProvider>
+          <StatDisplay />
+        </StatProvider>
       </Container>
     </>
   )

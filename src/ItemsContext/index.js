@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useState } from 'react'
 import meta from './data.json'
 import artifactSets from './artifactSets.json'
 import weaponTypes from './weaponTypes.json'
@@ -6,7 +6,6 @@ import weapons from './weapons.json'
 import characters from './characters.json'
 import artifacts from './artifacts.json'
 import { formatSlot } from './utils'
-import { calculateCharacterAtk } from './statCalculations'
 
 const data = {
   ...meta,
@@ -24,20 +23,15 @@ const initialState = {
 
   selectedItems: {
     flower: {
-      level: 1
+      level: 0
     },
-    plume: { level: 1 },
-    sands: { level: 1 },
-    goblet: { level: 1 },
-    circlet: { level: 1 },
+    plume: { level: 0 },
+    sands: { level: 0 },
+    goblet: { level: 0 },
+    circlet: { level: 0 },
     character: { level: 1 },
     weapon: { level: 1 },
     view: {}
-  },
-  calculatedStats: {
-    damage: 0,
-    weaponAtk: 0,
-    characterAtk: 0
   }
 }
 export const ItemsContext = createContext(initialState)
@@ -46,22 +40,6 @@ export default function ItemsProvider({ children }) {
   const [selectedItems, selectItem] = useState(initialState.selectedItems)
   const [displayedItem, setDisplayed] = useState('stats')
 
-  const [calculatedStats, setCalculatedStats] = useState(
-    initialState.calculatedStats
-  )
-
-  useEffect(() => {
-    if (selectedItems.character.id) {
-      const newAtk = calculateCharacterAtk(selectedItems.character)
-      setCalculatedStats(previousStats => {
-        return {
-          ...previousStats,
-          characterAtk: newAtk
-        }
-      })
-    }
-  }, [selectedItems.character, setCalculatedStats])
-
   const handleSelectItem = (item = {}) => {
     const slot = formatSlot(item.type === 'Artifact' ? item.slot : item.type)
 
@@ -69,7 +47,7 @@ export default function ItemsProvider({ children }) {
       selectItem({
         ...selectedItems,
         [slot]: {
-          level: 1,
+          level: 0,
           ascension: 0,
           stars: 1
         }
@@ -163,7 +141,7 @@ export default function ItemsProvider({ children }) {
           ...selected,
           level: level === 0 ? newLevel : level,
           ascension: newAscension,
-          maxLevel: ascensionTable[newAscension === 7 ? 7 : newAscension + 1]
+          maxLevel: ascensionTable[newAscension === 6 ? 7 : newAscension + 1]
         }
       })
     } else {
@@ -198,7 +176,6 @@ export default function ItemsProvider({ children }) {
         ...initialState,
         selectedItems,
         displayedItem,
-        calculatedStats,
         handleSelectItem,
         clearItems,
         handleItemDisplay,
