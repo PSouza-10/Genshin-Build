@@ -30,6 +30,9 @@ export const Container = styled.div`
         flex: 0.25 0 5%;
       }
     `}
+  @media (max-width: 576px) {
+    padding-bottom: 80px;
+  }
 `
 
 export const ItemRow = styled.div`

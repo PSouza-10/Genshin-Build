@@ -30,8 +30,8 @@ export function formatViewMode(item, data) {
 
 export function formatEditMode(item, data, stats) {
   if (item.id) {
-    const { type, stars, element, category, slot } = item
-    const { characterAtk, artifactsAtk } = stats
+    const { type, stars, element, category, slot, rarity } = item
+    const { characterAtk, artifactsAtk, weaponAtk } = stats
 
     let newInfo = {}
 
@@ -52,12 +52,13 @@ export function formatEditMode(item, data, stats) {
 
     const correspondingStats = {
       Character: characterAtk,
-      Artifact: artifactsAtk[slotKey || 'flower'].main
+      Artifact: artifactsAtk[slotKey || 'flower'].main,
+      Weapon: weaponAtk.main
     }
     newInfo = {
       ...item,
       baseAtk: correspondingStats[type] + statString,
-      displayStars: stars,
+      displayStars: type === 'Artifact' ? stars : rarity,
       category: displayCategory[type]
     }
 

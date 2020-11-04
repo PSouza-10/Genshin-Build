@@ -45,6 +45,10 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
     <Container isItemView displayed={!(displayedItem === 'stats')}>
       <span className='layoutControl'>
         <ArrowIcon onClick={() => setDisplayed('stats')} />
+        <p>
+          {type}
+          {displayedItem === 'view' ? `(View)` : `(Selected)`}
+        </p>
       </span>
       <ItemInfo>
         <span>

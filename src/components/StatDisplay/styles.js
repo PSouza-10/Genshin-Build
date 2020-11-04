@@ -1,5 +1,5 @@
 import { FaStar } from 'react-icons/fa'
-import { MdArrowBack } from 'react-icons/md'
+import { MdClose } from 'react-icons/md'
 import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
@@ -38,7 +38,16 @@ export const Container = styled.div`
   }
 
   span.layoutControl {
-    padding: 6px 12px;
+    background-color: var(--bgPrimary);
+    font-size: 1.6rem;
+
+    position: relative;
+    p {
+      width: 100%;
+      text-align: center;
+      font-weight: 560;
+      padding: 5px 0;
+    }
   }
   @media (max-width: 576px) {
     ${({ isItemView }) =>
@@ -82,11 +91,18 @@ export const StarIcon = styled(FaStar)`
   width: 24px;
 `
 
-export const ArrowIcon = styled(MdArrowBack)`
+export const ArrowIcon = styled(MdClose)`
   fill: var(--primary);
-  height: 30px;
-  width: 30px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 47px;
   cursor: pointer;
+  transition: all 0.4s ease;
+  &:hover {
+    background-color: var(--primary);
+    fill: var(--bgPrimary);
+  }
 `
 export const SelectButton = styled.button`
   height: auto;

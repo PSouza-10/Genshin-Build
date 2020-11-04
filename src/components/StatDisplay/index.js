@@ -8,9 +8,16 @@ export function StatDisplay() {
   const { selectedItems, displayedItem, setDisplayed } = useContext(
     ItemsContext
   )
-
   const stats = useContext(StatContext)
-  const { characterAtk } = stats
+
+  const {
+    characterAtk,
+    weaponAtk,
+    artifactsAtk,
+    totalAtkPerc,
+    totalAtk
+  } = stats
+
   return (
     <>
       <ItemView
@@ -20,7 +27,11 @@ export function StatDisplay() {
         setDisplayed={setDisplayed}
       />
       <Container>
+        <MainStat>Total ATK {totalAtk}</MainStat>
         <MainStat>Character ATK {characterAtk}</MainStat>
+        <MainStat>Weapon ATK {weaponAtk.main}</MainStat>
+        <MainStat>Total ATK Bonus {artifactsAtk.plume.main}</MainStat>
+        <MainStat>Total ATK% Bonus {totalAtkPerc}%</MainStat>
       </Container>
     </>
   )

@@ -1,14 +1,10 @@
-import React, {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useState
-} from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 import { ItemsContext } from '../ItemsContext'
 import {
   calculateCharacterAtk,
-  calculateArtifactStats
+  createNewArtifacts,
+  calculateWeaponStats,
+  calculateAtkPower
 } from './statCalculations'
 const initialState = {
   damage: 0,
@@ -34,57 +30,45 @@ const generateInitialArtifactState = (selectedItems = {}) => {
   })
   return returnObj
 }
+const calculateTotalAtkPerc = artifacts => {
+  let total = 0
+  const artifactsAtkCopy = Object.assign({}, artifacts)
+  Object.keys(artifactsAtkCopy).map(key => {
+    if (!['plume', 'flower'].includes(key)) {
+      total += artifactsAtkCopy[key].main
+    }
+    return key
+  })
+
+  return (Math.round(total * 100) / 100).toFixed(1)
+}
 export const StatContext = createContext(initialState)
 
 export default function StatProvider({ children }) {
   const { selectedItems } = useContext(ItemsContext)
-  const { character } = selectedItems
+  const { character, weapon } = selectedItems
 
   const [characterAtk, setCharacterAtk] = useState(0)
   const [artifactsAtk, setArtifactAtk] = useState(
     generateInitialArtifactState(selectedItems)
   )
-  const updateArtifacts = useCallback(() => {
-    Object.keys(selectedItems).map(key => {
-      if (
-        selectedItems[key].id &&
-        !['view', 'character', 'weapon'].includes(key)
-      ) {
-        const { level, stars, id } = selectedItems[key]
-        const {
-          level: currentLevel,
-          stars: currentStars,
-          id: currentId
-        } = artifactsAtk[key]
+  const [flatAtkBonus, setFlatAtk] = useState(0)
+  const [weaponAtk, setWeaponAtk] = useState({
+    main: 0,
+    sub: 0,
+    subType: ''
+  })
+  const [totalAtkPerc, setTotalAtkPerc] = useState(0)
 
-        if (
-          level !== currentLevel ||
-          stars !== currentStars ||
-          id !== currentId
-        ) {
-          const { newMain, newSub } = calculateArtifactStats(selectedItems[key])
+  const [totalAtk, setTotalAtk] = useState(0)
 
-          setArtifactAtk(previous => {
-            return {
-              ...previous,
-              [key]: {
-                ...previous[key],
-                level,
-                upgrade: stars,
-                id,
-                main: newMain,
-                sub: newSub
-              }
-            }
-          })
-        }
-      }
-      return null
-    })
-  }, [selectedItems, artifactsAtk])
   useEffect(() => {
-    updateArtifacts()
-  }, [selectedItems, updateArtifacts])
+    const newArtifacts = createNewArtifacts(artifactsAtk, selectedItems)
+    setArtifactAtk(newArtifacts)
+    setTotalAtkPerc(calculateTotalAtkPerc(newArtifacts))
+    setFlatAtk(newArtifacts.plume.main)
+    //eslint-disable-next-line
+  }, [selectedItems, setArtifactAtk])
 
   useEffect(() => {
     if (character.id) {
@@ -93,8 +77,30 @@ export default function StatProvider({ children }) {
     }
   }, [character])
 
+  useEffect(() => {
+    setTotalAtk(
+      calculateAtkPower(
+        characterAtk,
+        weaponAtk.main,
+        flatAtkBonus,
+        totalAtkPerc
+      )
+    )
+  }, [totalAtkPerc, flatAtkBonus, characterAtk, weaponAtk])
+
+  useEffect(() => {
+    if (weapon.id) {
+      const { main, sub } = calculateWeaponStats(weapon)
+      setWeaponAtk({
+        main,
+        sub,
+        subType: weapon.secondaryStat
+      })
+    }
+  }, [weapon])
   return (
-    <StatContext.Provider value={{ characterAtk, artifactsAtk }}>
+    <StatContext.Provider
+      value={{ characterAtk, weaponAtk, artifactsAtk, totalAtkPerc, totalAtk }}>
       {children}
     </StatContext.Provider>
   )
