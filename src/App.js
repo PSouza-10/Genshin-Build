@@ -8,7 +8,7 @@ const Container = styled.div`
   width: 100%;
   height: calc(100% - 50px);
   max-height: calc(100% - 50px);
-  overflow-x: hidden;
+  overflow: hidden;
   .left {
     flex-basis: 70%;
     display: flex;
@@ -44,18 +44,18 @@ const Container = styled.div`
 function App() {
   return (
     <>
-      <Header />
-      <Container>
-        <div className='left'>
-          <FilterProvider>
-            <ItemPicker />
-          </FilterProvider>
-          <CharacterWheel />
-        </div>
-        <StatProvider>
+      <StatProvider>
+        <Header />
+        <Container>
+          <div className='left'>
+            <FilterProvider>
+              <ItemPicker />
+            </FilterProvider>
+            <CharacterWheel />
+          </div>
           <StatDisplay />
-        </StatProvider>
-      </Container>
+        </Container>
+      </StatProvider>
     </>
   )
 }

@@ -8,7 +8,6 @@ export function calculateAtkPower(
   flatAtk,
   totalAtkPerc
 ) {
-  console.log(arguments)
   const baseAtk = characterAtk + weaponAtk
   const percBonus = parseFloat(totalAtkPerc) / 100
   const basePercBonus = percBonus * baseAtk

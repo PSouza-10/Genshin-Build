@@ -1,6 +1,17 @@
 import React, { useContext } from 'react'
-import styled, { css } from 'styled-components'
 import { ItemsContext } from '../../ItemsContext'
+import styled from 'styled-components'
+import { Wrapper, Image, elements, elementIconCSS } from './styles'
+
+let elementIcons = {}
+for (let varName in elements) {
+  elementIcons[varName] = React.createElement(
+    styled(elements[varName])`
+      ${elementIconCSS}
+    `,
+    { className: 'elementIcon' }
+  )
+}
 export default function Item({ item }) {
   const { id, image, name, type } = item
 
@@ -21,35 +32,8 @@ export default function Item({ item }) {
         window.innerWidth >= 576 ? handleSelectItem(item) : null
       }
       title={name}>
+      {type === 'Character' && elementIcons[item.element]}
       <Image src={image} alt={name} />
     </Wrapper>
   )
 }
-const Wrapper = styled.span`
-  position: relative;
-  z-index: 2;
-  margin-right: 10px;
-  cursor: pointer;
-  height: 60px;
-  width: 57px;
-  ${({ selected }) =>
-    selected
-      ? css`
-          background-color: var(--primary);
-          &:hover {
-            background-color: var(--primary);
-          }
-        `
-      : css`
-          &:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-          }
-        `}
-`
-const Image = styled.img`
-  z-index: 1;
-  max-height: 100%;
-  max-width: 100%;
-  height: 100%;
-  width: 100%;
-`

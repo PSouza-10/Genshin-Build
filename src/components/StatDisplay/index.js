@@ -5,7 +5,7 @@ import ItemView from './ItemView'
 import { StatContext } from '../../StatContext'
 
 export function StatDisplay() {
-  const { selectedItems, displayedItem, setDisplayed } = useContext(
+  const { selectedItems, displayedItem, setDisplayed, view } = useContext(
     ItemsContext
   )
   const stats = useContext(StatContext)
@@ -17,11 +17,14 @@ export function StatDisplay() {
     totalAtkPerc,
     totalAtk
   } = stats
-
+  const items = {
+    ...selectedItems,
+    view
+  }
   return (
     <>
       <ItemView
-        item={displayedItem === 'stats' ? {} : selectedItems[displayedItem]}
+        item={displayedItem === 'stats' ? {} : items[displayedItem]}
         stats={stats}
         displayedItem={displayedItem}
         setDisplayed={setDisplayed}

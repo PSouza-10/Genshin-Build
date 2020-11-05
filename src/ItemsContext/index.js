@@ -30,16 +30,16 @@ const initialState = {
     goblet: { level: 0 },
     circlet: { level: 0 },
     character: { level: 1 },
-    weapon: { level: 1 },
-    view: {}
-  }
+    weapon: { level: 1 }
+  },
+  view: {}
 }
 export const ItemsContext = createContext(initialState)
 
 export default function ItemsProvider({ children }) {
   const [selectedItems, selectItem] = useState(initialState.selectedItems)
   const [displayedItem, setDisplayed] = useState('stats')
-
+  const [view, setView] = useState(initialState.view)
   const handleSelectItem = (item = {}) => {
     const slot = formatSlot(item.type === 'Artifact' ? item.slot : item.type)
 
@@ -110,10 +110,7 @@ export default function ItemsProvider({ children }) {
         ]
         value = { ...value, minRarity, maxRarity }
       }
-      selectItem({
-        ...selectedItems,
-        view: value
-      })
+      setView(value)
       setDisplayed('view')
     } else {
       setDisplayed(slot)
@@ -176,6 +173,7 @@ export default function ItemsProvider({ children }) {
         ...initialState,
         selectedItems,
         displayedItem,
+        view,
         handleSelectItem,
         clearItems,
         handleItemDisplay,
