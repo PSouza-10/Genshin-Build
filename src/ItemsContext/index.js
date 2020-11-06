@@ -5,7 +5,7 @@ import weaponTypes from './weaponTypes.json'
 import weapons from './weapons.json'
 import characters from './characters.json'
 import artifacts from './artifacts.json'
-import { formatSlot } from './utils'
+import { formatSlot, findItems } from './utils'
 
 const data = {
   ...meta,
@@ -167,6 +167,15 @@ export default function ItemsProvider({ children }) {
   function clearItems() {
     selectItem(initialState.selectedItems)
   }
+
+  function dataFromUrl(string) {
+    const newItems = findItems(string)
+
+    selectItem({
+      ...selectedItems,
+      ...newItems
+    })
+  }
   return (
     <ItemsContext.Provider
       value={{
@@ -179,7 +188,8 @@ export default function ItemsProvider({ children }) {
         handleItemDisplay,
         setStats,
         formatSlot,
-        setDisplayed
+        setDisplayed,
+        dataFromUrl
       }}>
       {children}
     </ItemsContext.Provider>

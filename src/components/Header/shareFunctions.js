@@ -19,13 +19,7 @@ export function generateLink(selectedItems) {
   buildItems.map(({ id, level, type, upgrade, slot }) => {
     let itemStr = []
 
-    let idStr
-    if (type === 'Artifact') {
-      idStr = `${type[0]}${slot[0]}-${id}`
-    } else {
-      idStr = `${type[0]}-${id}`
-    }
-
+    let idStr = `${type[0]}-${id}`
     itemStr.push(idStr)
 
     itemStr.push(`l-${level}`)
@@ -34,6 +28,43 @@ export function generateLink(selectedItems) {
     buildString.push(itemStr.join('.'))
     return itemStr
   })
+  const joinedString = buildString.join('~')
+  localStorage.setItem('buildStr', joinedString)
+  return window.location.href.split('?b=')[0] + '?b=' + joinedString
+}
 
-  return window.location.href + '?b=' + buildString.join('~')
+export function copyLink() {
+  let copyText = document.getElementById('link')
+  copyText.select()
+  document.execCommand('copy')
+}
+
+export function downloadFile(selectedItems, totalAtk) {
+  let charName = selectedItems.character.id ? selectedItems.character.name : ''
+  var dataStr =
+    'data:text/json;charset=utf-8,' +
+    encodeURIComponent(JSON.stringify(selectedItems))
+  var dlAnchorElem = document.getElementById('downloadAnchorElem')
+  dlAnchorElem.setAttribute('href', dataStr)
+  dlAnchorElem.setAttribute(
+    'download',
+    `${charName || ''}${totalAtk}ATK-build.json`
+  )
+  dlAnchorElem.click()
+}
+
+export function selectApp(link, character, totalAtk) {
+  if (navigator.share) {
+    const text = `My ${totalAtk} DMG ${
+      character.id ? character.name : ''
+    } Build`
+    navigator.share({
+      title: document.title,
+      url: link,
+      text: text
+    })
+  } else {
+    alert('Browser/device does not support sharing, link was copied instead.')
+    copyLink()
+  }
 }

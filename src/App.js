@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { useEffect } from 'react'
 import styled from 'styled-components'
 import { Header, ItemPicker, CharacterWheel, StatDisplay } from './components'
 import FilterProvider from './components/ItemPicker/FilterContext'
 import StatProvider from './StatContext'
+import { ItemsContext } from './ItemsContext'
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -42,6 +44,18 @@ const Container = styled.div`
 `
 
 function App() {
+  const { dataFromUrl } = useContext(ItemsContext)
+  useEffect(() => {
+    const url = window.location.href
+    const savedData = localStorage.getItem('buildStr')
+    if (url.includes('/?b=')) {
+      let param = url.split('/?b=')[1]
+      dataFromUrl(param)
+    } else if (savedData) {
+      dataFromUrl(savedData)
+    }
+    //eslint-disable-next-line
+  }, [])
   return (
     <>
       <StatProvider>

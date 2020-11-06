@@ -12,6 +12,7 @@ import {
 } from './styles'
 import Filter from './Filter'
 import Item from '../Item'
+import LoadFile from '../LoadFile'
 import { FilterContext } from './FilterContext'
 
 export function ItemPicker() {
@@ -67,6 +68,7 @@ const Nav = ({ selectedTab, setTab }) => {
           {icon}
         </NavItem>
       ))}
+      <LoadFile />
     </NavContainer>
   )
 }

@@ -71,7 +71,7 @@ export const Items = styled.div`
   }
 `
 
-const iconCSS = css`
+export const iconCSS = css`
   height: 30px;
   width: 30px;
   fill: inherit;

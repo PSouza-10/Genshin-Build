@@ -34,7 +34,7 @@ export function CharacterWheel() {
 const Item = ({ itemSlot }) => {
   const { setStats, selectedItems } = useContext(ItemsContext)
   const item = selectedItems[itemSlot]
-
+  
   const { level, ascension, stars, maxLevel } = item
 
   const isArtifact = !['character', 'weapon'].includes(itemSlot)
