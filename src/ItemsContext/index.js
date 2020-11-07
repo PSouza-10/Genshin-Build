@@ -4,6 +4,8 @@ import artifactSets from './artifactSets.json'
 import weaponTypes from './weaponTypes.json'
 import weapons from './weapons.json'
 import characters from './characters.json'
+import talents from './talents.json'
+import passives from './passives.json'
 import artifacts from './artifacts.json'
 import { formatSlot, findItems } from './utils'
 import useDidMount from './useDidMount'
@@ -14,7 +16,9 @@ const data = {
   weaponTypes: weaponTypes,
   weapons: weapons,
   characters: characters,
-  artifacts: artifacts
+  artifacts: artifacts,
+  talents: talents,
+  passives: passives
 }
 
 const initialState = {
@@ -41,7 +45,7 @@ export default function ItemsProvider({ children }) {
   const [selectedItems, selectItem] = useState(initialState.selectedItems)
   const [displayedItem, setDisplayed] = useState('stats')
   const [view, setView] = useState(initialState.view)
-
+  const [talentLevel, setTalent] = useState(1)
   const { sendMessage } = useContext(MessageContext)
 
   const didMount = useDidMount()
@@ -218,6 +222,7 @@ export default function ItemsProvider({ children }) {
         selectedItems,
         displayedItem,
         view,
+        talentLevel,
         selectItem,
         didMount,
         handleSelectItem,
@@ -226,7 +231,8 @@ export default function ItemsProvider({ children }) {
         setStats,
         formatSlot,
         setDisplayed,
-        dataFromUrl
+        dataFromUrl,
+        setTalent
       }}>
       {children}
     </ItemsContext.Provider>

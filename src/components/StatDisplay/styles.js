@@ -49,6 +49,16 @@ export const Container = styled.div`
       padding: 5px 0;
     }
   }
+  h3.passiveName {
+    font-size: 1.4rem;
+    padding: 0 20px;
+  }
+  p.passiveDescription {
+    font-size: 1.2rem;
+    word-wrap: normal;
+    text-align: justify;
+    padding: 20px;
+  }
   @media (max-width: 576px) {
     ${({ isItemView }) =>
       !isItemView &&
@@ -116,5 +126,82 @@ export const SelectButton = styled.button`
   &:focus {
     background-color: var(--primary);
     color: var(--bgSecondary);
+  }
+`
+
+export const IconButton = styled.button`
+  border-radius: 50%;
+  background-color: var(--primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  svg {
+    fill: var(--outline);
+    height: 12px;
+    width: 12px;
+  }
+  padding: 3px;
+
+  &:active {
+    background-color: white;
+  }
+
+  &:hover {
+    background-color: ${({ negative }) =>
+      negative ? 'var(--negative)' : 'var(--positive)'};
+  }
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      filter: brightness(50%);
+      &:active {
+        background-color: var(--primary);
+      }
+
+      &:hover {
+        background-color: var(--primary);
+      }
+    `}
+`
+
+export const TalentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  .talentName {
+    font-size: 1.5rem;
+    background-color: var(--bgPrimary);
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .talentData {
+    background-color: var(--bgSecondary);
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    .talentLvl {
+      flex-basis: 40%;
+      display: flex;
+
+      justify-content: space-between;
+      padding: 15px 20px;
+      input {
+        font-size: 1.3rem;
+        background-color: transparent;
+        border: none;
+        width: 25px;
+        text-align: center;
+      }
+    }
+    .talentDMG {
+      text-align: center;
+      padding: 15px 0;
+      flex: 1;
+    }
   }
 `
