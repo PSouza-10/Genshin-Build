@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {
   Container,
   UploadIcon,
@@ -8,31 +8,39 @@ import {
   CloseIcon,
   CloseArrow
 } from './styles'
-
+import { ItemsContext } from '../../ItemsContext'
+import { MessageContext } from '../../MessageContext'
 export default function LoadFile() {
   const [modalOpen, setOpen] = useState(false)
   const [fileData, setData] = useState({})
   const [fileName, setFileName] = useState('Select')
+  const { selectItem } = useContext(ItemsContext)
+  const { sendMessage } = useContext(MessageContext)
   const handleModal = () => {
     setOpen(!modalOpen)
   }
 
   const handleChange = ({ target }) => {
     const files = target.files
+
     if (files.lenght <= 0) return false
-    const fileReader = new FileReader()
-    fileReader.onload = e => {
-      const result = JSON.parse(e.target.result)
-      setData(result)
+    if (files[0].type === 'application/json') {
+      const fileReader = new FileReader()
+      fileReader.onload = e => {
+        const result = JSON.parse(e.target.result)
+        setData(result)
+      }
+
+      fileReader.readAsText(files.item(0))
+
+      const name = files[0].name
+      setFileName(name.length > 8 ? name.substring(0, 8) + '..' : name)
+    } else {
+      sendMessage('Invalid File', 'Warning', 'Warning')
     }
-    fileReader.readAsText(files.item(0))
-
-    const name = files[0].name
-
-    setFileName(name.length > 8 ? name.substring(0, 8) + '..' : name)
   }
   const handleUpload = () => {
-    console.log(fileData)
+    selectItem(fileData)
   }
 
   return (
@@ -51,7 +59,11 @@ export default function LoadFile() {
             <div className='modalBody'>
               <label>
                 {fileName}
-                <input type='file' onChange={handleChange} accept='*' />
+                <input
+                  type='file'
+                  onChange={handleChange}
+                  accept='application/JSON'
+                />
               </label>
               <button onClick={handleUpload} disabled={fileName === 'Select'}>
                 Upload

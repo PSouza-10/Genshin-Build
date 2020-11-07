@@ -30,7 +30,7 @@ export const Container = styled.div`
     }
     `}
 
-  h1.title {
+  a.title {
     text-align: center;
     font-weight: 600;
     font-size: 1.6rem;

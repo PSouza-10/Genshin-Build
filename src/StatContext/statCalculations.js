@@ -106,12 +106,10 @@ export function calculateWeaponStats({ level, baseAtk = 0, ascension }) {
 export const createNewArtifacts = (artifactsAtk, selected) => {
   let newArtifacts = Object.assign({}, artifactsAtk)
   let selectedCopy = Object.assign({}, selected)
-
+  let { character, weapon, ...artifacts } = selectedCopy
+  selectedCopy = artifacts
   Object.keys(selectedCopy).map(key => {
-    if (
-      selectedCopy[key].id &&
-      !['view', 'character', 'weapon'].includes(key)
-    ) {
+    if (selectedCopy[key].id) {
       const { level, stars, id } = selectedCopy[key]
       const {
         level: currentLevel,
@@ -136,6 +134,17 @@ export const createNewArtifacts = (artifactsAtk, selected) => {
             main: newMain,
             sub: newSub
           }
+        }
+      }
+    } else {
+      const { level, stars } = selectedCopy[key]
+      newArtifacts = {
+        ...newArtifacts,
+        [key]: {
+          level,
+          upgrade: stars,
+          main: 0,
+          sub: []
         }
       }
     }

@@ -65,7 +65,15 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
       <ItemImage>
         <img src={image} alt={name} />
       </ItemImage>
-      <h1 className='title'>{name}</h1>
+      <a
+        href={
+          type === 'Artifact'
+            ? data.artifactSets[item.set].setUrl
+            : item.pageUrl
+        }
+        className='title'>
+        {name}
+      </a>
       <MainStat>ATK {baseAtk}</MainStat>
 
       {window.innerWidth < 576 && (

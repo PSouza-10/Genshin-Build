@@ -33,7 +33,7 @@ export function StatDisplay() {
         <MainStat>Total ATK {totalAtk}</MainStat>
         <MainStat>Character ATK {characterAtk}</MainStat>
         <MainStat>Weapon ATK {weaponAtk.main}</MainStat>
-        <MainStat>Total ATK Bonus {artifactsAtk.plume.main}</MainStat>
+        <MainStat>Flat ATK Bonus {artifactsAtk.plume.main}</MainStat>
         <MainStat>Total ATK% Bonus {totalAtkPerc}%</MainStat>
       </Container>
     </>

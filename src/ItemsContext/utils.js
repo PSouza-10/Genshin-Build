@@ -1,6 +1,7 @@
 import weapons from './weapons.json'
 import characters from './characters.json'
 import artifacts from './artifacts.json'
+import artifactSets from './artifactSets.json'
 
 export function findItem(type, id) {
   let arr = []
@@ -56,7 +57,11 @@ export function findItems(string = '') {
     item[isArtifact ? 'stars' : 'ascension'] = parseInt(
       itemStr.split('.')[2].split('-')[1]
     )
-
+    if (item.type === 'Artifact') {
+      let { minRarity, maxRarity } = artifactSets[item.set]
+      item.minRarity = minRarity
+      item.maxRarity = maxRarity
+    }
     items[slotStr] = item
   })
 

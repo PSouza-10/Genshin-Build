@@ -74,6 +74,8 @@ export default function StatProvider({ children }) {
     if (character.id) {
       const newAtk = calculateCharacterAtk(character)
       setCharacterAtk(newAtk)
+    } else {
+      setCharacterAtk(0)
     }
   }, [character])
 
@@ -95,6 +97,12 @@ export default function StatProvider({ children }) {
         main,
         sub,
         subType: weapon.secondaryStat
+      })
+    } else {
+      setWeaponAtk({
+        main: 0,
+        sub: 0,
+        subType: 0
       })
     }
   }, [weapon])

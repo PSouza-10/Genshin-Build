@@ -5,12 +5,14 @@ import { Header, ItemPicker, CharacterWheel, StatDisplay } from './components'
 import FilterProvider from './components/ItemPicker/FilterContext'
 import StatProvider from './StatContext'
 import { ItemsContext } from './ItemsContext'
+
+import WarningMessage from './components/WarningMessage'
 const Container = styled.div`
   display: flex;
   width: 100%;
   height: calc(100% - 50px);
   max-height: calc(100% - 50px);
-  overflow: hidden;
+
   .left {
     flex-basis: 70%;
     display: flex;
@@ -48,16 +50,19 @@ function App() {
   useEffect(() => {
     const url = window.location.href
     const savedData = localStorage.getItem('buildStr')
+    console.log(window.location.href)
     if (url.includes('/?b=')) {
       let param = url.split('/?b=')[1]
       dataFromUrl(param)
     } else if (savedData) {
+      console.log('localstorage')
       dataFromUrl(savedData)
     }
     //eslint-disable-next-line
   }, [])
   return (
     <>
+      <WarningMessage />
       <StatProvider>
         <Header />
         <Container>

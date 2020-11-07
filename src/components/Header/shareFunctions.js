@@ -13,10 +13,10 @@ export function generateLink(selectedItems) {
       }
     }
   }
-  if (buildItems.length === 0) return window.location.href
+
   let buildString = []
 
-  buildItems.map(({ id, level, type, upgrade, slot }) => {
+  buildItems.forEach(({ id, level, type, upgrade, slot }) => {
     let itemStr = []
 
     let idStr = `${type[0]}-${id}`
@@ -26,10 +26,10 @@ export function generateLink(selectedItems) {
     itemStr.push(`u-${upgrade}`)
 
     buildString.push(itemStr.join('.'))
-    return itemStr
   })
   const joinedString = buildString.join('~')
   localStorage.setItem('buildStr', joinedString)
+
   return window.location.href.split('?b=')[0] + '?b=' + joinedString
 }
 

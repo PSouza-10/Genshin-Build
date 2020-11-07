@@ -31,7 +31,7 @@ export default createGlobalStyle`
     html, body, #root {
         max-height: 100vh;
         max-width: 100vw;
-     overflow: hidden;
+   
         width: 100%;
         height: 100%;
         background-color: var(--bgPrimary);
@@ -45,6 +45,13 @@ export default createGlobalStyle`
     ul {
         list-style: none;
         
+    }
+    a{
+        text-decoration:none;
+        color: inherit;
+        &:hover{
+            text-decoration: underline;
+        }
     }
     button {
         border: none;

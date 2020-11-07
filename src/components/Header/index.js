@@ -24,7 +24,7 @@ import {
 export function Header() {
   const [shareModal, setShareModal] = useState(false)
   const { totalAtk } = useContext(StatContext)
-  const { selectedItems } = useContext(ItemsContext)
+  const { selectedItems, didMount } = useContext(ItemsContext)
   const [link, setLink] = useState(window.location.href)
   const [linkState, setLinkState] = useState('Copy Link')
   const handleShareModal = () => {
@@ -32,8 +32,10 @@ export function Header() {
     generateLink(selectedItems)
   }
   useEffect(() => {
-    setLink(generateLink(selectedItems))
-  }, [selectedItems])
+    if (didMount()) {
+      setLink(generateLink(selectedItems))
+    }
+  }, [selectedItems, didMount])
 
   return (
     <>
