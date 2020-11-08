@@ -1,0 +1,72 @@
+{
+  "5": {
+    "HP": { "base": 717, "mult": 0.283 },
+    "ATK": { "base": 47, "mult": 0.277 },
+    "HP%": { "base": 7.0, "mult": 0.286 },
+    "ATK%": { "base": 7.0, "mult": 0.286 },
+    "DEF%": { "base": 8.7, "mult": 0.287 },
+    "Physical DMG%": { "base": 8.7, "mult": 0.287 },
+    "Elemental DMG%": { "base": 7.0, "mult": 0.286 },
+    "Elemental Mastery": { "base": 28, "mult": 0.286 },
+    "Energy Recharge%": { "base": 7.8, "mult": 0.282 },
+    "Crit Rate%": { "base": 4.7, "mult": 0.277 },
+    "Crit DMG%": { "base": 9.3, "mult": 0.28 },
+    "Healing Bonus%": { "base": 5.4, "mult": 0.278 }
+  },
+  "4": {
+    "HP": { "base": 645, "mult": 0.284 },
+    "ATK": { "base": 42, "mult": 0.286 },
+    "HP%": { "base": 6.3, "mult": 0.286 },
+    "ATK%": { "base": 6.3, "mult": 0.286 },
+    "DEF%": { "base": 7.9, "mult": 0.278 },
+    "Physical DMG%": { "base": 7.9, "mult": 0.278 },
+    "Elemental DMG%": { "base": 6.3, "mult": 0.286 },
+    "Elemental Mastery": { "base": 25, "mult": 0.28 },
+    "Energy Recharge%": { "base": 7.0, "mult": 0.286 },
+    "Crit Rate%": { "base": 4.2, "mult": 0.286 },
+    "Crit DMG%": { "base": 8.4, "mult": 0.286 },
+    "Healing Bonus%": { "base": 4.8, "mult": 0.292 }
+  },
+  "3": {
+    "HP": { "base": 430, "mult": 0.284 },
+    "ATK": { "base": 28, "mult": 0.286 },
+    "HP%": { "base": 5.2, "mult": 0.288 },
+    "ATK%": { "base": 5.2, "mult": 0.288 },
+    "DEF%": { "base": 6.6, "mult": 0.273 },
+    "Physical DMG%": { "base": 6.6, "mult": 0.273 },
+    "Elemental DMG%": { "base": 5.2, "mult": 0.288 },
+    "Elemental Mastery": { "base": 21, "mult": 0.286 },
+    "Energy Recharge%": { "base": 5.8, "mult": 0.293 },
+    "Crit Rate%": { "base": 3.5, "mult": 0.286 },
+    "Crit DMG%": { "base": 7.0, "mult": 0.286 },
+    "Healing Bonus%": { "base": 4.0, "mult": 0.3 }
+  },
+  "1": {
+    "HP": { "base": 127, "mult": 0.285 },
+    "ATK": { "base": 8, "mult": 0.285 },
+    "HP%": { "base": 2.57, "mult": 0.285 },
+    "ATK%": { "base": 2.57, "mult": 0.285 },
+    "DEF%": { "base": 3.26, "mult": 0.285 },
+    "Physical DMG%": { "base": 3.26, "mult": 0.285 },
+    "Elemental DMG%": { "base": 2.57, "mult": 0.285 },
+    "Elemental Mastery": { "base": 10, "mult": 0.285 },
+    "Energy Recharge%": { "base": 2.86, "mult": 0.285 },
+    "Crit Rate%": { "base": 1.73, "mult": 0.285 },
+    "Crit DMG%": { "base": 3.45, "mult": 0.285 },
+    "Healing Bonus%": { "base": 1.97, "mult": 0.285 }
+  },
+  "2": {
+    "HP": { "base": 143, "mult": 0.285 },
+    "ATK": { "base": 9, "mult": 0.285 },
+    "HP%": { "base": 3.98, "mult": 0.285 },
+    "ATK%": { "base": 3.98, "mult": 0.285 },
+    "DEF%": { "base": 5.05, "mult": 0.285 },
+    "Physical DMG%": { "base": 5.05, "mult": 0.285 },
+    "Elemental DMG%": { "base": 3.98, "mult": 0.285 },
+    "Elemental Mastery": { "base": 16, "mult": 0.285 },
+    "Energy Recharge%": { "base": 4.44, "mult": 0.285 },
+    "Crit Rate%": { "base": 2.68, "mult": 0.285 },
+    "Crit DMG%": { "base": 5.36, "mult": 0.285 },
+    "Healing Bonus%": { "base": 3.06, "mult": 0.285 }
+  }
+}

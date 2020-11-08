@@ -91,7 +91,10 @@ export default function ItemsProvider({ children }) {
 
         selectItem(newItems)
       } else {
-        if (selectedItems.character.id || selectedItems.weapon.id) {
+        if (
+          (selectedItems.character.id && slot === 'weapon') ||
+          (selectedItems.weapon.id && slot === 'character')
+        ) {
           const attemptedCombinations = {
             character: {
               attempted: item.weapon,

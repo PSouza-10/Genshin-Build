@@ -28,7 +28,7 @@
     "name": "Adventurer's Golden Goblet",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/ae/Item_Adventurer%27s_Golden_Goblet.png",
     "set": "Adventurer",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -68,7 +68,7 @@
     "name": "Lucky Dog's Goblet",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/c/c1/Item_Lucky_Dog%27s_Goblet.png",
     "set": "Lucky Dog",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -108,7 +108,7 @@
     "name": "Traveling Doctor's Medicine Pot",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/25/Item_Traveling_Doctor%27s_Medicine_Pot.png",
     "set": "Traveling Doctor",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -148,7 +148,7 @@
     "name": "Instructor's Tea Cup",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/ad/Item_Instructor%27s_Tea_Cup.png",
     "set": "Instructor",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -188,7 +188,7 @@
     "name": "Berserker's Bone Goblet",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/da/Item_Berserker%27s_Bone_Goblet.png",
     "set": "Berserker",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -228,7 +228,7 @@
     "name": "Exile's Goblet",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/6a/Item_Exile%27s_Goblet.png",
     "set": "The Exile",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -268,7 +268,7 @@
     "name": "Goblet of the Sojourner",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/06/Item_Goblet_of_the_Sojourner.png",
     "set": "Resolution of Sojourner",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -308,7 +308,7 @@
     "name": "Martial Artist's Wine Cup",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/8d/Item_Martial_Artist%27s_Wine_Cup.png",
     "set": "Martial Artist",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -348,7 +348,7 @@
     "name": "45px\nGuardian's Vessel",
     "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Guardian%27s_Vessel.png",
     "set": "Defender's Will",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -388,7 +388,7 @@
     "name": "Tiny Miracle's Goblet",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/52/Item_Tiny_Miracle%27s_Goblet.png",
     "set": "Tiny Miracle",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -428,7 +428,7 @@
     "name": "Outset of the Brave",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/49/Item_Outset_of_the_Brave.png",
     "set": "Brave Heart",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -468,7 +468,7 @@
     "name": "Gambler's Dice Cup",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/f/fd/Item_Gambler%27s_Dice_Cup.png",
     "set": "Gambler",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -508,7 +508,7 @@
     "name": "Scholar's Ink Cup",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/66/Item_Scholar%27s_Ink_Cup.png",
     "set": "Scholar",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -548,7 +548,7 @@
     "name": "Gladiator's Intoxication",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/6d/Item_Gladiator%27s_Intoxication.png",
     "set": "Gladiator's Finale",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -588,7 +588,7 @@
     "name": "Maiden's Fleeting Leisure",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/23/Item_Maiden%27s_Fleeting_Leisure.png",
     "set": "Maiden Beloved",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -628,7 +628,7 @@
     "name": "Royal Silver Urn",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/9c/Item_Royal_Silver_Urn.png",
     "set": "Noblesse Oblige",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -668,7 +668,7 @@
     "name": "Bloodstained Chevalier's Goblet",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/4f/Item_Bloodstained_Chevalier%27s_Goblet.png",
     "set": "Bloodstained Chivalry",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -708,7 +708,7 @@
     "name": "Wanderer's String Kettle",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/9b/Item_Wanderer%27s_String_Kettle.png",
     "set": "Wanderer's Troupe",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -748,7 +748,7 @@
     "name": "45px\nOmen of Thunderstorm",
     "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Omen_of_Thunderstorm.png",
     "set": "Thundering Fury",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -788,7 +788,7 @@
     "name": "45px\n Thundershoother's Goblet",
     "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Thundershoother%27s_Goblet.png",
     "set": "Thundersoother",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -828,7 +828,7 @@
     "name": "45px\nWitch's Heart Flames",
     "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Witch%27s_Heart_Flames.png",
     "set": "Crimson Witch of Flames",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -868,7 +868,7 @@
     "name": "45px\nLavawalker's Epiphany",
     "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Lavawalker%27s_Epiphany.png",
     "set": "Lavawalker",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -908,7 +908,7 @@
     "name": "45px\nGoblet of Chiseled Crag",
     "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Goblet_of_Chiseled_Crag.png",
     "set": "Archaic Petra",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
@@ -948,7 +948,7 @@
     "name": "45px\nSummer Night's Waterballoon",
     "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Summer_Night%27s_Waterballoon.png",
     "set": "Retracing Bolide",
-    "slot": "Goblet of Enotherm",
+    "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {

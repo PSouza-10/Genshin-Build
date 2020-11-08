@@ -11,7 +11,7 @@ export function calculateAtkPower(
   const baseAtk = characterAtk + weaponAtk
   const percBonus = parseFloat(totalAtkPerc) / 100
   const basePercBonus = percBonus * baseAtk
-
+  console.log(baseAtk)
   return Math.floor(baseAtk + basePercBonus + flatAtk)
 }
 
@@ -48,22 +48,22 @@ export function calculateCharacterAtk({
   return Math.ceil(baseAtk + totalAtkIncrease + totalAscensionBonus)
 }
 
-export function calculateArtifactStats({ stars = 0, slot, level }) {
-  const { atkMult, atkPercMult, baseAtk, baseAtkPerc } = artifactIncreases[
-    stars.toString()
-  ]
-  let increase = 0
-  let newMain = slot === 'Plume of Death' ? baseAtk : baseAtkPerc
+export function calculateArtifactStats(
+  { stars = 0, slot, level },
+  mainType = 'ATK%'
+) {
+  const { mult, base } = artifactIncreases[stars.toString()][mainType]
+
+  let increase = level * (base * mult)
+  let newMain = base
   let newSub = []
 
   if (level > 0) {
-    if (slot === 'Plume of Death') {
-      increase = level * (baseAtk * atkMult)
-      newMain = Math.ceil(baseAtk + increase)
+    if (['Plume of Death', 'Flower of Life'].includes(slot)) {
+      newMain = Math.ceil(base + increase)
     } else {
-      increase = level * (baseAtkPerc * atkPercMult)
       newMain = parseFloat(
-        (Math.round((baseAtkPerc + increase) * 100) / 100).toFixed(1)
+        (Math.round((base + increase) * 100) / 100).toFixed(1)
       )
     }
   }
@@ -71,15 +71,20 @@ export function calculateArtifactStats({ stars = 0, slot, level }) {
   return { newMain, newSub }
 }
 
-export function calculateWeaponStats({ level, baseAtk = 0, ascension }) {
+export function calculateWeaponStats({
+  level,
+  baseAtk = 0,
+  ascension,
+  secondaryBase
+}) {
   const { ascensionBonus, increasesPerLevel } = weaponTypes[baseAtk.toString()]
 
   const levelsOfAscension = [1, 20, 40, 50, 60, 70, 80]
 
   const totalAscensionBonus = ascension === 0 ? 0 : ascension * ascensionBonus
   let totalAtkIncrease = 0
-
-  if (level === 1) return { main: baseAtk, sub: 0 }
+  let newSubStatValue = 0
+  if (level === 1) return { main: baseAtk, sub: secondaryBase }
   else {
     for (let i = ascension; i >= 0; i--) {
       let levelDiff = 0
@@ -95,11 +100,20 @@ export function calculateWeaponStats({ level, baseAtk = 0, ascension }) {
           increasesPerLevel[levelsOfAscension[i > 0 ? i - 1 : 0].toString()]
       }
     }
+    if ([25, 50, 75].includes(level)) {
+      let multiplier = [25, 50, 75].findIndex(el => el === level) + 2
+
+      newSubStatValue = multiplier * secondaryBase
+    } else {
+      const percentualIncrease = 0.2 * secondaryBase
+      const increase = Math.floor(level / 5) * percentualIncrease
+      newSubStatValue = secondaryBase + increase
+    }
   }
   let main = Math.ceil(baseAtk + totalAtkIncrease + totalAscensionBonus)
   return {
     main,
-    sub: 0
+    sub: newSubStatValue
   }
 }
 
@@ -122,7 +136,10 @@ export const createNewArtifacts = (artifactsAtk, selected) => {
         stars !== currentStars ||
         id !== currentId
       ) {
-        const { newMain, newSub } = calculateArtifactStats(selectedCopy[key])
+        const { newMain, newSub } = calculateArtifactStats(
+          selectedCopy[key],
+          newArtifacts[key].mainType
+        )
 
         newArtifacts = {
           ...newArtifacts,
@@ -132,7 +149,8 @@ export const createNewArtifacts = (artifactsAtk, selected) => {
             upgrade: stars,
             id,
             main: newMain,
-            sub: newSub
+            sub: newSub,
+            mainType: newArtifacts[key].mainType
           }
         }
       }
@@ -144,7 +162,8 @@ export const createNewArtifacts = (artifactsAtk, selected) => {
           level,
           upgrade: stars,
           main: 0,
-          sub: []
+          sub: [],
+          mainType: newArtifacts[key].mainType
         }
       }
     }

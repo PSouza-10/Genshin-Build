@@ -25,6 +25,14 @@ export function formatViewMode(item, data) {
     newInfo.displayStars = item.rarity
   }
 
+  if (type === 'Weapon') {
+    const { secondaryStat, secondaryBase } = item
+    newInfo.secondaryType = secondaryStat
+    newInfo.subStat =
+      secondaryStat === 'Elemental Mastery'
+        ? Math.round(secondaryBase)
+        : `${secondaryBase.toFixed(2)}%`
+  }
   return newInfo
 }
 
@@ -60,6 +68,15 @@ export function formatEditMode(item, data, stats) {
       baseAtk: correspondingStats[type] + statString,
       displayStars: type === 'Artifact' ? stars : rarity,
       category: displayCategory[type]
+    }
+
+    if (type === 'Weapon') {
+      const { subType, sub } = stats.weaponAtk
+
+      newInfo.secondaryType = subType
+
+      newInfo.subStat =
+        subType === 'Elemental Mastery' ? Math.round(sub) : `${sub.toFixed(2)}%`
     }
 
     return newInfo

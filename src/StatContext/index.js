@@ -16,29 +16,42 @@ const generateInitialArtifactState = (selectedItems = {}) => {
   const { character, view, weapon, ...artifacts } = selectedItems
 
   let returnObj = {}
-  Object.keys(artifacts).map(key => {
+  const initialStatMap = {
+    flower: 'HP',
+    plume: 'ATK'
+  }
+  Object.keys(artifacts).forEach(key => {
     const { id, level, stars } = artifacts[key]
 
+    const mainType = Object.keys(initialStatMap).includes(key)
+      ? initialStatMap[key]
+      : 'ATK%'
     returnObj[key] = {
       id,
       level,
       upgrade: stars,
       main: 0,
-      sub: []
+      sub: [],
+      mainType
     }
-    return level
   })
   return returnObj
 }
-const calculateTotalAtkPerc = artifacts => {
+const calculateTotalAtkPerc = (artifacts, weaponAtk) => {
   let total = 0
   const artifactsAtkCopy = Object.assign({}, artifacts)
-  Object.keys(artifactsAtkCopy).map(key => {
-    if (!['plume', 'flower'].includes(key)) {
+  Object.keys(artifactsAtkCopy).forEach(key => {
+    if (
+      !['plume', 'flower'].includes(key) &&
+      artifactsAtkCopy[key].mainType === 'ATK%'
+    ) {
       total += artifactsAtkCopy[key].main
     }
-    return key
   })
+
+  if (weaponAtk.subType === 'ATK') {
+    total += weaponAtk.sub
+  }
 
   return (Math.round(total * 100) / 100).toFixed(1)
 }
@@ -65,7 +78,7 @@ export default function StatProvider({ children }) {
   useEffect(() => {
     const newArtifacts = createNewArtifacts(artifactsAtk, selectedItems)
     setArtifactAtk(newArtifacts)
-    setTotalAtkPerc(calculateTotalAtkPerc(newArtifacts))
+
     setFlatAtk(newArtifacts.plume.main)
     //eslint-disable-next-line
   }, [selectedItems, setArtifactAtk])
@@ -93,11 +106,12 @@ export default function StatProvider({ children }) {
   useEffect(() => {
     if (weapon.id) {
       const { main, sub } = calculateWeaponStats(weapon)
-      setWeaponAtk({
+      const newWeaponStats = {
         main,
         sub,
         subType: weapon.secondaryStat
-      })
+      }
+      setWeaponAtk(newWeaponStats)
     } else {
       setWeaponAtk({
         main: 0,
@@ -105,39 +119,36 @@ export default function StatProvider({ children }) {
         subType: 0
       })
     }
+    //eslint-disable-next-line
   }, [weapon])
+
+  useEffect(() => {
+    setTotalAtkPerc(calculateTotalAtkPerc(artifactsAtk, weaponAtk))
+  }, [weaponAtk, artifactsAtk])
+
+  function setMainStat(slot = 'sands', stat = 'ATK%') {
+    const withNewStat = {
+      ...artifactsAtk,
+      [slot]: {
+        ...artifactsAtk[slot],
+        mainType: stat
+      }
+    }
+    const newArtifacts = createNewArtifacts(withNewStat, selectedItems)
+    setArtifactAtk(newArtifacts)
+  }
+
   return (
     <StatContext.Provider
-      value={{ characterAtk, weaponAtk, artifactsAtk, totalAtkPerc, totalAtk }}>
+      value={{
+        characterAtk,
+        weaponAtk,
+        artifactsAtk,
+        totalAtkPerc,
+        totalAtk,
+        setMainStat
+      }}>
       {children}
     </StatContext.Provider>
   )
 }
-
-// {
-//   flower : {
-//     main : 0,
-//     sub: [],
-//     lvl: flower.level
-//   },
-//   plume  : {
-//     main : 0,
-//     sub: [],
-//     lvl: plume.level
-//   },
-//   sands  : {
-//     main : 0,
-//     sub: [],
-//     lvl: sands.level
-//   },
-//   goblet : {
-//     main : 0,
-//     sub: [],
-//     lvl: goblet.level
-//   },
-//   circlet: {
-//     main : 0,
-//     sub: [],
-//     lvl: circlet.level
-//   },
-// }

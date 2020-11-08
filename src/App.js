@@ -50,12 +50,11 @@ function App() {
   useEffect(() => {
     const url = window.location.href
     const savedData = localStorage.getItem('buildStr')
-    console.log(window.location.href)
+
     if (url.includes('/?b=')) {
       let param = url.split('/?b=')[1]
       dataFromUrl(param)
     } else if (savedData) {
-      console.log('localstorage')
       dataFromUrl(savedData)
     }
     //eslint-disable-next-line

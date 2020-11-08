@@ -13,6 +13,7 @@ import {
   TalentContainer,
   IconButton
 } from './styles'
+import ArtifactMainStat from './ArtifactMainStat'
 
 import { FaMinus, FaPlus } from 'react-icons/fa'
 
@@ -78,8 +79,17 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
         className='title'>
         {name}
       </a>
-      <MainStat>ATK {baseAtk}</MainStat>
-      {type === 'Character' && <Talent name={item.talent} editable={true} />}
+      {type === 'Artifact' ? (
+        <ArtifactMainStat slot={item.slot} />
+      ) : (
+        <MainStat>ATK {baseAtk}</MainStat>
+      )}
+      {type === 'Weapon' && (
+        <MainStat>{`${itemInfo.secondaryType} ${itemInfo.subStat}`}</MainStat>
+      )}
+      {type === 'Character' && (
+        <Talent name={item.talent} editable={displayedItem !== 'view'} />
+      )}
       {type === 'Weapon' && item.passive !== 'None' && (
         <>
           <h3 className='passiveName'>{item.passive}</h3>
@@ -137,7 +147,7 @@ const Talent = ({ editable, name }) => {
             />
           </span>
         ) : (
-          <span className='talentLvl'>{talentLevel}</span>
+          <span className='talentLvl'>Lvl. {talentLevel}</span>
         )}
         <span className='talentDMG'>
           {data.talents[name][talentLevel - 1]}% ATK

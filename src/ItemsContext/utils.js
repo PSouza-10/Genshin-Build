@@ -57,6 +57,12 @@ export function findItems(string = '') {
     item[isArtifact ? 'stars' : 'ascension'] = parseInt(
       itemStr.split('.')[2].split('-')[1]
     )
+    const ascensionMaxLevelTable = [20, 40, 50, 60, 70, 80, 90]
+    const artifactMaxLevelTable = [4, 4, 12, 16, 20]
+    item.maxLevel = isArtifact
+      ? artifactMaxLevelTable[item.stars - 1]
+      : ascensionMaxLevelTable[item.ascension]
+
     if (item.type === 'Artifact') {
       let { minRarity, maxRarity } = artifactSets[item.set]
       item.minRarity = minRarity
@@ -64,6 +70,6 @@ export function findItems(string = '') {
     }
     items[slotStr] = item
   })
-
+  console.log(items)
   return items
 }
