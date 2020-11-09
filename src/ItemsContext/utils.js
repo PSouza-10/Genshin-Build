@@ -70,6 +70,6 @@ export function findItems(string = '') {
     }
     items[slotStr] = item
   })
-  console.log(items)
+
   return items
 }

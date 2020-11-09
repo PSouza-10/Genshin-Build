@@ -2,6 +2,10 @@ import data from '../ItemsContext/data.json'
 import weaponTypes from '../ItemsContext/weaponTypes.json'
 const { artifactIncreases } = data
 
+export function calculateDamage(atkPower, talentMultiplier) {
+  return Math.round(atkPower * (talentMultiplier / 100))
+}
+
 export function calculateAtkPower(
   characterAtk,
   weaponAtk,
@@ -11,7 +15,7 @@ export function calculateAtkPower(
   const baseAtk = characterAtk + weaponAtk
   const percBonus = parseFloat(totalAtkPerc) / 100
   const basePercBonus = percBonus * baseAtk
-  console.log(baseAtk)
+
   return Math.floor(baseAtk + basePercBonus + flatAtk)
 }
 

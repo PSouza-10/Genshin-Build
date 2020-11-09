@@ -8,20 +8,21 @@ export function formatViewMode(item, data) {
     Artifact: slot
   }
   newInfo.category = displayCategory[type]
+
   if (type === 'Artifact') {
     const artifactStats = data.artifactIncreases[minRarity.toString()]
     newInfo.displayStars = `${minRarity}~${maxRarity}`
     if (slot === 'Plume of Death') {
-      newInfo.baseAtk = artifactStats.baseAtk
+      newInfo.mainStat = 'ATK ' + artifactStats['ATK'].base
     } else if (slot === 'Flower of Life') {
-      newInfo.baseAtk = 0
+      newInfo.mainStat = 'HP ' + artifactStats['HP'].base
     } else {
-      newInfo.baseAtk = `${artifactStats.baseAtkPerc} ~ ${
-        data.artifactIncreases[maxRarity.toString()].baseAtkPerc
+      newInfo.mainStat = `ATK ${artifactStats['ATK%'].base} ~ ${
+        data.artifactIncreases[maxRarity.toString()]['ATK%'].base
       }%`
     }
   } else if (['Character', 'Weapon'].includes(type)) {
-    newInfo.baseAtk = item.baseAtk
+    newInfo.mainStat = 'ATK ' + item.baseAtk
     newInfo.displayStars = item.rarity
   }
 
@@ -32,6 +33,8 @@ export function formatViewMode(item, data) {
       secondaryStat === 'Elemental Mastery'
         ? Math.round(secondaryBase)
         : `${secondaryBase.toFixed(2)}%`
+  }
+  if (type === 'Artifact') {
   }
   return newInfo
 }
@@ -48,26 +51,35 @@ export function formatEditMode(item, data, stats) {
       Weapon: category,
       Artifact: slot
     }
+
+    newInfo.category = displayCategory[type]
+
     let slotKey = ''
     let statString = ''
+
     if (type === 'Artifact') {
       slotKey = slot.toLowerCase().split(' ')[0]
-
-      if (slot !== 'Plume of Death') {
-        statString = ' %'
-      }
     }
 
     const correspondingStats = {
       Character: characterAtk,
-      Artifact: artifactsAtk[slotKey || 'flower'].main,
+      Artifact: artifactsAtk[slotKey || 'flower'],
       Weapon: weaponAtk.main
     }
+
+    if (type === 'Artifact') {
+      statString = `${correspondingStats[type].mainType} ${correspondingStats[type].main}`
+      if (!['plume', 'flower'].includes(slotKey)) {
+        statString = statString + ' %'
+      }
+    } else {
+      statString = `ATK ${correspondingStats[type]}`
+    }
+
     newInfo = {
       ...item,
-      baseAtk: correspondingStats[type] + statString,
-      displayStars: type === 'Artifact' ? stars : rarity,
-      category: displayCategory[type]
+      mainStat: statString,
+      displayStars: type === 'Artifact' ? stars : rarity
     }
 
     if (type === 'Weapon') {

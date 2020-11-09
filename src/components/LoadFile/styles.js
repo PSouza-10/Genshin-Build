@@ -79,7 +79,7 @@ export const SelectFileModal = styled.div`
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
   transition: all 0.3s linear;
   z-index: 999;
-  width: 310px;
+  width: 320px;
   ${({ open }) =>
     css`
       visibility: ${open ? 'visible' : 'hidden'};
@@ -102,11 +102,11 @@ export const SelectFileModal = styled.div`
 const buttonCss = css`
   padding: 6px 6px;
   font-size: 1.1rem;
-  border: 1px solid var(--primary);
-  background-color: var(--bgSecondary);
+  border: 2px solid var(--primary);
+  background-color: var(--bgPrimary);
   transition: all 0.2s ease;
   cursor: pointer;
-  border-radius: 0.5em;
+
   font-weight: 400;
   overflow: hidden;
   max-height: 39px;
@@ -115,6 +115,7 @@ const buttonCss = css`
   &:focus {
     background-color: var(--primary);
     color: var(--bgSecondary);
+    font-weight: 550;
   }
 `
 export const ModalContent = styled.div`
@@ -143,8 +144,9 @@ export const ModalContent = styled.div`
       opacity: 0.4;
       &:hover,
       &:focus {
-        background-color: var(--bgSecondary);
+        background-color: var(--bgPrimary);
         color: var(--primary);
+        font-weight: initial;
       }
     }
   }

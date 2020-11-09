@@ -20,10 +20,13 @@ import { FaMinus, FaPlus } from 'react-icons/fa'
 export default function ItemView({ item, displayedItem, setDisplayed }) {
   const { handleSelectItem, data } = useContext(ItemsContext)
   const stats = useContext(StatContext)
-
   const { image, name, level, type } = item
-  const [itemInfo, setItemInfo] = useState({})
 
+  const slotKey = type === 'Artifact' && item.slot.toLowerCase().split(' ')[0]
+  const mainStatIsEditable = !['flower', 'plume'].includes(slotKey)
+
+  const [itemInfo, setItemInfo] = useState({})
+  const isViewMode = displayedItem === 'view'
   const handleSelect = () => {
     handleSelectItem(item)
     setDisplayed('stats')
@@ -32,27 +35,27 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
   const formatInfo = useCallback(() => {
     let newInfo = { ...item }
 
-    if (displayedItem === 'view') {
+    if (isViewMode) {
       newInfo = { ...newInfo, ...formatViewMode(item, data) }
     } else {
       newInfo = { ...newInfo, ...formatEditMode(item, data, stats) }
     }
 
     setItemInfo(newInfo)
-  }, [item, data, stats, displayedItem])
+  }, [item, data, stats, isViewMode])
 
   useEffect(() => {
     formatInfo()
   }, [item, formatInfo])
 
-  const { displayStars, baseAtk, category } = itemInfo
+  const { displayStars, mainStat, category } = itemInfo
   return (
     <Container isItemView displayed={!(displayedItem === 'stats')}>
       <span className='layoutControl'>
         <ArrowIcon onClick={() => setDisplayed('stats')} />
         <p>
           {type}
-          {displayedItem === 'view' ? `(View)` : `(Selected)`}
+          {isViewMode ? `(View)` : `(Selected)`}
         </p>
       </span>
       <ItemInfo>
@@ -79,16 +82,16 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
         className='title'>
         {name}
       </a>
-      {type === 'Artifact' ? (
-        <ArtifactMainStat slot={item.slot} />
+      {type === 'Artifact' && !isViewMode && mainStatIsEditable ? (
+        <ArtifactMainStat slot={slotKey} mainStatIsEditable />
       ) : (
-        <MainStat>ATK {baseAtk}</MainStat>
+        <MainStat>{mainStat}</MainStat>
       )}
       {type === 'Weapon' && (
         <MainStat>{`${itemInfo.secondaryType} ${itemInfo.subStat}`}</MainStat>
       )}
       {type === 'Character' && (
-        <Talent name={item.talent} editable={displayedItem !== 'view'} />
+        <Talent name={item.talent} editable={!isViewMode} />
       )}
       {type === 'Weapon' && item.passive !== 'None' && (
         <>
@@ -105,22 +108,23 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
 
 const Talent = ({ editable, name }) => {
   const { talentLevel, setTalent, data } = useContext(ItemsContext)
-  const [level, setlevel] = useState(talentLevel)
+  const [level, setLevel] = useState(talentLevel)
   const checkInput = () => {
     if (level < 1 || level > 15) {
-      setlevel(talentLevel)
+      setLevel(talentLevel)
     } else {
       setTalent(level)
     }
   }
   const handleInput = ({ target }) => {
-    setlevel(target.value)
+    setLevel(target.value)
   }
 
   const handleButtons = operation => {
     const newLevel =
       operation === 'increase' ? talentLevel + 1 : talentLevel - 1
     setTalent(newLevel)
+    setLevel(newLevel)
   }
 
   return (

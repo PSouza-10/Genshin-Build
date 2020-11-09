@@ -5,9 +5,9 @@ export const FilterContext = createContext({})
 
 export default function FilterProvider({ children }) {
   const [selectedFilter, setFilter] = useState({
-    characters: 'All',
-    weapons: 'All',
-    artifacts: 'All'
+    characters: ['All'],
+    weapons: ['All'],
+    artifacts: ['All']
   })
   const { data } = useContext(ItemsContext)
   const { artifactSets, characterSets, weaponSets } = data
@@ -20,44 +20,61 @@ export default function FilterProvider({ children }) {
 
   const [list, setList] = useState(initialListState)
 
-  const changeDisplayedItems = (set, category) => {
-    const arrayOfSetItems = Object.keys(set).map(key => {
-      const item = data[category].find(({ id }) => set[key] === id)
-      return item
+  const changeDisplayedItems = (set, filter = [], category) => {
+    let arrayOfSetItems = []
+    Object.keys(set).forEach(key => {
+      if (filter.includes(key)) {
+        console.log(set[key].items)
+        const ids = Object.keys(set[key].items).map(
+          itemKey => set[key].items[itemKey]
+        )
+        const items = data[category].filter(({ id }) => ids.includes(id))
+        arrayOfSetItems = [...arrayOfSetItems, ...items]
+      }
     })
-
-    setList({
-      ...list,
-      [category]: arrayOfSetItems
-    })
+    return arrayOfSetItems
   }
 
-  const handleFilterSelect = (newFilter, tab) => {
-    if (newFilter !== 'All') {
-      let setCategory = {}
+  const handleFilterSelect = (newFilter = [], tab) => {
+    if (newFilter !== []) {
+      if (!newFilter.includes('All')) {
+        let setCategory = {}
 
-      switch (tab) {
-        case 'characters':
-          setCategory = characterSets
-          break
-        case 'weapons':
-          setCategory = weaponSets
-          break
-        case 'artifacts':
-          setCategory = artifactSets
-          break
-        default:
-          setCategory = {}
+        switch (tab) {
+          case 'characters':
+            setCategory = characterSets
+            break
+          case 'weapons':
+            setCategory = weaponSets
+            break
+          case 'artifacts':
+            setCategory = artifactSets
+            break
+          default:
+            setCategory = {}
+        }
+
+        const newList = changeDisplayedItems(setCategory, newFilter, tab)
+
+        setList({
+          ...list,
+          [tab]: newList
+        })
+      } else {
+        setList({ ...list, [tab]: initialListState[tab] })
       }
-
-      changeDisplayedItems(setCategory[newFilter].items, tab)
+      setFilter({
+        ...selectedFilter,
+        [tab]: newFilter
+      })
     } else {
-      setList(initialListState)
+      setList({
+        ...list,
+        [tab]: []
+      })
+
+      console.log(list)
     }
-    setFilter({
-      ...selectedFilter,
-      [tab]: newFilter
-    })
   }
 
   return (

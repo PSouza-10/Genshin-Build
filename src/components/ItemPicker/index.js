@@ -26,12 +26,13 @@ export function ItemPicker() {
       <Items>
         <Search tab={selectedTab} query={query} setQuery={setQuery} />
         <div className='itemTable'>
-          {list[selectedTab].map(
-            item =>
-              (item.name.toLowerCase().includes(query) || query === '') && (
-                <Item key={item.id} item={item} />
-              )
-          )}
+          {list[selectedTab] !== [] &&
+            list[selectedTab].map(
+              item =>
+                (item.name.toLowerCase().includes(query) || query === '') && (
+                  <Item key={item.id} item={item} />
+                )
+            )}
         </div>
       </Items>
     </Container>

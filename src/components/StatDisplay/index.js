@@ -15,7 +15,8 @@ export function StatDisplay() {
     weaponAtk,
     artifactsAtk,
     totalAtkPerc,
-    totalAtk
+    totalAtk,
+    damage
   } = stats
   const items = {
     ...selectedItems,
@@ -30,6 +31,7 @@ export function StatDisplay() {
         setDisplayed={setDisplayed}
       />
       <Container>
+        <MainStat>Damage {damage}</MainStat>
         <MainStat>Total ATK {totalAtk}</MainStat>
         <MainStat>Character ATK {characterAtk}</MainStat>
         <MainStat>Weapon ATK {weaponAtk.main}</MainStat>

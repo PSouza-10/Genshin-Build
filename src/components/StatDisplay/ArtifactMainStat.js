@@ -2,22 +2,22 @@ import React, { useState, useContext } from 'react'
 import styled, { css } from 'styled-components'
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import { StatContext } from '../../StatContext'
-export default function ArtifactMainStat({ slot }) {
+
+export default function ArtifactMainStat({ slot, mainStatIsEditable }) {
   const { artifactsAtk, setMainStat } = useContext(StatContext)
   const [open, setOpen] = useState(false)
   const toggle = () => {
     setOpen(!open)
   }
-  const slotKey = slot.toLowerCase().split(' ')[0]
-  const mainStatIsEditable = !['flower', 'plume'].includes(slotKey)
+
   const uniqueStats = {
-    'Sands of Eon': ['Energy Recharge%'],
-    'Goblet of Eonothem': ['Elemental DMG%', 'Physical DMG%'],
-    'Circlet of Logos': ['Crit DMG%', 'Crit Rate%', 'Healing Bonus%']
+    sands: ['Energy Recharge%'],
+    goblet: ['Elemental DMG%', 'Physical DMG%'],
+    circlet: ['Crit DMG%', 'Crit Rate%', 'Healing Bonus%']
   }
 
   const handleSelect = value => {
-    setMainStat(slotKey, value)
+    setMainStat(slot, value)
     toggle()
   }
 
@@ -27,13 +27,14 @@ export default function ArtifactMainStat({ slot }) {
     possibleStats = [...possibleStats, ...uniqueStats[slot]]
   }
 
+  const { main, mainType } = artifactsAtk[slot]
   return (
     <Wrapper>
       <Bar
         onClick={() => mainStatIsEditable && toggle()}
         open={open}
         isEditable={mainStatIsEditable}>
-        <span>{`${artifactsAtk[slotKey].mainType} ${artifactsAtk[slotKey].main}`}</span>
+        <span>{`${mainType} ${main}`}</span>
 
         {
           <span className='close' onClick={toggle}>
@@ -46,7 +47,7 @@ export default function ArtifactMainStat({ slot }) {
           {possibleStats.map((item, index) => (
             <Item
               key={index}
-              selected={artifactsAtk[slotKey].mainType === item}
+              selected={mainType === item}
               onClick={() => handleSelect(item)}>
               {item}
             </Item>
@@ -61,16 +62,12 @@ const Wrapper = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
-  background-color: var(--bgPrimary);
-  margin: 20px 20px;
-  max-height: 72px;
   font-size: 1.4rem;
   z-index: 7;
+  margin: 12px 12px;
 `
 
 const ArrowIcon = styled(MdKeyboardArrowDown)`
-  height: 30px;
-  width: 30px;
   fill: inherit;
   transition: transform 0.2s ease;
   ${({ open }) =>
@@ -80,48 +77,44 @@ const ArrowIcon = styled(MdKeyboardArrowDown)`
     `}
 `
 const Bar = styled.div`
-  position: absolute;
+  position: relative;
   z-index: 7;
   display: flex;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  padding: 12px 12px;
 
-  padding: 25px 15px;
   justify-content: space-between;
   align-items: center;
   background-color: var(--bgPrimary);
+
+  font-weight: 550;
+
   .close {
-    display: ${({ isEditable }) => !isEditable && 'none'};
+    display: flex;
     fill: var(--primary);
+    align-items: center;
     cursor: pointer;
     transition: color 0.2s ease;
+
     &:hover {
       fill: white;
     }
   }
-
-  ${({ open }) =>
-    open &&
-    css`
-      .close {
-        display: initial;
-      }
-    `}
 `
 const Items = styled.ul`
   visibility: ${({ open }) => (open ? 'visible' : 'hidden')};
-  height: ${({ open }) => (open ? '250px' : '0')};
-  overflow: scroll;
+  max-height: ${({ open }) => (open ? '250px' : '0')};
+  overflow: ${({ open }) => (open ? 'scroll' : 'hidden')};
   color: ${({ open }) => (open ? 'var(--primary)' : 'rgba(0,0,0,0)')};
   transition: all 0.3s ease;
   background-color: var(--bgPrimary);
   position: absolute;
-  top: 0;
+  top: 55px;
   left: 0;
   right: 0;
-  padding-top: 55px;
   z-index: 6;
 
   &::-webkit-scrollbar {

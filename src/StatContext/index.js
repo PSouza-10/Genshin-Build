@@ -4,7 +4,8 @@ import {
   calculateCharacterAtk,
   createNewArtifacts,
   calculateWeaponStats,
-  calculateAtkPower
+  calculateAtkPower,
+  calculateDamage
 } from './statCalculations'
 const initialState = {
   damage: 0,
@@ -58,7 +59,7 @@ const calculateTotalAtkPerc = (artifacts, weaponAtk) => {
 export const StatContext = createContext(initialState)
 
 export default function StatProvider({ children }) {
-  const { selectedItems } = useContext(ItemsContext)
+  const { selectedItems, talentLevel, data } = useContext(ItemsContext)
   const { character, weapon } = selectedItems
 
   const [characterAtk, setCharacterAtk] = useState(0)
@@ -74,7 +75,7 @@ export default function StatProvider({ children }) {
   const [totalAtkPerc, setTotalAtkPerc] = useState(0)
 
   const [totalAtk, setTotalAtk] = useState(0)
-
+  const [damage, setDamage] = useState(0)
   useEffect(() => {
     const newArtifacts = createNewArtifacts(artifactsAtk, selectedItems)
     setArtifactAtk(newArtifacts)
@@ -126,6 +127,14 @@ export default function StatProvider({ children }) {
     setTotalAtkPerc(calculateTotalAtkPerc(artifactsAtk, weaponAtk))
   }, [weaponAtk, artifactsAtk])
 
+  useEffect(() => {
+    const { id, talent } = selectedItems.character
+    if (id) {
+      setDamage(
+        calculateDamage(totalAtk, data.talents[talent][talentLevel - 1])
+      )
+    }
+  }, [totalAtk, talentLevel, data.talents, selectedItems])
   function setMainStat(slot = 'sands', stat = 'ATK%') {
     const withNewStat = {
       ...artifactsAtk,
@@ -146,6 +155,7 @@ export default function StatProvider({ children }) {
         artifactsAtk,
         totalAtkPerc,
         totalAtk,
+        damage,
         setMainStat
       }}>
       {children}

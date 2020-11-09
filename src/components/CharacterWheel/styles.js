@@ -138,10 +138,10 @@ export const ClearIcon = styled(FaTrash)`
   position: absolute;
   top: 12px;
   left: 12px;
+  transition: fill 0.3s ease;
   &:hover {
     fill: var(--negative);
   }
-  transition: background-color 0.2s ease;
 `
 export const Image = styled.img`
   width: 45px;

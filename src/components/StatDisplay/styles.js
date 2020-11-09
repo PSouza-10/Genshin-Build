@@ -23,6 +23,7 @@ export const Container = styled.div`
       overflow: hidden;
       z-index: 15;
       height: 100%;
+      box-shadow: 0 -6px 5px rgba(0,0,0,0.6);
       
       @media (max-width: 576px) {
         width: ${displayed ? `100%` : '0'};

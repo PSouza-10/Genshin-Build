@@ -19,16 +19,25 @@ export default function Filter({ tab }) {
     artifacts: artifactSets
   }
   const handleSelect = value => {
-    handleFilterSelect(value, tab)
-    toggle()
+    if (!selectedFilter[tab].includes(value)) {
+      handleFilterSelect([...selectedFilter[tab], value], tab)
+    } else {
+      const newFilter = selectedFilter[tab].filter(item => item !== value)
+      console.log(newFilter)
+      handleFilterSelect(newFilter, tab)
+    }
   }
+  const filterString = selectedFilter[tab]
+    .join(', ')
+    .slice(0, window.innerWidth > 576 ? 42 : 14)
 
   return (
     <>
       <FilterIcon onClick={toggle} />
       <FilterWrapper>
         <FilterBar onClick={toggle} open={open}>
-          {selectedFilter[tab]}{' '}
+          {filterString}
+          {filterString.length > (window.innerWidth > 576 ? 41 : 13) && '...'}
           <span className='close' onClick={toggle}>
             &times;
           </span>
@@ -37,11 +46,15 @@ export default function Filter({ tab }) {
           <span className='close' onClick={toggle}>
             &times;
           </span>
-          <FilterItem onClick={() => handleSelect('All')}>All</FilterItem>
+          <FilterItem
+            onClick={() => handleSelect('All')}
+            selected={selectedFilter[tab].includes('All')}>
+            All
+          </FilterItem>
           {Object.keys(sets[tab]).map((item, index) => (
             <FilterItem
               key={index}
-              selected={selectedFilter === item}
+              selected={selectedFilter[tab].includes(item)}
               onClick={() => handleSelect(item)}>
               {item}
             </FilterItem>
@@ -58,7 +71,7 @@ const FilterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  z-index: 10;
+
   @media (max-width: 576px) {
     position: static;
     flex-basis: 70%;
@@ -69,6 +82,12 @@ const FilterBar = styled.span`
   border-radius: 1em;
   padding: 2.5px 15px;
   position: relative;
+
+  z-index: 11;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: transparent;
   border: 1px solid var(--outline);
   display: flex;
@@ -90,17 +109,22 @@ const FilterBar = styled.span`
   ${({ open }) =>
     open &&
     css`
-      border: none;
-      background-color: transparent;
+      border-radius: 1em 1em 0 0;
+      border-color: var(--primary);
+      border-bottom: none;
+      background-color: var(--bgSecondary);
       .close {
         display: initial;
       }
     `}
-  z-index: 10;
+
   @media (max-width: 576px) {
     position: static;
+    top: 0;
     z-index: 0;
     padding-right: 0;
+
+    max-height: 30px;
     .close {
       display: none;
     }
@@ -110,31 +134,41 @@ const FilterBar = styled.span`
 const FilterItems = styled.ul`
   visibility: ${({ open }) => (open ? 'visible' : 'hidden')};
   height: ${({ open }) => (open ? '200px' : '0')};
-  overflow: hidden;
+  overflow: ${({ open }) => (open ? 'scroll' : 'hidden')};
   color: ${({ open }) => (open ? 'var(--primary)' : 'rgba(0,0,0,0)')};
-  transition: all 0.3s ease;
-  background-color: var(--bgSecondary);
+  border-radius: 0 0 1em 1em;
+
+  transition: height 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+  background-color: ${({ open }) =>
+    open ? 'var(--bgSecondary)' : 'transparent'};
+  opacity: ${({ open }) => (open ? '1' : '0')};
 
   &::-webkit-scrollbar {
     display: none;
   }
   position: absolute;
-  width: 100%;
-  border-radius: 1em;
-  overflow-y: scroll;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+  top: 22px;
+  right: 0;
+
   border: 1px solid var(--primary);
-  padding-top: 28px;
+  border-top: none;
+  padding-top: 6px;
+
   .close {
     display: none;
   }
   @media (max-width: 576px) {
     width: ${({ open }) => (open ? `100%` : '0')};
     position: fixed;
+
+    height: 100%;
     left: 0;
     bottom: 0;
     top: 0;
-    height: 100%;
-
+    right: 0;
     z-index: 15;
     border: none;
     border-radius: initial;
@@ -155,6 +189,7 @@ const FilterItem = styled.li`
     background-color: var(--bgPrimary);
   }
   padding: 2px 17px;
+  padding-left: 20px;
   ${({ selected }) =>
     selected &&
     css`
