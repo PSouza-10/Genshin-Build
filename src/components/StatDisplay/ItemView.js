@@ -13,7 +13,7 @@ import {
   TalentContainer,
   IconButton
 } from './styles'
-import ArtifactMainStat from './ArtifactMainStat'
+import { ArtifactMainStat, ArtifactSubStats } from './ArtifactStatComponents'
 
 import { FaMinus, FaPlus } from 'react-icons/fa'
 
@@ -86,6 +86,13 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
         <ArtifactMainStat slot={slotKey} mainStatIsEditable />
       ) : (
         <MainStat>{mainStat}</MainStat>
+      )}
+      {type === 'Artifact' && !isViewMode && (
+        <ArtifactSubStats
+          subStats={itemInfo.subStats}
+          slot={slotKey}
+          mainStatType={stats.artifactsAtk[slotKey].mainType}
+        />
       )}
       {type === 'Weapon' && (
         <MainStat>{`${itemInfo.secondaryType} ${itemInfo.subStat}`}</MainStat>

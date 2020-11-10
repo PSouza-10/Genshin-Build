@@ -54,13 +54,15 @@ export function calculateCharacterAtk({
 
 export function calculateArtifactStats(
   { stars = 0, slot, level },
-  mainType = 'ATK%'
+  mainType = 'ATK%',
+  currentSubStats
 ) {
+  console.log(currentSubStats)
   const { mult, base } = artifactIncreases[stars.toString()][mainType]
 
   let increase = level * (base * mult)
   let newMain = base
-  let newSub = []
+  let newSub = currentSubStats
 
   if (level > 0) {
     if (['Plume of Death', 'Flower of Life'].includes(slot)) {
@@ -122,6 +124,7 @@ export function calculateWeaponStats({
 }
 
 export const createNewArtifacts = (artifactsAtk, selected) => {
+  console.log(artifactsAtk)
   let newArtifacts = Object.assign({}, artifactsAtk)
   let selectedCopy = Object.assign({}, selected)
   let { character, weapon, ...artifacts } = selectedCopy
@@ -142,7 +145,8 @@ export const createNewArtifacts = (artifactsAtk, selected) => {
       ) {
         const { newMain, newSub } = calculateArtifactStats(
           selectedCopy[key],
-          newArtifacts[key].mainType
+          newArtifacts[key].mainType,
+          newArtifacts[key].sub
         )
 
         newArtifacts = {
@@ -153,7 +157,7 @@ export const createNewArtifacts = (artifactsAtk, selected) => {
             upgrade: stars,
             id,
             main: newMain,
-            sub: newSub,
+            sub: newSub === [] ? newArtifacts[key].sub : newSub,
             mainType: newArtifacts[key].mainType
           }
         }
@@ -166,12 +170,13 @@ export const createNewArtifacts = (artifactsAtk, selected) => {
           level,
           upgrade: stars,
           main: 0,
-          sub: [],
+          sub: newArtifacts[key].sub,
           mainType: newArtifacts[key].mainType
         }
       }
     }
     return null
   })
+  console.log(newArtifacts)
   return newArtifacts
 }

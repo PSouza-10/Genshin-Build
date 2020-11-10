@@ -75,9 +75,23 @@ export function formatEditMode(item, data, stats) {
     } else {
       statString = `ATK ${correspondingStats[type]}`
     }
+    let subStats = []
+    if (type === 'Artifact') {
+      let artifactSubStats = correspondingStats[type].sub.map(stats => stats)
+
+      artifactSubStats.forEach(({ type, value }) => {
+        let valueString = '+' + type.replace('%', '') + ' ' + value.toString()
+        if (type.includes('%')) {
+          valueString = valueString + '%'
+        }
+        subStats.push(valueString)
+      })
+      newInfo.subStats = subStats
+    }
 
     newInfo = {
       ...item,
+      ...newInfo,
       mainStat: statString,
       displayStars: type === 'Artifact' ? stars : rarity
     }

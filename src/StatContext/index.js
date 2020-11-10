@@ -32,7 +32,20 @@ const generateInitialArtifactState = (selectedItems = {}) => {
       level,
       upgrade: stars,
       main: 0,
-      sub: [],
+      sub: [
+        {
+          type: 'CRIT Rate%',
+          value: 2.7
+        },
+        {
+          type: 'CRIT DMG%',
+          value: 5.4
+        },
+        {
+          type: 'Elemental Mastery',
+          value: 16
+        }
+      ],
       mainType
     }
   })
@@ -147,6 +160,62 @@ export default function StatProvider({ children }) {
     setArtifactAtk(newArtifacts)
   }
 
+  useEffect(() => {
+    let artifactsFlatATK = 0
+    Object.keys(artifactsAtk).forEach(key => {
+      let item = artifactsAtk[key]
+      if (item.id) {
+        if (key === 'plume') {
+          artifactsFlatATK += item.main
+        }
+
+        item.sub.forEach(({ type, value }) => {
+          if (type === 'ATK') {
+            artifactsFlatATK += value
+          }
+        })
+      }
+    })
+    setFlatAtk(artifactsFlatATK)
+  }, [artifactsAtk, setFlatAtk])
+  function handleSubStats(action, value, slot, subStatIndex = 0) {
+    if (action === 'add') {
+      const newSubStats = [...artifactsAtk[slot].sub, value]
+      setArtifactAtk(previousValue => {
+        return {
+          ...previousValue,
+          [slot]: {
+            ...previousValue[slot],
+            sub: newSubStats
+          }
+        }
+      })
+    } else if (action === 'remove') {
+      setArtifactAtk(previousValue => {
+        return {
+          ...previousValue,
+          [slot]: {
+            ...previousValue[slot],
+            sub: previousValue[slot].sub.filter(
+              (obj, index) => index !== subStatIndex
+            )
+          }
+        }
+      })
+    } else if (action === 'edit') {
+      let newSubStats = [...artifactsAtk[slot].sub]
+      newSubStats[subStatIndex] = value
+      setArtifactAtk(previousValue => {
+        return {
+          ...previousValue,
+          [slot]: {
+            ...previousValue[slot],
+            sub: newSubStats
+          }
+        }
+      })
+    }
+  }
   return (
     <StatContext.Provider
       value={{
@@ -156,7 +225,8 @@ export default function StatProvider({ children }) {
         totalAtkPerc,
         totalAtk,
         damage,
-        setMainStat
+        setMainStat,
+        handleSubStats
       }}>
       {children}
     </StatContext.Provider>
