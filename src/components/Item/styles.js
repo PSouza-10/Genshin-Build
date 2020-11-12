@@ -3,7 +3,7 @@ import { Anemo, Cryo, Geo, Electro, Hydro, Pyro } from '../../assets/icons'
 
 export const Wrapper = styled.span`
   position: relative;
-  z-index: 2;
+  z-index: 0;
   margin-right: 10px;
   cursor: pointer;
   height: 60px;
@@ -29,7 +29,7 @@ export const Wrapper = styled.span`
         `}
 `
 export const Image = styled.img`
-  z-index: 1;
+  z-index: 0;
   max-height: 100%;
   max-width: 100%;
   height: 100%;

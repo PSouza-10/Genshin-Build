@@ -39,16 +39,16 @@ export function copyLink() {
   document.execCommand('copy')
 }
 
-export function downloadFile(selectedItems, totalAtk) {
+export function downloadFile(selectedItems, artifactsAtk, totalAtk) {
   let charName = selectedItems.character.id ? selectedItems.character.name : ''
   var dataStr =
     'data:text/json;charset=utf-8,' +
-    encodeURIComponent(JSON.stringify(selectedItems))
+    encodeURIComponent(JSON.stringify({ selectedItems, artifactsAtk }))
   var dlAnchorElem = document.getElementById('downloadAnchorElem')
   dlAnchorElem.setAttribute('href', dataStr)
   dlAnchorElem.setAttribute(
     'download',
-    `${charName || ''}${totalAtk}ATK-build.json`
+    `${charName || ''}${totalAtk}DMG-build.json`
   )
   dlAnchorElem.click()
 }

@@ -207,6 +207,9 @@ export default function ItemsProvider({ children }) {
 
   function clearItems() {
     selectItem(initialState.selectedItems)
+    if (displayedItem !== 'view') {
+      setDisplayed('stats')
+    }
   }
 
   function dataFromUrl(string) {

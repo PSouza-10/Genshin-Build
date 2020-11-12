@@ -16,6 +16,7 @@ export default function LoadFile() {
   const [fileName, setFileName] = useState('Select')
   const { selectItem } = useContext(ItemsContext)
   const { sendMessage } = useContext(MessageContext)
+  const { setArtifactAtk } = useContext(MessageContext)
   const handleModal = () => {
     setOpen(!modalOpen)
   }
@@ -40,7 +41,8 @@ export default function LoadFile() {
     }
   }
   const handleUpload = () => {
-    selectItem(fileData)
+    selectItem(fileData.selectedItems)
+    setArtifactAtk(fileData.artifactsAtk)
   }
 
   return (

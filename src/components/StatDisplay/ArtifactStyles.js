@@ -118,8 +118,11 @@ export const SubStatDropdown = styled.div`
     }
     .value {
       font-size: 1.2rem;
-      flex-basis: 20%;
+      width: 40px;
+      background-color: transparent;
       font-weight: 550;
+      border: none;
+     
     }
     .buttons {
       display: flex;

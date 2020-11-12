@@ -20,11 +20,26 @@ export default function FilterProvider({ children }) {
 
   const [list, setList] = useState(initialListState)
 
-  const changeDisplayedItems = (set, filter = [], category) => {
+  const changeDisplayedItems = (filter = [], category) => {
+    let set = {}
+
+    switch (category) {
+      case 'characters':
+        set = characterSets
+        break
+      case 'weapons':
+        set = weaponSets
+        break
+      case 'artifacts':
+        set = artifactSets
+        break
+      default:
+        set = {}
+    }
+
     let arrayOfSetItems = []
     Object.keys(set).forEach(key => {
       if (filter.includes(key)) {
-        console.log(set[key].items)
         const ids = Object.keys(set[key].items).map(
           itemKey => set[key].items[itemKey]
         )
@@ -37,43 +52,36 @@ export default function FilterProvider({ children }) {
 
   const handleFilterSelect = (newFilter = [], tab) => {
     if (newFilter !== []) {
-      if (!newFilter.includes('All')) {
-        let setCategory = {}
-
-        switch (tab) {
-          case 'characters':
-            setCategory = characterSets
-            break
-          case 'weapons':
-            setCategory = weaponSets
-            break
-          case 'artifacts':
-            setCategory = artifactSets
-            break
-          default:
-            setCategory = {}
-        }
-
-        const newList = changeDisplayedItems(setCategory, newFilter, tab)
+      if (newFilter[0] === 'All') {
+        setList({
+          ...list,
+          [tab]: initialListState[tab]
+        })
+        setFilter({
+          ...selectedFilter,
+          [tab]: ['All']
+        })
+      } else {
+        const newList = changeDisplayedItems(newFilter, tab)
 
         setList({
           ...list,
           [tab]: newList
         })
-      } else {
-        setList({ ...list, [tab]: initialListState[tab] })
+        setFilter({
+          ...selectedFilter,
+          [tab]: newFilter.filter(filter => filter !== 'All')
+        })
       }
-      setFilter({
-        ...selectedFilter,
-        [tab]: newFilter
-      })
     } else {
       setList({
         ...list,
-        [tab]: []
+        [tab]: initialListState[tab]
       })
-
-      console.log(list)
+      setFilter({
+        ...selectedFilter,
+        [tab]: ['All']
+      })
     }
   }
 

@@ -23,7 +23,7 @@ import {
 } from './shareFunctions'
 export function Header() {
   const [shareModal, setShareModal] = useState(false)
-  const { totalAtk } = useContext(StatContext)
+  const { damage, artifactsAtk } = useContext(StatContext)
   const { selectedItems, didMount } = useContext(ItemsContext)
   const [link, setLink] = useState(window.location.href)
   const [linkState, setLinkState] = useState('Copy Link')
@@ -62,7 +62,7 @@ export function Header() {
               className='shareOption'
               name='chooseApp'
               onClick={() =>
-                selectApp(link, selectedItems.character, totalAtk)
+                selectApp(link, selectedItems.character, damage.normal)
               }>
               <ChooseApp className='icon' />
               <h3>Choose App</h3>
@@ -84,7 +84,9 @@ export function Header() {
             <div
               className='shareOption'
               name='download'
-              onClick={() => downloadFile(selectedItems, totalAtk)}>
+              onClick={() =>
+                downloadFile(selectedItems, artifactsAtk, damage.normal)
+              }>
               <DownloadJson className='icon' />
               <h3>Download file</h3>
               <a id='downloadAnchorElem' href='/#' style={{ display: 'none' }}>

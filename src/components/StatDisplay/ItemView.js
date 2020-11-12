@@ -89,7 +89,6 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
       )}
       {type === 'Artifact' && !isViewMode && (
         <ArtifactSubStats
-          subStats={itemInfo.subStats}
           slot={slotKey}
           mainStatType={stats.artifactsAtk[slotKey].mainType}
         />

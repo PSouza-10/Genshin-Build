@@ -59,6 +59,7 @@ export const Container = styled.div`
     word-wrap: normal;
     text-align: justify;
     padding: 20px;
+    color: white;
   }
   @media (max-width: 576px) {
     ${({ isItemView }) =>
@@ -88,6 +89,17 @@ export const MainStat = styled.span`
   background-color: var(--bgPrimary);
   font-size: 1.4rem;
   font-weight: 550;
+
+  ${({ clickable }) =>
+    clickable &&
+    css`
+      cursor: pointer;
+      transition: all 0.2s ease;
+      &:hover {
+        background-color: var(--primary);
+        color: var(--bgPrimary);
+      }
+    `}
 `
 export const ItemInfo = styled.div`
   display: flex;
@@ -203,6 +215,94 @@ export const TalentContainer = styled.div`
       text-align: center;
       padding: 15px 0;
       flex: 1;
+    }
+  }
+`
+
+export const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  visibility: ${({ overlayIsVisible }) =>
+    overlayIsVisible ? 'visible' : 'hidden'};
+  opacity: ${({ overlayIsVisible }) => (overlayIsVisible ? '1' : '0')};
+  transition: all 0.2s ease;
+  z-index: 950;
+`
+
+export const DamageModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  top: 10vh;
+  bottom: 10vh;
+  left: 10vw;
+  right: 10vw;
+  position: fixed;
+  z-index: 951;
+  background-color: var(--bgSecondary);
+
+  visibility: ${({ open }) => (open ? 'visible' : 'hidden')};
+  opacity: ${({ open }) => (open ? '1' : '0')};
+  transition: all 0.2s ease;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    background-color: var(--bgPrimary);
+    h1 {
+      padding-left: 20px;
+    }
+    .layoutControl {
+      transition: all 0.2s ease;
+      align-self: stretch;
+      padding: 5px 5px;
+      background-color: var(--bgPrimary);
+      fill: var(--primary);
+      cursor: pointer;
+      svg {
+        fill: inherit;
+        height: 40px;
+        width: 40px;
+      }
+      &:hover {
+        background-color: var(--primary);
+        fill: var(--bgPrimary);
+      }
+    }
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .enemyLevel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bgPrimary);
+    p {
+      font-size: 1.3rem;
+    }
+    span {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-basis: 15%;
+      padding: 5px;
+      @media (max-width: 576px) {
+        flex: 1;
+      }
+    }
+    input {
+      background-color: transparent;
+      border: none;
+      width: 13px;
+      text-align: center;
+      font-size: 1.5rem;
     }
   }
 `

@@ -19,12 +19,19 @@ export default function Filter({ tab }) {
     artifacts: artifactSets
   }
   const handleSelect = value => {
-    if (!selectedFilter[tab].includes(value)) {
-      handleFilterSelect([...selectedFilter[tab], value], tab)
+    if (value !== 'All') {
+      if (!selectedFilter[tab].includes(value)) {
+        handleFilterSelect(
+          [...selectedFilter[tab].filter(val => val !== 'All'), value],
+          tab
+        )
+      } else {
+        const newFilter = selectedFilter[tab].filter(item => item !== value)
+
+        handleFilterSelect(newFilter, tab)
+      }
     } else {
-      const newFilter = selectedFilter[tab].filter(item => item !== value)
-      console.log(newFilter)
-      handleFilterSelect(newFilter, tab)
+      handleFilterSelect(['All'], tab)
     }
   }
   const filterString = selectedFilter[tab]
