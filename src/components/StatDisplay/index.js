@@ -4,6 +4,7 @@ import { ItemsContext } from '../../ItemsContext'
 import ItemView from './ItemView'
 import { StatContext } from '../../StatContext'
 import DamageModal from './DamageModal'
+import { MdKeyboardArrowRight } from 'react-icons/md'
 export function StatDisplay() {
   const { selectedItems, displayedItem, setDisplayed, view } = useContext(
     ItemsContext
@@ -44,10 +45,12 @@ export function StatDisplay() {
       />
       <Container>
         <MainStat onClick={handleDamageModal} clickable>
-          Damage {damage.normal}
+          <span>Damage {damage.normal}</span>
+          <MdKeyboardArrowRight />
         </MainStat>
         <MainStat onClick={handleDamageModal} clickable>
-          Crit Damage {damage.crit}
+          <span>Crit Damage {damage.crit}</span>
+          <MdKeyboardArrowRight />
         </MainStat>
         <MainStat>Total ATK {totalAtk}</MainStat>
         <MainStat>Character ATK {characterAtk}</MainStat>

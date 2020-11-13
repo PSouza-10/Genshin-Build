@@ -12,6 +12,56 @@ import {
 } from '../../assets/icons'
 import React from 'react'
 
+export const Message = styled.div`
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3rem;
+  background-color: var(--bgPrimary);
+  z-index: 999;
+  padding: 20px 40px;
+  h3 {
+    text-align: center;
+    max-width: 300px;
+    word-wrap: normal;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+
+    button {
+      transition: all 0.2s ease;
+      border: 2px solid var(--primary);
+      padding: 10px 25px;
+      background-color: transparent;
+      font-size: 1.2rem;
+      cursor: pointer;
+      &:hover {
+        font-weight: 560;
+        background-color: var(--primary);
+        color: var(--bgPrimary);
+      }
+    }
+  }
+  transition: all 0.3s ease;
+  ${({ open }) =>
+    open
+      ? css`
+          visibility: visible;
+          transform: translateY(0);
+          opacity: 1;
+        `
+      : css`
+          visibility: hidden;
+          transform: translateY(150%);
+          opacity: 0;
+        `}
+`
+
 export const Container = styled.div`
   display: flex;
   align-items: stretch;

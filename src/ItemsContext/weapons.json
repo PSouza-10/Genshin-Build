@@ -9,7 +9,7 @@
     "passive": "Blackwing",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Skyward_Spine",
     "type": "Weapon",
-    "secondaryBase": 14.1,
+    "secondaryBase": 8.0,
     "category": "Polearm"
   },
   {
@@ -22,7 +22,7 @@
     "passive": "Sky-Piercing Fang",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Skyward_Blade",
     "type": "Weapon",
-    "secondaryBase": 21.2,
+    "secondaryBase": 12.0,
     "category": "Sword"
   },
   {
@@ -35,7 +35,7 @@
     "passive": "Wandering Clouds",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Skyward_Atlas",
     "type": "Weapon",
-    "secondaryBase": 12.7,
+    "secondaryBase": 7.2,
     "category": "Catalyst"
   },
   {
@@ -48,7 +48,7 @@
     "passive": "Boundless Blessing",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Lost_Prayer_to_the_Sacred_Winds",
     "type": "Weapon",
-    "secondaryBase": 12.7,
+    "secondaryBase": 7.2,
     "category": "Catalyst"
   },
   {
@@ -61,7 +61,7 @@
     "passive": "Echoing Ballad",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Skyward_Harp",
     "type": "Weapon",
-    "secondaryBase": 8.5,
+    "secondaryBase": 4.8,
     "category": "Bow"
   },
   {
@@ -74,7 +74,7 @@
     "passive": "Eagle Spear of Justice",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Primordial_Jade_Winged-Spear",
     "type": "Weapon",
-    "secondaryBase": 8.5,
+    "secondaryBase": 4.8,
     "category": "Polearm"
   },
   {
@@ -87,7 +87,7 @@
     "passive": "Rainbow-Piercing Stinger",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Kunwu%27s_Iris_Rift",
     "type": "Weapon",
-    "secondaryBase": 19.1,
+    "secondaryBase": 10.8,
     "category": "Polearm"
   },
   {
@@ -100,7 +100,7 @@
     "passive": "Falcon's Defiance",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Aquila_Favonia",
     "type": "Weapon",
-    "secondaryBase": 15.9,
+    "secondaryBase": 9.0,
     "category": "Sword"
   },
   {
@@ -113,7 +113,7 @@
     "passive": "Wolfish Tracker",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Wolf%27s_Gravestone",
     "type": "Weapon",
-    "secondaryBase": 19.1,
+    "secondaryBase": 10.8,
     "category": "Claymore"
   },
   {
@@ -126,7 +126,7 @@
     "passive": "Sky-ripping Dragon Spine",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Skyward_Pride",
     "type": "Weapon",
-    "secondaryBase": 14.1,
+    "secondaryBase": 8.0,
     "category": "Claymore"
   },
   {
@@ -139,7 +139,7 @@
     "passive": "Strong-Willed",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Amos%27_Bow",
     "type": "Weapon",
-    "secondaryBase": 19.1,
+    "secondaryBase": 10.8,
     "category": "Bow"
   },
   {
@@ -152,7 +152,7 @@
     "passive": "Press the Advantage",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Blackcliff_Longsword",
     "type": "Weapon",
-    "secondaryBase": 14.1,
+    "secondaryBase": 8.0,
     "category": "Sword"
   },
   {
@@ -165,7 +165,7 @@
     "passive": "Press the Advantage",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Blackcliff_Pole",
     "type": "Weapon",
-    "secondaryBase": 21.2,
+    "secondaryBase": 12.0,
     "category": "Polearm"
   },
   {
@@ -178,7 +178,7 @@
     "passive": "Bane of Flame and Water",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Dragon%27s_Bane",
     "type": "Weapon",
-    "secondaryBase": 85,
+    "secondaryBase": 48,
     "category": "Polearm"
   },
   {
@@ -191,7 +191,7 @@
     "passive": "Magic Affinity",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Prototype_Grudge",
     "type": "Weapon",
-    "secondaryBase": 17.7,
+    "secondaryBase": 10.0,
     "category": "Polearm"
   },
   {
@@ -204,7 +204,7 @@
     "passive": "Unreturning",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Prototype_Crescent",
     "type": "Weapon",
-    "secondaryBase": 15.9,
+    "secondaryBase": 9.0,
     "category": "Bow"
   },
   {
@@ -217,7 +217,7 @@
     "passive": "Infusion Stinger",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Iron_Sting",
     "type": "Weapon",
-    "secondaryBase": 64,
+    "secondaryBase": 36,
     "category": "Sword"
   },
   {
@@ -230,7 +230,7 @@
     "passive": "Infusion Blade",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Whiteblind",
     "type": "Weapon",
-    "secondaryBase": 20.0,
+    "secondaryBase": 11.3,
     "category": "Claymore"
   },
   {
@@ -243,7 +243,7 @@
     "passive": "Bane of Fire and Thunder",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Lion%27s_Roar",
     "type": "Weapon",
-    "secondaryBase": 15.9,
+    "secondaryBase": 9.0,
     "category": "Sword"
   },
   {
@@ -256,7 +256,7 @@
     "passive": "Smashed Stone",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Prototype_Rancour",
     "type": "Weapon",
-    "secondaryBase": 13.3,
+    "secondaryBase": 7.5,
     "category": "Sword"
   },
   {
@@ -269,7 +269,7 @@
     "passive": "Focus",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Royal_Longsword",
     "type": "Weapon",
-    "secondaryBase": 15.9,
+    "secondaryBase": 9.0,
     "category": "Sword"
   },
   {
@@ -282,7 +282,7 @@
     "passive": "Composed",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Sacrificial_Sword",
     "type": "Weapon",
-    "secondaryBase": 23.6,
+    "secondaryBase": 13.3,
     "category": "Sword"
   },
   {
@@ -295,7 +295,7 @@
     "passive": "Chord",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/The_Flute",
     "type": "Weapon",
-    "secondaryBase": 15.9,
+    "secondaryBase": 9.0,
     "category": "Sword"
   },
   {
@@ -308,7 +308,7 @@
     "passive": "Wavesplitter",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Serpent_Spine",
     "type": "Weapon",
-    "secondaryBase": 10.6,
+    "secondaryBase": 6.0,
     "category": "Claymore"
   },
   {
@@ -321,7 +321,7 @@
     "passive": "Echo",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Eye_of_Perception",
     "type": "Weapon",
-    "secondaryBase": 21.2,
+    "secondaryBase": 12.0,
     "category": "Catalyst"
   },
   {
@@ -334,7 +334,7 @@
     "passive": "Lithic Axiom - Unity",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Lithic_Blade",
     "type": "Weapon",
-    "secondaryBase": 28.3,
+    "secondaryBase": 16.0,
     "category": "Claymore"
   },
   {
@@ -347,7 +347,7 @@
     "passive": "Composed",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Sacrificial_Greatsword",
     "type": "Weapon",
-    "secondaryBase": 11.8,
+    "secondaryBase": 6.7,
     "category": "Claymore"
   },
   {
@@ -360,7 +360,7 @@
     "passive": "Descension",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Sword_of_Descension",
     "type": "Weapon",
-    "secondaryBase": 13.5,
+    "secondaryBase": 7.7,
     "category": "Sword"
   },
   {
@@ -373,7 +373,7 @@
     "passive": "Windfall",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Favonius_Lance",
     "type": "Weapon",
-    "secondaryBase": 11.8,
+    "secondaryBase": 6.7,
     "category": "Polearm"
   },
   {
@@ -386,7 +386,7 @@
     "passive": "Itinerant Hero",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/The_Alley_Flash",
     "type": "Weapon",
-    "secondaryBase": 7.1,
+    "secondaryBase": 4.0,
     "category": "Sword"
   },
   {
@@ -399,7 +399,7 @@
     "passive": "Windfall",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Favonius_Sword",
     "type": "Weapon",
-    "secondaryBase": 23.6,
+    "secondaryBase": 13.3,
     "category": "Sword"
   },
   {
@@ -412,7 +412,7 @@
     "passive": "Urban Guerrilla",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Alley_Hunter",
     "type": "Weapon",
-    "secondaryBase": 14.1,
+    "secondaryBase": 8.0,
     "category": "Bow"
   },
   {
@@ -425,7 +425,7 @@
     "passive": "Lithic Axiom - Subjugating Evil",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Lithic_Spear",
     "type": "Weapon",
-    "secondaryBase": 15.9,
+    "secondaryBase": 9.0,
     "category": "Polearm"
   },
   {
@@ -438,7 +438,7 @@
     "passive": "Justice",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/The_Black_Sword",
     "type": "Weapon",
-    "secondaryBase": 10.6,
+    "secondaryBase": 6.0,
     "category": "Sword"
   },
   {
@@ -451,7 +451,7 @@
     "passive": "Wind in the Square",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Wine_and_Song",
     "type": "Weapon",
-    "secondaryBase": 17.7,
+    "secondaryBase": 10.0,
     "category": "Catalyst"
   },
   {
@@ -464,7 +464,7 @@
     "passive": "Press the Advantage",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Blackcliff_Warbow",
     "type": "Weapon",
-    "secondaryBase": 10.6,
+    "secondaryBase": 8.0,
     "category": "Bow"
   },
   {
@@ -477,7 +477,7 @@
     "passive": "Press the Advantage",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Blackcliff_Slasher",
     "type": "Weapon",
-    "secondaryBase": 21.2,
+    "secondaryBase": 12.0,
     "category": "Claymore"
   },
   {
@@ -490,7 +490,7 @@
     "passive": "Gladiator",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Deathmatch",
     "type": "Weapon",
-    "secondaryBase": 14.1,
+    "secondaryBase": 8.0,
     "category": "Polearm"
   },
   {
@@ -503,7 +503,7 @@
     "passive": "Verdant Wind",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/The_Viridescent_Hunt",
     "type": "Weapon",
-    "secondaryBase": 10.6,
+    "secondaryBase": 6.0,
     "category": "Bow"
   },
   {
@@ -516,7 +516,7 @@
     "passive": "Focus",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Royal_Greatsword",
     "type": "Weapon",
-    "secondaryBase": 10.6,
+    "secondaryBase": 6.0,
     "category": "Claymore"
   },
   {
@@ -529,7 +529,7 @@
     "passive": "Rebellious Guardian",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/The_Bell",
     "type": "Weapon",
-    "secondaryBase": 15.9,
+    "secondaryBase": 9.0,
     "category": "Claymore"
   },
   {
@@ -542,7 +542,7 @@
     "passive": "Infusion Needle",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Crescent_Pike",
     "type": "Weapon",
-    "secondaryBase": 13.3,
+    "secondaryBase": 7.5,
     "category": "Polearm"
   },
   {
@@ -555,7 +555,7 @@
     "passive": "Bane of Storm and Tide",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Rainslasher",
     "type": "Weapon",
-    "secondaryBase": 64,
+    "secondaryBase": 36,
     "category": "Claymore"
   },
   {
@@ -568,7 +568,7 @@
     "passive": "Exorcise",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Blackcliff_Amulet",
     "type": "Weapon",
-    "secondaryBase": 21.2,
+    "secondaryBase": 12.0,
     "category": "Catalyst"
   },
   {
@@ -581,7 +581,7 @@
     "passive": "Focus",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Royal_Grimoire",
     "type": "Weapon",
-    "secondaryBase": 10.6,
+    "secondaryBase": 6.0,
     "category": "Catalyst"
   },
   {
@@ -594,7 +594,7 @@
     "passive": "Composed",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Sacrificial_Fragments",
     "type": "Weapon",
-    "secondaryBase": 85,
+    "secondaryBase": 48,
     "category": "Catalyst"
   },
   {
@@ -607,7 +607,7 @@
     "passive": "Solar Shine",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Solar_Pearl",
     "type": "Weapon",
-    "secondaryBase": 10.6,
+    "secondaryBase": 6.0,
     "category": "Catalyst"
   },
   {
@@ -620,7 +620,7 @@
     "passive": "Debut",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/The_Widsith",
     "type": "Weapon",
-    "secondaryBase": 21.2,
+    "secondaryBase": 12.0,
     "category": "Catalyst"
   },
   {
@@ -633,7 +633,7 @@
     "passive": "Gilding",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Prototype_Malice",
     "type": "Weapon",
-    "secondaryBase": 15.9,
+    "secondaryBase": 9.0,
     "category": "Catalyst"
   },
   {
@@ -646,7 +646,7 @@
     "passive": "Infusion Scroll",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Mappa_Mare",
     "type": "Weapon",
-    "secondaryBase": 42,
+    "secondaryBase": 24,
     "category": "Catalyst"
   },
   {
@@ -659,7 +659,7 @@
     "passive": "Critical Charge",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Favonius_Codex",
     "type": "Weapon",
-    "secondaryBase": 17.7,
+    "secondaryBase": 10.0,
     "category": "Catalyst"
   },
   {
@@ -672,7 +672,7 @@
     "passive": "Composed",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Sacrificial_Bow",
     "type": "Weapon",
-    "secondaryBase": 11.8,
+    "secondaryBase": 6.7,
     "category": "Bow"
   },
   {
@@ -685,7 +685,7 @@
     "passive": "Crush",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Prototype_Aminus",
     "type": "Weapon",
-    "secondaryBase": 10.6,
+    "secondaryBase": 6.0,
     "category": "Claymore"
   },
   {
@@ -698,7 +698,7 @@
     "passive": "Windfall",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Favonius_Greatsword",
     "type": "Weapon",
-    "secondaryBase": 23.6,
+    "secondaryBase": 13.3,
     "category": "Claymore"
   },
   {
@@ -711,7 +711,7 @@
     "passive": "Infusion Arrow",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Compound_Bow",
     "type": "Weapon",
-    "secondaryBase": 26.5,
+    "secondaryBase": 15.0,
     "category": "Bow"
   },
   {
@@ -724,7 +724,7 @@
     "passive": "Windfall",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Favonius_Warbow",
     "type": "Weapon",
-    "secondaryBase": 23.6,
+    "secondaryBase": 13.3,
     "category": "Bow"
   },
   {
@@ -737,7 +737,7 @@
     "passive": "Arrowless Song",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/The_Stringless",
     "type": "Weapon",
-    "secondaryBase": 64,
+    "secondaryBase": 36,
     "category": "Bow"
   },
   {
@@ -750,7 +750,7 @@
     "passive": "Focus",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Royal_Bow",
     "type": "Weapon",
-    "secondaryBase": 15.9,
+    "secondaryBase": 9.0,
     "category": "Bow"
   },
   {
@@ -763,7 +763,7 @@
     "passive": "Rapid Firing",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Rust",
     "type": "Weapon",
-    "secondaryBase": 15.9,
+    "secondaryBase": 9.0,
     "category": "Bow"
   },
   {
@@ -776,7 +776,7 @@
     "passive": "Guerilla Tactic",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Twin_Nephrite",
     "type": "Weapon",
-    "secondaryBase": 6.0,
+    "secondaryBase": 3.4,
     "category": "Catalyst"
   },
   {
@@ -789,7 +789,7 @@
     "passive": "Cull the Weak",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Recurve_Bow",
     "type": "Weapon",
-    "secondaryBase": 18.0,
+    "secondaryBase": 10.2,
     "category": "Bow"
   },
   {
@@ -815,7 +815,7 @@
     "passive": "Gash",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Fillet_Blade",
     "type": "Weapon",
-    "secondaryBase": 13.5,
+    "secondaryBase": 7.7,
     "category": "Sword"
   },
   {
@@ -828,7 +828,7 @@
     "passive": "Bane of Flame and Water",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Raven_Bow",
     "type": "Weapon",
-    "secondaryBase": 36,
+    "secondaryBase": 20,
     "category": "Bow"
   },
   {
@@ -841,7 +841,7 @@
     "passive": "Heavy",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Halberd",
     "type": "Weapon",
-    "secondaryBase": 9.0,
+    "secondaryBase": 5.1,
     "category": "Polearm"
   },
   {
@@ -854,7 +854,7 @@
     "passive": "Energy Shower",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Otherworldly_Story",
     "type": "Weapon",
-    "secondaryBase": 15.0,
+    "secondaryBase": 8.5,
     "category": "Catalyst"
   },
   {
@@ -867,7 +867,7 @@
     "passive": "Archer's Message",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Messenger",
     "type": "Weapon",
-    "secondaryBase": 12.0,
+    "secondaryBase": 6.8,
     "category": "Bow"
   },
   {
@@ -880,7 +880,7 @@
     "passive": "Slingshot",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Slingshot",
     "type": "Weapon",
-    "secondaryBase": 12.0,
+    "secondaryBase": 6.8,
     "category": "Bow"
   },
   {
@@ -893,7 +893,7 @@
     "passive": "Precise",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Sharpshooter%27s_Oath",
     "type": "Weapon",
-    "secondaryBase": 18.0,
+    "secondaryBase": 10.2,
     "category": "Bow"
   },
   {
@@ -906,7 +906,7 @@
     "passive": "Journey",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Traveler%27s_Handy_Sword",
     "type": "Weapon",
-    "secondaryBase": 11.3,
+    "secondaryBase": 6.4,
     "category": "Sword"
   },
   {
@@ -919,7 +919,7 @@
     "passive": "Sharp",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/White_Tassel",
     "type": "Weapon",
-    "secondaryBase": 9.0,
+    "secondaryBase": 5.1,
     "category": "Polearm"
   },
   {
@@ -932,7 +932,7 @@
     "passive": "Determination",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Skyrider_Sword",
     "type": "Weapon",
-    "secondaryBase": 20.0,
+    "secondaryBase": 11.3,
     "category": "Sword"
   },
   {
@@ -945,7 +945,7 @@
     "passive": "Bane of Fire and Thunder",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Bloodtainted_Greatsword",
     "type": "Weapon",
-    "secondaryBase": 72,
+    "secondaryBase": 41,
     "category": "Claymore"
   },
   {
@@ -958,7 +958,7 @@
     "passive": "Elemental Mastery",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Amber_Catalyst",
     "type": "Weapon",
-    "secondaryBase": 0,
+    "secondaryBase": 16,
     "category": "Catalyst"
   },
   {
@@ -971,7 +971,7 @@
     "passive": "Rapids",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Emerald_Orb",
     "type": "Weapon",
-    "secondaryBase": 36,
+    "secondaryBase": 20,
     "category": "Catalyst"
   },
   {
@@ -984,7 +984,7 @@
     "passive": "Bane of Storm and Tide",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Magic_Guide",
     "type": "Weapon",
-    "secondaryBase": 72,
+    "secondaryBase": 41,
     "category": "Catalyst"
   },
   {
@@ -997,7 +997,7 @@
     "passive": "Legacy",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Thrilling_Tales_of_Dragon_Slayers",
     "type": "Weapon",
-    "secondaryBase": 13.5,
+    "secondaryBase": 7.7,
     "category": "Catalyst"
   },
   {
@@ -1010,7 +1010,7 @@
     "passive": "Vigorous",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Harbinger_of_Dawn",
     "type": "Weapon",
-    "secondaryBase": 18.0,
+    "secondaryBase": 10.2,
     "category": "Sword"
   },
   {
@@ -1023,7 +1023,7 @@
     "passive": "Overloaded",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Dark_Iron_Sword",
     "type": "Weapon",
-    "secondaryBase": 54,
+    "secondaryBase": 31,
     "category": "Sword"
   },
   {
@@ -1036,7 +1036,7 @@
     "passive": "Bane of Water and Ice",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Cool_Steel",
     "type": "Weapon",
-    "secondaryBase": 13.5,
+    "secondaryBase": 7.7,
     "category": "Sword"
   },
   {
@@ -1049,7 +1049,7 @@
     "passive": "Courage",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Skyrider_Greatsword",
     "type": "Weapon",
-    "secondaryBase": 16.9,
+    "secondaryBase": 9.6,
     "category": "Claymore"
   },
   {
@@ -1062,7 +1062,7 @@
     "passive": "Residual Heat",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Quartz",
     "type": "Weapon",
-    "secondaryBase": 0,
+    "secondaryBase": 16,
     "category": "Claymore"
   },
   {
@@ -1075,7 +1075,7 @@
     "passive": "Unbending",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Ferrous_Shadow",
     "type": "Weapon",
-    "secondaryBase": 13.5,
+    "secondaryBase": 7.7,
     "category": "Claymore"
   },
   {
@@ -1088,7 +1088,7 @@
     "passive": "Cull the Weak",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/White_Iron_Greatsword",
     "type": "Weapon",
-    "secondaryBase": 16.9,
+    "secondaryBase": 9.6,
     "category": "Claymore"
   },
   {
@@ -1101,7 +1101,7 @@
     "passive": "Bane of the Soft",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Black_Tassel",
     "type": "Weapon",
-    "secondaryBase": 18.0,
+    "secondaryBase": 10.2,
     "category": "Polearm"
   },
   {
@@ -1114,7 +1114,7 @@
     "passive": "Blunt Conclusion",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Debate_Club",
     "type": "Weapon",
-    "secondaryBase": 13.5,
+    "secondaryBase": 7.7,
     "category": "Claymore"
   },
   {

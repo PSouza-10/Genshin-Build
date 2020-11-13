@@ -8,18 +8,9 @@
     "element": "Pyro",
     "weapon": "Bow",
     "type": "Character",
-    "ascensionBonus": 12.86,
-    "increasesPerLevel": {
-      "1": 1.53,
-      "20": 1.55,
-      "40": 1.5,
-      "50": 1.5,
-      "60": 3.61,
-      "70": 3.61,
-      "80": 3.61
-    },
-    "baseAtk": 19,
-    "talent": "Sharpshooter"
+    "levelATKIncrease": 1.5263157894736843,
+    "talent": "Sharpshooter",
+    "baseAtk": 19
   },
   {
     "id": 2,
@@ -30,18 +21,9 @@
     "element": "Hydro",
     "weapon": "Catalyst",
     "type": "Character",
-    "ascensionBonus": 7.43,
-    "increasesPerLevel": {
-      "1": 1.05,
-      "20": 1.15,
-      "40": 1.0,
-      "50": 1.1,
-      "60": 1.1,
-      "70": 1.1,
-      "80": 1.1
-    },
-    "baseAtk": 14,
-    "talent": "Whisper of Water"
+    "levelATKIncrease": 1.0526315789473684,
+    "talent": "Whisper of Water",
+    "baseAtk": 14
   },
   {
     "id": 3,
@@ -52,18 +34,9 @@
     "element": "Electro",
     "weapon": "Claymore",
     "type": "Character",
-    "ascensionBonus": 10.43,
-    "increasesPerLevel": {
-      "1": 1.58,
-      "20": 1.55,
-      "40": 1.6,
-      "50": 1.5,
-      "60": 1.6,
-      "70": 1.5,
-      "80": 1.5
-    },
-    "baseAtk": 19,
-    "talent": "Oceanborne"
+    "levelATKIncrease": 1.5789473684210527,
+    "talent": "Oceanborne",
+    "baseAtk": 19
   },
   {
     "id": 4,
@@ -74,18 +47,9 @@
     "element": "Pyro",
     "weapon": "Sword",
     "type": "Character",
-    "ascensionBonus": 8.57,
-    "increasesPerLevel": {
-      "1": 1.32,
-      "20": 1.35,
-      "40": 1.4,
-      "50": 1.3,
-      "60": 1.3,
-      "70": 1.3,
-      "80": 1.3
-    },
-    "baseAtk": 16,
-    "talent": "Strike of Fortune"
+    "levelATKIncrease": 1.3157894736842106,
+    "talent": "Strike of Fortune",
+    "baseAtk": 16
   },
   {
     "id": 5,
@@ -96,18 +60,9 @@
     "element": "Cryo",
     "weapon": "Claymore",
     "type": "Character",
-    "ascensionBonus": 12.86,
-    "increasesPerLevel": {
-      "1": 1.53,
-      "20": 1.55,
-      "40": 0.8,
-      "50": 1.5,
-      "60": 1.4,
-      "70": 1.6,
-      "80": 1.6
-    },
-    "baseAtk": 19,
-    "talent": "Demonbane"
+    "levelATKIncrease": 1.5263157894736843,
+    "talent": "Demonbane",
+    "baseAtk": 19
   },
   {
     "id": 6,
@@ -118,18 +73,9 @@
     "element": "Pyro",
     "weapon": "Claymore",
     "type": "Character",
-    "ascensionBonus": 16.86,
-    "increasesPerLevel": {
-      "1": 3.63,
-      "20": 1.16,
-      "40": 2.2,
-      "50": 2.2,
-      "60": 2.3,
-      "70": 2.4,
-      "80": 2.4
-    },
-    "baseAtk": 26,
-    "talent": "Tempered Sword"
+    "levelATKIncrease": 3.6315789473684212,
+    "talent": "Tempered Sword",
+    "baseAtk": 26
   },
   {
     "id": 7,
@@ -140,18 +86,9 @@
     "element": "Electro",
     "weapon": "Bow",
     "type": "Character",
-    "ascensionBonus": 10.14,
-    "increasesPerLevel": {
-      "1": 1.68,
-      "20": 1.7,
-      "40": 2.6,
-      "50": 1.7,
-      "60": 1.7,
-      "70": 1.6,
-      "80": 1.6
-    },
-    "baseAtk": 21,
-    "talent": "Bolts of Downfall"
+    "levelATKIncrease": 1.6842105263157894,
+    "talent": "Bolts of Downfall",
+    "baseAtk": 21
   },
   {
     "id": 8,
@@ -162,18 +99,9 @@
     "element": "Anemo",
     "weapon": "Sword",
     "type": "Character",
-    "ascensionBonus": 12.29,
-    "increasesPerLevel": {
-      "1": 1.58,
-      "20": 1.55,
-      "40": 1.6,
-      "50": 1.6,
-      "60": 1.7,
-      "70": 1.6,
-      "80": 1.6
-    },
-    "baseAtk": 19,
-    "talent": "Favonius Bladework"
+    "levelATKIncrease": 1.5789473684210527,
+    "talent": "Favonius Bladework",
+    "baseAtk": 19
   },
   {
     "id": 9,
@@ -184,18 +112,9 @@
     "element": "Cryo",
     "weapon": "Sword",
     "type": "Character",
-    "ascensionBonus": 9.86,
-    "increasesPerLevel": {
-      "1": 1.53,
-      "20": 1.55,
-      "40": 1.5,
-      "50": 1.6,
-      "60": 4.0,
-      "70": 4.0,
-      "80": 4.0
-    },
-    "baseAtk": 19,
-    "talent": "Ceremonial Bladework"
+    "levelATKIncrease": 1.5263157894736843,
+    "talent": "Ceremonial Bladework",
+    "baseAtk": 19
   },
   {
     "id": 10,
@@ -206,18 +125,9 @@
     "element": "Electro",
     "weapon": "Sword",
     "type": "Character",
-    "ascensionBonus": 16.0,
-    "increasesPerLevel": {
-      "1": 2.0,
-      "20": 2.0,
-      "40": 2.2,
-      "50": 2.1,
-      "60": 2.2,
-      "70": 2.3,
-      "80": 2.3
-    },
-    "baseAtk": 26,
-    "talent": "Yunlai Swordsmanship"
+    "levelATKIncrease": 2.1157894736842106,
+    "talent": "Yunlai Swordsmanship",
+    "baseAtk": 26
   },
   {
     "id": 11,
@@ -228,18 +138,9 @@
     "element": "Pyro",
     "weapon": "Catalyst",
     "type": "Character",
-    "ascensionBonus": 15.71,
-    "increasesPerLevel": {
-      "1": 2.05,
-      "20": 2.05,
-      "40": 2.1,
-      "50": 2.1,
-      "60": 2.1,
-      "70": 2.1,
-      "80": 2.1
-    },
-    "baseAtk": 24,
-    "talent": "Kaboom!"
+    "levelATKIncrease": 2.0526315789473686,
+    "talent": "Kaboom!",
+    "baseAtk": 24
   },
   {
     "id": 12,
@@ -250,18 +151,9 @@
     "element": "Electro",
     "weapon": "Catalyst",
     "type": "Character",
-    "ascensionBonus": 11.43,
-    "increasesPerLevel": {
-      "1": 1.58,
-      "20": 1.55,
-      "40": 1.6,
-      "50": 1.6,
-      "60": 3.76,
-      "70": 3.76,
-      "80": 3.76
-    },
-    "baseAtk": 20,
-    "talent": "Lightning Touch"
+    "levelATKIncrease": 1.5789473684210527,
+    "talent": "Lightning Touch",
+    "baseAtk": 20
   },
   {
     "id": 13,
@@ -272,18 +164,9 @@
     "element": "Hydro",
     "weapon": "Catalyst",
     "type": "Character",
-    "ascensionBonus": 13.86,
-    "increasesPerLevel": {
-      "1": 1.84,
-      "20": 1.95,
-      "40": 2.0,
-      "50": 1.9,
-      "60": 2.0,
-      "70": 2.0,
-      "80": 2.0
-    },
-    "baseAtk": 23,
-    "talent": "Ripple of Fate"
+    "levelATKIncrease": 1.8421052631578947,
+    "talent": "Ripple of Fate",
+    "baseAtk": 23
   },
   {
     "id": 14,
@@ -294,18 +177,9 @@
     "element": "Geo",
     "weapon": "Catalyst",
     "type": "Character",
-    "ascensionBonus": 10.14,
-    "increasesPerLevel": {
-      "1": 1.47,
-      "20": 1.5,
-      "40": 1.4,
-      "50": 1.5,
-      "60": 1.39,
-      "70": 1.5,
-      "80": 1.5
-    },
-    "baseAtk": 18,
-    "talent": "Sparkling Scatter"
+    "levelATKIncrease": 1.4736842105263157,
+    "talent": "Sparkling Scatter",
+    "baseAtk": 18
   },
   {
     "id": 15,
@@ -316,18 +190,9 @@
     "element": "Geo",
     "weapon": "Claymore",
     "type": "Character",
-    "ascensionBonus": 8.57,
-    "increasesPerLevel": {
-      "1": 1.32,
-      "20": 1.35,
-      "40": 1.4,
-      "50": 1.3,
-      "60": 1.3,
-      "70": 1.4,
-      "80": 1.4
-    },
-    "baseAtk": 16,
-    "talent": "Favonius Bladework - Maid"
+    "levelATKIncrease": 1.3157894736842106,
+    "talent": "Favonius Bladework - Maid",
+    "baseAtk": 16
   },
   {
     "id": 16,
@@ -338,18 +203,9 @@
     "element": "Cryo",
     "weapon": "Sword",
     "type": "Character",
-    "ascensionBonus": 14.57,
-    "increasesPerLevel": {
-      "1": 1.84,
-      "20": 1.9,
-      "40": 2.0,
-      "50": 1.9,
-      "60": 1.9,
-      "70": 1.9,
-      "80": 1.9
-    },
-    "baseAtk": 23,
-    "talent": "Ancient Sword Art"
+    "levelATKIncrease": 1.8421052631578947,
+    "talent": "Ancient Sword Art",
+    "baseAtk": 23
   },
   {
     "id": 17,
@@ -360,18 +216,9 @@
     "element": "Electro",
     "weapon": "Claymore",
     "type": "Character",
-    "ascensionBonus": 11.0,
-    "increasesPerLevel": {
-      "1": 1.63,
-      "20": 1.6,
-      "40": 1.6,
-      "50": 1.6,
-      "60": 1.6,
-      "70": 1.6,
-      "80": 1.6
-    },
-    "baseAtk": 20,
-    "talent": "Steel Fang"
+    "levelATKIncrease": 1.631578947368421,
+    "talent": "Steel Fang",
+    "baseAtk": 20
   },
   {
     "id": 18,
@@ -382,18 +229,9 @@
     "element": "Anemo",
     "weapon": "Catalyst",
     "type": "Character",
-    "ascensionBonus": 7.86,
-    "increasesPerLevel": {
-      "1": 1.21,
-      "20": 1.2,
-      "40": 1.1,
-      "50": 1.2,
-      "60": 1.2,
-      "70": 1.2,
-      "80": 1.2
-    },
-    "baseAtk": 14,
-    "talent": "Wind Spirit Creation"
+    "levelATKIncrease": 1.2105263157894737,
+    "talent": "Wind Spirit Creation",
+    "baseAtk": 14
   },
   {
     "id": 19,
@@ -404,18 +242,9 @@
     "element": "Adaptive",
     "weapon": "Sword",
     "type": "Character",
-    "ascensionBonus": 34.29,
-    "increasesPerLevel": {
-      "1": 1.47,
-      "20": 1.4,
-      "40": 1.4,
-      "50": 1.4,
-      "60": 1.5,
-      "70": 1.9,
-      "80": 1.9
-    },
-    "baseAtk": 18,
-    "talent": "Foreign Ironwind"
+    "levelATKIncrease": 1.4736842105263157,
+    "talent": "Foreign Ironwind",
+    "baseAtk": 18
   },
   {
     "id": 20,
@@ -426,18 +255,9 @@
     "element": "Anemo",
     "weapon": "Bow",
     "type": "Character",
-    "ascensionBonus": 12.86,
-    "increasesPerLevel": {
-      "1": 1.68,
-      "20": 1.75,
-      "40": 1.8,
-      "50": 1.7,
-      "60": 1.9,
-      "70": 1.9,
-      "80": 1.9
-    },
-    "baseAtk": 21,
-    "talent": "Divine Archery"
+    "levelATKIncrease": 1.6842105263157894,
+    "talent": "Divine Archery",
+    "baseAtk": 21
   },
   {
     "id": 21,
@@ -448,18 +268,9 @@
     "element": "Pyro",
     "weapon": "Polearm",
     "type": "Character",
-    "ascensionBonus": 10.57,
-    "increasesPerLevel": {
-      "1": 1.58,
-      "20": 1.55,
-      "40": 1.5,
-      "50": 1.6,
-      "60": 1.5,
-      "70": 1.6,
-      "80": 1.6
-    },
-    "baseAtk": 19,
-    "talent": "Dough-Fu"
+    "levelATKIncrease": 1.5789473684210527,
+    "talent": "Dough-Fu",
+    "baseAtk": 19
   },
   {
     "id": 22,
@@ -470,17 +281,8 @@
     "element": "Hydro",
     "weapon": "Sword",
     "type": "Character",
-    "ascensionBonus": 9.0,
-    "increasesPerLevel": {
-      "1": 1.5,
-      "20": 1.5,
-      "40": 1.5,
-      "50": 1.7,
-      "60": 1.7,
-      "70": 1.7,
-      "80": 1.7
-    },
-    "baseAtk": 17,
-    "talent": "Guhua Style"
+    "levelATKIncrease": 1.4210526315789473,
+    "talent": "Guhua Style",
+    "baseAtk": 17
   }
 ]

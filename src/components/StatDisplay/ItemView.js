@@ -105,9 +105,10 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
           <p className='passiveDescription'>{data.passives[item.passive]}</p>
         </>
       )}
-      {window.innerWidth < 576 && (
-        <SelectButton onClick={handleSelect}>Select</SelectButton>
-      )}
+
+      <SelectButton onClick={handleSelect}>
+        {isViewMode ? 'Select' : 'Remove'}
+      </SelectButton>
     </Container>
   )
 }

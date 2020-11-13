@@ -46,7 +46,7 @@ export function calculateDamage(
   }
 
   let critDMG = normalDMG * (1 + critMult)
-  console.log(critMult)
+
   return {
     normal: Math.round(normalDMG),
     crit: Math.round(critDMG)
@@ -69,34 +69,46 @@ export function calculateAtkPower(
 export function calculateCharacterAtk({
   level,
   baseAtk,
-  ascensionBonus,
-  increasesPerLevel,
-  ascension
+  levelATKIncrease,
+  ascension,
+  rarity,
+  name
 }) {
   const levelsOfAscension = [1, 20, 40, 50, 60, 70, 80]
-
-  const totalAscensionBonus = ascension === 0 ? 0 : ascension * ascensionBonus
-  let totalAtkIncrease = 0
-
-  if (level === 1) return baseAtk
-  else {
-    for (let i = ascension; i >= 0; i--) {
-      let levelDiff = 0
-      if (i === ascension) {
-        levelDiff = level - levelsOfAscension[i]
-
-        totalAtkIncrease +=
-          levelDiff * increasesPerLevel[levelsOfAscension[i].toString()]
-      } else {
-        levelDiff = i > 0 ? levelsOfAscension[i] - levelsOfAscension[i - 1] : 19
-        totalAtkIncrease +=
-          levelDiff *
-          increasesPerLevel[levelsOfAscension[i > 0 ? i - 1 : 0].toString()]
-      }
-    }
+  const stars = parseInt(rarity)
+  const ascensionBonuses = {
+    small:
+      stars === 5 && name !== 'Traveler'
+        ? Math.ceil(0.55 * baseAtk)
+        : Math.ceil(0.55 * baseAtk),
+    big:
+      stars === 5 && name !== 'Traveler'
+        ? Math.floor(0.85 * baseAtk)
+        : Math.floor(0.75 * baseAtk)
   }
 
-  return Math.ceil(baseAtk + totalAtkIncrease + totalAscensionBonus)
+  let totalAscensionBonus = 0
+  levelsOfAscension.forEach((lvl, index) => {
+    if (index > 0 && index <= ascension) {
+      if (lvl < 60) {
+        totalAscensionBonus +=
+          index % 2 > 0 ? ascensionBonuses.big : ascensionBonuses.small
+      } else {
+        console.log('level ' + lvl)
+        console.log('fixed ' + ascensionBonuses.small)
+
+        totalAscensionBonus += ascensionBonuses.small
+      }
+    }
+  })
+
+  let totalAtkIncrease = 0
+  if (level === 1) return baseAtk
+  else {
+    totalAtkIncrease = levelATKIncrease * (level - 1)
+  }
+
+  return Math.floor(baseAtk + totalAtkIncrease + totalAscensionBonus)
 }
 
 export function calculateArtifactStats(

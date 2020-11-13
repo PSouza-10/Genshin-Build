@@ -1,15 +1,37 @@
-import React, { useContext } from 'react'
-import { Container, ItemRow, ClearIcon } from './styles'
+import React, { useContext, useState } from 'react'
+import { Container, ItemRow, ClearIcon, Message } from './styles'
 
 import { ItemsContext } from '../../ItemsContext'
 import ItemRenderer from './ItemRenderer'
+import { StatContext } from '../../StatContext'
 
 export function CharacterWheel() {
   const { clearItems } = useContext(ItemsContext)
+  const { totalAtk } = useContext(StatContext)
+  const [messageOpen, openMessage] = useState(false)
+
+  const handleClear = (option = '') => {
+    if (totalAtk > 0) {
+      if (option === '') {
+        openMessage(!messageOpen)
+      } else {
+        if (option === 'Yes') clearItems()
+
+        openMessage(false)
+      }
+    }
+  }
 
   return (
     <div className='charWheel'>
-      <ClearIcon onClick={clearItems} />
+      <ClearIcon onClick={() => !messageOpen && handleClear('')} />
+      <Message open={messageOpen}>
+        <h3>Are you sure you want to clear the selected build?</h3>
+        <div>
+          <button onClick={() => handleClear('Yes')}>Yes</button>
+          <button onClick={() => handleClear('No')}>No</button>
+        </div>
+      </Message>
       <Container>
         <ItemRow justify='center'>
           <Item itemSlot='flower' slotType='artifact' />
@@ -34,7 +56,7 @@ export function CharacterWheel() {
 const Item = ({ itemSlot }) => {
   const { setStats, selectedItems } = useContext(ItemsContext)
   const item = selectedItems[itemSlot]
-  
+
   const { level, ascension, stars, maxLevel } = item
 
   const isArtifact = !['character', 'weapon'].includes(itemSlot)

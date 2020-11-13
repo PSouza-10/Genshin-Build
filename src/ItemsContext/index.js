@@ -229,6 +229,7 @@ export default function ItemsProvider({ children }) {
         displayedItem,
         view,
         talentLevel,
+        initialState,
         selectItem,
         didMount,
         handleSelectItem,

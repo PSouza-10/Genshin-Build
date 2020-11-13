@@ -94,10 +94,24 @@ export const MainStat = styled.span`
     clickable &&
     css`
       cursor: pointer;
+      fill: var(--primary);
       transition: all 0.2s ease;
+      span {
+        background-color: transparent;
+        color: inherit;
+      }
       &:hover {
         background-color: var(--primary);
         color: var(--bgPrimary);
+        fill: var(--bgPrimary);
+      }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      svg {
+        height: 36px;
+        width: 36px;
+        fill: inherit;
       }
     `}
 `
@@ -136,7 +150,9 @@ export const SelectButton = styled.button`
   background-color: transparent;
   margin-top: auto;
   transition: all 0.2s ease;
-  &:focus {
+  cursor: pointer;
+  &:focus,
+  &:hover {
     background-color: var(--primary);
     color: var(--bgSecondary);
   }
@@ -300,7 +316,7 @@ export const DamageModalContainer = styled.div`
     input {
       background-color: transparent;
       border: none;
-      width: 13px;
+      width: 42px;
       text-align: center;
       font-size: 1.5rem;
     }
