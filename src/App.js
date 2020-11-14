@@ -1,12 +1,16 @@
-import React, { useContext } from 'react'
-import { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components'
-import { Header, ItemPicker, CharacterWheel, StatDisplay } from './components'
+import {
+  Header,
+  ItemPicker,
+  CharacterWheel,
+  StatDisplay,
+  WarningMessage
+} from './components'
 import FilterProvider from './components/ItemPicker/FilterContext'
 import StatProvider from './StatContext'
 import { ItemsContext } from './ItemsContext'
 
-import WarningMessage from './components/WarningMessage'
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -61,8 +65,8 @@ function App() {
   }, [])
   return (
     <>
-      <WarningMessage />
       <StatProvider>
+        <WarningMessage />
         <Header />
         <Container>
           <div className='left'>

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled, { css } from 'styled-components'
 import { MessageContext } from '../../MessageContext'
 
-export default function WarningMessage() {
+export function WarningMessage() {
   const { message, messageIsVisible, type, title } = useContext(MessageContext)
 
   const messageColors = {

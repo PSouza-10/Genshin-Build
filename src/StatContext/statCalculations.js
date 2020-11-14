@@ -143,27 +143,13 @@ export function calculateWeaponStats({
 }) {
   const { ascensionBonus, increasesPerLevel } = weaponTypes[baseAtk.toString()]
 
-  const levelsOfAscension = [1, 20, 40, 50, 60, 70, 80]
-
-  const totalAscensionBonus = ascension === 0 ? 0 : ascension * ascensionBonus
+  const totalAscensionBonus = ascension * ascensionBonus
   let totalAtkIncrease = 0
   let newSubStatValue = 0
   if (level === 1) return { main: baseAtk, sub: secondaryBase }
   else {
-    for (let i = ascension; i >= 0; i--) {
-      let levelDiff = 0
-      if (i === ascension) {
-        levelDiff = level - levelsOfAscension[i]
+    totalAtkIncrease = increasesPerLevel['1'] * (level - 1)
 
-        totalAtkIncrease +=
-          levelDiff * increasesPerLevel[levelsOfAscension[i].toString()]
-      } else {
-        levelDiff = i > 0 ? levelsOfAscension[i] - levelsOfAscension[i - 1] : 19
-        totalAtkIncrease +=
-          levelDiff *
-          increasesPerLevel[levelsOfAscension[i > 0 ? i - 1 : 0].toString()]
-      }
-    }
     if ([25, 50, 75].includes(level)) {
       let multiplier = [25, 50, 75].findIndex(el => el === level) + 2
 

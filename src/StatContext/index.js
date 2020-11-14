@@ -42,7 +42,7 @@ export default function StatProvider({ children }) {
     crit: 0,
     normal: 0
   })
-  const [enemyLevel, setEnemyLevel] = useState(selectedItems.character.level)
+  const [enemyLevel, setEnemyLevel] = useState(character.level)
 
   useEffect(() => {
     const newArtifacts = createNewArtifacts(artifactsAtk, selectedItems)

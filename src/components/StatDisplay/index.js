@@ -6,9 +6,13 @@ import { StatContext } from '../../StatContext'
 import DamageModal from './DamageModal'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 export function StatDisplay() {
-  const { selectedItems, displayedItem, setDisplayed, view } = useContext(
-    ItemsContext
-  )
+  const {
+    selectedItems,
+    displayedItem,
+    setDisplayed,
+    view,
+    talentLevel
+  } = useContext(ItemsContext)
   const [damageModal, setDamageModal] = useState(false)
   const stats = useContext(StatContext)
   const handleDamageModal = () => {
@@ -45,7 +49,9 @@ export function StatDisplay() {
       />
       <Container>
         <MainStat onClick={handleDamageModal} clickable>
-          <span>Damage {damage.normal}</span>
+          <span>
+            Damage {damage.normal} | Enemy Lvl. {enemyLevel}
+          </span>
           <MdKeyboardArrowRight />
         </MainStat>
         <MainStat onClick={handleDamageModal} clickable>
@@ -53,7 +59,9 @@ export function StatDisplay() {
           <MdKeyboardArrowRight />
         </MainStat>
         <MainStat>Total ATK {totalAtk}</MainStat>
-        <MainStat>Character ATK {characterAtk}</MainStat>
+        <MainStat>
+          Character ATK {characterAtk} | Talent Lvl.{talentLevel}
+        </MainStat>
         <MainStat>Weapon ATK {weaponAtk.main}</MainStat>
         <MainStat>Flat ATK Bonus {flatAtkBonus}</MainStat>
         <MainStat>Total ATK% Bonus {totalAtkPerc}%</MainStat>

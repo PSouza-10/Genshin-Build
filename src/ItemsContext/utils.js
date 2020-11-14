@@ -73,3 +73,75 @@ export function findItems(string = '') {
 
   return items
 }
+
+export function selectedItemsFactory(item, slot, selectedItems, initialState) {
+  const selected = selectedItems[slot]
+  if (item.type === 'Artifact') {
+    const { minRarity, maxRarity } = initialState.data.artifactSets[item.set]
+    const currentLevel = selected.level
+    const currentStars =
+      selected.stars > maxRarity || selected.stars < minRarity
+        ? minRarity
+        : selected.stars || minRarity
+    const maxLevel = currentStars > 2 ? currentStars * 4 : 4
+
+    const newItems = {
+      ...selectedItems,
+      [slot]: {
+        ...selected,
+        ...item,
+        stars: currentStars,
+        maxLevel: maxLevel,
+        level: currentLevel > maxLevel ? maxLevel : currentLevel,
+        minRarity,
+        maxRarity
+      }
+    }
+
+    return { result: 200, payload: newItems }
+  } else {
+    if (
+      (selectedItems.character.id && slot === 'weapon') ||
+      (selectedItems.weapon.id && slot === 'character')
+    ) {
+      const attemptedCombinations = {
+        character: {
+          attempted: item.weapon,
+          current: selectedItems.weapon.category
+        },
+        weapon: {
+          attempted: item.category,
+          current: selectedItems.character.weapon
+        }
+      }
+
+      const { attempted, current } = attemptedCombinations[slot]
+
+      if (attempted !== current) {
+        const message = {
+          character: `${current}s cannot be equiped by ${item.name}`,
+          weapon: `${selectedItems.character.name} cannot equip ${attempted}s`
+        }
+        return { result: 300, payload: message[slot] }
+      }
+    }
+
+    const ascensionTable = [20, 40, 50, 60, 70, 80, 90]
+
+    const currentLevel = selected.level
+    const currentAscension = selected.ascension || 0
+
+    const newItems = {
+      ...selectedItems,
+      [slot]: {
+        ...selected,
+        ...item,
+        level: currentLevel || 1,
+        ascension: currentAscension,
+        maxLevel: ascensionTable[currentAscension]
+      }
+    }
+
+    return { result: 200, payload: newItems }
+  }
+}

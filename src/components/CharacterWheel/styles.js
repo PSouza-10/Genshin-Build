@@ -14,14 +14,22 @@ import React from 'react'
 
 export const Message = styled.div`
   position: fixed;
+
   bottom: 30px;
   left: 30px;
+  @media (max-width: 576px) {
+    bottom: 2vh;
+    left: 3vw;
+    right: 3vw;
+  }
+
   display: flex;
   flex-direction: column;
   font-size: 1.3rem;
   background-color: var(--bgPrimary);
   z-index: 999;
   padding: 20px 40px;
+
   h3 {
     text-align: center;
     max-width: 300px;

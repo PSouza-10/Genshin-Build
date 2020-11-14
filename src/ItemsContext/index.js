@@ -7,9 +7,10 @@ import characters from './characters.json'
 import talents from './talents.json'
 import passives from './passives.json'
 import artifacts from './artifacts.json'
-import { formatSlot, findItems } from './utils'
+import { formatSlot, findItems, selectedItemsFactory } from './utils'
 import useDidMount from './useDidMount'
 import { MessageContext } from '../MessageContext'
+
 const data = {
   ...meta,
   artifactSets: artifactSets,
@@ -34,8 +35,8 @@ const initialState = {
     sands: { level: 0 },
     goblet: { level: 0 },
     circlet: { level: 0 },
-    character: { level: 1 },
-    weapon: { level: 1 }
+    character: { level: 1, ascension: 0 },
+    weapon: { level: 1, ascension: 0 }
   },
   view: {}
 }
@@ -49,6 +50,7 @@ export default function ItemsProvider({ children }) {
   const { sendMessage } = useContext(MessageContext)
 
   const didMount = useDidMount()
+
   const handleSelectItem = (item = {}) => {
     const slot = formatSlot(item.type === 'Artifact' ? item.slot : item.type)
     if (selectedItems[slot].id === item.id) {
@@ -64,81 +66,20 @@ export default function ItemsProvider({ children }) {
         setDisplayed('stats')
       }
     } else {
-      const selected = selectedItems[slot]
-      if (item.type === 'Artifact') {
-        const { minRarity, maxRarity } = initialState.data.artifactSets[
-          item.set
-        ]
-        const currentLevel = selected.level
-        const currentStars =
-          selected.stars > maxRarity || selected.stars < minRarity
-            ? minRarity
-            : selected.stars || minRarity
-        const maxLevel = currentStars > 2 ? currentStars * 4 : 4
+      const { result, payload } = selectedItemsFactory(
+        item,
+        slot,
+        selectedItems,
+        initialState
+      )
 
-        const newItems = {
-          ...selectedItems,
-          [slot]: {
-            ...selected,
-            ...item,
-            stars: currentStars,
-            maxLevel: maxLevel,
-            level: currentLevel > maxLevel ? maxLevel : currentLevel,
-            minRarity,
-            maxRarity
-          }
-        }
-
-        selectItem(newItems)
-      } else {
-        if (
-          (selectedItems.character.id && slot === 'weapon') ||
-          (selectedItems.weapon.id && slot === 'character')
-        ) {
-          const attemptedCombinations = {
-            character: {
-              attempted: item.weapon,
-              current: selectedItems.weapon.category
-            },
-            weapon: {
-              attempted: item.category,
-              current: selectedItems.character.weapon
-            }
-          }
-
-          const { attempted, current } = attemptedCombinations[slot]
-
-          if (attempted !== current) {
-            const message = {
-              character: `${current}s cannot be equiped by ${item.name}`,
-              weapon: `${selectedItems.character.name} cannot equip ${attempted}s`
-            }
-
-            sendMessage(message[slot], 'Info', 'Weapon mismatch')
-            return false
-          }
-        }
-
-        const ascensionTable = [20, 40, 50, 60, 70, 80, 90]
-
-        const currentLevel = selected.level
-        const currentAscension = selected.ascension || 0
-
-        const newItems = {
-          ...selectedItems,
-          [slot]: {
-            ...selected,
-            ...item,
-            level: currentLevel || 1,
-            ascension: currentAscension,
-            maxLevel: ascensionTable[currentAscension]
-          }
-        }
-
-        selectItem(newItems)
+      if (result === 200) {
+        selectItem(payload)
+      } else if (result === 300) {
+        sendMessage(payload, 'Info', 'Weapon Mismatch', 2000)
       }
-      setDisplayed(slot)
     }
+    setDisplayed(slot)
   }
 
   const handleItemDisplay = (item = {}, view = false) => {

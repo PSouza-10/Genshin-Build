@@ -41,6 +41,7 @@ export function Header() {
     <>
       <Container>
         <Brand>Genshin Character Builder</Brand>
+
         <span className='iconWrapper' title='Share your build'>
           <ShareIcon
             className='icon'
@@ -48,8 +49,8 @@ export function Header() {
             onClick={handleShareModal}
           />
         </span>
-        <Overlay visible={shareModal} onClick={handleShareModal} />
       </Container>
+      <Overlay visible={shareModal} onClick={handleShareModal} />
       <ShareModal open={shareModal}>
         <ModalContent className='modalContent'>
           <div className='modalHeader'>
