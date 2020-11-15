@@ -242,7 +242,7 @@
   {
     "id": 31,
     "name": "Heart of Comeradeship",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/8a/Item_Heart_of_Comeradeship.png",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/f/fc/Item_Heart_of_Comradeship.png",
     "set": "Resolution of Sojourner",
     "slot": "Flower of Life",
     "type": "Artifact"
@@ -329,32 +329,32 @@
   },
   {
     "id": 42,
-    "name": "45px\nGuardian's Sigil",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Guardian%27s_Sigil.png",
+    "name": "Guardian's Sigil",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/f/ff/Item_Guardian%27s_Sigil.png",
     "set": "Defender's Will",
     "slot": "Plume of Death",
     "type": "Artifact"
   },
   {
     "id": 43,
-    "name": "45px\nGuardian's Clock",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Guardian%27s_Clock.png",
+    "name": "Guardian's Clock",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/51/Item_Guardian%27s_Clock.png",
     "set": "Defender's Will",
     "slot": "Sands of Eon",
     "type": "Artifact"
   },
   {
     "id": 44,
-    "name": "45px\nGuardian's Vessel",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Guardian%27s_Vessel.png",
+    "name": "Guardian's Vessel",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/2b/Item_Guardian%27s_Vessel.png",
     "set": "Defender's Will",
     "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
     "id": 45,
-    "name": "45px\nGuardian's Band",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Guardian%27s_Band.png",
+    "name": "Guardian's Band",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/c/c4/Item_Guardian%27s_Band.png",
     "set": "Defender's Will",
     "slot": "Circlet of Logos",
     "type": "Artifact"
@@ -449,16 +449,16 @@
   },
   {
     "id": 57,
-    "name": "45px\nGambler's Feather Accessory",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Gambler%27s_Feather_Accessory.png",
+    "name": "Gambler's Feather Accessory",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/bf/Item_Gambler%27s_Feather_Accessory.png",
     "set": "Gambler",
     "slot": "Plume of Death",
     "type": "Artifact"
   },
   {
     "id": 58,
-    "name": "45px\n Gambler's Pocket Watch",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Gambler%27s_Pocket_Watch.png",
+    "name": " Gambler's Pocket Watch",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/f/f7/Item_Gambler%27s_Pocket_Watch.png",
     "set": "Gambler",
     "slot": "Sands of Eon",
     "type": "Artifact"
@@ -473,8 +473,8 @@
   },
   {
     "id": 60,
-    "name": "45px\nGambler's Earrings",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Gambler%27s_Earrings.png",
+    "name": "Gambler's Earrings",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/43/Item_Gambler%27s_Earrings.png",
     "set": "Gambler",
     "slot": "Circlet of Logos",
     "type": "Artifact"
@@ -609,16 +609,16 @@
   },
   {
     "id": 77,
-    "name": "45px\nRoyal Plume",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Royal_Plume.png",
+    "name": "Royal Plume",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/e/ee/Item_Royal_Plume.png",
     "set": "Noblesse Oblige",
     "slot": "Plume of Death",
     "type": "Artifact"
   },
   {
     "id": 78,
-    "name": "45px\nRoyal Pocket Watch",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Royal_Pocket_Watch.png",
+    "name": "Royal Pocket Watch",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/1/1a/Item_Royal_Pocket_Watch.png",
     "set": "Noblesse Oblige",
     "slot": "Sands of Eon",
     "type": "Artifact"
@@ -633,8 +633,8 @@
   },
   {
     "id": 80,
-    "name": "45px\nRoyal Masque",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Royal_Masque.png",
+    "name": "Royal Masque",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/e/eb/Item_Royal_Masque.png",
     "set": "Noblesse Oblige",
     "slot": "Circlet of Logos",
     "type": "Artifact"
@@ -649,16 +649,16 @@
   },
   {
     "id": 82,
-    "name": "45px\nBloodstained Black Plume",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Bloodstained_Black_Plume.png",
+    "name": "Bloodstained Black Plume",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/5c/Item_Bloodstained_Black_Plume.png",
     "set": "Bloodstained Chivalry",
     "slot": "Plume of Death",
     "type": "Artifact"
   },
   {
     "id": 83,
-    "name": "45px\nBloodstained Final Hour",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Bloodstained_Final_Hour.png",
+    "name": "Bloodstained Final Hour",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/8c/Item_Bloodstained_Final_Hour.png",
     "set": "Bloodstained Chivalry",
     "slot": "Sands of Eon",
     "type": "Artifact"
@@ -673,8 +673,8 @@
   },
   {
     "id": 85,
-    "name": "45px\nBloodstained Iron Mask",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Bloodstained_Iron_Mask.png",
+    "name": "Bloodstained Iron Mask",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/0c/Item_Bloodstained_Iron_Mask.png",
     "set": "Bloodstained Chivalry",
     "slot": "Circlet of Logos",
     "type": "Artifact"
@@ -745,8 +745,8 @@
   },
   {
     "id": 94,
-    "name": "45px\nOmen of Thunderstorm",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Omen_of_Thunderstorm.png",
+    "name": "Omen of Thunderstorm",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/c/cd/Item_Omen_of_Thunderstorm.png",
     "set": "Thundering Fury",
     "slot": "Goblet of Eonothem",
     "type": "Artifact"
@@ -769,8 +769,8 @@
   },
   {
     "id": 97,
-    "name": "45px\n Thundershoother's Plume",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Thundershoother%27s_Plume.png",
+    "name": " Thundershoother's Plume",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/c/cb/Item_Thundersoother%27s_Plume.png",
     "set": "Thundersoother",
     "slot": "Plume of Death",
     "type": "Artifact"
@@ -785,8 +785,8 @@
   },
   {
     "id": 99,
-    "name": "45px\n Thundershoother's Goblet",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Thundershoother%27s_Goblet.png",
+    "name": " Thundershoother's Goblet",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/87/Item_Thundersoother%27s_Goblet.png",
     "set": "Thundersoother",
     "slot": "Goblet of Eonothem",
     "type": "Artifact"
@@ -794,7 +794,7 @@
   {
     "id": 100,
     "name": " Thundershoother's Diadem",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/47/Item_Thundershoother%27s_Diadem.png",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/1/14/Item_Thundersoother%27s_Diadem.png",
     "set": "Thundersoother",
     "slot": "Circlet of Logos",
     "type": "Artifact"
@@ -809,8 +809,8 @@
   },
   {
     "id": 102,
-    "name": "45px\nWitch's Ever-Burning Plume",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Witch%27s_Ever-Burning_Plume.png",
+    "name": "Witch's Ever-Burning Plume",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b3/Item_Witch%27s_Ever-Burning_Plume.png",
     "set": "Crimson Witch of Flames",
     "slot": "Plume of Death",
     "type": "Artifact"
@@ -825,16 +825,16 @@
   },
   {
     "id": 104,
-    "name": "45px\nWitch's Heart Flames",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Witch%27s_Heart_Flames.png",
+    "name": "Witch's Heart Flames",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/ba/Item_Witch%27s_Heart_Flames.png",
     "set": "Crimson Witch of Flames",
     "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
     "id": 105,
-    "name": "45px\nWitch's Scorching Hat",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Witch%27s_Scorching_Hat.png",
+    "name": "Witch's Scorching Hat",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/e/ea/Item_Witch%27s_Scorching_Hat.png",
     "set": "Crimson Witch of Flames",
     "slot": "Circlet of Logos",
     "type": "Artifact"
@@ -857,16 +857,16 @@
   },
   {
     "id": 108,
-    "name": "45px\nLavawalker's Torment",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Lavawalker%27s_Torment.png",
+    "name": "Lavawalker's Torment",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/3f/Item_Lavawalker%27s_Torment.png",
     "set": "Lavawalker",
     "slot": "Sands of Eon",
     "type": "Artifact"
   },
   {
     "id": 109,
-    "name": "45px\nLavawalker's Epiphany",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Lavawalker%27s_Epiphany.png",
+    "name": "Lavawalker's Epiphany",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/1/1b/Item_Lavawalker%27s_Epiphany.png",
     "set": "Lavawalker",
     "slot": "Goblet of Eonothem",
     "type": "Artifact"
@@ -889,32 +889,32 @@
   },
   {
     "id": 112,
-    "name": "45px\nFeather of Jagged Peaks",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Feather_of_Jagged_Peaks.png",
+    "name": "Feather of Jagged Peaks",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a5/Item_Feather_of_Jagged_Peaks.png",
     "set": "Archaic Petra",
     "slot": "Plume of Death",
     "type": "Artifact"
   },
   {
     "id": 113,
-    "name": "45px\nSundial of Enduring Jade",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Sundial_of_Enduring_Jade.png",
+    "name": "Sundial of Enduring Jade",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/1/1d/Item_Sundial_of_Enduring_Jade.png",
     "set": "Archaic Petra",
     "slot": "Sands of Eon",
     "type": "Artifact"
   },
   {
     "id": 114,
-    "name": "45px\nGoblet of Chiseled Crag",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Goblet_of_Chiseled_Crag.png",
+    "name": "Goblet of Chiseled Crag",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/02/Item_Goblet_of_Chiseled_Crag.png",
     "set": "Archaic Petra",
     "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
     "id": 115,
-    "name": "45px\nMask of Solitude Basalt",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Mask_of_Solitude_Basalt.png",
+    "name": "Mask of Solitude Basalt",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/09/Item_Mask_of_Solitude_Basalt.png",
     "set": "Archaic Petra",
     "slot": "Circlet of Logos",
     "type": "Artifact"
@@ -929,7 +929,7 @@
   },
   {
     "id": 117,
-    "name": "45px\nSummer Night's Finale",
+    "name": "Summer Night's Finale",
     "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Summer_Night%27s_Finale.png",
     "set": "Retracing Bolide",
     "slot": "Plume of Death",
@@ -937,7 +937,7 @@
   },
   {
     "id": 118,
-    "name": "45px\nSummer Night's Moment",
+    "name": "Summer Night's Moment",
     "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Summer_Night%27s_Moment.png",
     "set": "Retracing Bolide",
     "slot": "Sands of Eon",
@@ -945,15 +945,15 @@
   },
   {
     "id": 119,
-    "name": "45px\nSummer Night's Waterballoon",
-    "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Summer_Night%27s_Waterballoon.png",
+    "name": "Summer Night's Waterballoon",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/1/10/Item_Summer_Night%27s_Waterballoon.png",
     "set": "Retracing Bolide",
     "slot": "Goblet of Eonothem",
     "type": "Artifact"
   },
   {
     "id": 120,
-    "name": "45px\nSummer Night's Mask",
+    "name": "Summer Night's Mask",
     "image": "https://genshin-impact.fandom.com/wiki/Special:Upload?wpDestFile=Item_Summer_Night%27s_Mask.png",
     "set": "Retracing Bolide",
     "slot": "Circlet of Logos",
