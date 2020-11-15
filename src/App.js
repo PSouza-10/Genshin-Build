@@ -16,7 +16,6 @@ const Container = styled.div`
   width: 100%;
   height: calc(100% - 50px);
   max-height: calc(100% - 50px);
-
   .left {
     flex-basis: 70%;
     display: flex;

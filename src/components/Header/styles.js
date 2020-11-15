@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import { IoIosShareAlt } from 'react-icons/io'
-import { MdClose } from 'react-icons/md'
+import { MdClose, MdHelpOutline } from 'react-icons/md'
 import { BiLinkAlt, BiDownload } from 'react-icons/bi'
 export const Container = styled.div`
   width: 100%;
@@ -27,6 +27,9 @@ export const Container = styled.div`
 
 export const Brand = styled.h1`
   font-size: 22px;
+  @media (max-width: 576px) {
+    font-size: 18px;
+  }
 `
 
 export const ShareIcon = styled(IoIosShareAlt)`
@@ -34,6 +37,7 @@ export const ShareIcon = styled(IoIosShareAlt)`
   height: 38px;
   width: 38px;
 `
+
 export const Overlay = styled.div`
   position: absolute;
   top: 0;
@@ -155,4 +159,9 @@ export const DownloadJson = styled(BiDownload)`
 
 export const ChooseApp = styled(IoIosShareAlt)`
   ${shareOptionIconCss}
+`
+export const HelpIcon = styled(MdHelpOutline)`
+  fill: var(--primary);
+  height: 38px;
+  width: 38px;
 `

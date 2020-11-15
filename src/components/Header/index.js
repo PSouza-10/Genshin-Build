@@ -21,15 +21,22 @@ import {
   selectApp,
   downloadFile
 } from './shareFunctions'
+import Help from './Help'
 export function Header() {
   const [shareModal, setShareModal] = useState(false)
+  const [helpModal, setHelpModal] = useState(false)
   const { damage, artifactsAtk } = useContext(StatContext)
   const { selectedItems, didMount } = useContext(ItemsContext)
   const [link, setLink] = useState(window.location.href)
   const [linkState, setLinkState] = useState('Copy Link')
   const handleShareModal = () => {
+    document.body.style.overflow = !shareModal ? 'hidden' : 'initial'
     setShareModal(!shareModal)
     generateLink(selectedItems)
+  }
+  const handleHelpModal = () => {
+    document.body.style.overflow = !helpModal ? 'hidden' : 'initial'
+    setHelpModal(!helpModal)
   }
   useEffect(() => {
     if (didMount()) {
@@ -40,8 +47,8 @@ export function Header() {
   return (
     <>
       <Container>
-        <Brand>Genshin Character Builder</Brand>
-
+        <Brand>Genshin Build Planner</Brand>
+        <Help toggle={handleHelpModal} state={helpModal} />
         <span className='iconWrapper' title='Share your build'>
           <ShareIcon
             className='icon'
@@ -50,7 +57,7 @@ export function Header() {
           />
         </span>
       </Container>
-      <Overlay visible={shareModal} onClick={handleShareModal} />
+      <Overlay visible={shareModal || helpModal} onClick={handleShareModal} />
       <ShareModal open={shareModal}>
         <ModalContent className='modalContent'>
           <div className='modalHeader'>

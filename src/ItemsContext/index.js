@@ -75,11 +75,11 @@ export default function ItemsProvider({ children }) {
 
       if (result === 200) {
         selectItem(payload)
+        setDisplayed(slot)
       } else if (result === 300) {
         sendMessage(payload, 'Info', 'Weapon Mismatch', 2000)
       }
     }
-    setDisplayed(slot)
   }
 
   const handleItemDisplay = (item = {}, view = false) => {

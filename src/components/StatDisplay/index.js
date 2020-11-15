@@ -16,6 +16,7 @@ export function StatDisplay() {
   const [damageModal, setDamageModal] = useState(false)
   const stats = useContext(StatContext)
   const handleDamageModal = () => {
+    document.body.style.overflow = !damageModal ? 'hidden' : 'initial'
     setDamageModal(!damageModal)
   }
   const {

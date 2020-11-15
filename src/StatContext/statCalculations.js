@@ -15,7 +15,7 @@ export function calculateDamage(
 
   let elBonus = 0
   let physBonus = subType === 'Physical DMG Bonus' ? sub / 100 : 0
-  let critMult = 0.5
+  let critMult = subType === 'CRIT DMG%' ? 0.5 + sub / 100 : 0.5
   Object.keys(artifactsAtk).forEach(artKey => {
     if ('Elemental DMG%' === artifactsAtk[artKey].mainType) {
       elBonus += artifactsAtk[artKey].main / 100

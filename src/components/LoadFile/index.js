@@ -18,6 +18,7 @@ export default function LoadFile() {
   const { sendMessage } = useContext(MessageContext)
   const { setArtifactAtk } = useContext(MessageContext)
   const handleModal = () => {
+    document.body.style.overflow = !modalOpen ? 'hidden' : 'initial'
     setOpen(!modalOpen)
   }
 
