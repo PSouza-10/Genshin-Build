@@ -25,7 +25,8 @@ const HelpContent = styled.div`
       color: var(--primary);
     }
   }
-  .link {
+  a {
+    color: var(--hover);
   }
 `
 export default HelpContent

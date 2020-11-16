@@ -13,6 +13,8 @@ export default {
         other stats (DEF, CRIT Rate%, etc...) will also be calculated and
         displayed.
       </p>
+      <br></br>
+      <br></br>
       <h3 className='title'>Current Limitations</h3>
       <p className='text'>
         At the current moment, character and weapon stats have are at some level
@@ -35,6 +37,8 @@ export default {
         These aspects will be improved upon as I collect more data to improve
         calculations, and the community dissects formulas.
       </p>
+      <br></br>
+      <br></br>
       <h3 className='title'>Disclaimer</h3>
       <p className='text'>
         Genshin Build Planner is not affiliated with or endorsed by miHoYo.
@@ -77,6 +81,8 @@ export default {
         Noelle with a Bow), the action won't go through and a message will be
         displayed.
       </p>
+      <br></br>
+      <br></br>
       <h3 className='title'>
         Selected Character/Items (Bottom left, or middle in Mobile)
       </h3>
@@ -103,6 +109,8 @@ export default {
         To clear the selected build, press the trash icon, you will be prompted
         to confirm your decision.
       </p>
+      <br></br>
+      <br></br>
       <h3 className='title'>Stat Display (Right, or bottom in mobile)</h3>
       <p className='text'>
         The most important calculated values are displayed here (eg. Damage,
@@ -122,6 +130,8 @@ export default {
         <br></br>
         Press the X icon on the top left to view calculated stats again.
       </p>
+      <br></br>
+      <br></br>
       <h3 className='title'>Sharing/saving (Top Right)</h3>
       <p className='text'>
         Press the share icon to view available sharing options ( Forward to App
@@ -168,6 +178,8 @@ export default {
         the sum of ATK% stats from weapon, and artifact main/sub stats, and Flat
         ATK Bonus pertains to The Feather Main Stat + all other +ATK sub stats.
       </p>
+      <br></br>
+      <br></br>
       <h3 className='title'>Damage and CRIT Damage</h3>
       <p className='text'>
         Damage is calculated according to the formula below:
@@ -199,7 +211,49 @@ export default {
         Total CRIT DMG% is equal to the sum of weapon and artifact CRIT DMG%
         main/sub stats.
       </p>
+      <br></br>
+
+      <h3 className='title'>Sources</h3>
+      <br></br>
+
+      <p className='text'>
+        All data on this page was taken from the Genshin Impact wiki, and will
+        be updated accordingly.
+      </p>
     </HelpContent>
   ),
-  contribute: ''
+  contribute: (
+    <HelpContent>
+      <h3 className='title'>Contact</h3>
+      <br></br>
+
+      <p className='text'>
+        If you have issues with the app, suggestions, or can help with
+        development, join our discord server!
+        <br></br>
+        <a
+          href='https://discord.gg/MfFeG4W6'
+          target='_blank'
+          rel='noopener noreferrer'>
+          Discord
+        </a>{' '}
+        <br></br>
+      </p>
+      <br></br>
+      <br></br>
+
+      <h3 className='title'>Donate</h3>
+      <br></br>
+
+      <p className='text'>
+        While at the moment the website doesn't require funds to maintain, and
+        will forever remain free to use, a lot of time was spent building this
+        tool. If you support my work, feel free to donate any amount :)
+        <br></br>
+        <a href='http://google.com' target='_blank' rel='noopener noreferrer'>
+          Donate
+        </a>
+      </p>
+    </HelpContent>
+  )
 }

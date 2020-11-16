@@ -154,7 +154,7 @@ const Talent = ({ editable, name }) => {
             />
             <Icon
               onClick={() => handleButtons('increase')}
-              disabled={talentLevel > 14}
+              disabled={talentLevel === data.talents[name].length}
             />
           </span>
         ) : (

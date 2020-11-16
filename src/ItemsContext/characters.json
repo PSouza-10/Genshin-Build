@@ -284,5 +284,31 @@
     "levelATKIncrease": 1.4210526315789473,
     "talent": "Guhua Style",
     "baseAtk": 17
+  },
+  {
+    "id": 23,
+    "rarity": "5",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/53/Character_Tartaglia_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Tartaglia",
+    "name": "Tartaglia (Childe)",
+    "element": "Hydro",
+    "weapon": "Bow",
+    "type": "Character",
+    "levelATKIncrease": 2,
+    "talent": "Cutting Torrent",
+    "baseAtk": 47
+  },
+  {
+    "id": 24,
+    "rarity": "4",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b9/Character_Diona_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Diona",
+    "name": "Diona",
+    "element": "Cryo",
+    "weapon": "Bow",
+    "type": "Character",
+    "levelATKIncrease": 1.5,
+    "talent": "Kätzlein Style",
+    "baseAtk": 41
   }
 ]
