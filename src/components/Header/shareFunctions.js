@@ -20,7 +20,7 @@ export function generateLink(selectedItems) {
     let itemStr = []
 
     let idStr = `${type[0]}-${id}`
-    itemStr.push(idStr)
+    itemStr.push(idStr) //https://genshin-build.netlify.app/?b=A-111.l-0.u-4~A-112.l-16.u-4~A-53.l-14.u-4~A-114.l-14.u-5~A-55.l-0.u-3~C-14.l-80.u-5~W-48.l-80.u-5
 
     itemStr.push(`l-${level}`)
     itemStr.push(`u-${upgrade}`)

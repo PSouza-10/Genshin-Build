@@ -22,6 +22,7 @@ import {
   downloadFile
 } from './shareFunctions'
 import Help from './Help'
+
 export function Header() {
   const [shareModal, setShareModal] = useState(false)
   const [helpModal, setHelpModal] = useState(false)
