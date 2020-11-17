@@ -20,7 +20,7 @@ export function StatDisplay() {
     setDamageModal(!damageModal)
   }
   const {
-    characterAtk,
+    characterStats,
     weaponAtk,
     flatAtkBonus,
     totalAtkPerc,
@@ -61,7 +61,7 @@ export function StatDisplay() {
         </MainStat>
         <MainStat>Total ATK {totalAtk}</MainStat>
         <MainStat>
-          Character ATK {characterAtk} | Talent Lvl.{talentLevel}
+          Character ATK {characterStats.ATK} | Talent Lvl.{talentLevel}
         </MainStat>
         <MainStat>Weapon ATK {weaponAtk.main}</MainStat>
         <MainStat>Flat ATK Bonus {flatAtkBonus}</MainStat>

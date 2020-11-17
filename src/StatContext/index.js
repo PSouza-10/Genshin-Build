@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { ItemsContext } from '../ItemsContext'
 import {
-  calculateCharacterAtk,
+  calculateCharacterStats,
   createNewArtifacts,
   calculateWeaponStats,
   calculateAtkPower,
@@ -9,14 +9,25 @@ import {
   calculateTotalFlatATK,
   calculateTotalAtkPerc
 } from './statCalculations'
+
 import {
   returnNewSubStats,
   generateInitialArtifactState
 } from './statControlFunctions'
+
 const initialState = {
   damage: 0,
   weaponAtk: 0,
-  characterAtk: 0
+  characterStats: {
+    HP: 0,
+    'CRIT Rate%': 0,
+    'CRIT DMG%': 0.5,
+    ATK: 0,
+    DEF: 0,
+    'Elemental Mastery': 0,
+    'Energy Recharge': 0,
+    'Elemental DMG%': 0
+  }
 }
 
 export const StatContext = createContext(initialState)
@@ -25,7 +36,9 @@ export default function StatProvider({ children }) {
   const { selectedItems, talentLevel, data } = useContext(ItemsContext)
   const { character, weapon } = selectedItems
 
-  const [characterAtk, setCharacterAtk] = useState(0)
+  const [characterStats, setCharacterStats] = useState(
+    initialState.characterStats
+  )
   const [artifactsAtk, setArtifactAtk] = useState(
     generateInitialArtifactState(selectedItems)
   )
@@ -54,23 +67,23 @@ export default function StatProvider({ children }) {
 
   useEffect(() => {
     if (character.id) {
-      const newAtk = calculateCharacterAtk(character)
-      setCharacterAtk(newAtk)
+      const newAtk = calculateCharacterStats(character)
+      setCharacterStats(newAtk)
     } else {
-      setCharacterAtk(0)
+      setCharacterStats(initialState.characterStats)
     }
   }, [character])
 
   useEffect(() => {
     setTotalAtk(
       calculateAtkPower(
-        characterAtk,
+        characterStats,
         weaponAtk.main,
         flatAtkBonus,
         totalAtkPerc
       )
     )
-  }, [totalAtkPerc, flatAtkBonus, characterAtk, weaponAtk])
+  }, [totalAtkPerc, flatAtkBonus, characterStats, weaponAtk])
 
   useEffect(() => {
     if (weapon.id) {
@@ -92,20 +105,20 @@ export default function StatProvider({ children }) {
   }, [weapon])
 
   useEffect(() => {
-    setTotalAtkPerc(calculateTotalAtkPerc(artifactsAtk, weaponAtk))
-  }, [weaponAtk, artifactsAtk])
+    setTotalAtkPerc(
+      calculateTotalAtkPerc(artifactsAtk, weaponAtk, characterStats)
+    )
+  }, [weaponAtk, artifactsAtk, characterStats])
 
   useEffect(() => {
-    const { talent, weapon, level } = selectedItems.character
-
     setDamage(
       calculateDamage(
         totalAtk,
-        data.talents[talent || 'Sharpshooter'][talentLevel - 1],
+        talentLevel,
         artifactsAtk,
-        weapon,
+        characterStats,
         weaponAtk,
-        level,
+        character,
         enemyLevel
       )
     )
@@ -115,9 +128,9 @@ export default function StatProvider({ children }) {
     totalAtk,
     talentLevel,
     data.talents,
-    selectedItems,
     enemyLevel,
-    artifactsAtk
+    artifactsAtk,
+    characterStats
   ])
   function setMainStat(slot = 'sands', stat = 'ATK%') {
     const withNewStat = {
@@ -158,7 +171,7 @@ export default function StatProvider({ children }) {
   return (
     <StatContext.Provider
       value={{
-        characterAtk,
+        characterStats,
         weaponAtk,
         artifactsAtk,
         totalAtkPerc,

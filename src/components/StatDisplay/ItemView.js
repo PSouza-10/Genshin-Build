@@ -97,7 +97,11 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
         <MainStat>{`${itemInfo.secondaryType} ${itemInfo.subStat}`}</MainStat>
       )}
       {type === 'Character' && (
-        <Talent name={item.talent} editable={!isViewMode} />
+        <Talent
+          name={item.talent}
+          base={item.talentBase}
+          editable={!isViewMode}
+        />
       )}
       {type === 'Weapon' && item.passive !== 'None' && (
         <>
@@ -113,7 +117,7 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
   )
 }
 
-const Talent = ({ editable, name }) => {
+const Talent = ({ editable, name, base }) => {
   const { talentLevel, setTalent, data } = useContext(ItemsContext)
   const [level, setLevel] = useState(talentLevel)
   const checkInput = () => {
@@ -154,14 +158,15 @@ const Talent = ({ editable, name }) => {
             />
             <Icon
               onClick={() => handleButtons('increase')}
-              disabled={talentLevel === data.talents[name].length}
+              disabled={talentLevel === data.talentLevelMultipliers.length}
             />
           </span>
         ) : (
           <span className='talentLvl'>Lvl. {talentLevel}</span>
         )}
         <span className='talentDMG'>
-          {data.talents[name][talentLevel - 1]}% ATK
+          {(data.talentLevelMultipliers[talentLevel - 1] * base).toFixed(1)}%
+          ATK
         </span>
       </span>
     </TalentContainer>

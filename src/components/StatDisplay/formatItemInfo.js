@@ -1,5 +1,5 @@
 export function formatViewMode(item, data) {
-  const { type, element, category, slot, minRarity, maxRarity } = item
+  const { type, element, category, slot, minRarity, maxRarity, stats } = item
 
   let newInfo = {}
   const displayCategory = {
@@ -21,8 +21,11 @@ export function formatViewMode(item, data) {
         data.artifactIncreases[maxRarity.toString()]['ATK%'].base
       }%`
     }
-  } else if (['Character', 'Weapon'].includes(type)) {
+  } else if (type === 'Weapon') {
     newInfo.mainStat = 'ATK ' + item.baseAtk
+    newInfo.displayStars = item.rarity
+  } else if (type === 'Character') {
+    newInfo.mainStat = 'ATK ' + stats.ATK.base
     newInfo.displayStars = item.rarity
   }
 
@@ -34,7 +37,12 @@ export function formatViewMode(item, data) {
         ? Math.round(secondaryBase)
         : `${secondaryBase.toFixed(2)}%`
   }
-  if (type === 'Artifact') {
+  if (type === 'Character') {
+    const { type: bonusType, base: bonusBase } = item.bonusStat
+
+    newInfo.secondaryType = bonusType
+    newInfo.subStat =
+      bonusBase === 'Elemental Mastery' ? bonusBase : `${bonusBase.toFixed(2)}%`
   }
   return newInfo
 }
@@ -42,7 +50,7 @@ export function formatViewMode(item, data) {
 export function formatEditMode(item, data, stats) {
   if (item.id) {
     const { type, stars, element, category, slot, rarity } = item
-    const { characterAtk, artifactsAtk, weaponAtk } = stats
+    const { characterStats, artifactsAtk, weaponAtk } = stats
 
     let newInfo = {}
 
@@ -62,7 +70,7 @@ export function formatEditMode(item, data, stats) {
     }
 
     const correspondingStats = {
-      Character: characterAtk,
+      Character: characterStats.ATK,
       Artifact: artifactsAtk[slotKey || 'flower'],
       Weapon: weaponAtk.main
     }

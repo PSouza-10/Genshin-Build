@@ -59,7 +59,7 @@ function Tabs({ selected, setTab, toggle, tabs }) {
         </span>
       )}
       <TabsContainer open={collapseOpen}>
-        {tabs.map(tab => (
+        {tabs.map((tab, index) => (
           <TabItem
             onClick={() => {
               setTab(tab)
@@ -67,7 +67,8 @@ function Tabs({ selected, setTab, toggle, tabs }) {
                 handleCollapse()
               }
             }}
-            selected={selected.name === tab.name}>
+            selected={selected.name === tab.name}
+            key={index}>
             {tab.displayName}
           </TabItem>
         ))}

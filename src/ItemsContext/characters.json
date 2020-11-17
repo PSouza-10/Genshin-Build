@@ -8,9 +8,14 @@
     "element": "Pyro",
     "weapon": "Bow",
     "type": "Character",
-    "levelATKIncrease": 1.5263157894736843,
+    "stats": {
+      "HP": { "base": 793, "lvlIncrease": 65.52631578947368 },
+      "ATK": { "base": 19, "lvlIncrease": 1.5263157894736843 },
+      "DEF": { "base": 50, "lvlIncrease": 4.157894736842105 }
+    },
     "talent": "Sharpshooter",
-    "baseAtk": 19
+    "talentBase": 36.1,
+    "bonusStat": { "type": "ATK%", "base": 6.0 }
   },
   {
     "id": 2,
@@ -21,9 +26,14 @@
     "element": "Hydro",
     "weapon": "Catalyst",
     "type": "Character",
-    "levelATKIncrease": 1.0526315789473684,
+    "stats": {
+      "HP": { "base": 821, "lvlIncrease": 67.73684210526316 },
+      "ATK": { "base": 14, "lvlIncrease": 1.0526315789473684 },
+      "DEF": { "base": 56, "lvlIncrease": 4.631578947368421 }
+    },
     "talent": "Whisper of Water",
-    "baseAtk": 14
+    "talentBase": 37.8,
+    "bonusStat": { "type": "HP%", "base": 6.0 }
   },
   {
     "id": 3,
@@ -34,9 +44,14 @@
     "element": "Electro",
     "weapon": "Claymore",
     "type": "Character",
-    "levelATKIncrease": 1.5789473684210527,
+    "stats": {
+      "HP": { "base": 1094, "lvlIncrease": 90.36842105263158 },
+      "ATK": { "base": 19, "lvlIncrease": 1.5789473684210527 },
+      "DEF": { "base": 54, "lvlIncrease": 4.526315789473684 }
+    },
     "talent": "Oceanborne",
-    "baseAtk": 19
+    "talentBase": 71.1,
+    "bonusStat": { "type": "Elemental DMG%", "base": 6.0 }
   },
   {
     "id": 4,
@@ -47,9 +62,14 @@
     "element": "Pyro",
     "weapon": "Sword",
     "type": "Character",
-    "levelATKIncrease": 1.3157894736842106,
+    "stats": {
+      "HP": { "base": 1039, "lvlIncrease": 85.84210526315789 },
+      "ATK": { "base": 16, "lvlIncrease": 1.3157894736842106 },
+      "DEF": { "base": 65, "lvlIncrease": 5.315789473684211 }
+    },
     "talent": "Strike of Fortune",
-    "baseAtk": 16
+    "talentBase": 45.0,
+    "bonusStat": { "type": "Energy Recharge%", "base": 6.7 }
   },
   {
     "id": 5,
@@ -60,9 +80,14 @@
     "element": "Cryo",
     "weapon": "Claymore",
     "type": "Character",
-    "levelATKIncrease": 1.5263157894736843,
+    "stats": {
+      "HP": { "base": 1003, "lvlIncrease": 71.73684210526316 },
+      "ATK": { "base": 19, "lvlIncrease": 1.5263157894736843 },
+      "DEF": { "base": 54, "lvlIncrease": 4.526315789473684 }
+    },
     "talent": "Demonbane",
-    "baseAtk": 19
+    "talentBase": 70.0,
+    "bonusStat": { "type": "ATK%", "base": 6.0 }
   },
   {
     "id": 6,
@@ -73,233 +98,17 @@
     "element": "Pyro",
     "weapon": "Claymore",
     "type": "Character",
-    "levelATKIncrease": 3.6315789473684212,
+    "stats": {
+      "HP": { "base": 1011, "lvlIncrease": 64.52631578947368 },
+      "ATK": { "base": 26, "lvlIncrease": 3.6315789473684212 },
+      "DEF": { "base": 61, "lvlIncrease": 2.736842105263158 }
+    },
     "talent": "Tempered Sword",
-    "baseAtk": 26
+    "talentBase": 89.7,
+    "bonusStat": { "type": "CRIT Rate%", "base": 9.8 }
   },
   {
     "id": 7,
-    "rarity": "4",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/1/14/Character_Fischl_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Fischl",
-    "name": "Fischl",
-    "element": "Electro",
-    "weapon": "Bow",
-    "type": "Character",
-    "levelATKIncrease": 1.6842105263157894,
-    "talent": "Bolts of Downfall",
-    "baseAtk": 21
-  },
-  {
-    "id": 8,
-    "rarity": "5",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/89/Character_Jean_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Jean",
-    "name": "Jean",
-    "element": "Anemo",
-    "weapon": "Sword",
-    "type": "Character",
-    "levelATKIncrease": 1.5789473684210527,
-    "talent": "Favonius Bladework",
-    "baseAtk": 19
-  },
-  {
-    "id": 9,
-    "rarity": "4",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/33/Character_Kaeya_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Kaeya",
-    "name": "Kaeya",
-    "element": "Cryo",
-    "weapon": "Sword",
-    "type": "Character",
-    "levelATKIncrease": 1.5263157894736843,
-    "talent": "Ceremonial Bladework",
-    "baseAtk": 19
-  },
-  {
-    "id": 10,
-    "rarity": "5",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/06/Character_Keqing_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Keqing",
-    "name": "Keqing",
-    "element": "Electro",
-    "weapon": "Sword",
-    "type": "Character",
-    "levelATKIncrease": 2.1157894736842106,
-    "talent": "Yunlai Swordsmanship",
-    "baseAtk": 26
-  },
-  {
-    "id": 11,
-    "rarity": "5",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/c/c3/Character_Klee_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Klee",
-    "name": "Klee",
-    "element": "Pyro",
-    "weapon": "Catalyst",
-    "type": "Character",
-    "levelATKIncrease": 2.0526315789473686,
-    "talent": "Kaboom!",
-    "baseAtk": 24
-  },
-  {
-    "id": 12,
-    "rarity": "4",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/51/Character_Lisa_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Lisa",
-    "name": "Lisa",
-    "element": "Electro",
-    "weapon": "Catalyst",
-    "type": "Character",
-    "levelATKIncrease": 1.5789473684210527,
-    "talent": "Lightning Touch",
-    "baseAtk": 20
-  },
-  {
-    "id": 13,
-    "rarity": "5",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a0/Character_Mona_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Mona",
-    "name": "Mona",
-    "element": "Hydro",
-    "weapon": "Catalyst",
-    "type": "Character",
-    "levelATKIncrease": 1.8421052631578947,
-    "talent": "Ripple of Fate",
-    "baseAtk": 23
-  },
-  {
-    "id": 14,
-    "rarity": "4",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/2b/Character_Ningguang_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Ningguang",
-    "name": "Ningguang",
-    "element": "Geo",
-    "weapon": "Catalyst",
-    "type": "Character",
-    "levelATKIncrease": 1.4736842105263157,
-    "talent": "Sparkling Scatter",
-    "baseAtk": 18
-  },
-  {
-    "id": 15,
-    "rarity": "4",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/ab/Character_Noelle_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Noelle",
-    "name": "Noelle",
-    "element": "Geo",
-    "weapon": "Claymore",
-    "type": "Character",
-    "levelATKIncrease": 1.3157894736842106,
-    "talent": "Favonius Bladework - Maid",
-    "baseAtk": 16
-  },
-  {
-    "id": 16,
-    "rarity": "5",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d5/Character_Qiqi_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Qiqi",
-    "name": "Qiqi",
-    "element": "Cryo",
-    "weapon": "Sword",
-    "type": "Character",
-    "levelATKIncrease": 1.8421052631578947,
-    "talent": "Ancient Sword Art",
-    "baseAtk": 23
-  },
-  {
-    "id": 17,
-    "rarity": "4",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/1/1d/Character_Razor_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Razor",
-    "name": "Razor",
-    "element": "Electro",
-    "weapon": "Claymore",
-    "type": "Character",
-    "levelATKIncrease": 1.631578947368421,
-    "talent": "Steel Fang",
-    "baseAtk": 20
-  },
-  {
-    "id": 18,
-    "rarity": "4",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/61/Character_Sucrose_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Sucrose",
-    "name": "Sucrose",
-    "element": "Anemo",
-    "weapon": "Catalyst",
-    "type": "Character",
-    "levelATKIncrease": 1.2105263157894737,
-    "talent": "Wind Spirit Creation",
-    "baseAtk": 14
-  },
-  {
-    "id": 19,
-    "rarity": "5",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/7/71/Character_Traveler_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Traveler",
-    "name": "Traveler",
-    "element": "Adaptive",
-    "weapon": "Sword",
-    "type": "Character",
-    "levelATKIncrease": 1.4736842105263157,
-    "talent": "Foreign Ironwind",
-    "baseAtk": 18
-  },
-  {
-    "id": 20,
-    "rarity": "5",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/8d/Character_Venti_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Venti",
-    "name": "Venti",
-    "element": "Anemo",
-    "weapon": "Bow",
-    "type": "Character",
-    "levelATKIncrease": 1.6842105263157894,
-    "talent": "Divine Archery",
-    "baseAtk": 21
-  },
-  {
-    "id": 21,
-    "rarity": "4",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a0/Character_Xiangling_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Xiangling",
-    "name": "Xiangling",
-    "element": "Pyro",
-    "weapon": "Polearm",
-    "type": "Character",
-    "levelATKIncrease": 1.5789473684210527,
-    "talent": "Dough-Fu",
-    "baseAtk": 19
-  },
-  {
-    "id": 22,
-    "rarity": "4",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/4a/Character_Xingqiu_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Xingqiu",
-    "name": "Xingqiu",
-    "element": "Hydro",
-    "weapon": "Sword",
-    "type": "Character",
-    "levelATKIncrease": 1.4210526315789473,
-    "talent": "Guhua Style",
-    "baseAtk": 17
-  },
-  {
-    "id": 23,
-    "rarity": "5",
-    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/53/Character_Tartaglia_Thumb.png",
-    "pageUrl": "https://genshin-impact.fandom.com/wiki/Tartaglia",
-    "name": "Tartaglia (Childe)",
-    "element": "Hydro",
-    "weapon": "Bow",
-    "type": "Character",
-    "levelATKIncrease": 2,
-    "talent": "Cutting Torrent",
-    "baseAtk": 47
-  },
-  {
-    "id": 24,
     "rarity": "4",
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b9/Character_Diona_Thumb.png",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Diona",
@@ -307,8 +116,319 @@
     "element": "Cryo",
     "weapon": "Bow",
     "type": "Character",
-    "levelATKIncrease": 1.5,
+    "stats": {
+      "HP": { "base": 802, "lvlIncrease": 66.26315789473684 },
+      "ATK": { "base": 41, "lvlIncrease": 1.4736842105263157 },
+      "DEF": { "base": 50, "lvlIncrease": 4.157894736842105 }
+    },
     "talent": "Kätzlein Style",
-    "baseAtk": 41
+    "talentBase": 36.1,
+    "bonusStat": { "type": "Elemental DMG%", "base": 6.0 }
+  },
+  {
+    "id": 8,
+    "rarity": "4",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/1/14/Character_Fischl_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Fischl",
+    "name": "Fischl",
+    "element": "Electro",
+    "weapon": "Bow",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 770, "lvlIncrease": 63.63157894736842 },
+      "ATK": { "base": 21, "lvlIncrease": 1.6842105263157894 },
+      "DEF": { "base": 50, "lvlIncrease": 4.105263157894737 }
+    },
+    "talent": "Bolts of Downfall",
+    "talentBase": 44.1,
+    "bonusStat": { "type": "ATK%", "base": 6.0 }
+  },
+  {
+    "id": 9,
+    "rarity": "5",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/89/Character_Jean_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Jean",
+    "name": "Jean",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 1144, "lvlIncrease": 95.94736842105263 },
+      "ATK": { "base": 19, "lvlIncrease": 1.5789473684210527 },
+      "DEF": { "base": 60, "lvlIncrease": 5.0 }
+    },
+    "talent": "Favonius Bladework",
+    "talentBase": 48.3,
+    "bonusStat": { "type": "Healing%", "base": 5.5 }
+  },
+  {
+    "id": 10,
+    "rarity": "4",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/33/Character_Kaeya_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Kaeya",
+    "name": "Kaeya",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 976, "lvlIncrease": 80.52631578947368 },
+      "ATK": { "base": 19, "lvlIncrease": 1.5263157894736843 },
+      "DEF": { "base": 66, "lvlIncrease": 5.526315789473684 }
+    },
+    "talent": "Ceremonial Bladework",
+    "talentBase": 53.8,
+    "bonusStat": { "type": "Energy Recharge%", "base": 6.7 }
+  },
+  {
+    "id": 11,
+    "rarity": "5",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/0/06/Character_Keqing_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Keqing",
+    "name": "Keqing",
+    "element": "Electro",
+    "weapon": "Sword",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 983, "lvlIncrease": 86.89473684210526 },
+      "ATK": { "base": 26, "lvlIncrease": 2.1052631578947367 },
+      "DEF": { "base": 63, "lvlIncrease": 5.2105263157894735 }
+    },
+    "talent": "Yunlai Swordsmanship",
+    "talentBase": 41.0,
+    "bonusStat": { "type": "CRIT DMG%", "base": 9.6 }
+  },
+  {
+    "id": 12,
+    "rarity": "5",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/c/c3/Character_Klee_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Klee",
+    "name": "Klee",
+    "element": "Pyro",
+    "weapon": "Catalyst",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 801, "lvlIncrease": 67.15789473684211 },
+      "ATK": { "base": 24, "lvlIncrease": 2.0526315789473686 },
+      "DEF": { "base": 48, "lvlIncrease": 4.0 }
+    },
+    "talent": "Kaboom!",
+    "talentBase": 72.2,
+    "bonusStat": { "type": "Elemental DMG%", "base": 7.2 }
+  },
+  {
+    "id": 13,
+    "rarity": "4",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/51/Character_Lisa_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Lisa",
+    "name": "Lisa",
+    "element": "Electro",
+    "weapon": "Catalyst",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 802, "lvlIncrease": 66.26315789473684 },
+      "ATK": { "base": 20, "lvlIncrease": 1.5789473684210527 },
+      "DEF": { "base": 48, "lvlIncrease": 3.9473684210526314 }
+    },
+    "talent": "Lightning Touch",
+    "talentBase": 39.6,
+    "bonusStat": { "type": "Elemental Mastery", "base": 24 }
+  },
+  {
+    "id": 14,
+    "rarity": "5",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a0/Character_Mona_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Mona",
+    "name": "Mona",
+    "element": "Hydro",
+    "weapon": "Catalyst",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 810, "lvlIncrease": 68.0 },
+      "ATK": { "base": 46, "lvlIncrease": 0.631578947368421 },
+      "DEF": { "base": 51, "lvlIncrease": 4.2631578947368425 }
+    },
+    "talent": "Ripple of Fate",
+    "talentBase": 37.6,
+    "bonusStat": { "type": "Energy Recharge%", "base": 8.0 }
+  },
+  {
+    "id": 15,
+    "rarity": "4",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/2/2b/Character_Ningguang_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Ningguang",
+    "name": "Ningguang",
+    "element": "Geo",
+    "weapon": "Catalyst",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 821, "lvlIncrease": 67.73684210526316 },
+      "ATK": { "base": 18, "lvlIncrease": 1.4736842105263157 },
+      "DEF": { "base": 48, "lvlIncrease": 3.9473684210526314 }
+    },
+    "talent": "Sparkling Scatter",
+    "talentBase": 28.0,
+    "bonusStat": { "type": "Elemental DMG%", "base": 6.0 }
+  },
+  {
+    "id": 16,
+    "rarity": "4",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/ab/Character_Noelle_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Noelle",
+    "name": "Noelle",
+    "element": "Geo",
+    "weapon": "Claymore",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 1012, "lvlIncrease": 83.57894736842105 },
+      "ATK": { "base": 16, "lvlIncrease": 1.3157894736842106 },
+      "DEF": { "base": 67, "lvlIncrease": 5.526315789473684 }
+    },
+    "talent": "Favonius Bladework - Maid",
+    "talentBase": 79.1,
+    "bonusStat": { "type": "DEF%", "base": 7.5 }
+  },
+  {
+    "id": 17,
+    "rarity": "5",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d5/Character_Qiqi_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Qiqi",
+    "name": "Qiqi",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 963, "lvlIncrease": 80.78947368421052 },
+      "ATK": { "base": 23, "lvlIncrease": 1.8421052631578947 },
+      "DEF": { "base": 72, "lvlIncrease": 6.0 }
+    },
+    "talent": "Ancient Sword Art",
+    "talentBase": 37.8,
+    "bonusStat": { "type": "Healing Bonus%", "base": 5.5 }
+  },
+  {
+    "id": 18,
+    "rarity": "4",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/1/1d/Character_Razor_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Razor",
+    "name": "Razor",
+    "element": "Electro",
+    "weapon": "Claymore",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 1003, "lvlIncrease": 82.84210526315789 },
+      "ATK": { "base": 20, "lvlIncrease": 1.631578947368421 },
+      "DEF": { "base": 63, "lvlIncrease": 5.2105263157894735 }
+    },
+    "talent": "Steel Fang",
+    "talentBase": 88.0,
+    "bonusStat": { "type": "Physical DMG%", "base": 7.5 }
+  },
+  {
+    "id": 19,
+    "rarity": "4",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/61/Character_Sucrose_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Sucrose",
+    "name": "Sucrose",
+    "element": "Anemo",
+    "weapon": "Catalyst",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 775, "lvlIncrease": 64.0 },
+      "ATK": { "base": 14, "lvlIncrease": 1.2105263157894737 },
+      "DEF": { "base": 59, "lvlIncrease": 4.842105263157895 }
+    },
+    "talent": "Wind Spirit Creation",
+    "talentBase": 33.5,
+    "bonusStat": { "type": "Elemental DMG%", "base": 6.0 }
+  },
+  {
+    "id": 20,
+    "rarity": "5",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/53/Character_Tartaglia_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Tartaglia",
+    "name": "Tartaglia",
+    "element": "Hydro",
+    "weapon": "Bow",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 1020, "lvlIncrease": 85.57894736842105 },
+      "ATK": { "base": 47, "lvlIncrease": 0.7368421052631579 },
+      "DEF": { "base": 63, "lvlIncrease": 5.368421052631579 }
+    },
+    "talent": "Cutting Torrent",
+    "talentBase": 41.3,
+    "bonusStat": { "type": "Elemental DMG%", "base": 7.2 }
+  },
+  {
+    "id": 21,
+    "rarity": "5",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/7/71/Character_Traveler_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Traveler",
+    "name": "Traveler",
+    "element": "Adaptive",
+    "weapon": "Sword",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 912, "lvlIncrease": 75.26315789473684 },
+      "ATK": { "base": 18, "lvlIncrease": 1.4736842105263157 },
+      "DEF": { "base": 57, "lvlIncrease": 4.7368421052631575 }
+    },
+    "talent": "Foreign Ironwind",
+    "talentBase": 44.5,
+    "bonusStat": { "type": "ATK%", "base": 6.0 }
+  },
+  {
+    "id": 22,
+    "rarity": "5",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/8/8d/Character_Venti_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Venti",
+    "name": "Venti",
+    "element": "Anemo",
+    "weapon": "Bow",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 820, "lvlIncrease": 68.78947368421052 },
+      "ATK": { "base": 21, "lvlIncrease": 1.6842105263157894 },
+      "DEF": { "base": 52, "lvlIncrease": 4.368421052631579 }
+    },
+    "talent": "Divine Archery",
+    "talentBase": 20.4,
+    "bonusStat": { "type": "Energy Recharge%", "base": 8.0 }
+  },
+  {
+    "id": 23,
+    "rarity": "4",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/a/a0/Character_Xiangling_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Xiangling",
+    "name": "Xiangling",
+    "element": "Pyro",
+    "weapon": "Polearm",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 912, "lvlIncrease": 75.26315789473684 },
+      "ATK": { "base": 19, "lvlIncrease": 1.5789473684210527 },
+      "DEF": { "base": 56, "lvlIncrease": 4.631578947368421 }
+    },
+    "talent": "Dough-Fu",
+    "talentBase": 42.1,
+    "bonusStat": { "type": "Elemental Mastery", "base": 24 }
+  },
+  {
+    "id": 24,
+    "rarity": "4",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/4a/Character_Xingqiu_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Xingqiu",
+    "name": "Xingqiu",
+    "element": "Hydro",
+    "weapon": "Sword",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 857, "lvlIncrease": 70.78947368421052 },
+      "ATK": { "base": 17, "lvlIncrease": 1.4210526315789473 },
+      "DEF": { "base": 64, "lvlIncrease": 5.2105263157894735 }
+    },
+    "talent": "Guhua Style",
+    "talentBase": 46.6,
+    "bonusStat": { "type": "ATK%", "base": 6.0 }
   }
 ]
