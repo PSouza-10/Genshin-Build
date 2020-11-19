@@ -8,7 +8,7 @@ import {
   MainStat,
   ItemInfo,
   StarIcon,
-  ArrowIcon,
+  CloseIcon,
   SelectButton,
   TalentContainer,
   IconButton
@@ -52,7 +52,7 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
   return (
     <Container isItemView displayed={!(displayedItem === 'stats')}>
       <span className='layoutControl'>
-        <ArrowIcon onClick={() => setDisplayed('stats')} />
+        <CloseIcon onClick={() => setDisplayed('stats')} />
         <p>
           {type}
           {isViewMode ? `(View)` : `(Selected)`}
@@ -90,7 +90,7 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
       {type === 'Artifact' && !isViewMode && (
         <ArtifactSubStats
           slot={slotKey}
-          mainStatType={stats.artifactsAtk[slotKey].mainType}
+          mainStatType={stats.artifactStats[slotKey].mainType}
         />
       )}
       {type === 'Weapon' && (

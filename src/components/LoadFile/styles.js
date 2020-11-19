@@ -64,7 +64,7 @@ export const Overlay = styled.div`
   right: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: 998;
+  z-index: 30;
   display: none;
   @media (max-width: 576px) {
     display: ${({ visible }) => (visible ? 'block' : 'none')};
@@ -78,7 +78,7 @@ export const SelectFileModal = styled.div`
   background-color: var(--bgPrimary);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
   transition: all 0.3s linear;
-  z-index: 999;
+  z-index: 31;
   width: 320px;
   ${({ open }) =>
     css`

@@ -7,11 +7,12 @@ import { StatContext } from '../../StatContext'
 
 export function CharacterWheel() {
   const { clearItems } = useContext(ItemsContext)
-  const { totalAtk } = useContext(StatContext)
+  const { calculatedStats } = useContext(StatContext)
   const [messageOpen, openMessage] = useState(false)
 
   const handleClear = (option = '') => {
-    if (totalAtk > 0) {
+    if (calculatedStats.ATK > 0) {
+      console.log(option)
       if (option === '') {
         openMessage(!messageOpen)
       } else {

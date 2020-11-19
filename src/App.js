@@ -8,8 +8,9 @@ import {
   WarningMessage
 } from './components'
 import FilterProvider from './components/ItemPicker/FilterContext'
-import StatProvider from './StatContext'
+
 import { ItemsContext } from './ItemsContext'
+import { StatContext } from './StatContext'
 
 const Container = styled.div`
   display: flex;
@@ -49,34 +50,40 @@ const Container = styled.div`
 `
 
 function App() {
-  const { dataFromUrl } = useContext(ItemsContext)
+  const { dataFromUrl, selectItem, selectedItems } = useContext(ItemsContext)
+  const { setArtifactStats } = useContext(StatContext)
+
   useEffect(() => {
     const url = window.location.href
-    const savedData = localStorage.getItem('buildStr')
+    const savedData = JSON.parse(localStorage.getItem('buildStr'))
 
     if (url.includes('/?b=')) {
       let param = url.split('/?b=')[1]
       dataFromUrl(param)
     } else if (savedData) {
-      dataFromUrl(savedData)
+      selectItem({
+        ...selectedItems,
+        ...savedData.selectedItems
+      })
+      setArtifactStats({
+        ...savedData.artifactStats
+      })
     }
     //eslint-disable-next-line
   }, [])
   return (
     <>
-      <StatProvider>
-        <WarningMessage />
-        <Header />
-        <Container>
-          <div className='left'>
-            <FilterProvider>
-              <ItemPicker />
-            </FilterProvider>
-            <CharacterWheel />
-          </div>
-          <StatDisplay />
-        </Container>
-      </StatProvider>
+      <WarningMessage />
+      <Header />
+      <Container>
+        <div className='left'>
+          <FilterProvider>
+            <ItemPicker />
+          </FilterProvider>
+          <CharacterWheel />
+        </div>
+        <StatDisplay />
+      </Container>
     </>
   )
 }

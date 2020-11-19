@@ -15,7 +15,7 @@ import {
 import { StatContext } from '../../StatContext'
 
 export function ArtifactMainStat({ slot, mainStatIsEditable }) {
-  const { artifactsAtk, setMainStat } = useContext(StatContext)
+  const { artifactStats, setMainStat } = useContext(StatContext)
   const [open, setOpen] = useState(false)
   const toggle = () => {
     setOpen(!open)
@@ -24,7 +24,7 @@ export function ArtifactMainStat({ slot, mainStatIsEditable }) {
   const uniqueStats = {
     sands: ['Energy Recharge%'],
     goblet: ['Elemental DMG%', 'Physical DMG%'],
-    circlet: ['Crit DMG%', 'Crit Rate%', 'Healing Bonus%']
+    circlet: ['CRIT DMG%', 'CRIT Rate%', 'Healing Bonus%']
   }
 
   const handleSelect = value => {
@@ -38,7 +38,7 @@ export function ArtifactMainStat({ slot, mainStatIsEditable }) {
     possibleStats = [...possibleStats, ...uniqueStats[slot]]
   }
 
-  const { main, mainType } = artifactsAtk[slot]
+  const { main, mainType } = artifactStats[slot]
   return (
     <Wrapper>
       <Bar
@@ -70,9 +70,9 @@ export function ArtifactMainStat({ slot, mainStatIsEditable }) {
 }
 
 export function ArtifactSubStats({ slot, mainStatType }) {
-  const { handleSubStats, artifactsAtk } = useContext(StatContext)
+  const { handleSubStats, artifactStats } = useContext(StatContext)
   const [openSubStat, setOpen] = useState(5)
-  const subStats = artifactsAtk[slot].sub
+  const subStats = artifactStats[slot].sub
   const currentStatsType = subStats.map(({ type }) => type)
   const [inputData, setInputData] = useState(subStats)
 
@@ -148,7 +148,7 @@ export function ArtifactSubStats({ slot, mainStatType }) {
     }
   }
   const maxNumberTable = [1, 2, 4, 4, 4]
-  const maxNumberOfSubStats = maxNumberTable[artifactsAtk[slot].upgrade - 1]
+  const maxNumberOfSubStats = maxNumberTable[artifactStats[slot].upgrade - 1]
   return (
     <>
       <span

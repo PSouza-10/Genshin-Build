@@ -21,7 +21,7 @@ export const Container = styled.div`
       top:0;
     
       overflow: hidden;
-      z-index: 15;
+      z-index: 10;
       height: 100%;
       box-shadow: 0 -6px 5px rgba(0,0,0,0.6);
       
@@ -128,7 +128,7 @@ export const StarIcon = styled(FaStar)`
   width: 24px;
 `
 
-export const ArrowIcon = styled(MdClose)`
+export const CloseIcon = styled(MdClose)`
   fill: var(--primary);
   height: 100%;
   position: absolute;

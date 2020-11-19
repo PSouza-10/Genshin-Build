@@ -2,68 +2,24 @@ import data from '../ItemsContext/data.json'
 import weaponTypes from '../ItemsContext/weaponTypes.json'
 const { artifactIncreases } = data
 
-export function calculateDamage(
-  totalAtk,
-  talentLevel,
-  artifactsAtk,
-  characterStats,
-  weaponAtk,
-  character,
-  enemyLevel
-) {
-  console.log(arguments)
-
-  let bonuses = {
-    'CRIT DMG%': 0,
-    'Physical DMG%': 0,
-    'Elemental DMG%': 0
-  }
-
-  let bonusKeys = [...Object.keys(bonuses)]
-
-  for (let key in characterStats) {
-    if (bonusKeys.includes(key)) {
-      bonuses[key] += characterStats[key] / 100
-    }
-  }
-
-  const { subType, sub } = weaponAtk
-
-  if (bonusKeys.includes(subType)) {
-    bonuses[subType] += sub / 100
-  }
-
-  for (let key in artifactsAtk) {
-    const { main, mainType, sub } = artifactsAtk[key]
-
-    if (bonusKeys.includes(mainType)) {
-      bonuses[mainType] += main / 100
-    }
-
-    sub
-      .filter(({ type }) => type === 'CRIT DMG%')
-      .forEach(({ value }) => {
-        bonuses['CRIT DMG%'] += value / 100
-      })
-  }
-
+export function calculateDamage(stats, talentLevel, character, enemyLevel) {
   let talentAtkMult =
     ((character.talentBase || 0) *
       data.talentLevelMultipliers[talentLevel - 1]) /
     100
 
   let normalDMG =
-    totalAtk *
+    stats.ATK *
     talentAtkMult *
     ((100 + character.level) / (200 + character.level + enemyLevel))
 
   if (character.weapon === 'Catalyst') {
-    normalDMG *= 1 + bonuses['Elemental DMG%']
+    normalDMG *= 1 + stats['Elemental DMG%'] / 100
   } else {
-    normalDMG *= 1 + bonuses['Physical DMG%']
+    normalDMG *= 1 + stats['Physical DMG%'] / 100
   }
 
-  let critDMG = normalDMG * (1 + bonuses['CRIT DMG%'])
+  let critDMG = normalDMG * (1 + stats['CRIT DMG%'] / 100)
 
   return {
     normal: Math.round(normalDMG),
@@ -71,17 +27,52 @@ export function calculateDamage(
   }
 }
 
-export function calculateAtkPower(
-  characterStats,
-  weaponAtk,
-  flatAtk,
-  totalAtkPerc
-) {
-  const baseAtk = characterStats.ATK + weaponAtk
-  const percBonus = parseFloat(totalAtkPerc) / 100
-  const basePercBonus = percBonus * baseAtk
+export function calculateStats(characterStats, weaponAtk, artifactStats) {
+  const baseStats = {
+    ATK: characterStats.ATK + weaponAtk.main,
+    DEF: characterStats.DEF,
+    HP: characterStats.HP
+  }
 
-  return Math.floor(baseAtk + basePercBonus + flatAtk)
+  let baseStatObj = Object.assign({}, baseStats)
+
+  const totalBonus = calculateTotalBonus(
+    artifactStats,
+    weaponAtk,
+    characterStats
+  )
+
+  const baseStatKeys = ['ATK', 'HP', 'DEF']
+  let increases = {
+    ATK: 0,
+    HP: 0,
+    DEF: 0
+  }
+  baseStatKeys.forEach(key => {
+    const perc = key + '%'
+
+    increases[key] += totalBonus[key]
+    increases[key] += (totalBonus[perc] / 100) * baseStats[key]
+
+    baseStatObj[key] += increases[key]
+  })
+  let newStats = {
+    ATK: baseStatObj.ATK,
+    DEF: baseStatObj.DEF,
+    HP: baseStatObj.HP,
+    ATKBonus: increases.ATK,
+    DEFBonus: increases.DEF,
+    HPBonus: increases.HP
+  }
+
+  for (const key in totalBonus) {
+    if (!baseStatKeys.includes(key)) {
+      newStats[key] = totalBonus[key]
+    }
+  }
+  console.log(newStats)
+
+  return newStats
 }
 
 export function calculateCharacterStats({
@@ -96,12 +87,12 @@ export function calculateCharacterStats({
   const stars = parseInt(rarity)
   let newStats = {
     HP: 0,
-    'CRIT Rate%': 0,
+    'CRIT Rate%': 5,
     'CRIT DMG%': 50,
     ATK: 0,
     DEF: 0,
     'Elemental Mastery': 0,
-    'Energy Recharge': 0,
+    'Energy Recharge%': 100,
     'Elemental DMG%': 0,
     'Physical DMG%': 0
   }
@@ -264,34 +255,57 @@ export const createNewArtifacts = (artifactsAtk, selected) => {
   return newArtifacts
 }
 
-export function calculateTotalFlatATK(artifactsAtk) {
-  let artifactsFlatATK = 0
+export function calculateTotalBonus(artifactsAtk, weapon, characterStats) {
+  let statBonus = {
+    ATK: 0,
+    DEF: 0,
+    HP: 0,
+    'ATK%': 0,
+    'DEF%': 0,
+    'HP%': 0,
+    'Elemental Mastery': 0,
+    'Energy Recharge%': 0,
+    'CRIT Rate%': 0,
+    'CRIT DMG%': 0,
+    'Elemental DMG%': 0,
+    'Physical DMG%': 0,
+    'Healing Bonus%': 0
+  }
+
+  const stats = [...Object.keys(statBonus)]
+
   Object.keys(artifactsAtk).forEach(key => {
-    let item = artifactsAtk[key]
-    if (item.id) {
-      if (key === 'plume') {
-        artifactsFlatATK += item.main
+    const { id, mainType, main, sub } = artifactsAtk[key]
+    if (id) {
+      if (stats.includes(mainType)) {
+        statBonus[mainType] += main
       }
 
-      item.sub.forEach(({ type, value }) => {
-        if (type === 'ATK') {
-          console.log(type)
-          artifactsFlatATK += value
+      sub.forEach(({ type, value }) => {
+        if (stats.includes(type)) {
+          statBonus[type] += value
         }
       })
     }
   })
-  return artifactsFlatATK
+
+  if (stats.includes(weapon.subType)) {
+    stats[weapon.subType] += weapon.sub
+  }
+
+  for (const key in characterStats) {
+    if (!['ATK', 'HP', 'DEF'].includes(key)) {
+      statBonus[key] += characterStats[key]
+    }
+  }
+  return statBonus
 }
 
 export function calculateTotalAtkPerc(artifacts, weaponAtk, characterStats) {
   let total = 0
   const artifactsAtkCopy = Object.assign({}, artifacts)
   Object.keys(artifactsAtkCopy).forEach(key => {
-    if (
-      !['plume', 'flower'].includes(key) &&
-      artifactsAtkCopy[key].mainType === 'ATK%'
-    ) {
+    if (artifactsAtkCopy[key].mainType === 'ATK%') {
       total += artifactsAtkCopy[key].main
     }
 
@@ -302,7 +316,7 @@ export function calculateTotalAtkPerc(artifacts, weaponAtk, characterStats) {
     })
   })
 
-  if (weaponAtk.subType === 'ATK') {
+  if (weaponAtk.subType === 'ATK%') {
     total += weaponAtk.sub
   }
 

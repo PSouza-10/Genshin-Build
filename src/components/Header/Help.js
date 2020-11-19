@@ -83,7 +83,7 @@ const Container = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 999;
+  z-index: 60;
   transition: all 0.3s ease;
   background-color: var(--bgPrimary);
   ${({ open }) =>

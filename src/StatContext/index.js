@@ -4,10 +4,8 @@ import {
   calculateCharacterStats,
   createNewArtifacts,
   calculateWeaponStats,
-  calculateAtkPower,
-  calculateDamage,
-  calculateTotalFlatATK,
-  calculateTotalAtkPerc
+  calculateStats,
+  calculateDamage
 } from './statCalculations'
 
 import {
@@ -17,40 +15,50 @@ import {
 
 const initialState = {
   damage: 0,
-  weaponAtk: 0,
+  weaponStats: 0,
   characterStats: {
     HP: 0,
-    'CRIT Rate%': 0,
-    'CRIT DMG%': 0.5,
+    'CRIT Rate%': 5,
+    'CRIT DMG%': 50,
     ATK: 0,
     DEF: 0,
     'Elemental Mastery': 0,
-    'Energy Recharge': 0,
-    'Elemental DMG%': 0
+    'Energy Recharge%': 100,
+    'Elemental DMG%': 0,
+    'Physical DMG%': 0
   }
 }
 
 export const StatContext = createContext(initialState)
 
 export default function StatProvider({ children }) {
-  const { selectedItems, talentLevel, data } = useContext(ItemsContext)
+  const { selectedItems, talentLevel, didMount } = useContext(ItemsContext)
   const { character, weapon } = selectedItems
 
   const [characterStats, setCharacterStats] = useState(
     initialState.characterStats
   )
-  const [artifactsAtk, setArtifactAtk] = useState(
+  const [artifactStats, setArtifactStats] = useState(
     generateInitialArtifactState(selectedItems)
   )
-  const [flatAtkBonus, setFlatAtk] = useState(0)
-  const [weaponAtk, setWeaponAtk] = useState({
+
+  const [weaponStats, setWeaponStats] = useState({
     main: 0,
     sub: 0,
     subType: ''
   })
-  const [totalAtkPerc, setTotalAtkPerc] = useState(0)
 
-  const [totalAtk, setTotalAtk] = useState(0)
+  const [calculatedStats, setCalculatedStats] = useState({
+    HP: 0,
+    ATK: 0,
+    DEF: 0,
+    'Energy Recharge%': 0,
+    'CRIT Rate%': 0,
+    'CRIT DMG%': 0,
+    'Elemental DMG%': 0,
+    'Physical DMG%': 0,
+    'Healing Bonus': 0
+  })
   const [damage, setDamage] = useState({
     crit: 0,
     normal: 0
@@ -58,12 +66,12 @@ export default function StatProvider({ children }) {
   const [enemyLevel, setEnemyLevel] = useState(character.level)
 
   useEffect(() => {
-    const newArtifacts = createNewArtifacts(artifactsAtk, selectedItems)
-    setArtifactAtk(newArtifacts)
-
-    setFlatAtk(newArtifacts.plume.main)
+    if (didMount()) {
+      const newArtifacts = createNewArtifacts(artifactStats, selectedItems)
+      setArtifactStats(newArtifacts)
+    }
     //eslint-disable-next-line
-  }, [selectedItems, setArtifactAtk])
+  }, [selectedItems, setArtifactStats])
 
   useEffect(() => {
     if (character.id) {
@@ -75,15 +83,10 @@ export default function StatProvider({ children }) {
   }, [character])
 
   useEffect(() => {
-    setTotalAtk(
-      calculateAtkPower(
-        characterStats,
-        weaponAtk.main,
-        flatAtkBonus,
-        totalAtkPerc
-      )
+    setCalculatedStats(
+      calculateStats(characterStats, weaponStats, artifactStats)
     )
-  }, [totalAtkPerc, flatAtkBonus, characterStats, weaponAtk])
+  }, [characterStats, weaponStats, artifactStats])
 
   useEffect(() => {
     if (weapon.id) {
@@ -93,9 +96,9 @@ export default function StatProvider({ children }) {
         sub,
         subType: weapon.secondaryStat
       }
-      setWeaponAtk(newWeaponStats)
+      setWeaponStats(newWeaponStats)
     } else {
-      setWeaponAtk({
+      setWeaponStats({
         main: 0,
         sub: 0,
         subType: 0
@@ -105,59 +108,33 @@ export default function StatProvider({ children }) {
   }, [weapon])
 
   useEffect(() => {
-    setTotalAtkPerc(
-      calculateTotalAtkPerc(artifactsAtk, weaponAtk, characterStats)
-    )
-  }, [weaponAtk, artifactsAtk, characterStats])
-
-  useEffect(() => {
     setDamage(
-      calculateDamage(
-        totalAtk,
-        talentLevel,
-        artifactsAtk,
-        characterStats,
-        weaponAtk,
-        character,
-        enemyLevel
-      )
+      calculateDamage(calculatedStats, talentLevel, character, enemyLevel)
     )
 
     //eslint-disable-next-line
-  }, [
-    totalAtk,
-    talentLevel,
-    data.talents,
-    enemyLevel,
-    artifactsAtk,
-    characterStats
-  ])
+  }, [talentLevel, enemyLevel, calculatedStats, character])
   function setMainStat(slot = 'sands', stat = 'ATK%') {
     const withNewStat = {
-      ...artifactsAtk,
+      ...artifactStats,
       [slot]: {
-        ...artifactsAtk[slot],
+        ...artifactStats[slot],
         mainType: stat
       }
     }
     const newArtifacts = createNewArtifacts(withNewStat, selectedItems)
-    setArtifactAtk(newArtifacts)
+    setArtifactStats(newArtifacts)
   }
-
-  useEffect(() => {
-    const newFlatATK = calculateTotalFlatATK(artifactsAtk)
-    setFlatAtk(newFlatATK)
-  }, [artifactsAtk, setFlatAtk])
 
   function handleSubStats(action, value, slot, subStatIndex = 0) {
     const newSubStats = returnNewSubStats(
       action,
-      artifactsAtk[slot].sub,
+      artifactStats[slot].sub,
       value,
       subStatIndex
     )
 
-    setArtifactAtk(previousValue => {
+    setArtifactStats(previousValue => {
       return {
         ...previousValue,
         [slot]: {
@@ -172,16 +149,14 @@ export default function StatProvider({ children }) {
     <StatContext.Provider
       value={{
         characterStats,
-        weaponAtk,
-        artifactsAtk,
-        totalAtkPerc,
-        totalAtk,
-        flatAtkBonus,
+        weaponStats,
+        artifactStats,
+        calculatedStats,
         damage,
         enemyLevel,
         setMainStat,
         handleSubStats,
-        setArtifactAtk,
+        setArtifactStats,
         setEnemyLevel
       }}>
       {children}

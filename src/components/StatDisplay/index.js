@@ -5,6 +5,8 @@ import ItemView from './ItemView'
 import { StatContext } from '../../StatContext'
 import DamageModal from './DamageModal'
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import AllStats from './AllStatsModal'
+
 export function StatDisplay() {
   const {
     selectedItems,
@@ -21,10 +23,8 @@ export function StatDisplay() {
   }
   const {
     characterStats,
-    weaponAtk,
-    flatAtkBonus,
-    totalAtkPerc,
-    totalAtk,
+    weaponStats,
+    calculatedStats,
     damage,
     enemyLevel,
     setEnemyLevel
@@ -59,13 +59,12 @@ export function StatDisplay() {
           <span>Crit Damage {damage.crit}</span>
           <MdKeyboardArrowRight />
         </MainStat>
-        <MainStat>Total ATK {totalAtk}</MainStat>
+        <MainStat>Total ATK {Math.round(calculatedStats.ATK)}</MainStat>
         <MainStat>
           Character ATK {characterStats.ATK} | Talent Lvl.{talentLevel}
         </MainStat>
-        <MainStat>Weapon ATK {weaponAtk.main}</MainStat>
-        <MainStat>Flat ATK Bonus {flatAtkBonus}</MainStat>
-        <MainStat>Total ATK% Bonus {totalAtkPerc}%</MainStat>
+        <MainStat>Weapon ATK {weaponStats.main}</MainStat>
+        <AllStats stats={calculatedStats} />
       </Container>
     </>
   )
