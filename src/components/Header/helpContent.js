@@ -17,24 +17,14 @@ export default {
       <br></br>
       <h3 className='title'>Current Limitations</h3>
       <p className='text'>
-        At the current moment, character and weapon stats have are at some level
-        of innacuracy, by extension, the damage displayed will differ somewhat
-        from what you actually see in the game. Do keep in mind that in the
-        current version of the application (1.0), only 1-Hit DMG for the
-        auto-attack talent is calculated.
+        At the current moment, stats have are at some level of innacuracy, by
+        extension, the damage displayed will differ somewhat from what you
+        actually see in the game. Do keep in mind that in the current version of
+        the application (1.0), only 1-Hit DMG for the auto-attack talent is
+        calculated.
         <br></br>
         <br></br>
-        Set bonuses and character bonus stats are NOT currently factored in the
-        Total Attack calculation, thus adding to discrepancies in the final
-        damage value.
-        <br></br>
-        <br></br>
-        This effect may be exacerbated in some builds, especifically those that
-        rely on set bonuses, as these have not yet been implemented, but are the
-        #1 thing on the to-do list.
-        <br></br>
-        <br></br>
-        These aspects will be improved upon as I collect more data to improve
+        This will be improved upon as I collect more data to improve
         calculations, and the community dissects formulas.
       </p>
       <br></br>
