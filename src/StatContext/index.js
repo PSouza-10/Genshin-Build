@@ -5,7 +5,8 @@ import {
   createNewArtifacts,
   calculateWeaponStats,
   calculateStats,
-  calculateDamage
+  calculateDamage,
+  findSetBonuses
 } from './statCalculations'
 
 import {
@@ -47,7 +48,7 @@ export default function StatProvider({ children }) {
     sub: 0,
     subType: ''
   })
-
+  const [setBonuses, setSetBonuses] = useState({})
   const [calculatedStats, setCalculatedStats] = useState({
     HP: 0,
     ATK: 0,
@@ -68,6 +69,7 @@ export default function StatProvider({ children }) {
   useEffect(() => {
     if (didMount()) {
       const newArtifacts = createNewArtifacts(artifactStats, selectedItems)
+      setSetBonuses(findSetBonuses(selectedItems))
       setArtifactStats(newArtifacts)
     }
     //eslint-disable-next-line
@@ -84,9 +86,21 @@ export default function StatProvider({ children }) {
 
   useEffect(() => {
     setCalculatedStats(
-      calculateStats(characterStats, weaponStats, artifactStats)
+      calculateStats(
+        characterStats,
+        weaponStats,
+        artifactStats,
+        setBonuses,
+        character.element
+      )
     )
-  }, [characterStats, weaponStats, artifactStats])
+  }, [
+    characterStats,
+    weaponStats,
+    artifactStats,
+    character.element,
+    setBonuses
+  ])
 
   useEffect(() => {
     if (weapon.id) {

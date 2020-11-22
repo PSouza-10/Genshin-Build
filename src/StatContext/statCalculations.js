@@ -1,5 +1,6 @@
 import data from '../ItemsContext/data.json'
 import weaponTypes from '../ItemsContext/weaponTypes.json'
+import artifactSets from '../ItemsContext/artifactSets.json'
 const { artifactIncreases } = data
 
 export function calculateDamage(stats, talentLevel, character, enemyLevel) {
@@ -27,7 +28,13 @@ export function calculateDamage(stats, talentLevel, character, enemyLevel) {
   }
 }
 
-export function calculateStats(characterStats, weaponAtk, artifactStats) {
+export function calculateStats(
+  characterStats,
+  weaponAtk,
+  artifactStats,
+  setBonuses,
+  characterElement = ''
+) {
   const baseStats = {
     ATK: characterStats.ATK + weaponAtk.main,
     DEF: characterStats.DEF,
@@ -39,7 +46,9 @@ export function calculateStats(characterStats, weaponAtk, artifactStats) {
   const totalBonus = calculateTotalBonus(
     artifactStats,
     weaponAtk,
-    characterStats
+    characterStats,
+    setBonuses,
+    characterElement
   )
 
   const baseStatKeys = ['ATK', 'HP', 'DEF']
@@ -70,7 +79,6 @@ export function calculateStats(characterStats, weaponAtk, artifactStats) {
       newStats[key] = totalBonus[key]
     }
   }
-  console.log(newStats)
 
   return newStats
 }
@@ -137,7 +145,7 @@ export function calculateCharacterStats({
   const bonusStatPerAscensionMultiplier = [0, 0, 1, 2, 2, 3, 4]
   let bonusStatValue = bonusStatPerAscensionMultiplier[ascension] * base
 
-  newStats[type] = bonusStatValue
+  newStats[type] += bonusStatValue
 
   return newStats
 }
@@ -255,7 +263,13 @@ export const createNewArtifacts = (artifactsAtk, selected) => {
   return newArtifacts
 }
 
-export function calculateTotalBonus(artifactsAtk, weapon, characterStats) {
+export function calculateTotalBonus(
+  artifactsAtk,
+  weapon,
+  characterStats,
+  setBonuses,
+  characterElement
+) {
   let statBonus = {
     ATK: 0,
     DEF: 0,
@@ -298,31 +312,56 @@ export function calculateTotalBonus(artifactsAtk, weapon, characterStats) {
       statBonus[key] += characterStats[key]
     }
   }
+
+  const elements = ['Pyro', 'Cryo', 'Electro', 'Hydro', 'Anemo', 'Geo']
+
+  for (const key in setBonuses) {
+    if (elements.includes(key.split(' ')[0])) {
+      if (characterElement === key.split(' ')[0]) {
+        statBonus['Elemental DMG%'] += setBonuses[key]
+      }
+    } else {
+      statBonus[key] += setBonuses[key]
+    }
+  }
+
   return statBonus
 }
 
-export function calculateTotalAtkPerc(artifacts, weaponAtk, characterStats) {
-  let total = 0
-  const artifactsAtkCopy = Object.assign({}, artifacts)
-  Object.keys(artifactsAtkCopy).forEach(key => {
-    if (artifactsAtkCopy[key].mainType === 'ATK%') {
-      total += artifactsAtkCopy[key].main
-    }
+export function findSetBonuses(selectedItems) {
+  let setsArray = []
 
-    artifactsAtkCopy[key].sub.forEach(({ type, value }) => {
-      if (type === 'ATK%') {
-        total += value
+  for (const key in selectedItems) {
+    if (!['character', 'weapon'].includes(key)) {
+      const set = selectedItems[key].set
+      setsArray.push(set)
+    }
+  }
+  const getOcurrence = (item, arr = []) =>
+    arr.filter(arrItem => item === arrItem).length
+
+  let copyArr = []
+
+  copyArr = setsArray.filter(item => !copyArr.includes(item) && item)
+
+  let bonuses = {}
+  console.log(copyArr)
+  copyArr.forEach(item => {
+    let bonusIndex = getOcurrence(item, setsArray)
+    const { setBonuses } = artifactSets[item]
+    if (bonusIndex > 3) {
+      bonuses = {
+        ...bonuses,
+        ...setBonuses[0],
+        ...setBonuses[1]
       }
-    })
+    } else if (bonusIndex > 1) {
+      bonuses = {
+        ...bonuses,
+        ...setBonuses[0]
+      }
+    }
   })
 
-  if (weaponAtk.subType === 'ATK%') {
-    total += weaponAtk.sub
-  }
-
-  if (characterStats['ATK%']) {
-    total += characterStats['ATK%']
-  }
-
-  return (Math.round(total * 100) / 100).toFixed(1)
+  return bonuses
 }

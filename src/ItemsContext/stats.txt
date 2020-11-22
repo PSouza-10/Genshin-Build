@@ -1,0 +1,25 @@
+"HP"
+
+"ATK"
+
+"DEF"
+
+"HP%"
+
+"ATK%"
+
+"DEF%"
+
+"Physical DMG%"
+
+"{Elemento} DMG%"
+
+"Elemental Mastery"
+
+"Energy Recharge%"
+
+"CRIT Rate%"
+
+"CRIT DMG%"
+
+"Healing Bonus%"

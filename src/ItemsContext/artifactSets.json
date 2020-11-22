@@ -3,13 +3,31 @@
     "minRarity": 1,
     "maxRarity": 3,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Adventurer",
-    "items": { "flower": 1, "plume": 2, "sands": 3, "goblet": 4, "circlet": 5 }
+    "items": { "flower": 1, "plume": 2, "sands": 3, "goblet": 4, "circlet": 5 },
+    "setBonuses": [
+      {
+        "HP": 1000
+      },
+      {}
+    ]
   },
   "Lucky Dog": {
     "minRarity": 1,
     "maxRarity": 3,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Lucky_Dog",
-    "items": { "flower": 6, "plume": 7, "sands": 8, "goblet": 9, "circlet": 10 }
+    "items": {
+      "flower": 6,
+      "plume": 7,
+      "sands": 8,
+      "goblet": 9,
+      "circlet": 10
+    },
+    "setBonuses": [
+      {
+        "DEF": 100
+      },
+      {}
+    ]
   },
   "Traveling Doctor": {
     "minRarity": 1,
@@ -21,7 +39,8 @@
       "sands": 13,
       "goblet": 14,
       "circlet": 15
-    }
+    },
+    "setBonuses": [{}, {}]
   },
   "Instructor": {
     "minRarity": 3,
@@ -33,7 +52,13 @@
       "sands": 18,
       "goblet": 19,
       "circlet": 20
-    }
+    },
+    "setBonuses": [
+      {
+        "Elemental Mastery": 80
+      },
+      {}
+    ]
   },
   "Berserker": {
     "minRarity": 3,
@@ -45,7 +70,13 @@
       "sands": 23,
       "goblet": 24,
       "circlet": 25
-    }
+    },
+    "setBonuses": [
+      {
+        "CRIT Rate%": 12
+      },
+      {}
+    ]
   },
   "The Exile": {
     "minRarity": 3,
@@ -57,7 +88,13 @@
       "sands": 28,
       "goblet": 29,
       "circlet": 30
-    }
+    },
+    "setBonuses": [
+      {
+        "Energy Recharge%": 20
+      },
+      {}
+    ]
   },
   "Resolution of Sojourner": {
     "minRarity": 3,
@@ -69,7 +106,13 @@
       "sands": 33,
       "goblet": 34,
       "circlet": 35
-    }
+    },
+    "setBonuses": [
+      {
+        "ATK%": 18
+      },
+      {}
+    ]
   },
   "Martial Artist": {
     "minRarity": 3,
@@ -81,7 +124,13 @@
       "sands": 38,
       "goblet": 39,
       "circlet": 40
-    }
+    },
+    "setBonuses": [
+      {
+        "ATK%": 15
+      },
+      {}
+    ]
   },
   "Defender's Will": {
     "minRarity": 3,
@@ -93,7 +142,13 @@
       "sands": 43,
       "goblet": 44,
       "circlet": 45
-    }
+    },
+    "setBonuses": [
+      {
+        "DEF%": 30
+      },
+      {}
+    ]
   },
   "Tiny Miracle": {
     "minRarity": 3,
@@ -105,7 +160,8 @@
       "sands": 48,
       "goblet": 49,
       "circlet": 50
-    }
+    },
+    "setBonuses": [{}, {}]
   },
   "Brave Heart": {
     "minRarity": 3,
@@ -117,7 +173,13 @@
       "sands": 53,
       "goblet": 54,
       "circlet": 55
-    }
+    },
+    "setBonuses": [
+      {
+        "ATK%": 18
+      },
+      {}
+    ]
   },
   "Gambler": {
     "minRarity": 3,
@@ -129,7 +191,8 @@
       "sands": 58,
       "goblet": 59,
       "circlet": 60
-    }
+    },
+    "setBonuses": [{}, {}]
   },
   "Scholar": {
     "minRarity": 3,
@@ -141,7 +204,13 @@
       "sands": 63,
       "goblet": 64,
       "circlet": 65
-    }
+    },
+    "setBonuses": [
+      {
+        "Energy Recharge%": 20
+      },
+      {}
+    ]
   },
   "Gladiator's Finale": {
     "minRarity": 4,
@@ -153,7 +222,13 @@
       "sands": 68,
       "goblet": 69,
       "circlet": 70
-    }
+    },
+    "setBonuses": [
+      {
+        "ATK%": 18
+      },
+      {}
+    ]
   },
   "Maiden Beloved": {
     "minRarity": 4,
@@ -165,7 +240,13 @@
       "sands": 73,
       "goblet": 74,
       "circlet": 75
-    }
+    },
+    "setBonuses": [
+      {
+        "Healing Bonus%": 15
+      },
+      {}
+    ]
   },
   "Noblesse Oblige": {
     "minRarity": 4,
@@ -177,7 +258,8 @@
       "sands": 78,
       "goblet": 79,
       "circlet": 80
-    }
+    },
+    "setBonuses": [{}, {}]
   },
   "Bloodstained Chivalry": {
     "minRarity": 4,
@@ -189,7 +271,13 @@
       "sands": 83,
       "goblet": 84,
       "circlet": 85
-    }
+    },
+    "setBonuses": [
+      {
+        "Physical DMG%": 25
+      },
+      {}
+    ]
   },
   "Wanderer's Troupe": {
     "minRarity": 4,
@@ -201,7 +289,13 @@
       "sands": 88,
       "goblet": 89,
       "circlet": 90
-    }
+    },
+    "setBonuses": [
+      {
+        "Elemental Mastery": 80
+      },
+      {}
+    ]
   },
   "Thundering Fury": {
     "minRarity": 4,
@@ -213,7 +307,13 @@
       "sands": 93,
       "goblet": 94,
       "circlet": 95
-    }
+    },
+    "setBonuses": [
+      {
+        "Electro DMG%": 15
+      },
+      {}
+    ]
   },
   "Thundersoother": {
     "minRarity": 4,
@@ -225,7 +325,8 @@
       "sands": 98,
       "goblet": 99,
       "circlet": 100
-    }
+    },
+    "setBonuses": [{}, {}]
   },
   "Crimson Witch of Flames": {
     "minRarity": 4,
@@ -237,7 +338,13 @@
       "sands": 103,
       "goblet": 104,
       "circlet": 105
-    }
+    },
+    "setBonuses": [
+      {
+        "Pyro DMG%": 15
+      },
+      {}
+    ]
   },
   "Lavawalker": {
     "minRarity": 4,
@@ -249,7 +356,8 @@
       "sands": 108,
       "goblet": 109,
       "circlet": 110
-    }
+    },
+    "setBonuses": [{}, {}]
   },
   "Archaic Petra": {
     "minRarity": 4,
@@ -261,7 +369,13 @@
       "sands": 113,
       "goblet": 114,
       "circlet": 115
-    }
+    },
+    "setBonuses": [
+      {
+        "Geo DMG%": 15
+      },
+      {}
+    ]
   },
   "Retracing Bolide": {
     "minRarity": 4,
@@ -273,6 +387,7 @@
       "sands": 118,
       "goblet": 119,
       "circlet": 120
-    }
+    },
+    "setBonuses": [{}, {}]
   }
 }

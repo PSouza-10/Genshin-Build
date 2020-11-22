@@ -3,7 +3,7 @@ import { MainStat } from '../styles'
 import { MdKeyboardArrowRight, MdClose } from 'react-icons/md'
 import { Modal, Overlay, Stat, StatTableColumn } from './styles'
 
-function AllStats({ stats }) {
+function AllStats({ stats, element }) {
   const [statModal, setStatModal] = React.useState(false)
   const handleAllStatsModal = () => {
     setStatModal(!statModal)
@@ -22,7 +22,7 @@ function AllStats({ stats }) {
           <MdClose onClick={handleAllStatsModal} />
         </div>
         <div className='body'>
-          <StatTable stats={stats} />
+          <StatTable stats={stats} element={element} />
         </div>
       </Modal>
     </>
@@ -33,32 +33,36 @@ function StatRow({
   name,
   even = false,
   isBase = false,
-  increaseVal = 0
+  increaseVal = 0,
+  element
 }) {
   const displayValue = name.includes('%')
     ? value.toFixed(1) + '%'
-    : Math.round(value)
+    : Math.round(isBase ? value - increaseVal : value)
   const displayName = name.includes('%') ? name.replace('%', '') : name
 
   return (
     <Stat even={even}>
-      <span>{displayName}</span>
+      <span>
+        {displayName === 'Elemental DMG'
+          ? displayName.replace('Elemental', element)
+          : displayName}
+      </span>
       <span className='value'>
         <h4 className='total'>{displayValue}</h4>
         {isBase && (
           <h4 className='increase'>
-            {'| Bonuses: +' + (isBase && Math.round(increaseVal))}
+            {' +' + (isBase && Math.round(increaseVal))}
           </h4>
         )}
       </span>
     </Stat>
   )
 }
-function StatTable({ stats }) {
+function StatTable({ stats, element }) {
   const keys = [...Object.keys(stats)]
   const blackList = ['ATK%', 'DEF%', 'HP%']
 
-  console.log(keys)
   return (
     <StatTableColumn>
       {keys.map(
@@ -71,6 +75,7 @@ function StatTable({ stats }) {
               even={index % 2 === 0}
               isBase={blackList.includes(key + '%')}
               increaseVal={stats[key + 'Bonus']}
+              element={element}
             />
           )
       )}

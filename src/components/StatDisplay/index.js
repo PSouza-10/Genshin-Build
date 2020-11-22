@@ -64,7 +64,10 @@ export function StatDisplay() {
           Character ATK {characterStats.ATK} | Talent Lvl.{talentLevel}
         </MainStat>
         <MainStat>Weapon ATK {weaponStats.main}</MainStat>
-        <AllStats stats={calculatedStats} />
+        <AllStats
+          stats={calculatedStats}
+          element={selectedItems.character.element}
+        />
       </Container>
     </>
   )
