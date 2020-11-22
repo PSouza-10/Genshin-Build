@@ -342,26 +342,51 @@ export function findSetBonuses(selectedItems) {
 
   let copyArr = []
 
-  copyArr = setsArray.filter(item => !copyArr.includes(item) && item)
+  setsArray.forEach(item => {
+    if (!copyArr.includes(item) && item) {
+      copyArr.push(item)
+    }
+  })
 
   let bonuses = {}
+  let descriptions = []
   console.log(copyArr)
   copyArr.forEach(item => {
     let bonusIndex = getOcurrence(item, setsArray)
-    const { setBonuses } = artifactSets[item]
+    const { setBonuses, bonusDesc } = artifactSets[item]
+
     if (bonusIndex > 3) {
       bonuses = {
         ...bonuses,
         ...setBonuses[0],
         ...setBonuses[1]
       }
+      const newDescription = {
+        name: item,
+        equiped: bonusIndex,
+        2: bonusDesc['2'],
+        4: bonusDesc['4']
+      }
+
+      descriptions.push(newDescription)
     } else if (bonusIndex > 1) {
       bonuses = {
         ...bonuses,
         ...setBonuses[0]
       }
+
+      const newDescription = {
+        name: item,
+        equiped: bonusIndex,
+        2: bonusDesc['2']
+      }
+
+      descriptions.push(newDescription)
     }
   })
 
-  return bonuses
+  return {
+    bonuses,
+    descriptions
+  }
 }

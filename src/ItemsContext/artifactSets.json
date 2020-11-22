@@ -3,18 +3,21 @@
     "minRarity": 1,
     "maxRarity": 3,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Adventurer",
+    "bonusDesc": {
+      "2": "HP increased by 1,000.",
+      "4": "Opening chest regenerates 30% HP over 5s."
+    },
     "items": { "flower": 1, "plume": 2, "sands": 3, "goblet": 4, "circlet": 5 },
-    "setBonuses": [
-      {
-        "HP": 1000
-      },
-      {}
-    ]
+    "setBonuses": [{ "HP": 1000 }, {}]
   },
   "Lucky Dog": {
     "minRarity": 1,
     "maxRarity": 3,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Lucky_Dog",
+    "bonusDesc": {
+      "2": "DEF increased by 100.",
+      "4": "Picking up Mora restores 300 HP."
+    },
     "items": {
       "flower": 6,
       "plume": 7,
@@ -22,17 +25,16 @@
       "goblet": 9,
       "circlet": 10
     },
-    "setBonuses": [
-      {
-        "DEF": 100
-      },
-      {}
-    ]
+    "setBonuses": [{ "DEF": 100 }, {}]
   },
   "Traveling Doctor": {
     "minRarity": 1,
     "maxRarity": 3,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Traveling_Doctor",
+    "bonusDesc": {
+      "2": "Increases incoming healing by 20%.",
+      "4": "Using Elemental Burst restores 20% HP."
+    },
     "items": {
       "flower": 11,
       "plume": 12,
@@ -46,6 +48,10 @@
     "minRarity": 3,
     "maxRarity": 4,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Instructor",
+    "bonusDesc": {
+      "2": "Increases Elemental Mastery by 80.",
+      "4": "Upon triggering an Elemental Reaction, increases all party members' Elemental Mastery by 120 for 8s."
+    },
     "items": {
       "flower": 16,
       "plume": 17,
@@ -53,17 +59,16 @@
       "goblet": 19,
       "circlet": 20
     },
-    "setBonuses": [
-      {
-        "Elemental Mastery": 80
-      },
-      {}
-    ]
+    "setBonuses": [{ "Elemental Mastery": 80 }, {}]
   },
   "Berserker": {
     "minRarity": 3,
     "maxRarity": 4,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Berserker",
+    "bonusDesc": {
+      "2": "CRIT Rate +12%",
+      "4": "When HP is below 70%, CRIT Rate increases by an additional 24%."
+    },
     "items": {
       "flower": 21,
       "plume": 22,
@@ -71,17 +76,16 @@
       "goblet": 24,
       "circlet": 25
     },
-    "setBonuses": [
-      {
-        "CRIT Rate%": 12
-      },
-      {}
-    ]
+    "setBonuses": [{ "CRIT Rate%": 12 }, {}]
   },
   "The Exile": {
     "minRarity": 3,
     "maxRarity": 4,
     "setUrl": "https://genshin-impact.fandom.com/wiki/The_Exile",
+    "bonusDesc": {
+      "2": "Energy Recharge +20%",
+      "4": "Using an Elemental Burst regenerates 2 Energy for all party members (excluding the wearer) every 2s for 6s. This effect cannot stack."
+    },
     "items": {
       "flower": 26,
       "plume": 27,
@@ -89,17 +93,16 @@
       "goblet": 29,
       "circlet": 30
     },
-    "setBonuses": [
-      {
-        "Energy Recharge%": 20
-      },
-      {}
-    ]
+    "setBonuses": [{ "Energy Recharge%": 20 }, {}]
   },
   "Resolution of Sojourner": {
     "minRarity": 3,
     "maxRarity": 4,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Resolution_of_Sojourner",
+    "bonusDesc": {
+      "2": "ATK +18%",
+      "4": "Increases Charged Attack CRIT Rate by 30%."
+    },
     "items": {
       "flower": 31,
       "plume": 32,
@@ -107,17 +110,16 @@
       "goblet": 34,
       "circlet": 35
     },
-    "setBonuses": [
-      {
-        "ATK%": 18
-      },
-      {}
-    ]
+    "setBonuses": [{ "ATK%": 18 }, {}]
   },
   "Martial Artist": {
     "minRarity": 3,
     "maxRarity": 4,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Martial_Artist",
+    "bonusDesc": {
+      "2": "Increases Normal Attack and Charged Attack DMG by 15%.",
+      "4": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s."
+    },
     "items": {
       "flower": 36,
       "plume": 37,
@@ -125,17 +127,16 @@
       "goblet": 39,
       "circlet": 40
     },
-    "setBonuses": [
-      {
-        "ATK%": 15
-      },
-      {}
-    ]
+    "setBonuses": [{ "ATK%": 15 }, {}]
   },
   "Defender's Will": {
     "minRarity": 3,
     "maxRarity": 4,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Defender%27s_Will",
+    "bonusDesc": {
+      "2": "DEF +30%",
+      "4": "For each different element present in your own party, the wearer's Elemental RES to that corresponding element is increased by 30%."
+    },
     "items": {
       "flower": 41,
       "plume": 42,
@@ -143,17 +144,16 @@
       "goblet": 44,
       "circlet": 45
     },
-    "setBonuses": [
-      {
-        "DEF%": 30
-      },
-      {}
-    ]
+    "setBonuses": [{ "DEF%": 30 }, {}]
   },
   "Tiny Miracle": {
     "minRarity": 3,
     "maxRarity": 4,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Tiny_Miracle",
+    "bonusDesc": {
+      "2": "All Elemental RES increased by 20%",
+      "4": "Incoming elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s."
+    },
     "items": {
       "flower": 46,
       "plume": 47,
@@ -167,6 +167,10 @@
     "minRarity": 3,
     "maxRarity": 4,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Brave_Heart",
+    "bonusDesc": {
+      "2": "ATK +18%",
+      "4": "Increases DMG by 30% against enemies with more than 50% HP."
+    },
     "items": {
       "flower": 51,
       "plume": 52,
@@ -174,17 +178,16 @@
       "goblet": 54,
       "circlet": 55
     },
-    "setBonuses": [
-      {
-        "ATK%": 18
-      },
-      {}
-    ]
+    "setBonuses": [{ "ATK%": 18 }, {}]
   },
   "Gambler": {
     "minRarity": 3,
     "maxRarity": 4,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Gambler",
+    "bonusDesc": {
+      "2": "Elemental Skill DMG increased by 20%",
+      "4": "Defeating an enemy has 100% chance to remove Elemental Skill CD. Can only occur once every 15s."
+    },
     "items": {
       "flower": 56,
       "plume": 57,
@@ -198,6 +201,10 @@
     "minRarity": 3,
     "maxRarity": 4,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Scholar",
+    "bonusDesc": {
+      "2": "Energy Recharge +20%",
+      "4": "Gaining Energy gives 3 Energy to all party members who have a bow or a catalyst equipped. Can only occur once every 3s."
+    },
     "items": {
       "flower": 61,
       "plume": 62,
@@ -205,17 +212,16 @@
       "goblet": 64,
       "circlet": 65
     },
-    "setBonuses": [
-      {
-        "Energy Recharge%": 20
-      },
-      {}
-    ]
+    "setBonuses": [{ "Energy Recharge%": 20 }, {}]
   },
   "Gladiator's Finale": {
     "minRarity": 4,
     "maxRarity": 5,
     "setUrl": "https://genshin-impact.fandom.com/wiki/Gladiator%27s_Finale",
+    "bonusDesc": {
+      "2": "ATK +18%",
+      "4": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%."
+    },
     "items": {
       "flower": 66,
       "plume": 67,
@@ -223,17 +229,16 @@
       "goblet": 69,
       "circlet": 70
     },
-    "setBonuses": [
-      {
-        "ATK%": 18
-      },
-      {}
-    ]
+    "setBonuses": [{ "ATK%": 18 }, {}]
   },
-  "Maiden Beloved": {
+  "Wanderer's Troupe": {
     "minRarity": 4,
     "maxRarity": 5,
-    "setUrl": "https://genshin-impact.fandom.com/wiki/Maiden_Beloved",
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Wanderer%27s_Troupe",
+    "bonusDesc": {
+      "2": "Elemental Mastery +80",
+      "4": "Increases Charged Attack DMG by 35% if the character uses a Catalyst or Bow."
+    },
     "items": {
       "flower": 71,
       "plume": 72,
@@ -241,17 +246,16 @@
       "goblet": 74,
       "circlet": 75
     },
-    "setBonuses": [
-      {
-        "Healing Bonus%": 15
-      },
-      {}
-    ]
+    "setBonuses": [{ "Elemental Mastery": 80 }, {}]
   },
-  "Noblesse Oblige": {
+  "Viridescent Venerer": {
     "minRarity": 4,
     "maxRarity": 5,
-    "setUrl": "https://genshin-impact.fandom.com/wiki/Noblesse_Oblige",
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Viridescent_Venerer",
+    "bonusDesc": {
+      "2": "Anemo DMG Bonus +15%",
+      "4": "Increases Swirl DMG by 60%. Decreases opponent's Elemental RES to the element infused in the Swirl by 40% for 10s."
+    },
     "items": {
       "flower": 76,
       "plume": 77,
@@ -259,12 +263,16 @@
       "goblet": 79,
       "circlet": 80
     },
-    "setBonuses": [{}, {}]
+    "setBonuses": [{ "Anemo DMG%": 15 }, {}]
   },
-  "Bloodstained Chivalry": {
+  "Thundering Fury": {
     "minRarity": 4,
     "maxRarity": 5,
-    "setUrl": "https://genshin-impact.fandom.com/wiki/Bloodstained_Chivalry",
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Thundering_Fury",
+    "bonusDesc": {
+      "2": "Electro DMG Bonus +15%",
+      "4": "Increases damage caused by Overloaded, Electro-Charged, and Superconduct DMG by 40%. Triggering such effects decreases Elemental Skill CD by 1s. Can only occur once every 0.8s."
+    },
     "items": {
       "flower": 81,
       "plume": 82,
@@ -272,17 +280,16 @@
       "goblet": 84,
       "circlet": 85
     },
-    "setBonuses": [
-      {
-        "Physical DMG%": 25
-      },
-      {}
-    ]
+    "setBonuses": [{ "Electro DMG%": 15 }, {}]
   },
-  "Wanderer's Troupe": {
+  "Thundersoother": {
     "minRarity": 4,
     "maxRarity": 5,
-    "setUrl": "https://genshin-impact.fandom.com/wiki/Wanderer%27s_Troupe",
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Thundersoother",
+    "bonusDesc": {
+      "2": "Electro RES increased by 40%",
+      "4": "Increases DMG against enemies affected by Electro by 35%."
+    },
     "items": {
       "flower": 86,
       "plume": 87,
@@ -290,17 +297,16 @@
       "goblet": 89,
       "circlet": 90
     },
-    "setBonuses": [
-      {
-        "Elemental Mastery": 80
-      },
-      {}
-    ]
+    "setBonuses": [{}, {}]
   },
-  "Thundering Fury": {
+  "Crimson Witch of Flames": {
     "minRarity": 4,
     "maxRarity": 5,
-    "setUrl": "https://genshin-impact.fandom.com/wiki/Thundering_Fury",
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Crimson_Witch_of_Flames",
+    "bonusDesc": {
+      "2": "Pyro DMG Bonus +15%",
+      "4": "Increases Overloaded and Burning DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using an Elemental Skill increases 2-Piece Set effects by 50% for 10s. Max 3 stacks."
+    },
     "items": {
       "flower": 91,
       "plume": 92,
@@ -308,17 +314,16 @@
       "goblet": 94,
       "circlet": 95
     },
-    "setBonuses": [
-      {
-        "Electro DMG%": 15
-      },
-      {}
-    ]
+    "setBonuses": [{ "Pyro DMG%": 15 }, {}]
   },
-  "Thundersoother": {
+  "Lavawalker": {
     "minRarity": 4,
     "maxRarity": 5,
-    "setUrl": "https://genshin-impact.fandom.com/wiki/Thundersoother",
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Lavawalker",
+    "bonusDesc": {
+      "2": "Pyro RES increased by 40%",
+      "4": "Increases DMG against enemies that are Burning or affected by Pyro by 35%."
+    },
     "items": {
       "flower": 96,
       "plume": 97,
@@ -328,10 +333,14 @@
     },
     "setBonuses": [{}, {}]
   },
-  "Crimson Witch of Flames": {
+  "Archaic Petra": {
     "minRarity": 4,
     "maxRarity": 5,
-    "setUrl": "https://genshin-impact.fandom.com/wiki/Crimson_Witch_of_Flames",
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Archaic_Petra",
+    "bonusDesc": {
+      "2": "Gain a 15% Geo DMG Bonus",
+      "4": "Upon obtaining a crystal created through a Geo Elemental Reaction, all party members gain 35% Elemental DMG Bonus to that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time. (the in-game description is incorrect)"
+    },
     "items": {
       "flower": 101,
       "plume": 102,
@@ -339,17 +348,16 @@
       "goblet": 104,
       "circlet": 105
     },
-    "setBonuses": [
-      {
-        "Pyro DMG%": 15
-      },
-      {}
-    ]
+    "setBonuses": [{ "Geo DMG%": 15 }, {}]
   },
-  "Lavawalker": {
+  "Retracing Bolide": {
     "minRarity": 4,
     "maxRarity": 5,
-    "setUrl": "https://genshin-impact.fandom.com/wiki/Lavawalker",
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Retracing_Bolide",
+    "bonusDesc": {
+      "2": "Increases the effectiveness of shields by 35%",
+      "4": "Gain an additional 40% Normal and Charged Attack DMG while under the protection of a shield."
+    },
     "items": {
       "flower": 106,
       "plume": 107,
@@ -359,10 +367,14 @@
     },
     "setBonuses": [{}, {}]
   },
-  "Archaic Petra": {
+  "Maiden Beloved": {
     "minRarity": 4,
     "maxRarity": 5,
-    "setUrl": "https://genshin-impact.fandom.com/wiki/Archaic_Petra",
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Maiden_Beloved",
+    "bonusDesc": {
+      "2": "Character Healing Effectiveness +15%",
+      "4": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s."
+    },
     "items": {
       "flower": 111,
       "plume": 112,
@@ -370,17 +382,16 @@
       "goblet": 114,
       "circlet": 115
     },
-    "setBonuses": [
-      {
-        "Geo DMG%": 15
-      },
-      {}
-    ]
+    "setBonuses": [{ "Healing Bonus%": 15 }, {}]
   },
-  "Retracing Bolide": {
+  "Noblesse Oblige": {
     "minRarity": 4,
     "maxRarity": 5,
-    "setUrl": "https://genshin-impact.fandom.com/wiki/Retracing_Bolide",
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Noblesse_Oblige",
+    "bonusDesc": {
+      "2": "Elemental Burst DMG +20%",
+      "4": "Using an Elemental Burst increases all party members' ATK by 20% for 12s. This effect cannot stack."
+    },
     "items": {
       "flower": 116,
       "plume": 117,
@@ -389,5 +400,22 @@
       "circlet": 120
     },
     "setBonuses": [{}, {}]
+  },
+  "Bloodstained Chivalry": {
+    "minRarity": 4,
+    "maxRarity": 5,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Bloodstained_Chivalry",
+    "bonusDesc": {
+      "2": "Physical DMG +25%",
+      "4": "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s."
+    },
+    "items": {
+      "flower": 121,
+      "plume": 122,
+      "sands": 123,
+      "goblet": 124,
+      "circlet": 125
+    },
+    "setBonuses": [{ "Physical DMG%": 25 }, {}]
   }
 }

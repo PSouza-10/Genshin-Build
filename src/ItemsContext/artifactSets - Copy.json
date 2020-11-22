@@ -1,0 +1,393 @@
+{
+  "Adventurer": {
+    "minRarity": 1,
+    "maxRarity": 3,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Adventurer",
+    "items": { "flower": 1, "plume": 2, "sands": 3, "goblet": 4, "circlet": 5 },
+    "setBonuses": [
+      {
+        "HP": 1000
+      },
+      {}
+    ]
+  },
+  "Lucky Dog": {
+    "minRarity": 1,
+    "maxRarity": 3,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Lucky_Dog",
+    "items": {
+      "flower": 6,
+      "plume": 7,
+      "sands": 8,
+      "goblet": 9,
+      "circlet": 10
+    },
+    "setBonuses": [
+      {
+        "DEF": 100
+      },
+      {}
+    ]
+  },
+  "Traveling Doctor": {
+    "minRarity": 1,
+    "maxRarity": 3,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Traveling_Doctor",
+    "items": {
+      "flower": 11,
+      "plume": 12,
+      "sands": 13,
+      "goblet": 14,
+      "circlet": 15
+    },
+    "setBonuses": [{}, {}]
+  },
+  "Instructor": {
+    "minRarity": 3,
+    "maxRarity": 4,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Instructor",
+    "items": {
+      "flower": 16,
+      "plume": 17,
+      "sands": 18,
+      "goblet": 19,
+      "circlet": 20
+    },
+    "setBonuses": [
+      {
+        "Elemental Mastery": 80
+      },
+      {}
+    ]
+  },
+  "Berserker": {
+    "minRarity": 3,
+    "maxRarity": 4,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Berserker",
+    "items": {
+      "flower": 21,
+      "plume": 22,
+      "sands": 23,
+      "goblet": 24,
+      "circlet": 25
+    },
+    "setBonuses": [
+      {
+        "CRIT Rate%": 12
+      },
+      {}
+    ]
+  },
+  "The Exile": {
+    "minRarity": 3,
+    "maxRarity": 4,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/The_Exile",
+    "items": {
+      "flower": 26,
+      "plume": 27,
+      "sands": 28,
+      "goblet": 29,
+      "circlet": 30
+    },
+    "setBonuses": [
+      {
+        "Energy Recharge%": 20
+      },
+      {}
+    ]
+  },
+  "Resolution of Sojourner": {
+    "minRarity": 3,
+    "maxRarity": 4,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Resolution_of_Sojourner",
+    "items": {
+      "flower": 31,
+      "plume": 32,
+      "sands": 33,
+      "goblet": 34,
+      "circlet": 35
+    },
+    "setBonuses": [
+      {
+        "ATK%": 18
+      },
+      {}
+    ]
+  },
+  "Martial Artist": {
+    "minRarity": 3,
+    "maxRarity": 4,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Martial_Artist",
+    "items": {
+      "flower": 36,
+      "plume": 37,
+      "sands": 38,
+      "goblet": 39,
+      "circlet": 40
+    },
+    "setBonuses": [
+      {
+        "ATK%": 15
+      },
+      {}
+    ]
+  },
+  "Defender's Will": {
+    "minRarity": 3,
+    "maxRarity": 4,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Defender%27s_Will",
+    "items": {
+      "flower": 41,
+      "plume": 42,
+      "sands": 43,
+      "goblet": 44,
+      "circlet": 45
+    },
+    "setBonuses": [
+      {
+        "DEF%": 30
+      },
+      {}
+    ]
+  },
+  "Tiny Miracle": {
+    "minRarity": 3,
+    "maxRarity": 4,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Tiny_Miracle",
+    "items": {
+      "flower": 46,
+      "plume": 47,
+      "sands": 48,
+      "goblet": 49,
+      "circlet": 50
+    },
+    "setBonuses": [{}, {}]
+  },
+  "Brave Heart": {
+    "minRarity": 3,
+    "maxRarity": 4,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Brave_Heart",
+    "items": {
+      "flower": 51,
+      "plume": 52,
+      "sands": 53,
+      "goblet": 54,
+      "circlet": 55
+    },
+    "setBonuses": [
+      {
+        "ATK%": 18
+      },
+      {}
+    ]
+  },
+  "Gambler": {
+    "minRarity": 3,
+    "maxRarity": 4,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Gambler",
+    "items": {
+      "flower": 56,
+      "plume": 57,
+      "sands": 58,
+      "goblet": 59,
+      "circlet": 60
+    },
+    "setBonuses": [{}, {}]
+  },
+  "Scholar": {
+    "minRarity": 3,
+    "maxRarity": 4,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Scholar",
+    "items": {
+      "flower": 61,
+      "plume": 62,
+      "sands": 63,
+      "goblet": 64,
+      "circlet": 65
+    },
+    "setBonuses": [
+      {
+        "Energy Recharge%": 20
+      },
+      {}
+    ]
+  },
+  "Gladiator's Finale": {
+    "minRarity": 4,
+    "maxRarity": 5,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Gladiator%27s_Finale",
+    "items": {
+      "flower": 66,
+      "plume": 67,
+      "sands": 68,
+      "goblet": 69,
+      "circlet": 70
+    },
+    "setBonuses": [
+      {
+        "ATK%": 18
+      },
+      {}
+    ]
+  },
+  "Maiden Beloved": {
+    "minRarity": 4,
+    "maxRarity": 5,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Maiden_Beloved",
+    "items": {
+      "flower": 71,
+      "plume": 72,
+      "sands": 73,
+      "goblet": 74,
+      "circlet": 75
+    },
+    "setBonuses": [
+      {
+        "Healing Bonus%": 15
+      },
+      {}
+    ]
+  },
+  "Noblesse Oblige": {
+    "minRarity": 4,
+    "maxRarity": 5,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Noblesse_Oblige",
+    "items": {
+      "flower": 76,
+      "plume": 77,
+      "sands": 78,
+      "goblet": 79,
+      "circlet": 80
+    },
+    "setBonuses": [{}, {}]
+  },
+  "Bloodstained Chivalry": {
+    "minRarity": 4,
+    "maxRarity": 5,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Bloodstained_Chivalry",
+    "items": {
+      "flower": 81,
+      "plume": 82,
+      "sands": 83,
+      "goblet": 84,
+      "circlet": 85
+    },
+    "setBonuses": [
+      {
+        "Physical DMG%": 25
+      },
+      {}
+    ]
+  },
+  "Wanderer's Troupe": {
+    "minRarity": 4,
+    "maxRarity": 5,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Wanderer%27s_Troupe",
+    "items": {
+      "flower": 86,
+      "plume": 87,
+      "sands": 88,
+      "goblet": 89,
+      "circlet": 90
+    },
+    "setBonuses": [
+      {
+        "Elemental Mastery": 80
+      },
+      {}
+    ]
+  },
+  "Thundering Fury": {
+    "minRarity": 4,
+    "maxRarity": 5,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Thundering_Fury",
+    "items": {
+      "flower": 91,
+      "plume": 92,
+      "sands": 93,
+      "goblet": 94,
+      "circlet": 95
+    },
+    "setBonuses": [
+      {
+        "Electro DMG%": 15
+      },
+      {}
+    ]
+  },
+  "Thundersoother": {
+    "minRarity": 4,
+    "maxRarity": 5,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Thundersoother",
+    "items": {
+      "flower": 96,
+      "plume": 97,
+      "sands": 98,
+      "goblet": 99,
+      "circlet": 100
+    },
+    "setBonuses": [{}, {}]
+  },
+  "Crimson Witch of Flames": {
+    "minRarity": 4,
+    "maxRarity": 5,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Crimson_Witch_of_Flames",
+    "items": {
+      "flower": 101,
+      "plume": 102,
+      "sands": 103,
+      "goblet": 104,
+      "circlet": 105
+    },
+    "setBonuses": [
+      {
+        "Pyro DMG%": 15
+      },
+      {}
+    ]
+  },
+  "Lavawalker": {
+    "minRarity": 4,
+    "maxRarity": 5,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Lavawalker",
+    "items": {
+      "flower": 106,
+      "plume": 107,
+      "sands": 108,
+      "goblet": 109,
+      "circlet": 110
+    },
+    "setBonuses": [{}, {}]
+  },
+  "Archaic Petra": {
+    "minRarity": 4,
+    "maxRarity": 5,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Archaic_Petra",
+    "items": {
+      "flower": 111,
+      "plume": 112,
+      "sands": 113,
+      "goblet": 114,
+      "circlet": 115
+    },
+    "setBonuses": [
+      {
+        "Geo DMG%": 15
+      },
+      {}
+    ]
+  },
+  "Retracing Bolide": {
+    "minRarity": 4,
+    "maxRarity": 5,
+    "setUrl": "https://genshin-impact.fandom.com/wiki/Retracing_Bolide",
+    "items": {
+      "flower": 116,
+      "plume": 117,
+      "sands": 118,
+      "goblet": 119,
+      "circlet": 120
+    },
+    "setBonuses": [{}, {}]
+  }
+}

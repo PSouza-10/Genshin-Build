@@ -1,5 +1,10 @@
 import React, { useContext, useState } from 'react'
-import { Container, MainStat } from './styles'
+import {
+  Container,
+  MainStat,
+  Descriptions,
+  DescriptionContainer
+} from './styles'
 import { ItemsContext } from '../../ItemsContext'
 import ItemView from './ItemView'
 import { StatContext } from '../../StatContext'
@@ -27,7 +32,8 @@ export function StatDisplay() {
     calculatedStats,
     damage,
     enemyLevel,
-    setEnemyLevel
+    setEnemyLevel,
+    setBonusDescriptions
   } = stats
   const items = {
     ...selectedItems,
@@ -68,7 +74,32 @@ export function StatDisplay() {
           stats={calculatedStats}
           element={selectedItems.character.element}
         />
+        <SetBonuses descriptions={setBonusDescriptions} />
       </Container>
     </>
+  )
+}
+
+const SetBonuses = ({ descriptions = [] }) => {
+  return (
+    <Descriptions>
+      {descriptions.map(({ name, equiped, 4: piece4, 2: piece2 }) => (
+        <DescriptionContainer>
+          <h4>
+            {name}({equiped})
+          </h4>
+          {piece2 && (
+            <p>
+              <span>2 piece bonus: </span> {piece2}
+            </p>
+          )}
+          {piece4 && (
+            <p>
+              <span>4 piece bonus: </span> {piece4}
+            </p>
+          )}
+        </DescriptionContainer>
+      ))}
+    </Descriptions>
   )
 }

@@ -109,7 +109,13 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
           <p className='passiveDescription'>{data.passives[item.passive]}</p>
         </>
       )}
-
+      {type === 'Artifact' && (
+        <div className='setBonusDescription'>
+          <h3>Set Bonuses: </h3>
+          <p>2 piece set: {data.artifactSets[item.set].bonusDesc['2']}</p>
+          <p>4 piece set: {data.artifactSets[item.set].bonusDesc['4']}</p>
+        </div>
+      )}
       <SelectButton onClick={handleSelect}>
         {isViewMode ? 'Select' : 'Remove'}
       </SelectButton>

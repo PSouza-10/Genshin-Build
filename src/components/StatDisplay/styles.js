@@ -20,7 +20,15 @@ export const Container = styled.div`
       bottom: 0;
       top:0;
     
-      overflow: hidden;
+      overflow-y: scroll;
+      &::-webkit-scrollbar-thumb {
+      background-color: var(--primary);
+      opacity: 0.2;
+      border-radius: 1em;
+    }
+    &::-webkit-scrollbar {
+      background-color: transparent;
+    }
       z-index: 10;
       height: 100%;
       box-shadow: 0 -6px 5px rgba(0,0,0,0.6);
@@ -60,6 +68,25 @@ export const Container = styled.div`
     text-align: justify;
     padding: 20px;
     color: white;
+  }
+  .setBonusDescription {
+    padding-left: 20px;
+    padding-right: 10px;
+
+    h3 {
+      font-size: 1.3rem;
+      color: white;
+    }
+    p {
+      font-size: 1.2rem;
+      padding-left: 12px;
+      margin-bottom: 12px;
+      color: white;
+      span {
+        font-weight: 600;
+        color: var(--primary);
+      }
+    }
   }
   @media (max-width: 576px) {
     ${({ isItemView }) =>
@@ -319,6 +346,42 @@ export const DamageModalContainer = styled.div`
       width: 42px;
       text-align: center;
       font-size: 1.5rem;
+    }
+  }
+`
+export const Descriptions = styled.div`
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+  padding-left: 20px;
+  @media (max-width: 576px) {
+    height: auto;
+    overflow: visible;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    opacity: 0.2;
+    border-radius: 1em;
+  }
+  &::-webkit-scrollbar {
+    background-color: transparent;
+  }
+`
+export const DescriptionContainer = styled.div`
+  h4 {
+    color: var(--positive);
+    font-size: 1.3rem;
+  }
+  p {
+    color: var(--positive);
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    padding-left: 12px;
+    span {
+      color: var(--positive);
+      font-size: 1.2rem;
+      font-weight: 550;
     }
   }
 `
