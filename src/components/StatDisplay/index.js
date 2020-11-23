@@ -31,8 +31,8 @@ export function StatDisplay() {
     weaponStats,
     calculatedStats,
     damage,
-    enemyLevel,
-    setEnemyLevel,
+    enemy,
+    handleEnemy,
     setBonusDescriptions
   } = stats
   const items = {
@@ -42,8 +42,8 @@ export function StatDisplay() {
   return (
     <>
       <DamageModal
-        enemyLevel={enemyLevel}
-        setEnemyLevel={setEnemyLevel}
+        enemyLevel={enemy}
+        setEnemyLevel={handleEnemy}
         damage={damage}
         handleDamageModal={handleDamageModal}
         open={damageModal}
@@ -57,7 +57,7 @@ export function StatDisplay() {
       <Container>
         <MainStat onClick={handleDamageModal} clickable>
           <span>
-            Damage {damage.normal} | Enemy Lvl. {enemyLevel}
+            Damage {damage.normal} | Enemy Lvl. {enemy.level}
           </span>
           <MdKeyboardArrowRight />
         </MainStat>

@@ -321,31 +321,10 @@ export const DamageModalContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding: 20px;
-  }
-  .enemyLevel {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--bgPrimary);
-    p {
-      font-size: 1.3rem;
-    }
-    span {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-basis: 15%;
-      padding: 5px;
-      @media (max-width: 576px) {
-        flex: 1;
-      }
-    }
-    input {
-      background-color: transparent;
-      border: none;
-      width: 42px;
-      text-align: center;
-      font-size: 1.5rem;
+    ul.enemyRES {
+      font-size: 1.2rem;
+      padding-left: 30px;
+      padding-top: 10px;
     }
   }
 `

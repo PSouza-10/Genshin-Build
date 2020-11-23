@@ -3,11 +3,31 @@ import weaponTypes from '../ItemsContext/weaponTypes.json'
 import artifactSets from '../ItemsContext/artifactSets.json'
 const { artifactIncreases } = data
 
-export function calculateDamage(stats, talentLevel, character, enemyLevel) {
+export function calculateDamage(stats, talentLevel, character, enemy) {
   let talentAtkMult =
     ((character.talentBase || 0) *
       data.talentLevelMultipliers[talentLevel - 1]) /
     100
+
+  let totalPhysRes = 0
+  let totalElemRes = 0
+
+  const elements = ['Pyro', 'Cryo', 'Electro', 'Hydro', 'Anemo', 'Geo']
+
+  for (const key in enemy) {
+    const firstWord = key.split(' ')[0]
+    if (elements.includes(firstWord)) {
+      if (character.element === firstWord) {
+        totalElemRes += enemy[key] / 100
+      }
+    } else if (key === 'Elemental RES%') {
+      totalElemRes += enemy[key] / 100
+    } else if (key === 'Physical RES%') {
+      totalPhysRes += enemy[key] / 100
+    }
+  }
+
+  const enemyLevel = enemy.level
 
   let normalDMG =
     stats.ATK *
@@ -15,9 +35,9 @@ export function calculateDamage(stats, talentLevel, character, enemyLevel) {
     ((100 + character.level) / (200 + character.level + enemyLevel))
 
   if (character.weapon === 'Catalyst') {
-    normalDMG *= 1 + stats['Elemental DMG%'] / 100
+    normalDMG *= (1 + stats['Elemental DMG%'] / 100) * (1 - totalElemRes)
   } else {
-    normalDMG *= 1 + stats['Physical DMG%'] / 100
+    normalDMG *= (1 + stats['Physical DMG%'] / 100) * (1 - totalPhysRes)
   }
 
   let critDMG = normalDMG * (1 + stats['CRIT DMG%'] / 100)

@@ -8,7 +8,7 @@ import {
   calculateDamage,
   findSetBonuses
 } from './statCalculations'
-
+import ENEMIES from './enemies.json'
 import {
   returnNewSubStats,
   generateInitialArtifactState
@@ -65,7 +65,11 @@ export default function StatProvider({ children }) {
     crit: 0,
     normal: 0
   })
-  const [enemyLevel, setEnemyLevel] = useState(character.level)
+  const [enemy, setEnemy] = useState({
+    ...ENEMIES.Hilichurl,
+    level: character.level,
+    name: 'Hilichurl'
+  })
 
   useEffect(() => {
     if (didMount()) {
@@ -125,12 +129,10 @@ export default function StatProvider({ children }) {
   }, [weapon])
 
   useEffect(() => {
-    setDamage(
-      calculateDamage(calculatedStats, talentLevel, character, enemyLevel)
-    )
+    setDamage(calculateDamage(calculatedStats, talentLevel, character, enemy))
 
     //eslint-disable-next-line
-  }, [talentLevel, enemyLevel, calculatedStats, character])
+  }, [talentLevel, enemy, calculatedStats, character])
   function setMainStat(slot = 'sands', stat = 'ATK%') {
     const withNewStat = {
       ...artifactStats,
@@ -161,6 +163,15 @@ export default function StatProvider({ children }) {
       }
     })
   }
+  function handleEnemy(newEnemy, newLevel = 0) {
+    setEnemy(previous => {
+      return {
+        ...ENEMIES[newEnemy],
+        name: newEnemy,
+        level: newLevel || previous.level
+      }
+    })
+  }
 
   return (
     <StatContext.Provider
@@ -170,12 +181,12 @@ export default function StatProvider({ children }) {
         artifactStats,
         calculatedStats,
         damage,
-        enemyLevel,
+        enemy,
         setBonusDescriptions,
         setMainStat,
         handleSubStats,
         setArtifactStats,
-        setEnemyLevel
+        handleEnemy
       }}>
       {children}
     </StatContext.Provider>

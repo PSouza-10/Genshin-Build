@@ -1,0 +1,145 @@
+{
+  "Hilichurl": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10
+  },
+  "Mitachurl": {
+    "Elemental RES%": 10,
+    "Physical RES%": 30
+  },
+  "Hydro Samachurl": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10,
+    "Hydro RES%": 40
+  },
+  "Anemo Samachurl": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10,
+    "Anemo RES%": 40
+  },
+  "Dendro Samachurl": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10,
+    "Dendro RES%": 40
+  },
+  "Geo Samachurl": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10,
+    "Geo RES%": 40
+  },
+  "Stonehide Lawachurl": {
+    "Elemental RES%": 10,
+    "Physical RES%": 50,
+    "Geo RES%": 70
+  },
+  "Slime": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10,
+    "Notes": "Immune to corresponding element"
+  },
+  "Ruin Guard": {
+    "Elemental RES%": 10,
+    "Physical RES%": 70
+  },
+  "Ruin Hunter": {
+    "Elemental RES%": 10,
+    "Physical RES%": 50
+  },
+  "Pyro WhopperFlower": {
+    "Elemental RES%": 35,
+    "Physical RES%": 35,
+    "Pyro RES%": 40,
+    "Notes": "All RES -25% when stunned"
+  },
+  "Cryo WhopperFlower": {
+    "Elemental RES%": 35,
+    "Physical RES%": 35,
+    "Cryo RES%": 40,
+    "Notes": "All RES -25% when stunned"
+  },
+  "Fatui Skirmisher": {
+    "Elemental RES%": 10,
+    "Physical RES%": -20
+  },
+  "Fatui Pyro Agent": {
+    "Elemental RES%": 10,
+    "Physical RES%": -20,
+    "Pyro RES%": 40
+  },
+  "Electro Cicin Mage": {
+    "Elemental RES%": 10,
+    "Physical RES%": -20,
+    "Electro RES%": 40
+  },
+  "Treasure Hoarder": {
+    "Elemental RES%": 10,
+    "Physical RES%": -20
+  },
+  "Millelith": {
+    "Elemental RES%": 10,
+    "Physical RES%": -20
+  },
+  "Geovishap Hatchling": {
+    "Elemental RES%": 10,
+    "Physical RES%": 30,
+    "Geo RES%": 40
+  },
+  "Abyss Mage": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10
+  },
+  "Eye of The Storm": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10,
+    "Anemo RES%": 100
+  },
+  "Cicin (Annoying bird thing)": {
+    "Elemental RES%": 10,
+    "Physical RES%": -50
+  },
+  "Electro Hypostasis": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10,
+    "Electro RES%": 100,
+    "Notes": "Immune to corresponding element"
+  },
+  "Anemo Hypostasis": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10,
+    "Anemo RES%": 100,
+    "Notes": "Immune to corresponding element"
+  },
+  "Geo Hypostasis": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10,
+    "Geo RES%": 100,
+    "Notes": "Immune to corresponding element"
+  },
+  "Pyro Regisvine": {
+    "Elemental RES%": 110,
+    "Physical RES%": 130,
+    "Pyro RES%": 60,
+    "Notes": "All RES -100% when stunned"
+  },
+  "Cryo Regisvine": {
+    "Elemental RES%": 110,
+    "Physical RES%": 130,
+    "Cryo RES%": 60,
+    "Notes": "All RES -100% when stunned"
+  },
+  "Stormterror": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10
+  },
+  "Andrius": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10,
+    "Anemo RES%": 100,
+    "Cryo RES%": 100
+  },
+  "Tartaglia": {
+    "Elemental RES%": 0,
+    "Physical RES%": 0,
+    "Notes": "In Phase 1, +50% Elemental RES to Hydro attacks. All RES -30% when stunned | In Phase 2, +50% Elemental RES to Electro attacks. All RES -50% when stunned | In Phase 3, +70% Elemental RES to both Hydro attacks and Electro attacks."
+  }
+}
