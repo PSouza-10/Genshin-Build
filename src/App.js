@@ -50,7 +50,9 @@ const Container = styled.div`
 `
 
 function App() {
-  const { dataFromUrl, selectItem, selectedItems } = useContext(ItemsContext)
+  const { dataFromUrl, selectItem, selectedItems, setTalent } = useContext(
+    ItemsContext
+  )
   const { setArtifactStats } = useContext(StatContext)
 
   useEffect(() => {
@@ -68,6 +70,9 @@ function App() {
       setArtifactStats({
         ...savedData.artifactStats
       })
+      if (savedData.talentLevel) {
+        setTalent(savedData.talentLevel)
+      }
     }
     //eslint-disable-next-line
   }, [])

@@ -35,43 +35,47 @@ export function findItems(string = '') {
     C: 'Character'
   }
   let items = {}
+  let talentLevel = 1
   strArr.forEach(itemStr => {
-    let id = itemStr.split('.')[0].split('-')[1]
+    if (itemStr[0] !== 'T') {
+      let id = itemStr.split('.')[0].split('-')[1]
+      let type = correspondingType[itemStr[0]]
 
-    let type = correspondingType[itemStr[0]]
+      let item = findItem(type, id)
 
-    let item = findItem(type, id)
+      let slotStr = ''
+      if (item.type === 'Artifact') {
+        slotStr = item.slot.toLowerCase().split(' ')[0]
+      } else {
+        slotStr = item.type.toLowerCase().split(' ')[0]
+      }
+      let level = itemStr.split('.')[1].split('-')[1]
+      item = {
+        ...item,
+        level: parseInt(level)
+      }
+      const isArtifact = item.type === 'Artifact'
+      item[isArtifact ? 'stars' : 'ascension'] = parseInt(
+        itemStr.split('.')[2].split('-')[1]
+      )
+      const ascensionMaxLevelTable = [20, 40, 50, 60, 70, 80, 90]
+      const artifactMaxLevelTable = [4, 4, 12, 16, 20]
+      item.maxLevel = isArtifact
+        ? artifactMaxLevelTable[item.stars - 1]
+        : ascensionMaxLevelTable[item.ascension]
 
-    let slotStr = ''
-    if (item.type === 'Artifact') {
-      slotStr = item.slot.toLowerCase().split(' ')[0]
+      if (item.type === 'Artifact') {
+        let { minRarity, maxRarity } = artifactSets[item.set]
+        item.minRarity = minRarity
+        item.maxRarity = maxRarity
+      }
+      items[slotStr] = item
     } else {
-      slotStr = item.type.toLowerCase().split(' ')[0]
+      talentLevel = itemStr.split('.')[0].split('-')[1]
     }
-    let level = itemStr.split('.')[1].split('-')[1]
-    item = {
-      ...item,
-      level: parseInt(level)
-    }
-    const isArtifact = item.type === 'Artifact'
-    item[isArtifact ? 'stars' : 'ascension'] = parseInt(
-      itemStr.split('.')[2].split('-')[1]
-    )
-    const ascensionMaxLevelTable = [20, 40, 50, 60, 70, 80, 90]
-    const artifactMaxLevelTable = [4, 4, 12, 16, 20]
-    item.maxLevel = isArtifact
-      ? artifactMaxLevelTable[item.stars - 1]
-      : ascensionMaxLevelTable[item.ascension]
-
-    if (item.type === 'Artifact') {
-      let { minRarity, maxRarity } = artifactSets[item.set]
-      item.minRarity = minRarity
-      item.maxRarity = maxRarity
-    }
-    items[slotStr] = item
   })
 
-  return items
+  return { newItems: items, newTalentLevel: talentLevel }
 }
 
 export function selectedItemsFactory(item, slot, selectedItems, initialState) {

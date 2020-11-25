@@ -46,5 +46,6 @@ export function generateInitialArtifactState(selectedItems = {}) {
       mainType
     }
   })
+
   return returnObj
 }

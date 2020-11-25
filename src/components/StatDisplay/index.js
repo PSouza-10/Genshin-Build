@@ -84,7 +84,7 @@ const SetBonuses = ({ descriptions = [] }) => {
   return (
     <Descriptions>
       {descriptions.map(({ name, equiped, 4: piece4, 2: piece2 }) => (
-        <DescriptionContainer>
+        <DescriptionContainer key={name}>
           <h4>
             {name}({equiped})
           </h4>

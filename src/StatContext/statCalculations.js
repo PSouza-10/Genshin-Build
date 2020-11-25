@@ -35,9 +35,11 @@ export function calculateDamage(stats, talentLevel, character, enemy) {
     ((100 + character.level) / (200 + character.level + enemyLevel))
 
   if (character.weapon === 'Catalyst') {
-    normalDMG *= (1 + stats['Elemental DMG%'] / 100) * (1 - totalElemRes)
+    normalDMG *=
+      (1 + (stats['Elemental DMG%'] + stats['DMG%']) / 100) * (1 - totalElemRes)
   } else {
-    normalDMG *= (1 + stats['Physical DMG%'] / 100) * (1 - totalPhysRes)
+    normalDMG *=
+      (1 + (stats['Physical DMG%'] + stats['DMG%']) / 100) * (1 - totalPhysRes)
   }
 
   let critDMG = normalDMG * (1 + stats['CRIT DMG%'] / 100)
@@ -226,8 +228,8 @@ export function calculateWeaponStats({
   }
 }
 
-export const createNewArtifacts = (artifactsAtk, selected) => {
-  let newArtifacts = Object.assign({}, artifactsAtk)
+export const createNewArtifacts = (artifactStats, selected) => {
+  let newArtifacts = Object.assign({}, artifactStats)
   let selectedCopy = Object.assign({}, selected)
   let { character, weapon, ...artifacts } = selectedCopy
   selectedCopy = artifacts
@@ -303,7 +305,8 @@ export function calculateTotalBonus(
     'CRIT DMG%': 0,
     'Elemental DMG%': 0,
     'Physical DMG%': 0,
-    'Healing Bonus%': 0
+    'Healing Bonus%': 0,
+    'DMG%': 0
   }
 
   const stats = [...Object.keys(statBonus)]
@@ -324,7 +327,7 @@ export function calculateTotalBonus(
   })
 
   if (stats.includes(weapon.subType)) {
-    stats[weapon.subType] += weapon.sub
+    statBonus[weapon.subType] += weapon.sub
   }
 
   for (const key in characterStats) {
@@ -370,7 +373,7 @@ export function findSetBonuses(selectedItems) {
 
   let bonuses = {}
   let descriptions = []
-  console.log(copyArr)
+
   copyArr.forEach(item => {
     let bonusIndex = getOcurrence(item, setsArray)
     const { setBonuses, bonusDesc } = artifactSets[item]

@@ -190,7 +190,10 @@ export function ArtifactSubStats({ slot, mainStatType }) {
                   !currentStatsType.includes(stat) && (
                     <Stat
                       selected={stat === type}
-                      onClick={() => changeStat(stat, index, value)}
+                      onClick={() => {
+                        changeStat(stat, index, value)
+                        setOpen(7)
+                      }}
                       key={stat}>
                       {stat}
                     </Stat>

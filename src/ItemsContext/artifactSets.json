@@ -229,7 +229,7 @@
       "goblet": 69,
       "circlet": 70
     },
-    "setBonuses": [{ "ATK%": 18 }, {}]
+    "setBonuses": [{ "ATK%": 18 }, { "DMG%": 35 }]
   },
   "Wanderer's Troupe": {
     "minRarity": 4,

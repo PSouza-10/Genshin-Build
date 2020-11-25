@@ -59,7 +59,8 @@ export default function DamageModal({ damage, open, handleDamageModal }) {
                 {Object.keys(ENEMIES).map(name => (
                   <EnemyListItem
                     selected={name === enemy.name}
-                    onClick={() => selectEnemy(name)}>
+                    onClick={() => selectEnemy(name)}
+                    key={name}>
                     {name}
                   </EnemyListItem>
                 ))}
@@ -92,11 +93,11 @@ export default function DamageModal({ damage, open, handleDamageModal }) {
             {Object.keys(enemy)
               .filter(key => !['level', 'name', 'Notes'].includes(key))
               .map(key => (
-                <li>
+                <li key={key}>
                   +{key.replace('%', '')}: {enemy[key] + '%'}
                 </li>
               ))}
-            {enemy['Notes'] && <li>Notes: {enemy['Notes']} </li>}
+            {enemy['Notes'] && <li>Note: {enemy['Notes']} </li>}
           </ul>
           <MainStat>Damage {normal}</MainStat>
           <MainStat>Crit Damage {crit}</MainStat>
@@ -227,6 +228,7 @@ const EnemyListItem = styled.li`
   cursor: pointer;
   transition: all 0.2s ease;
   &:hover {
-    background-color: var(--bgSecondary);
+    background-color: ${({ selected }) =>
+      selected ? 'var(--primary)' : 'var(--bgSecondary)'};
   }
 `

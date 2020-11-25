@@ -115,17 +115,10 @@
     "Geo RES%": 100,
     "Notes": "Immune to corresponding element"
   },
-  "Pyro Regisvine": {
-    "Elemental RES%": 110,
-    "Physical RES%": 130,
-    "Pyro RES%": 60,
-    "Notes": "All RES -100% when stunned"
-  },
-  "Cryo Regisvine": {
-    "Elemental RES%": 110,
-    "Physical RES%": 130,
-    "Cryo RES%": 60,
-    "Notes": "All RES -100% when stunned"
+  "Pyro/Cryo Regisvine(Stunned)": {
+    "Elemental RES%": 10,
+    "Physical RES%": 10,
+    "Notes": "60% RES to corresponding element."
   },
   "Stormterror": {
     "Elemental RES%": 10,

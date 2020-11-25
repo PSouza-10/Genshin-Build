@@ -27,7 +27,7 @@ export function Header() {
   const [shareModal, setShareModal] = useState(false)
   const [helpModal, setHelpModal] = useState(false)
   const { damage, artifactStats } = useContext(StatContext)
-  const { selectedItems, didMount } = useContext(ItemsContext)
+  const { selectedItems, didMount, talentLevel } = useContext(ItemsContext)
   const [link, setLink] = useState(window.location.href)
   const [linkState, setLinkState] = useState('Copy Link')
   const handleShareModal = () => {
@@ -41,17 +41,17 @@ export function Header() {
   }
   useEffect(() => {
     if (didMount()) {
-      setLink(generateLink(selectedItems))
+      setLink(generateLink(selectedItems, talentLevel))
     }
-  }, [selectedItems, didMount])
+  }, [selectedItems, talentLevel, didMount])
   useEffect(() => {
     if (didMount()) {
       localStorage.setItem(
         'buildStr',
-        JSON.stringify({ selectedItems, artifactStats })
+        JSON.stringify({ selectedItems, artifactStats, talentLevel })
       )
     }
-  }, [selectedItems, didMount, artifactStats])
+  }, [selectedItems, talentLevel, didMount, artifactStats])
 
   return (
     <>
@@ -102,7 +102,12 @@ export function Header() {
               className='shareOption'
               name='download'
               onClick={() =>
-                downloadFile(selectedItems, artifactStats, damage.normal)
+                downloadFile(
+                  selectedItems,
+                  artifactStats,
+                  damage.normal,
+                  talentLevel
+                )
               }>
               <DownloadJson className='icon' />
               <h3>Download file</h3>

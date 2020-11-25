@@ -10,13 +10,14 @@ import {
 } from './styles'
 import { ItemsContext } from '../../ItemsContext'
 import { MessageContext } from '../../MessageContext'
+import { StatContext } from '../../StatContext'
 export default function LoadFile() {
   const [modalOpen, setOpen] = useState(false)
   const [fileData, setData] = useState({})
   const [fileName, setFileName] = useState('Select')
-  const { selectItem } = useContext(ItemsContext)
+  const { selectItem, setTalent } = useContext(ItemsContext)
   const { sendMessage } = useContext(MessageContext)
-  const { setArtifactAtk } = useContext(MessageContext)
+  const { setArtifactStats } = useContext(StatContext)
   const handleModal = () => {
     document.body.style.overflow = !modalOpen ? 'hidden' : 'initial'
     setOpen(!modalOpen)
@@ -43,7 +44,8 @@ export default function LoadFile() {
   }
   const handleUpload = () => {
     selectItem(fileData.selectedItems)
-    setArtifactAtk(fileData.artifactsAtk)
+    setArtifactStats(fileData.artifactStats)
+    setTalent(fileData.talentLevel)
   }
 
   return (

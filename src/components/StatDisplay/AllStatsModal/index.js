@@ -61,7 +61,7 @@ function StatRow({
 }
 function StatTable({ stats, element }) {
   const keys = [...Object.keys(stats)]
-  const blackList = ['ATK%', 'DEF%', 'HP%']
+  const blackList = ['ATK%', 'DEF%', 'HP%', 'DMG%']
 
   return (
     <StatTableColumn>
@@ -76,6 +76,7 @@ function StatTable({ stats, element }) {
               isBase={blackList.includes(key + '%')}
               increaseVal={stats[key + 'Bonus']}
               element={element}
+              key={key}
             />
           )
       )}

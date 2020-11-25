@@ -1,4 +1,4 @@
-export function generateLink(selectedItems) {
+export function generateLink(selectedItems, talentLevel) {
   const { ...items } = selectedItems
 
   let buildItems = []
@@ -27,7 +27,8 @@ export function generateLink(selectedItems) {
 
     buildString.push(itemStr.join('.'))
   })
-  const joinedString = buildString.join('~')
+
+  const joinedString = buildString.join('~') + `~T-${talentLevel}`
 
   return window.location.href.split('?b=')[0] + '?b=' + joinedString
 }
@@ -38,11 +39,18 @@ export function copyLink() {
   document.execCommand('copy')
 }
 
-export function downloadFile(selectedItems, artifactsAtk, totalAtk) {
+export function downloadFile(
+  selectedItems,
+  artifactStats,
+  totalAtk,
+  talentLevel
+) {
   let charName = selectedItems.character.id ? selectedItems.character.name : ''
   var dataStr =
     'data:text/json;charset=utf-8,' +
-    encodeURIComponent(JSON.stringify({ selectedItems, artifactsAtk }))
+    encodeURIComponent(
+      JSON.stringify({ selectedItems, artifactStats, talentLevel })
+    )
   var dlAnchorElem = document.getElementById('downloadAnchorElem')
   dlAnchorElem.setAttribute('href', dataStr)
   dlAnchorElem.setAttribute(

@@ -154,12 +154,13 @@ export default function ItemsProvider({ children }) {
   }
 
   function dataFromUrl(string) {
-    const newItems = findItems(string)
+    const {newItems,newTalentLevel}= findItems(string)
 
     selectItem({
       ...selectedItems,
       ...newItems
     })
+    setTalent(newTalentLevel)
   }
 
   return (
