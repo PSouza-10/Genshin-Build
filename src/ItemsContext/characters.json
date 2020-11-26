@@ -365,7 +365,7 @@
     "image": "https://static.wikia.nocookie.net/gensin-impact/images/7/71/Character_Traveler_Thumb.png",
     "pageUrl": "https://genshin-impact.fandom.com/wiki/Traveler",
     "name": "Traveler",
-    "element": "Adaptive",
+    "element": "Anemo",
     "weapon": "Sword",
     "type": "Character",
     "stats": {
@@ -377,6 +377,7 @@
     "talentBase": 44.5,
     "bonusStat": { "type": "ATK%", "base": 6.0 }
   },
+
   {
     "id": 22,
     "rarity": "5",
@@ -429,6 +430,24 @@
     },
     "talent": "Guhua Style",
     "talentBase": 46.6,
+    "bonusStat": { "type": "ATK%", "base": 6.0 }
+  },
+  {
+    "id": 25,
+    "rarity": "5",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/7/71/Character_Traveler_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Traveler",
+    "name": "Traveler",
+    "element": "Geo",
+    "weapon": "Sword",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 912, "lvlIncrease": 75.26315789473684 },
+      "ATK": { "base": 18, "lvlIncrease": 1.4736842105263157 },
+      "DEF": { "base": 57, "lvlIncrease": 4.7368421052631575 }
+    },
+    "talent": "Foreign Rockblade",
+    "talentBase": 44.5,
     "bonusStat": { "type": "ATK%", "base": 6.0 }
   }
 ]

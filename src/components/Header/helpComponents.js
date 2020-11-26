@@ -4,6 +4,7 @@ const HelpContent = styled.div`
   padding: 20px 25px;
   overflow-y: scroll;
   background-color: var(--bgSecondary);
+  height: 100%;
   &::-webkit-scrollbar {
     background-color: transparent;
   }

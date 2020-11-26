@@ -168,11 +168,13 @@ const Talent = ({ editable, name, base }) => {
             />
           </span>
         ) : (
-          <span className='talentLvl'>Lvl. {talentLevel}</span>
+          <span className='talentLvl'>Lvl. {1}</span>
         )}
         <span className='talentDMG'>
-          {(data.talentLevelMultipliers[talentLevel - 1] * base).toFixed(1)}%
-          ATK
+          {editable
+            ? (data.talentLevelMultipliers[talentLevel - 1] * base).toFixed(1)
+            : base}
+          % ATK
         </span>
       </span>
     </TalentContainer>

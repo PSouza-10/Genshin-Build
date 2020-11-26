@@ -8,23 +8,27 @@ export default {
         Welcome to the Genshin Impact build planning tool!
       </h3>
       <p className='text'>
-        This tool helps you measure the viability of your builds by calculating
-        the damage dealt to enemies with the selected loadout. In the future,
-        other stats (DEF, CRIT Rate%, etc...) will also be calculated and
-        displayed.
+        This tool helps you measure the damage output of your builds by
+        calculating stats according to the selected loadout. Do keep in mind
+        that most of your build efficiency comes from team composition, combat
+        strategies, and your skill in the game, as such, this tool only helps
+        you in determining ideal stat values and does not in any way dictate the
+        best build for your character in every situation, as that is dependant
+        on other factors. These factors will be incorporated into the
+        application in future updates.
       </p>
       <br></br>
       <br></br>
       <h3 className='title'>Current Limitations</h3>
       <p className='text'>
-        At the current moment, stats have are at some level of innacuracy, by
+        At the current moment, stats values are at some level of innacuracy, by
         extension, the damage displayed will differ somewhat from what you
         actually see in the game. Do keep in mind that in the current version of
         the application (1.0), only 1-Hit DMG for the auto-attack talent is
         calculated.
         <br></br>
         <br></br>
-        This will be improved upon as I collect more data to improve
+        This will be improved upon as more data is collected to improve
         calculations, and the community dissects formulas.
       </p>
       <br></br>
@@ -104,8 +108,13 @@ export default {
       <h3 className='title'>Stat Display (Right, or bottom in mobile)</h3>
       <p className='text'>
         The most important calculated values are displayed here (eg. Damage,
-        Total ATK). Click on the Damage or the Crit damage stat to select enemy
-        levels and improve damage accuracy. The default enemy level is 1.
+        Total ATK). Click on the Damage or the Crit damage stat to select the
+        enemy and its level to improve damage accuracy (Some resistances are a
+        little off).
+        <br></br>
+        <br></br>
+        Press the "All Stats" button at the bottom to inspect specific stat
+        values and how much artifacts/weapons give you.
         <br></br>
         <br></br>
         Once an item has been selected, this section will display its
@@ -146,8 +155,8 @@ export default {
         caution at least for now, as measures will be taken to prevent this.
         <br></br>
         <br></br>
-        You may load these files by selecting the last option on the Item Grid,
-        selecting the files and uploading them.
+        You may load these files by pressing the last button on the Item Grid
+        navbar, selecting the files and uploading them.
       </p>
     </HelpContent>
   ),
@@ -166,7 +175,7 @@ export default {
         <br></br>
         Where Base ATK is the sum of character and weapon ATK, ATK% Bonuses is
         the sum of ATK% stats from weapon, and artifact main/sub stats, and Flat
-        ATK Bonus pertains to The Feather Main Stat + all other +ATK sub stats.
+        ATK Bonus pertains to the Feather Main Stat + all other +ATK sub stats.
       </p>
       <br></br>
       <br></br>
@@ -178,7 +187,7 @@ export default {
         <i>
           Damage = Total ATK * (Talent Multiplier / 100) * ((100 + Character
           Level) / (200 + Character Level + Enemy Level)) * (1 +
-          Elemental/Physical DMG Bonus)
+          (Elemental/Physical DMG Bonus + Raw DMG% Bonus) / 100)
         </i>
         <br></br>
         <br></br>
@@ -219,30 +228,15 @@ export default {
 
       <p className='text'>
         If you have issues with the app, suggestions, or can help with
-        development, join our discord server!
+        values/formulas, join our discord server!
         <br></br>
         <a
-          href='https://discord.gg/MfFeG4W6'
+          href='https://discord.gg/Xrxz4ASWuz'
           target='_blank'
           rel='noopener noreferrer'>
           Discord
         </a>{' '}
         <br></br>
-      </p>
-      <br></br>
-      <br></br>
-
-      <h3 className='title'>Donate</h3>
-      <br></br>
-
-      <p className='text'>
-        While at the moment the website doesn't require funds to maintain, and
-        will forever remain free to use, a lot of time was spent building this
-        tool. If you support my work, feel free to donate any amount :)
-        <br></br>
-        <a href='http://google.com' target='_blank' rel='noopener noreferrer'>
-          Donate
-        </a>
       </p>
     </HelpContent>
   )

@@ -40,9 +40,10 @@ export default function FilterProvider({ children }) {
     let arrayOfSetItems = []
     Object.keys(set).forEach(key => {
       if (filter.includes(key)) {
-        const ids = Object.keys(set[key].items).map(
+        let ids = Object.keys(set[key].items).map(
           itemKey => set[key].items[itemKey]
         )
+
         const items = data[category].filter(({ id }) => ids.includes(id))
         arrayOfSetItems = [...arrayOfSetItems, ...items]
       }
