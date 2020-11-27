@@ -55,7 +55,7 @@ export function calculateStats(
   weaponAtk,
   artifactStats,
   setBonuses,
-  characterElement = ''
+  { element = '', weapon }
 ) {
   const baseStats = {
     ATK: characterStats.ATK + weaponAtk.main,
@@ -70,7 +70,8 @@ export function calculateStats(
     weaponAtk,
     characterStats,
     setBonuses,
-    characterElement
+    element,
+    weapon
   )
 
   const baseStatKeys = ['ATK', 'HP', 'DEF']
@@ -131,11 +132,11 @@ export function calculateCharacterStats({
 
     const ascensionBonuses = {
       small:
-        stars === 5 && name !== 'Traveler'
+        stars === 5 && !name.includes('Traveler')
           ? Math.ceil(0.55 * base)
           : Math.ceil(0.55 * base),
       big:
-        stars === 5 && name !== 'Traveler'
+        stars === 5 && !name.includes('Traveler')
           ? Math.floor(0.85 * base)
           : Math.floor(0.75 * base)
     }
@@ -167,7 +168,11 @@ export function calculateCharacterStats({
   const bonusStatPerAscensionMultiplier = [0, 0, 1, 2, 2, 3, 4]
   let bonusStatValue = bonusStatPerAscensionMultiplier[ascension] * base
 
-  newStats[type] += bonusStatValue
+  if (newStats[type] || newStats[type] === 0) {
+    newStats[type] += bonusStatValue
+  } else {
+    newStats[type] = 0 + bonusStatValue
+  }
 
   return newStats
 }
@@ -290,7 +295,8 @@ export function calculateTotalBonus(
   weapon,
   characterStats,
   setBonuses,
-  characterElement
+  characterElement,
+  characterWeapon
 ) {
   let statBonus = {
     ATK: 0,
@@ -344,7 +350,9 @@ export function calculateTotalBonus(
         statBonus['Elemental DMG%'] += setBonuses[key]
       }
     } else {
-      statBonus[key] += setBonuses[key]
+      if (stats.includes(key)) {
+        statBonus[key] += setBonuses[key]
+      }
     }
   }
 
@@ -377,13 +385,32 @@ export function findSetBonuses(selectedItems) {
   copyArr.forEach(item => {
     let bonusIndex = getOcurrence(item, setsArray)
     const { setBonuses, bonusDesc } = artifactSets[item]
+    let bonusApplies = [true, true]
+    if (selectedItems.character.weapon && bonusDesc.conditions) {
+      const conditions = [bonusDesc.conditions['2'], bonusDesc.conditions['4']]
 
-    if (bonusIndex > 3) {
+      conditions.forEach(({ weapon }, index) => {
+        if (weapon) {
+          bonusApplies[index] = weapon.includes(selectedItems.character.weapon)
+        }
+      })
+    }
+
+    if (bonusIndex > 1 && bonusApplies[0]) {
       bonuses = {
         ...bonuses,
-        ...setBonuses[0],
+        ...setBonuses[0]
+      }
+    }
+
+    if (bonusIndex > 3 && bonusApplies[1]) {
+      bonuses = {
+        ...bonuses,
         ...setBonuses[1]
       }
+    }
+
+    if (bonusIndex > 3) {
       const newDescription = {
         name: item,
         equiped: bonusIndex,
@@ -393,11 +420,6 @@ export function findSetBonuses(selectedItems) {
 
       descriptions.push(newDescription)
     } else if (bonusIndex > 1) {
-      bonuses = {
-        ...bonuses,
-        ...setBonuses[0]
-      }
-
       const newDescription = {
         name: item,
         equiped: bonusIndex,

@@ -127,7 +127,7 @@
       "goblet": 39,
       "circlet": 40
     },
-    "setBonuses": [{ "ATK%": 15 }, {}]
+    "setBonuses": [{ "DMG%": 15 }, {}]
   },
   "Defender's Will": {
     "minRarity": 3,
@@ -220,7 +220,13 @@
     "setUrl": "https://genshin-impact.fandom.com/wiki/Gladiator%27s_Finale",
     "bonusDesc": {
       "2": "ATK +18%",
-      "4": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%."
+      "4": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%.",
+      "conditions": {
+        "4": {
+          "weapon": ["Sword", "Claymore", "Polearm"]
+        },
+        "2": {}
+      }
     },
     "items": {
       "flower": 66,

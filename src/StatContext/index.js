@@ -98,16 +98,10 @@ export default function StatProvider({ children }) {
         weaponStats,
         artifactStats,
         setBonuses,
-        character.element
+        character
       )
     )
-  }, [
-    characterStats,
-    weaponStats,
-    artifactStats,
-    character.element,
-    setBonuses
-  ])
+  }, [characterStats, weaponStats, artifactStats, character, setBonuses])
 
   useEffect(() => {
     if (weapon.id) {

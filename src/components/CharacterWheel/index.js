@@ -12,7 +12,6 @@ export function CharacterWheel() {
 
   const handleClear = (option = '') => {
     if (calculatedStats.ATK > 0) {
-      console.log(option)
       if (option === '') {
         openMessage(!messageOpen)
       } else {
