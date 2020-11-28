@@ -31,7 +31,7 @@ export function formatViewMode(item, data) {
 
   if (type === 'Weapon') {
     const { secondaryStat, secondaryBase } = item
-    newInfo.secondaryType = secondaryStat
+    newInfo.secondaryType = secondaryStat.replace('%', '')
     newInfo.subStat =
       secondaryStat === 'Elemental Mastery'
         ? Math.round(secondaryBase)
@@ -107,7 +107,7 @@ export function formatEditMode(item, data, stats) {
     if (type === 'Weapon') {
       const { subType, sub } = weaponStats
 
-      newInfo.secondaryType = subType
+      newInfo.secondaryType = subType.replace('%', '')
 
       newInfo.subStat =
         subType === 'Elemental Mastery' ? Math.round(sub) : `${sub.toFixed(2)}%`

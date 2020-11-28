@@ -11,10 +11,44 @@ import {
   AddStatButton,
   Stat,
   DeleteStat
-} from './ArtifactStyles'
-import { StatContext } from '../../StatContext'
+} from './styles'
+import { MainStat } from '../styles'
+import { StatContext } from '../../../StatContext'
 
-export function ArtifactMainStat({ slot, mainStatIsEditable }) {
+export default function ArtifactView({
+  link,
+  isEditable,
+  slot,
+  mainStat,
+  mainStatType,
+  data,
+  item
+}) {
+  const { name } = item
+  return (
+    <>
+      <a href={link} className='title'>
+        {name}
+      </a>
+      {isEditable ? (
+        <ArtifactMainStat slot={slot} isEditable />
+      ) : (
+        <MainStat>{mainStat}</MainStat>
+      )}
+      {isEditable && (
+        <ArtifactSubStats slot={slot} mainStatType={mainStatType} />
+      )}
+
+      <div className='setBonusDescription'>
+        <h3>Set Bonuses: </h3>
+        <p>2 piece set: {data.artifactSets[item.set].bonusDesc['2']}</p>
+        <p>4 piece set: {data.artifactSets[item.set].bonusDesc['4']}</p>
+      </div>
+    </>
+  )
+}
+
+function ArtifactMainStat({ slot, mainStatIsEditable }) {
   const { artifactStats, setMainStat } = useContext(StatContext)
   const [open, setOpen] = useState(false)
   const toggle = () => {
@@ -41,10 +75,7 @@ export function ArtifactMainStat({ slot, mainStatIsEditable }) {
   const { main, mainType } = artifactStats[slot]
   return (
     <Wrapper>
-      <Bar
-        onClick={() => mainStatIsEditable && toggle()}
-        open={open}
-        isEditable={mainStatIsEditable}>
+      <Bar onClick={() => toggle()} open={open} isEditable={mainStatIsEditable}>
         <span>{`${mainType} ${main}`}</span>
 
         {
@@ -53,7 +84,7 @@ export function ArtifactMainStat({ slot, mainStatIsEditable }) {
           </span>
         }
       </Bar>
-      {mainStatIsEditable && (
+      {
         <Items open={open}>
           {possibleStats.map((item, index) => (
             <Item
@@ -64,12 +95,13 @@ export function ArtifactMainStat({ slot, mainStatIsEditable }) {
             </Item>
           ))}
         </Items>
-      )}
+      }
     </Wrapper>
   )
 }
 
-export function ArtifactSubStats({ slot, mainStatType }) {
+function ArtifactSubStats({ slot, mainStatType }) {
+  console.log(slot)
   const { handleSubStats, artifactStats } = useContext(StatContext)
   const [openSubStat, setOpen] = useState(5)
   const subStats = artifactStats[slot].sub

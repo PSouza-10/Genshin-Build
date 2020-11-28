@@ -5,28 +5,27 @@ import { StatContext } from '../../StatContext'
 import {
   Container,
   ItemImage,
-  MainStat,
   ItemInfo,
   StarIcon,
   CloseIcon,
-  SelectButton,
-  TalentContainer,
-  IconButton
+  SelectButton
 } from './styles'
-import { ArtifactMainStat, ArtifactSubStats } from './ArtifactStatComponents'
-
-import { FaMinus, FaPlus } from 'react-icons/fa'
+import ArtifactView from './ArtifactStatComponents'
+import WeaponView from './WeaponStatComponents'
+import CharacterView from './CharacterStatComponents'
 
 export default function ItemView({ item, displayedItem, setDisplayed }) {
   const { handleSelectItem, data } = useContext(ItemsContext)
   const stats = useContext(StatContext)
   const { image, name, level, type } = item
 
-  const slotKey = type === 'Artifact' && item.slot.toLowerCase().split(' ')[0]
-  const mainStatIsEditable = !['flower', 'plume'].includes(slotKey)
-
   const [itemInfo, setItemInfo] = useState({})
+
+  const slotKey = type === 'Artifact' && item.slot.toLowerCase().split(' ')[0]
   const isViewMode = displayedItem === 'view'
+  const mainStatIsEditable =
+    !['flower', 'plume'].includes(slotKey) && !isViewMode
+
   const handleSelect = () => {
     handleSelectItem(item)
     setDisplayed('stats')
@@ -48,7 +47,24 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
     formatInfo()
   }, [item, formatInfo])
 
-  const { displayStars, mainStat, category } = itemInfo
+  const { displayStars, category } = itemInfo
+
+  const typeMap = {
+    Artifact: (
+      <ArtifactView
+        isEditable={mainStatIsEditable}
+        link={data.artifactSets[item.set || 'Adventurer'].pageUrl}
+        mainStat={itemInfo.mainStat}
+        mainStatType={itemInfo.mainStatType}
+        slot={slotKey}
+        data={data}
+        item={item}
+      />
+    ),
+    Weapon: <WeaponView {...{ itemInfo, data, item }} />,
+    Character: <CharacterView {...{ itemInfo, isViewMode, item }} />
+  }
+
   return (
     <Container isItemView displayed={!(displayedItem === 'stats')}>
       <span className='layoutControl'>
@@ -73,121 +89,10 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
       <ItemImage>
         <img src={image} alt={name} />
       </ItemImage>
-      <a
-        href={
-          type === 'Artifact'
-            ? data.artifactSets[item.set].setUrl
-            : item.pageUrl
-        }
-        className='title'>
-        {name}
-      </a>
-      {type === 'Artifact' && !isViewMode && mainStatIsEditable ? (
-        <ArtifactMainStat slot={slotKey} mainStatIsEditable />
-      ) : (
-        <MainStat>{mainStat}</MainStat>
-      )}
-      {type === 'Artifact' && !isViewMode && (
-        <ArtifactSubStats
-          slot={slotKey}
-          mainStatType={stats.artifactStats[slotKey].mainType}
-        />
-      )}
-      {type === 'Weapon' && (
-        <MainStat>{`${itemInfo.secondaryType} ${itemInfo.subStat}`}</MainStat>
-      )}
-      {type === 'Character' && (
-        <Talent
-          name={item.talent}
-          base={item.talentBase}
-          editable={!isViewMode}
-        />
-      )}
-      {type === 'Weapon' && item.passive !== 'None' && (
-        <>
-          <h3 className='passiveName'>{item.passive}</h3>
-          <p className='passiveDescription'>{data.passives[item.passive]}</p>
-        </>
-      )}
-      {type === 'Artifact' && (
-        <div className='setBonusDescription'>
-          <h3>Set Bonuses: </h3>
-          <p>2 piece set: {data.artifactSets[item.set].bonusDesc['2']}</p>
-          <p>4 piece set: {data.artifactSets[item.set].bonusDesc['4']}</p>
-        </div>
-      )}
+      {typeMap[type]}
       <SelectButton onClick={handleSelect}>
         {isViewMode ? 'Select' : 'Remove'}
       </SelectButton>
     </Container>
   )
 }
-
-const Talent = ({ editable, name, base }) => {
-  const { talentLevel, setTalent, data } = useContext(ItemsContext)
-  const [level, setLevel] = useState(talentLevel)
-  const checkInput = () => {
-    if (level < 1 || level > 15) {
-      setLevel(talentLevel)
-    } else {
-      setTalent(level)
-    }
-  }
-  const handleInput = ({ target }) => {
-    setLevel(target.value)
-  }
-
-  const handleButtons = operation => {
-    const newLevel =
-      operation === 'increase' ? talentLevel + 1 : talentLevel - 1
-    setTalent(newLevel)
-    setLevel(newLevel)
-  }
-
-  return (
-    <TalentContainer>
-      <span className='talentName'>{name}</span>
-      <span className='talentData'>
-        {editable ? (
-          <span className='talentLvl'>
-            <Icon
-              negative
-              onClick={() => handleButtons('decrease')}
-              disabled={talentLevel < 2}
-            />
-            Lvl.
-            <input
-              type='number'
-              onChange={e => handleInput(e)}
-              onBlur={checkInput}
-              value={level}
-            />
-            <Icon
-              onClick={() => handleButtons('increase')}
-              disabled={talentLevel === data.talentLevelMultipliers.length}
-            />
-          </span>
-        ) : (
-          <span className='talentLvl'>Lvl. {1}</span>
-        )}
-        <span className='talentDMG'>
-          {editable
-            ? (data.talentLevelMultipliers[talentLevel - 1] * base).toFixed(1)
-            : base}
-          % ATK
-        </span>
-      </span>
-    </TalentContainer>
-  )
-}
-
-const Icon = ({ negative = false, disabled = false, ...otherProps }) =>
-  negative ? (
-    <IconButton negative disabled={disabled} {...otherProps}>
-      <FaMinus />
-    </IconButton>
-  ) : (
-    <IconButton disabled={disabled} {...otherProps}>
-      <FaPlus />
-    </IconButton>
-  )
