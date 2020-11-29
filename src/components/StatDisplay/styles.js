@@ -134,7 +134,7 @@ export const MainStat = styled.span`
       }
       display: flex;
       align-items: center;
-      flex: auto 0 auto;
+      flex: auto 0 28px;
 
       span {
         flex: 1 0 auto;
