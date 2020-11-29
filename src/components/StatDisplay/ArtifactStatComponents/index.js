@@ -13,6 +13,7 @@ import {
   DeleteStat
 } from './styles'
 import { MainStat } from '../styles'
+
 import { StatContext } from '../../../StatContext'
 
 export default function ArtifactView({
@@ -101,7 +102,6 @@ function ArtifactMainStat({ slot, mainStatIsEditable }) {
 }
 
 function ArtifactSubStats({ slot, mainStatType }) {
-  console.log(slot)
   const { handleSubStats, artifactStats } = useContext(StatContext)
   const [openSubStat, setOpen] = useState(5)
   const subStats = artifactStats[slot].sub

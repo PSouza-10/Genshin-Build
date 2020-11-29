@@ -55,8 +55,8 @@ export default function ItemRenderer({
   }, [level, setLevel])
 
   const upgradeLevel = isArtifact ? stars : ascension
-  const minUpgrade = isArtifact ? minRarity : 0
-  const maxUpgrade = isArtifact ? maxRarity : 6
+  const minUpgrade = isArtifact ? minRarity || 1 : 0
+  const maxUpgrade = isArtifact ? maxRarity || 5 : 6
 
   const ascensionLevels = [1, 20, 40, 50, 60, 70, 80]
   return (

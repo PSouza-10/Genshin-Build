@@ -231,7 +231,7 @@ export default {
         values/formulas, join our discord server!
         <br></br>
         <a
-          href='https://discord.gg/Xrxz4ASWuz'
+          href='https://discord.gg/986syVP9BV'
           target='_blank'
           rel='noopener noreferrer'>
           Discord

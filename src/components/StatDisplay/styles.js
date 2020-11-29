@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   background-color: var(--bgSecondary);
-  flex: 1;
+  flex: 1 0 auto;
   transition: width 0.3s ease;
 
   ${({ isItemView, displayed }) =>
@@ -101,12 +101,12 @@ export const Container = styled.div`
 `
 
 export const ItemImage = styled.div`
-  flex-basis: 33%;
-  max-height: 200px;
+  flex: auto auto 33%;
   max-width: 100%;
   text-align: center;
   img {
-    max-height: 200px;
+    flex: 0 auto 200px;
+
     max-width: 100%;
   }
 `

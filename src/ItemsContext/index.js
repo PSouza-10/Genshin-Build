@@ -59,7 +59,7 @@ export default function ItemsProvider({ children }) {
         [slot]: {
           level: 0,
           ascension: 0,
-          stars: 1
+          stars: selectedItems[slot].stars
         }
       })
       if (displayedItem === slot) {
@@ -154,7 +154,7 @@ export default function ItemsProvider({ children }) {
   }
 
   function dataFromUrl(string) {
-    const {newItems,newTalentLevel}= findItems(string)
+    const { newItems, newTalentLevel } = findItems(string)
 
     selectItem({
       ...selectedItems,
