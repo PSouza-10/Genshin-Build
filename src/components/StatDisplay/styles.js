@@ -133,6 +133,7 @@ export const MainStat = styled.span`
         fill: var(--bgPrimary);
       }
       display: flex;
+      flex: auto auto auto;
       justify-content: space-between;
       align-items: center;
       svg {
