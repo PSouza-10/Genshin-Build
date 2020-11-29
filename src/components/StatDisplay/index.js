@@ -59,11 +59,11 @@ export function StatDisplay() {
           <span>
             Damage {damage.normal} | Enemy Lvl. {enemy.level}
           </span>
-          <MdKeyboardArrowRight />
+          <MdKeyboardArrowRight className='icon' />
         </MainStat>
         <MainStat onClick={handleDamageModal} clickable>
           <span>Crit Damage {damage.crit}</span>
-          <MdKeyboardArrowRight />
+          <MdKeyboardArrowRight className='icon' />
         </MainStat>
         <MainStat>Total ATK {Math.round(calculatedStats.ATK)}</MainStat>
         <MainStat>

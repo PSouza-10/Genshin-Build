@@ -133,13 +133,18 @@ export const MainStat = styled.span`
         fill: var(--bgPrimary);
       }
       display: flex;
-      flex: auto auto auto;
-      justify-content: space-between;
       align-items: center;
-      svg {
-        height: 36px;
-        width: 36px;
+      flex: auto 0 auto;
+
+      span {
+        flex: 1 0 auto;
+      }
+      .icon {
+        height: 32px;
+        width: 32px;
         fill: inherit;
+        margin-left: auto;
+        flex: auto 0 32px;
       }
     `}
 `

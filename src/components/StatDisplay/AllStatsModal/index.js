@@ -13,7 +13,7 @@ function AllStats({ stats, element }) {
     <>
       <MainStat onClick={handleAllStatsModal} clickable>
         <span>All Stats</span>
-        <MdKeyboardArrowRight />
+        <MdKeyboardArrowRight className='icon' />
       </MainStat>
       <Overlay visible={statModal} onClick={handleAllStatsModal} />
       <Modal open={statModal}>
