@@ -30,7 +30,7 @@ export const Container = styled.div`
       background-color: transparent;
     }
       z-index: 10;
-      height: 100%;
+     
       box-shadow: 0 -6px 5px rgba(0,0,0,0.6);
       
       @media (max-width: 576px) {
@@ -134,17 +134,13 @@ export const MainStat = styled.span`
       }
       display: flex;
       align-items: center;
-      min-height: 31px;
+      flex: 0 0 auto;
 
-      span {
-        flex: 1 0 auto;
-      }
       .icon {
         height: 32px;
         width: 32px;
         fill: inherit;
         margin-left: auto;
-        flex: auto 0 32px;
       }
     `}
 `

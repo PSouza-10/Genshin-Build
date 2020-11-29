@@ -19,7 +19,7 @@ const Container = styled.div`
   max-height: calc(100% - 50px);
   .left {
     display: flex;
-    flex: 1 0 70%;
+    flex: 0 0 70%;
     flex-direction: column;
     max-height: 100%;
   }
