@@ -76,7 +76,7 @@ export const Container = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   background-color: var(--bgSecondary);
-  flex: 1 0 auto;
+  flex: 1 0 90%;
   ${({ RightColumn }) =>
     RightColumn &&
     css`
@@ -90,6 +90,7 @@ export const Container = styled.div`
     `}
   @media (max-width: 576px) {
     padding-bottom: 80px;
+    flex: 1 0 95%;
   }
 `
 
@@ -98,7 +99,7 @@ export const ItemRow = styled.div`
   justify-content: ${({ justify }) => justify};
   padding: 6px 75px;
   align-items: center;
-  flex: 0 0 33%;
+  flex: auto 0 33%;
   @media (max-width: 576px) {
     padding: 6px 6px;
   }
