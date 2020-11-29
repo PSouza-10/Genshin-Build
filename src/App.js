@@ -18,20 +18,20 @@ const Container = styled.div`
   height: calc(100% - 50px);
   max-height: calc(100% - 50px);
   .left {
-    flex-basis: 70%;
     display: flex;
+    flex: 1 0 70%;
     flex-direction: column;
     max-height: 100%;
   }
   .right {
-    flex: 1;
+    flex: 1 0 auto;
     display: flex;
     align-items: stretch;
     position: relative;
   }
   .charWheel {
     display: flex;
-    flex-basis: 60%;
+    flex: 1 0 auto;
     align-items: stretch;
     position: relative;
     box-shadow: 0 0 4px #000 inset;
@@ -41,10 +41,10 @@ const Container = styled.div`
     flex-direction: column;
 
     .charWheel {
-      flex-basis: 1;
+      flex: 1 0 auto;
     }
     .left {
-      flex: 1;
+      flex: 1 0 auto;
     }
   }
 `
