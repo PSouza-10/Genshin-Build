@@ -17,7 +17,6 @@ const data = {
   weapons: weapons,
   characters: characters,
   artifacts: artifacts,
-
   passives: passives
 }
 
