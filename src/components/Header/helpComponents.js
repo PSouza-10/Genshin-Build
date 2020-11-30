@@ -16,8 +16,7 @@ const HelpContent = styled.div`
     font-size: 1.4rem;
     padding: 6px 0;
   }
-  .table {
-  }
+
   .text {
     font-size: 1.2rem;
     color: white;
@@ -25,6 +24,14 @@ const HelpContent = styled.div`
     .bold {
       font-weight: 520;
       color: var(--primary);
+    }
+  }
+
+  .list {
+    list-style: disc;
+    padding-left: 15px;
+    li {
+      font-size: 1.2rem;
     }
   }
   a {

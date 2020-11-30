@@ -126,7 +126,7 @@ export default function ItemsProvider({ children }) {
     } else {
       const starsTable = [0, 4, 4, 12, 16, 20]
       let maxLevel = selected.maxLevel
-      let newLevel = level ? level : selected.level
+      let newLevel = level || level === 0 ? level : selected.level
       if (stars && (stars > selected.stars || stars < selected.stars)) {
         maxLevel = starsTable[stars]
         if (maxLevel < newLevel) {

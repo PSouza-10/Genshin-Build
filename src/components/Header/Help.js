@@ -18,6 +18,10 @@ export default function Help({ toggle, state }) {
       name: 'howItWorks'
     },
     {
+      displayName: 'Updates',
+      name: 'updates'
+    },
+    {
       displayName: 'Contribute',
       name: 'contribute'
     }

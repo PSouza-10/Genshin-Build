@@ -86,7 +86,10 @@ export default function ItemRenderer({
         <Icon
           negative
           onClick={() => handleLevel('minus')}
-          disabled={level === 0 || level === ascensionLevels[upgradeLevel]}
+          disabled={
+            level === 0 ||
+            (level === ascensionLevels[upgradeLevel] && !isArtifact)
+          }
         />
         <span className='text'>
           {isArtifact ? '+' : 'Lvl'}{' '}

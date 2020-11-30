@@ -8,7 +8,9 @@ import { StatTableColumn, Stat } from '../AllStatsModal/styles'
 
 export default function CharacterView({ item, isViewMode, itemInfo }) {
   const { characterStats } = useContext(StatContext)
-  const statList = [...Object.keys(isViewMode ? item.stats : characterStats)]
+  const statList = [
+    ...Object.keys(isViewMode ? item.stats : characterStats)
+  ].filter(name => name !== 'ATK')
 
   return (
     <>

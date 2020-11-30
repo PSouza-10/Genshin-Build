@@ -1,4 +1,5 @@
 import React from 'react'
+import changelog from './changelog'
 import HelpContent from './helpComponents'
 
 export default {
@@ -238,6 +239,21 @@ export default {
         </a>{' '}
         <br></br>
       </p>
+    </HelpContent>
+  ),
+  updates: (
+    <HelpContent>
+      {changelog.map(({ version, changes }) => (
+        <>
+          <h3 className='title'>Changelog - {version}</h3>
+          <br></br>
+          <ul className='list'>
+            {changes.map(item => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </>
+      ))}
     </HelpContent>
   )
 }
