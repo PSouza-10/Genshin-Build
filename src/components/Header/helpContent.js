@@ -1,7 +1,7 @@
 import React from 'react'
 import changelog from './changelog'
 import HelpContent from './helpComponents'
-
+import { VERSION } from '../../meta'
 export default {
   introduction: (
     <HelpContent>
@@ -25,8 +25,8 @@ export default {
         At the current moment, stats values are at some level of innacuracy, by
         extension, the damage displayed will differ somewhat from what you
         actually see in the game. Do keep in mind that in the current version of
-        the application (1.0), only 1-Hit DMG for the auto-attack talent is
-        calculated.
+        the application ({VERSION}), only 1-Hit DMG for the auto-attack talent
+        is calculated.
         <br></br>
         <br></br>
         This will be improved upon as more data is collected to improve

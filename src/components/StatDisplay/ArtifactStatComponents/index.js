@@ -18,7 +18,7 @@ import { StatContext } from '../../../StatContext'
 
 export default function ArtifactView({
   link,
-  isEditable,
+  isViewMode,
   slot,
   mainStat,
   mainStatType,
@@ -31,12 +31,12 @@ export default function ArtifactView({
       <a href={link} className='title'>
         {name}
       </a>
-      {isEditable ? (
-        <ArtifactMainStat slot={slot} isEditable />
+      {!isViewMode && !['flower', 'plume'].includes(slot) ? (
+        <ArtifactMainStat slot={slot} />
       ) : (
         <MainStat>{mainStat}</MainStat>
       )}
-      {isEditable && (
+      {!isViewMode && (
         <ArtifactSubStats slot={slot} mainStatType={mainStatType} />
       )}
 
@@ -49,7 +49,7 @@ export default function ArtifactView({
   )
 }
 
-function ArtifactMainStat({ slot, mainStatIsEditable }) {
+function ArtifactMainStat({ slot }) {
   const { artifactStats, setMainStat } = useContext(StatContext)
   const [open, setOpen] = useState(false)
   const toggle = () => {
@@ -76,7 +76,7 @@ function ArtifactMainStat({ slot, mainStatIsEditable }) {
   const { main, mainType } = artifactStats[slot]
   return (
     <Wrapper>
-      <Bar onClick={() => toggle()} open={open} isEditable={mainStatIsEditable}>
+      <Bar onClick={() => toggle()} open={open}>
         <span>{`${mainType} ${main}`}</span>
 
         {

@@ -1,3 +1,5 @@
+import { VERSION } from '../../meta'
+
 export function generateLink(selectedItems, talentLevel) {
   const { ...items } = selectedItems
 
@@ -16,7 +18,7 @@ export function generateLink(selectedItems, talentLevel) {
 
   let buildString = []
 
-  buildItems.forEach(({ id, level, type, upgrade, slot }) => {
+  buildItems.forEach(({ id, level, type, upgrade }) => {
     let itemStr = []
 
     let idStr = `${type[0]}-${id}`
@@ -49,7 +51,12 @@ export function downloadFile(
   var dataStr =
     'data:text/json;charset=utf-8,' +
     encodeURIComponent(
-      JSON.stringify({ selectedItems, artifactStats, talentLevel })
+      JSON.stringify({
+        selectedItems,
+        artifactStats,
+        talentLevel,
+        version: VERSION
+      })
     )
   var dlAnchorElem = document.getElementById('downloadAnchorElem')
   dlAnchorElem.setAttribute('href', dataStr)

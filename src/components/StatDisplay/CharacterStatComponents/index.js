@@ -29,10 +29,12 @@ export default function CharacterView({ item, isViewMode, itemInfo }) {
       <StatTableColumn style={{ margin: '0 auto' }}>
         {statList.map((stat, index) => {
           let value = isViewMode ? item.stats[stat].base : characterStats[stat]
-
+          let name = !stat.includes('Mastery')
+            ? stat.replace('Elemental', item.element)
+            : stat
           return (
             <Stat even={index % 2 === 0}>
-              <span>{stat.replace('%', '')}</span>
+              <span>{name.replace('%', '')}</span>
               <span>
                 {stat.includes('%')
                   ? value.toFixed(2) + '%'

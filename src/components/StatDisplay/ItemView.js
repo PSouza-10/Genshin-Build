@@ -23,8 +23,6 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
 
   const slotKey = type === 'Artifact' && item.slot.toLowerCase().split(' ')[0]
   const isViewMode = displayedItem === 'view'
-  const mainStatIsEditable =
-    !['flower', 'plume'].includes(slotKey) && !isViewMode
 
   const handleSelect = () => {
     handleSelectItem(item)
@@ -52,7 +50,7 @@ export default function ItemView({ item, displayedItem, setDisplayed }) {
   const typeMap = {
     Artifact: (
       <ArtifactView
-        isEditable={mainStatIsEditable}
+        isViewMode={isViewMode}
         link={data.artifactSets[item.set || 'Adventurer'].pageUrl}
         mainStat={itemInfo.mainStat}
         mainStatType={itemInfo.mainStatType}

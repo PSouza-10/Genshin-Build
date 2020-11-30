@@ -9,6 +9,7 @@ import {
 } from './components'
 import FilterProvider from './components/ItemPicker/FilterContext'
 
+import { VERSION } from './meta'
 import { ItemsContext } from './ItemsContext'
 import { StatContext } from './StatContext'
 
@@ -89,6 +90,16 @@ function App() {
         </div>
         <StatDisplay />
       </Container>
+      <h5
+        style={{
+          position: 'fixed',
+          bottom: '0',
+          left: '0',
+          zIndex: '999',
+          padding: '5px'
+        }}>
+        v{VERSION}
+      </h5>
     </>
   )
 }

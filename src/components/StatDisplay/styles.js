@@ -184,6 +184,7 @@ export const SelectButton = styled.button`
   &:hover {
     background-color: var(--primary);
     color: var(--bgSecondary);
+    font-weight: 560;
   }
 `
 
