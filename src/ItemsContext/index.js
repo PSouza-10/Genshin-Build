@@ -4,7 +4,6 @@ import artifactSets from './artifactSets.json'
 import weaponTypes from './weaponTypes.json'
 import weapons from './weapons.json'
 import characters from './characters.json'
-import talents from './talents.json'
 import passives from './passives.json'
 import artifacts from './artifacts.json'
 import { formatSlot, findItems, selectedItemsFactory } from './utils'
@@ -18,7 +17,7 @@ const data = {
   weapons: weapons,
   characters: characters,
   artifacts: artifacts,
-  talents: talents,
+
   passives: passives
 }
 
