@@ -449,5 +449,41 @@
     "talent": "Foreign Rockblade",
     "talentBase": 44.5,
     "bonusStat": { "type": "ATK%", "base": 6.0 }
+  },
+  {
+    "id": 26,
+    "rarity": "4",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/9/9d/Character_Xinyan_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Xinyan",
+    "name": "Xinyan",
+    "element": "Pyro",
+    "weapon": "Claymore",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 939, "lvlIncrease": 77.57894736842105 },
+      "ATK": { "base": 21, "lvlIncrease": 1.736842105263158 },
+      "DEF": { "base": 67, "lvlIncrease": 5.526315789473684 }
+    },
+    "talent": "Dance on Fire",
+    "talentBase": 76.5,
+    "bonusStat": { "type": "Elemental DMG%", "base": 6.0 }
+  },
+  {
+    "id": 27,
+    "rarity": "5",
+    "image": "https://static.wikia.nocookie.net/gensin-impact/images/c/c2/Character_Zhongli_Thumb.png",
+    "pageUrl": "https://genshin-impact.fandom.com/wiki/Zhongli",
+    "name": "Zhongli",
+    "element": "Geo",
+    "weapon": "Polearm",
+    "type": "Character",
+    "stats": {
+      "HP": { "base": 1144, "lvlIncrease": 95.94736842105263 },
+      "ATK": { "base": 20, "lvlIncrease": 1.631578947368421 },
+      "DEF": { "base": 57, "lvlIncrease": 4.842105263157895 }
+    },
+    "talent": "Rain of Stone",
+    "talentBase": 30.8,
+    "bonusStat": { "type": "Elemental DMG%", "base": 7.2 }
   }
 ]
