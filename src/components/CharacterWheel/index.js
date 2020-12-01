@@ -76,8 +76,8 @@ const Item = ({ itemSlot }) => {
       const newUpgrade =
         operation === 'plus' ? initialValue + 1 : initialValue - 1
       const newValue = isArtifact
-        ? { stars: newUpgrade }
-        : { ascension: newUpgrade }
+        ? { stars: newUpgrade, level: level }
+        : { ascension: newUpgrade, level: level }
       setStats(itemSlot, newValue)
     } else {
       setStats(itemSlot, { ascension: operation })

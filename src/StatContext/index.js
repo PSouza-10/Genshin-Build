@@ -106,6 +106,7 @@ export default function StatProvider({ children }) {
   useEffect(() => {
     if (weapon.id) {
       const { main, sub } = calculateWeaponStats(weapon)
+
       const newWeaponStats = {
         main,
         sub,
@@ -116,7 +117,7 @@ export default function StatProvider({ children }) {
       setWeaponStats({
         main: 0,
         sub: 0,
-        subType: 0
+        subType: ''
       })
     }
     //eslint-disable-next-line

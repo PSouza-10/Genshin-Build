@@ -55,8 +55,8 @@ export default function ItemsProvider({ children }) {
       selectItem({
         ...selectedItems,
         [slot]: {
-          level: 0,
-          ascension: 0,
+          level: selectedItems[slot].stars,
+          ascension: selectedItems[slot].ascension,
           stars: selectedItems[slot].stars
         }
       })
@@ -125,6 +125,7 @@ export default function ItemsProvider({ children }) {
       const starsTable = [0, 4, 4, 12, 16, 20]
       let maxLevel = selected.maxLevel
       let newLevel = level || level === 0 ? level : selected.level
+
       if (stars && (stars > selected.stars || stars < selected.stars)) {
         maxLevel = starsTable[stars]
         if (maxLevel < newLevel) {
