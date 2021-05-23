@@ -1,14 +1,14 @@
-import React from 'react'
-import changelog from './changelog'
-import HelpContent from './helpComponents'
-import { VERSION } from '../../meta'
+import React from "react";
+import changelog from "./changelog";
+import HelpContent from "./helpComponents";
+import { VERSION } from "../../meta";
 export default {
   introduction: (
     <HelpContent>
-      <h3 className='title'>
+      <h3 className="title">
         Welcome to the Genshin Impact build planning tool!
       </h3>
-      <p className='text'>
+      <p className="text">
         This tool helps you measure the damage output of your builds by
         calculating stats according to the selected loadout. Do keep in mind
         that most of your build efficiency comes from team composition, combat
@@ -20,8 +20,8 @@ export default {
       </p>
       <br></br>
       <br></br>
-      <h3 className='title'>Current Limitations</h3>
-      <p className='text'>
+      <h3 className="title">Current Limitations</h3>
+      <p className="text">
         At the current moment, stats values are at some level of innacuracy, by
         extension, the damage displayed will differ somewhat from what you
         actually see in the game. Do keep in mind that in the current version of
@@ -34,8 +34,8 @@ export default {
       </p>
       <br></br>
       <br></br>
-      <h3 className='title'>Disclaimer</h3>
-      <p className='text'>
+      <h3 className="title">Disclaimer</h3>
+      <p className="text">
         Genshin Build Planner is not affiliated with or endorsed by miHoYo.
         <br></br>
         <br></br>
@@ -46,10 +46,10 @@ export default {
   ),
   userGuide: (
     <HelpContent>
-      <h3 className='title'>
+      <h3 className="title">
         Item/Character Grid (Top Left, or Top in Mobile)
       </h3>
-      <p className='text'>
+      <p className="text">
         Click/touch the icon of the desired category (Characters, Weapons,
         Artifacts) to display available items. The last icon allows you to load
         files saved in the manner described on the "Sharing/saving: Download
@@ -78,10 +78,10 @@ export default {
       </p>
       <br></br>
       <br></br>
-      <h3 className='title'>
+      <h3 className="title">
         Selected Character/Items (Bottom left, or middle in Mobile)
       </h3>
-      <p className='text'>
+      <p className="text">
         Click/touch an item once to view its information, and open the window to
         select character talents and artifact stats. To deselect it,
         double-click the slot(Desktop) or Click/touch the item once and press
@@ -106,8 +106,8 @@ export default {
       </p>
       <br></br>
       <br></br>
-      <h3 className='title'>Stat Display (Right, or bottom in mobile)</h3>
-      <p className='text'>
+      <h3 className="title">Stat Display (Right, or bottom in mobile)</h3>
+      <p className="text">
         The most important calculated values are displayed here (eg. Damage,
         Total ATK). Click on the Damage or the Crit damage stat to select the
         enemy and its level to improve damage accuracy (Some resistances are a
@@ -132,25 +132,25 @@ export default {
       </p>
       <br></br>
       <br></br>
-      <h3 className='title'>Sharing/saving (Top Right)</h3>
-      <p className='text'>
+      <h3 className="title">Sharing/saving (Top Right)</h3>
+      <p className="text">
         Press the share icon to view available sharing options ( Forward to App
         (Mobile only), Share link, and Download File).
         <br></br>
         <br></br>
-        <span className='bold'>Forward to App(Mobile Only): </span> Selecting
+        <span className="bold">Forward to App(Mobile Only): </span> Selecting
         this option will open a window to share a link to your build. Your
         device/browser may not support sharing in this manner, and in that case
         you will be warned. If you do come across this, contact me as instructed
         in the contribute section.
         <br></br>
         <br></br>
-        <span className='bold'>Copy Link: </span> Copies a link to your build.
+        <span className="bold">Copy Link: </span> Copies a link to your build.
         This link does not expire, and builds loaded from it unfortanely do NOT
         store artifact stats/sub stats. This will be changed in the future.
         <br></br>
         <br></br>
-        <span className='bold'>Download File: </span> Downloads a file with all
+        <span className="bold">Download File: </span> Downloads a file with all
         the information about the current build. If this file is modified and
         you attempt to load it, the application may break, therefore, exercise
         caution at least for now, as measures will be taken to prevent this.
@@ -163,8 +163,8 @@ export default {
   ),
   howItWorks: (
     <HelpContent>
-      <h3 className='title'>Total ATK calculation</h3>
-      <p className='text'>
+      <h3 className="title">Total ATK calculation</h3>
+      <p className="text">
         Total ATK is calculated according to the formula below:
         <br></br>
         <br></br>
@@ -180,8 +180,8 @@ export default {
       </p>
       <br></br>
       <br></br>
-      <h3 className='title'>Damage and CRIT Damage</h3>
-      <p className='text'>
+      <h3 className="title">Damage and CRIT Damage</h3>
+      <p className="text">
         Damage is calculated according to the formula below:
         <br></br>
         <br></br>
@@ -213,10 +213,10 @@ export default {
       </p>
       <br></br>
 
-      <h3 className='title'>Sources</h3>
+      <h3 className="title">Sources</h3>
       <br></br>
 
-      <p className='text'>
+      <p className="text">
         All data on this page was taken from the Genshin Impact wiki, and will
         be updated accordingly.
       </p>
@@ -224,19 +224,33 @@ export default {
   ),
   contribute: (
     <HelpContent>
-      <h3 className='title'>Contact</h3>
+      <h3 className="title">Contact</h3>
       <br></br>
 
-      <p className='text'>
+      <p className="text">
         If you have issues with the app, suggestions, or can help with
         values/formulas, join our discord server!
         <br></br>
         <a
-          href='https://discord.gg/986syVP9BV'
-          target='_blank'
-          rel='noopener noreferrer'>
+          href="https://discord.gg/986syVP9BV"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Discord
-        </a>{' '}
+        </a>{" "}
+        <br></br>
+      </p>
+      <p className="text">
+        Or, if you got a knack for screaming at code, take a look at the
+        repository.
+        <br></br>
+        <a
+          href="https://github.com/PSouza-10/Genshin-Build"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Repository
+        </a>{" "}
         <br></br>
       </p>
     </HelpContent>
@@ -245,15 +259,15 @@ export default {
     <HelpContent>
       {changelog.map(({ version, changes }) => (
         <>
-          <h3 className='title'>Changelog - {version}</h3>
+          <h3 className="title">Changelog - {version}</h3>
           <br></br>
-          <ul className='list'>
-            {changes.map(item => (
+          <ul className="list">
+            {changes.map((item) => (
               <li>{item}</li>
             ))}
           </ul>
         </>
       ))}
     </HelpContent>
-  )
-}
+  ),
+};
